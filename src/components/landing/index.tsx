@@ -11,16 +11,21 @@ import {
   SimpleGrid,
   Button,
   Icon,
+  Image,
 } from '@chakra-ui/react'
 import { BsArrowRightShort } from 'react-icons/bs'
+// import Image from 'next/image'
+import { scaleLinear } from 'd3-scale'
 
-// import ArtsflowSvg from 'svg/artsflow.svg'
+import ArtsflowSvg from 'svg/artsflow.svg'
 import AfSvg from 'svg/af.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import CreateSvg from 'svg/landing/create.svg'
 import BookSvg from 'svg/landing/book.svg'
 import DeliverSvg from 'svg/landing/deliver.svg'
 import EarnSvg from 'svg/landing/earn.svg'
+
+import { useWindowSize } from '../../hooks'
 
 export default function Landing(): JSX.Element {
   return (
@@ -37,24 +42,98 @@ export default function Landing(): JSX.Element {
 }
 
 const Header = () => (
-  <Flex
+  <Stack
     bg="rgba(71, 188, 200, 0.1)"
     w="100%"
-    h="100vh"
-    minH="900px"
+    h={['auto', '100vh']}
+    maxH={['auto', '900px']}
     alignItems="center"
-    justifyContent="center"
+    justifyContent="space-between"
+    position="relative"
+    direction={['column', 'row']}
+    overflow="hidden"
   >
-    <Text fontSize="3xl">header</Text>
-  </Flex>
+    <Stack
+      w={['100%', '440px']}
+      justifyContent="center"
+      alignItems="flex-start"
+      p={['2rem', '0']}
+      ml={['0', '32px', '100px']}
+      mb={['0px', 0]}
+      h="100%"
+      zIndex="2"
+    >
+      <Icon
+        as={ArtsflowSvg}
+        w={['134px', '160px']}
+        h={['30px', '36px']}
+        justifySelf="flex-start"
+        mt={[0, '40px']}
+        mb="auto"
+      />
+      <Box alignSelf="center" pt={['60px', 0]} mb={['100px', 'auto']}>
+        <Text fontSize="20px">👋 Welcome!</Text>
+        <Heading
+          as="h1"
+          fontSize={['2.125rem', '3rem']}
+          pt={['16px', '32px']}
+          mb={['20px', '30px']}
+        >
+          Pursue your passion for the arts
+        </Heading>
+        <Text fontSize={['1.125rem', '1.25rem']} pb={['32px', '40px']} lineHeight="2rem">
+          Whether you’re a skilled artist, musician, dancer or drama practitioner, you can pursue
+          your passion with Artsflow.
+        </Text>
+        <OrderButton />
+      </Box>
+    </Stack>
+    <Box
+      w={['100%', '500px']}
+      h={['375px', '100%']}
+      bg="#765EA6"
+      top="0px"
+      roundedTopLeft={['40px', '80px']}
+      roundedTopRight={['40px', '0']}
+      roundedBottomLeft={['0', '80px']}
+      position="relative"
+    />
+    <HeroImage />
+  </Stack>
 )
+
+const HeroImage = () => {
+  const windowSize = useWindowSize()
+  // console.log(windowSize.width)
+  const xFn = scaleLinear().domain([800, 1600]).range([740, 140])
+  const x = xFn(windowSize.width)
+  return (
+    <Box
+      width={['600px', '1023px']}
+      height={['487px', '827px']}
+      position="absolute"
+      top={['auto', '100px']}
+      bottom={['-50px', 'auto']}
+      right={['-260px', `-${x}px`]}
+    >
+      <Image
+        src="/img/hero-image.png"
+        alt="Artsflow management dashboard"
+        // @ts-ignore
+        // layout="fill"
+        // unsized
+        // quality="95"
+      />
+    </Box>
+  )
+}
 
 const Intro = () => (
   <VStack w="100%" p={['2rem']} py={['80px', '160px']} alignItems="center" justifyContent="center">
     <Heading fontSize={['2rem', '3rem']} mb="32px" textAlign="center" fontWeight="semibold">
       Finally, a platform for the arts!
     </Heading>
-    <Text fontSize={['1.125rem', '1.5rem']} px={[0, '10%']} textAlign="center">
+    <Text fontSize={['1.125rem', '1.5rem']} px={[0, '10%']}>
       Artsflow is a tailor-made platform for the Arts Sector enabling creative practitioners to
       easily create, book, deliver and earn a living from their passion. We will help you to connect
       with people locally, so that you can share your passion with them.{' '}
@@ -160,17 +239,7 @@ const Join = () => (
       Sign up to receive updates on our progress and join the Beta release of the platform
     </Text>
     <HStack position="relative" w="100%" alignItems="center" justifyContent="center">
-      <Button
-        bg="#47BCC8"
-        color="white"
-        py="1.75rem"
-        w={['100%', '300px']}
-        fontSize="1.25rem"
-        fontWeight="semibold"
-        rightIcon={<Icon as={BsArrowRightShort} />}
-      >
-        Joint the waiting list
-      </Button>
+      <OrderButton />
       <Icon
         as={CurledArrowSvg}
         w="160"
@@ -182,6 +251,21 @@ const Join = () => (
       />
     </HStack>
   </VStack>
+)
+
+const OrderButton = () => (
+  <Button
+    bg="#47BCC8"
+    color="white"
+    py="1.75rem"
+    w={['100%', '300px']}
+    fontSize="1.25rem"
+    fontWeight="semibold"
+    rightIcon={<Icon as={BsArrowRightShort} />}
+    rounded="8px"
+  >
+    Joint the waiting list
+  </Button>
 )
 
 const Footer = () => (
