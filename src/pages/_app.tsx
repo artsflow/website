@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/core'
+import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 import NProgress from 'nprogress'
 import Router from 'next/router'
