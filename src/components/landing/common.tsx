@@ -1,4 +1,4 @@
-import { Button, Icon } from '@chakra-ui/react'
+import { Button, Icon, VStack, Text, Heading } from '@chakra-ui/react'
 
 import { BsArrowRightShort } from 'react-icons/bs'
 
@@ -15,4 +15,22 @@ export const OrderButton = () => (
   >
     Joint the waiting list
   </Button>
+)
+
+export const Content = ({ title, subtitle, ...rest }: any) => (
+  <VStack
+    w="100%"
+    p={['2rem']}
+    py={['80px', '160px']}
+    alignItems="center"
+    justifyContent="center"
+    {...rest}
+  >
+    <Heading fontSize={['2rem', '3rem']} mb="32px" textAlign="center" fontWeight="semibold">
+      {title}
+    </Heading>
+    <Text fontSize={['1.125rem', '1.5rem']} px={[0, '10%']}>
+      {subtitle}
+    </Text>
+  </VStack>
 )
