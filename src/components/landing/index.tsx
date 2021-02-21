@@ -1,7 +1,7 @@
 import { VStack } from '@chakra-ui/react'
 
 import { Hero } from './Hero'
-import { Benefits } from './Benefits'
+import { PlatformBenefits } from './PlatformBenefits'
 import { Join } from './Join'
 import { Footer } from './Footer'
 
@@ -14,7 +14,7 @@ export default function Landing(): JSX.Element {
     <>
       <Hero />
       <VStack maxW={['100%', '1440px']} m="auto" overflow="hidden">
-        <Benefits />
+        <PlatformBenefits />
         <DiscoverMobileApp />
         <Testimonials />
         <DiscoverWebApp />
