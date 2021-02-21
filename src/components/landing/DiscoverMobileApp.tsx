@@ -60,14 +60,14 @@ export const DiscoverMobileApp = () => (
       <Stack
         pos="relative"
         overflow={['hidden', 'inherit']}
-        py="100px"
+        py="120px"
         // border="1px solid blue"
         width={['100%', '400px']}
       >
         <Box
           w="300px"
           rounded="50px"
-          h="320px"
+          h="300px"
           alignSelf="center"
           pos="relative"
           bg={['rgba(239, 151, 181, 0.2)', 'none']}
@@ -79,7 +79,7 @@ export const DiscoverMobileApp = () => (
           transform={['scale(1)', 'scale(1.4)']}
           position="absolute"
           left={['-10px', '0px']}
-          top={['-20px', '-50px']}
+          top={['-40px', '-50px']}
         />
         <Image
           display={['none', 'block']}
