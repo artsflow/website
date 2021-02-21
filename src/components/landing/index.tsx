@@ -13,7 +13,7 @@ export default function Landing(): JSX.Element {
   return (
     <>
       <Hero />
-      <VStack maxW={['100%', '1440px']} m="auto">
+      <VStack maxW={['100%', '1440px']} m="auto" overflow="hidden">
         <Benefits />
         <DiscoverMobileApp />
         <Testimonials />
