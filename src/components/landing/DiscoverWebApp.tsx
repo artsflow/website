@@ -1,0 +1,1 @@
+export const DiscoverWebApp = () => null
