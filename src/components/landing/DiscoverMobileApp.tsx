@@ -101,6 +101,8 @@ export const DiscoverMobileApp = () => (
         <Image
           src="/img/mobapp-scr1.webp"
           fallbackSrc="/img/mobapp-scr1.png"
+          htmlWidth="400"
+          htmlHeight="554"
           alt="Artsflow mobile app explore screenshot 1"
           transform={['scale(1)', 'scale(1.4)']}
           position="absolute"
@@ -187,6 +189,8 @@ export const DiscoverMobileApp = () => (
         <Image
           src="/img/mobapp-scr2.webp"
           fallbackSrc="/img/mobapp-scr2.png"
+          htmlWidth="400"
+          htmlHeight="569"
           alt="Artsflow mobile app booking screenshot 1"
           transform={['scale(1)', 'scale(1.4)']}
           position="absolute"
