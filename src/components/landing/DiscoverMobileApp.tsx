@@ -70,7 +70,7 @@ export const DiscoverMobileApp = () => (
         alignItems="flex-start"
         // border="1px solid green"
       >
-        <Heading fontSize={['2rem', '3rem']} fontWeight="semibold">
+        <Heading fontSize={['1.375rem', '2rem']} fontWeight="semibold">
           Explore the Arts
         </Heading>
         <Text fontSize="1rem" lineHeight="2rem" pt="20px">
@@ -145,7 +145,7 @@ export const DiscoverMobileApp = () => (
         alignItems="flex-start"
         // border="1px solid green"
       >
-        <Heading fontSize={['2rem', '3rem']} fontWeight="semibold">
+        <Heading fontSize={['1.375rem', '2rem']} fontWeight="semibold">
           Booking is a breeze
         </Heading>
         <Text fontSize="1rem" lineHeight="2rem" pt="20px">
