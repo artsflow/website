@@ -73,7 +73,7 @@ export const Hero = () => (
       bg="#FFB4C4"
       left={['-10px', '50px']}
       top={['80px', '180px']}
-      rounded={['31px', '39px']}
+      rounded="full"
       w={['31px', '39px']}
       h={['31px', '39px']}
     />
@@ -81,7 +81,7 @@ export const Hero = () => (
       bg="#1574F6"
       left={['270px', '680px']}
       top={['530px', '160px']}
-      rounded="16px"
+      rounded="full"
       w="16px"
       h="16px"
     />
@@ -90,7 +90,7 @@ export const Hero = () => (
       bg="#FFD167"
       right="400px"
       top="70px"
-      rounded="16px"
+      rounded="full"
       w="16px"
       h="16px"
     />
@@ -99,7 +99,7 @@ export const Hero = () => (
       bg="#FFB4C4"
       left="660px"
       top="800px"
-      rounded="16px"
+      rounded="full"
       w="16px"
       h="16px"
     />
@@ -109,7 +109,7 @@ export const Hero = () => (
       border="8px solid white"
       left="460px"
       top="740px"
-      rounded="42px"
+      rounded="full"
       w="42px"
       h="42px"
     />
@@ -132,8 +132,8 @@ const HeroImage = () => {
       <Image
         src="/img/hero-image.png" // 1.237 ratio
         alt="Artsflow management dashboard"
-        // w="1534px"
-        // h="1240px"
+        htmlWidth="1023"
+        htmlHeight="827"
         // @ts-ignore
         // layout="fill"
         // unsized
