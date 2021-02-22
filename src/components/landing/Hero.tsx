@@ -45,10 +45,15 @@ export const Hero = () => (
           pt={['16px', '32px']}
           mb={['20px', '30px']}
         >
-          Pursue your passion for the arts
+          Share your passion for the arts
         </Heading>
-        <Text fontSize={['1.125rem', '1.25rem']} pb={['32px', '40px']} lineHeight="2rem">
-          Whether you’re a skilled artist, musician, dancer or drama practitioner, you can pursue
+        <Text
+          fontSize={['1.125rem', '1.25rem']}
+          pb={['32px', '40px']}
+          lineHeight="2rem"
+          color="#616167"
+        >
+          Whether you’re a skilled artist, musician, dancer or drama practitioner, you can share
           your passion with Artsflow.
         </Text>
         <OrderButton />

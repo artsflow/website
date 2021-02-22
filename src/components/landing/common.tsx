@@ -34,7 +34,7 @@ export const Content = ({ title, subtitle, ...rest }: any) => (
     <Heading fontSize={['2rem', '3rem']} mb="32px" textAlign="center" fontWeight="semibold">
       {title}
     </Heading>
-    <Text fontSize={['1.125rem', '1.5rem']} px={[0, '10%']}>
+    <Text fontSize={['1.125rem', '1.125rem']} px={[0, '10%']} lineHeight={['2rem', '2.25rem']}>
       {subtitle}
     </Text>
   </VStack>

@@ -184,12 +184,12 @@ export const DiscoverWebApp = () => (
 
     <Box px={['2rem', '4rem']} my={['100px', '200px']}>
       <Heading
-        fontSize={['1.5rem', '3rem']}
+        fontSize={['1.5rem', '2rem']}
         fontWeight="semibold"
         px={['2rem', 0]}
         textAlign="center"
       >
-        The Benefits of using our web app
+        Why use our web app?
       </Heading>
       <Benefits mt={['40px', '80px']} data={benefits} />
     </Box>
