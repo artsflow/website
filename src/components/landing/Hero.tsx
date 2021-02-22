@@ -130,8 +130,8 @@ const HeroImage = () => {
       right={['-300px', `-${x}px`]}
     >
       <Image
-        src="/img/hero-image.webp" // 1.237 ratio
-        fallbackSrc="/img/hero-image.png"
+        src="/img/hero-image1.webp" // 1.237 ratio
+        fallbackSrc="/img/hero-image1.png"
         alt="Artsflow management dashboard"
         htmlWidth="1023"
         htmlHeight="827"
