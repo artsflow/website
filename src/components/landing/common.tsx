@@ -1,4 +1,5 @@
 import { Button, Icon, VStack, Text, Heading, HStack, SimpleGrid, Box } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 
 import { BsArrowRightShort } from 'react-icons/bs'
 
@@ -7,20 +8,32 @@ import BookSvg from 'svg/landing/book.svg'
 import DeliverSvg from 'svg/landing/deliver.svg'
 import EarnSvg from 'svg/landing/earn.svg'
 
-export const OrderButton = () => (
-  <Button
-    bg="#00616b"
-    color="white"
-    py="1.75rem"
-    w={['100%', '300px']}
-    fontSize="1.25rem"
-    fontWeight="semibold"
-    rightIcon={<Icon as={BsArrowRightShort} />}
-    rounded="8px"
-  >
-    Joint the waiting list
-  </Button>
-)
+export const OrderButton = () => {
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push({
+      pathname: '/join',
+      query: { src: 'testsrc' },
+    })
+  }
+
+  return (
+    <Button
+      bg="#00616b"
+      color="white"
+      py="1.75rem"
+      w={['100%', '300px']}
+      fontSize="1.25rem"
+      fontWeight="semibold"
+      rightIcon={<Icon as={BsArrowRightShort} />}
+      rounded="8px"
+      onClick={handleClick}
+    >
+      Joint the waiting list
+    </Button>
+  )
+}
 
 export const Content = ({ title, subtitle, ...rest }: any) => (
   <VStack
