@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Landing from 'components/landing'
 
-const url = 'http://www.artsflow.com'
+const url = 'http://preview.artsflow.com'
 const title = 'Artsflow - the platform for the arts sector'
 
 const description =

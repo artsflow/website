@@ -9,7 +9,7 @@ import EarnSvg from 'svg/landing/earn.svg'
 
 export const OrderButton = () => (
   <Button
-    bg="#47BCC8"
+    bg="#00616b"
     color="white"
     py="1.75rem"
     w={['100%', '300px']}
