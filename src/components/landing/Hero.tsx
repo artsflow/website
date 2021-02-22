@@ -17,6 +17,7 @@ export const Hero = () => (
     position="relative"
     direction={['column', 'row']}
     overflow="hidden"
+    pos="relative"
   >
     <Stack
       w={['100%', '440px']}
@@ -36,7 +37,7 @@ export const Hero = () => (
         mt={[0, '40px']}
         mb="auto"
       />
-      <Box alignSelf="center" pt={['60px', 0]} mb={['100px', 'auto']}>
+      <Box alignSelf="center" pt={['60px', 0]} mb={['150px', 'auto']}>
         <Text fontSize="20px">👋 Welcome!</Text>
         <Heading
           as="h1"
@@ -64,26 +65,75 @@ export const Hero = () => (
       position="relative"
     />
     <HeroImage />
+    <Dot image="head1" left={['auto', '500px']} right={['-10px', 'auto']} top={['80px', '160px']} />
+    <Dot image="head2" left={['-10px', 'auto']} right={['auto', '170px']} top={['550px', '45px']} />
+    <Dot image="head3" top="760px" left="50px" display={['none', 'block']} w="68px" h="68px" />
+    <Dot image="head4" top="800px" right="320px" display={['none', 'block']} w="42px" h="42px" />
+    <Dot
+      bg="#FFB4C4"
+      left={['-10px', '50px']}
+      top={['80px', '180px']}
+      rounded={['31px', '39px']}
+      w={['31px', '39px']}
+      h={['31px', '39px']}
+    />
+    <Dot
+      bg="#1574F6"
+      left={['270px', '680px']}
+      top={['530px', '160px']}
+      rounded="16px"
+      w="16px"
+      h="16px"
+    />
+    <Dot
+      display={['none', 'block']}
+      bg="#FFD167"
+      right="400px"
+      top="70px"
+      rounded="16px"
+      w="16px"
+      h="16px"
+    />
+    <Dot
+      display={['none', 'block']}
+      bg="#FFB4C4"
+      left="660px"
+      top="800px"
+      rounded="16px"
+      w="16px"
+      h="16px"
+    />
+    <Dot
+      display={['none', 'block']}
+      bg="#F0F8F9"
+      border="8px solid white"
+      left="460px"
+      top="740px"
+      rounded="42px"
+      w="42px"
+      h="42px"
+    />
   </Stack>
 )
 
 const HeroImage = () => {
   const windowSize = useWindowSize()
-  // console.log(windowSize.width)
   const xFn = scaleLinear().domain([800, 1600]).range([740, 140])
   const x = xFn(windowSize.width)
   return (
     <Box
-      width={['600px', '1023px']}
-      height={['487px', '827px']}
+      width={['643px', '1023px']}
+      height={['520px', '827px']}
       position="absolute"
       top={['auto', '100px']}
-      bottom={['-50px', 'auto']}
-      right={['-260px', `-${x}px`]}
+      bottom={['-40px', 'auto']}
+      right={['-300px', `-${x}px`]}
     >
       <Image
-        src="/img/hero-image.png"
+        src="/img/hero-image.png" // 1.237 ratio
         alt="Artsflow management dashboard"
+        // w="1534px"
+        // h="1240px"
         // @ts-ignore
         // layout="fill"
         // unsized
@@ -92,3 +142,13 @@ const HeroImage = () => {
     </Box>
   )
 }
+
+const Dot = ({ image, ...rest }: any) => (
+  <Box
+    pos="absolute"
+    width="56px"
+    height="56px"
+    {...(image ? { backgroundImage: `url(/img/${image}.png)` } : {})}
+    {...rest}
+  />
+)
