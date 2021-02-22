@@ -130,7 +130,8 @@ const HeroImage = () => {
       right={['-300px', `-${x}px`]}
     >
       <Image
-        src="/img/hero-image.png" // 1.237 ratio
+        src="/img/hero-image.webp" // 1.237 ratio
+        fallbackSrc="/img/hero-image.png"
         alt="Artsflow management dashboard"
         htmlWidth="1023"
         htmlHeight="827"
@@ -148,7 +149,7 @@ const Dot = ({ image, ...rest }: any) => (
     pos="absolute"
     width="56px"
     height="56px"
-    {...(image ? { backgroundImage: `url(/img/${image}.png)` } : {})}
+    {...(image ? { backgroundImage: `url(/img/${image}.webp)` } : {})}
     {...rest}
   />
 )

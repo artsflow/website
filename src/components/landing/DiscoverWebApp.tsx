@@ -101,7 +101,8 @@ export const DiscoverWebApp = () => (
           display={['block', 'none']}
         />
         <Image
-          src="/img/webapp-scr1.png"
+          src="/img/webapp-scr1.webp"
+          fallbackSrc="/img/webapp-scr1.png"
           alt="Artsflow management dashboard activities screenshot"
           transform={['scale(1.4)', 'scale(2.3)']}
           position="absolute"
@@ -166,7 +167,8 @@ export const DiscoverWebApp = () => (
           display={['block', 'none']}
         />
         <Image
-          src="/img/webapp-scr2.png"
+          src="/img/webapp-scr2.webp"
+          fallbackSrc="/img/webapp-scr2.png"
           alt="Artsflow mobile management dashboard screenshot"
           transform={['scale(1.3)', 'scale(2.4)']}
           position="absolute"

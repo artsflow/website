@@ -99,7 +99,8 @@ export const DiscoverMobileApp = () => (
           display={['block', 'none']}
         />
         <Image
-          src="/img/mobapp-scr1.png"
+          src="/img/mobapp-scr1.webp"
+          fallbackSrc="/img/mobapp-scr1.png"
           alt="Artsflow mobile app explore screenshot 1"
           transform={['scale(1)', 'scale(1.4)']}
           position="absolute"
@@ -108,7 +109,8 @@ export const DiscoverMobileApp = () => (
         />
         <Image
           display={['none', 'block']}
-          src="/img/mobapp-scr11.png"
+          src="/img/mobapp-scr11.webp"
+          sfallbackSrcrc="/img/mobapp-scr11.png"
           alt="Artsflow mobile app explore screenshot 2"
           transform="scale(1)"
           position="absolute"
@@ -174,7 +176,8 @@ export const DiscoverMobileApp = () => (
         />
         <Image
           display={['none', 'block']}
-          src="/img/mobapp-scr21.png"
+          src="/img/mobapp-scr21.webp"
+          fallbackSrc="/img/mobapp-scr21.png"
           alt="Artsflow mobile app booking screenshot 2"
           transform="scale(1)"
           position="absolute"
@@ -182,7 +185,8 @@ export const DiscoverMobileApp = () => (
           top="40px"
         />
         <Image
-          src="/img/mobapp-scr2.png"
+          src="/img/mobapp-scr2.webp"
+          fallbackSrc="/img/mobapp-scr2.png"
           alt="Artsflow mobile app booking screenshot 1"
           transform={['scale(1)', 'scale(1.4)']}
           position="absolute"
