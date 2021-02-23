@@ -2,7 +2,12 @@ export const GTM_ID = 'GTM-PT28G72'
 
 export const gtmEvent = ({ event, ...rest }: any) => {
   // @ts-ignore
-  if (window?.dataLayer) window?.dataLayer.push({ event, ...rest })
+  if (window && window?.dataLayer) {
+    // @ts-ignore
+    window.dataLayer = window.dataLayer || []
+    // @ts-ignore
+    window?.dataLayer.push({ event, ...rest })
+  }
 }
 
 export const GoogleTagManager = () => (
