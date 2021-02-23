@@ -12,13 +12,14 @@ import { event } from 'lib/gtag'
 
 export const OrderButton = ({ type }: any) => {
   const router = useRouter()
+  const { utm_source: utmSource } = router.query
 
   const handleClick = () => {
     event({ action: 'button_click', category: type })
 
     router.push({
       pathname: '/join',
-      query: { src: 'testsrc' },
+      query: { utm_source: utmSource },
     })
   }
 

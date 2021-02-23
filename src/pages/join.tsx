@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
-export default function Home(): JSX.Element {
+export default function Join(): JSX.Element {
   const { query } = useRouter()
   const { utm_source: utmSource } = query
 
