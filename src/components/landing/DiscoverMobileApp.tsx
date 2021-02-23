@@ -112,7 +112,7 @@ export const DiscoverMobileApp = () => (
         <Image
           display={['none', 'block']}
           src="/img/mobapp-scr11.webp"
-          sfallbackSrcrc="/img/mobapp-scr11.png"
+          fallbackSrc="/img/mobapp-scr11.png"
           alt="Artsflow mobile app explore screenshot 2"
           transform="scale(1)"
           position="absolute"

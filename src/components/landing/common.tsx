@@ -8,10 +8,14 @@ import BookSvg from 'svg/landing/book.svg'
 import DeliverSvg from 'svg/landing/deliver.svg'
 import EarnSvg from 'svg/landing/earn.svg'
 
-export const OrderButton = () => {
+import { event } from 'lib/gtag'
+
+export const OrderButton = ({ type }: any) => {
   const router = useRouter()
 
   const handleClick = () => {
+    event({ action: 'button_click', category: type })
+
     router.push({
       pathname: '/join',
       query: { src: 'testsrc' },

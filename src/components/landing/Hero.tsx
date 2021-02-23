@@ -56,7 +56,7 @@ export const Hero = () => (
           Whether you’re a skilled artist, musician, dancer or drama practitioner, you can share
           your passion with Artsflow.
         </Text>
-        <OrderButton />
+        <OrderButton type="hero" />
       </Box>
     </Stack>
     <Box

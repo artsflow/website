@@ -23,7 +23,7 @@ export const Join = () => (
       Sign up to receive updates on our progress and join the Beta release of the platform
     </Text>
     <HStack position="relative" w="100%" alignItems="center" justifyContent="center">
-      <OrderButton />
+      <OrderButton type="footer" />
       <Icon
         as={CurledArrowSvg}
         w="160"
