@@ -1,12 +1,15 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
+import { Meta } from 'components'
+
 export default function Join(): JSX.Element {
   const { query } = useRouter()
   const { utm_source: utmSource } = query
 
   return (
     <>
+      <Meta title="Join" />
       <iframe
         title="typeform"
         id="typeform-full"
