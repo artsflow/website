@@ -3,14 +3,14 @@ import { useRouter } from 'next/router'
 import { Stack, Text, Heading } from '@chakra-ui/react'
 
 import { Meta } from 'components'
-import { event } from 'lib/gtag'
+import { gtmEvent } from 'lib/gtm'
 
 export default function Home(): JSX.Element {
   const { query } = useRouter()
   const { name } = query
 
   useEffect(() => {
-    event({ action: 'generate_lead' })
+    gtmEvent({ event: 'generate_lead' })
   }, [])
 
   return (

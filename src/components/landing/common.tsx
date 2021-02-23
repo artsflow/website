@@ -8,14 +8,14 @@ import BookSvg from 'svg/landing/book.svg'
 import DeliverSvg from 'svg/landing/deliver.svg'
 import EarnSvg from 'svg/landing/earn.svg'
 
-import { event } from 'lib/gtag'
+import { gtmEvent } from 'lib/gtm'
 
 export const OrderButton = ({ type }: any) => {
   const router = useRouter()
   const { utm_source: utmSource } = router.query
 
   const handleClick = () => {
-    event({ action: 'button_click', category: type })
+    gtmEvent({ event: 'button_click', type })
 
     router.push({
       pathname: '/join',

@@ -1,7 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
 
-import { GoogleTagManager } from 'lib/gtag'
+import { GoogleTagManager } from 'lib/gtm'
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
