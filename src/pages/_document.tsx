@@ -20,6 +20,9 @@ export default class MyDocument extends Document {
         <style>
           {`
             #__next { height: 100% }
+            body {
+              font-family: "Manrope", sans-serif;
+            }
           `}
         </style>
         <body>

@@ -10,6 +10,7 @@ const theme = {
         height: '100%',
       },
       body: {
+        fontFamily: 'Manrope',
         width: '100%',
         height: '100%',
       },

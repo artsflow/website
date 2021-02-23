@@ -3,7 +3,6 @@ import { VStack } from '@chakra-ui/react'
 import { Hero } from './Hero'
 import { PlatformBenefits } from './PlatformBenefits'
 import { Join } from './Join'
-import { Footer } from './Footer'
 
 import { DiscoverMobileApp } from './DiscoverMobileApp'
 import { DiscoverWebApp } from './DiscoverWebApp'
@@ -20,7 +19,6 @@ export default function Landing(): JSX.Element {
         <DiscoverWebApp />
       </VStack>
       <Join />
-      <Footer />
     </>
   )
 }
