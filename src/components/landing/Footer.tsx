@@ -2,13 +2,14 @@ import { Link, Stack, VStack, HStack, Text, Icon } from '@chakra-ui/react'
 
 import AfSvg from 'svg/af.svg'
 
-export const Footer = () => (
+export const Footer = (props: any) => (
   <VStack
     maxW={['100%', '1440px']}
     m="auto"
     pt={['5rem', '2rem']}
     pb={['3rem', '2rem']}
     px={['2rem', '4rem']}
+    {...props}
   >
     <Stack
       direction={['column-reverse', 'row']}
