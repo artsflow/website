@@ -1,7 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
 
-import { GTag } from 'lib/gtag'
+import { GTag, GoogleTagManager } from 'lib/gtag'
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -11,6 +11,7 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="stylesheet" type="text/css" href="/nprogress.css" />
           <GTag />
+          <GoogleTagManager />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
