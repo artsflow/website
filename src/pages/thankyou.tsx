@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Meta title="Thank you!" />
-      <Stack bg="#F0F8F9">
+      <Stack bg="#F0F8F9" minH="calc(100vh - 95px)">
         <VStack flex="1" justifyContent="center" alignItems="center">
           <Heading mb="20px" fontSize="3xl">
             Thank you, {name}
