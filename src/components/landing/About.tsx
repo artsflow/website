@@ -63,6 +63,8 @@ const Founder = ({ img, name, position, children, ...rest }: any) => (
       fallbackSrc="/img/james.png"
       htmlWidth="120"
       htmlHeight="120"
+      w="120px"
+      h="120px"
       alt={name}
       border="10px solid white"
       rounded="full"
