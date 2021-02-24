@@ -28,7 +28,7 @@ export const About = () => (
       direction={['column', 'row']}
       spacing={['100px', '40px']}
     >
-      <Founder img="/img/james.webp" name="James Cropper" position="CEO">
+      <Founder img="james" name="James Cropper" position="CEO">
         James is an entrepreneur and founder of Creative Minds a nationwide community of artists
         that deliver art sessions to care homes and other venues.
         <br />
@@ -36,7 +36,7 @@ export const About = () => (
         He has a BA Fine Art degree from Loughborough University and has a keen interest in
         sculpture.
       </Founder>
-      <Founder img="/img/radu.webp" name="Radu Ciocan" position="CTO" bg="#F1EFF6">
+      <Founder img="radu" name="Radu Ciocan" position="CTO" bg="#F1EFF6">
         Radu is the technical wizard at Artsflow. As a Full Stack software developer with more than
         10 years professional experience he’s worked for prominent fintech, social media and
         advertising start-ups.
@@ -59,12 +59,13 @@ const Founder = ({ img, name, position, children, ...rest }: any) => (
     {...rest}
   >
     <Image
-      src={img}
-      fallbackSrc="/img/james.png"
+      src={`/img/${img}.webp`}
+      fallbackSrc={`/img/${img}.png`}
       htmlWidth="120"
       htmlHeight="120"
       w="120px"
       h="120px"
+      display="block"
       alt={name}
       border="10px solid white"
       rounded="full"
