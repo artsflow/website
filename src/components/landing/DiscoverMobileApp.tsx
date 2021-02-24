@@ -1,26 +1,34 @@
 import { Box, Heading, Text, Icon, Image, Stack, VStack } from '@chakra-ui/react'
 
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
+import EyeSvg from 'svg/landing/eye.svg'
+import CalendarSvg from 'svg/landing/calendar.svg'
+import ChatSvg from 'svg/landing/chat.svg'
+import PieChartSvg from 'svg/landing/pie-chart.svg'
 
 import { Content, Benefits } from './common'
 
 const benefits = {
   1: {
+    icon: EyeSvg,
     title: 'Increased visibility',
     description:
       'Publishing your arts activities on Artsflow will provide you with more visibility to Users locally and nationally.',
   },
   2: {
+    icon: CalendarSvg,
     title: 'Seamless booking & transaction',
     description:
       'It’s never been easier for Users to book with you and to earn and income from your passion.',
   },
   3: {
+    icon: ChatSvg,
     title: 'Communicate with Users',
     description:
       'Communicate with your attendees professionally to update them as to what to bring or inform them of a cancellation. ',
   },
   4: {
+    icon: PieChartSvg,
     title: 'Data at a glance',
     description:
       'View your Dashboard containing data on your income, bookings, attendees and activities. Deeper data analytics available in the Web app.',

@@ -1,26 +1,34 @@
 import { Box, Heading, Text, Icon, Image, Stack, VStack } from '@chakra-ui/react'
 
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
+import CalendarSvg from 'svg/landing/calendar-alt.svg'
+import StarSvg from 'svg/landing/star.svg'
+import DocumentSvg from 'svg/landing/document.svg'
+import DataSvg from 'svg/landing/data.svg'
 
 import { Content, Benefits } from './common'
 
 const benefits = {
   1: {
-    title: 'Access Resources',
-    description:
-      'From video tutorials, to documents and live training/tutorials (coming soon), we’ll have everything you need to get started on Artsflow.',
-  },
-  2: {
+    icon: CalendarSvg,
     title: 'Calendar Overview',
     description:
       'Filter by day, week or month to see what’s going on and when, including every freelancer and franchisee (‘member’) in your organisation.',
   },
-  3: {
+  2: {
+    icon: StarSvg,
     title: 'Organisation Membership',
     description:
       'Upgrade your membership at any time and add multiple members to your Organisation account. View member reviews and activities.',
   },
+  3: {
+    icon: DocumentSvg,
+    title: 'Access Resources',
+    description:
+      'From video tutorials, to documents and live training/tutorials (coming soon), we’ll have everything you need to get started on Artsflow.',
+  },
   4: {
+    icon: DataSvg,
     title: 'Crunch your data',
     description:
       'From the number of bookings to the income generated, the Dashboard contains the data you need to help you improve your business.',

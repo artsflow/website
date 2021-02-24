@@ -3,11 +3,6 @@ import { useRouter } from 'next/router'
 
 import { BsArrowRightShort } from 'react-icons/bs'
 
-import CreateSvg from 'svg/landing/create.svg'
-import BookSvg from 'svg/landing/book.svg'
-import DeliverSvg from 'svg/landing/deliver.svg'
-import EarnSvg from 'svg/landing/earn.svg'
-
 import { gtmEvent } from 'lib/gtm'
 
 export const OrderButton = ({ type }: any) => {
@@ -66,7 +61,7 @@ export const Benefits = ({ data, ...rest }: any) => (
         alignSelf="flex-start"
         alignItems={['center', 'flex-start']}
       >
-        <Icon as={CreateSvg} boxSize={['48px', '72px']} />
+        <Icon as={data[1].icon} boxSize={['48px', '72px']} />
         <Heading fontSize={['20px', '24px']}>{data[1].title}</Heading>
       </HStack>
       <Box>
@@ -81,7 +76,7 @@ export const Benefits = ({ data, ...rest }: any) => (
         alignSelf="flex-start"
         alignItems={['center', 'flex-start']}
       >
-        <Icon as={BookSvg} boxSize={['48px', '72px']} />
+        <Icon as={data[2].icon} boxSize={['48px', '72px']} />
         <Heading fontSize={['20px', '24px']}>{data[2].title}</Heading>
       </HStack>
       <Box>
@@ -96,7 +91,7 @@ export const Benefits = ({ data, ...rest }: any) => (
         alignSelf="flex-start"
         alignItems={['center', 'flex-start']}
       >
-        <Icon as={DeliverSvg} boxSize={['48px', '72px']} />
+        <Icon as={data[3].icon} boxSize={['48px', '72px']} />
         <Heading fontSize={['20px', '24px']}>{data[3].title}</Heading>
       </HStack>
       <Box>
@@ -111,7 +106,7 @@ export const Benefits = ({ data, ...rest }: any) => (
         alignSelf="flex-start"
         alignItems={['center', 'flex-start']}
       >
-        <Icon as={EarnSvg} boxSize={['48px', '72px']} />
+        <Icon as={data[4].icon} boxSize={['48px', '72px']} />
         <Heading fontSize={['20px', '24px']}>{data[4].title}</Heading>
       </HStack>
       <Box>
