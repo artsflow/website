@@ -6,7 +6,7 @@ import { Join } from './Join'
 
 import { DiscoverMobileApp } from './DiscoverMobileApp'
 import { DiscoverWebApp } from './DiscoverWebApp'
-import { Testimonials } from './Testimonials'
+import { About } from './About'
 
 export default function Landing(): JSX.Element {
   return (
@@ -15,8 +15,8 @@ export default function Landing(): JSX.Element {
       <VStack maxW={['100%', '1440px']} m="auto" overflow="hidden">
         <PlatformBenefits />
         <DiscoverMobileApp />
-        <Testimonials />
         <DiscoverWebApp />
+        <About />
       </VStack>
       <Join />
     </>
