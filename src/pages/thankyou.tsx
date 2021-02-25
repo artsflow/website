@@ -21,15 +21,6 @@ export default function Home(): JSX.Element {
 
   useEffect(() => {
     gtmEvent({ event: 'generate_lead', source: utmSource })
-
-    if (name) {
-      // @ts-ignore
-      $crisp.push(['set', 'user:nickname', [name]])
-    }
-    if (email) {
-      // @ts-ignore
-      $crisp.push(['set', 'user:email', email])
-    }
   }, [])
 
   const handleClick = (source: string) => {
@@ -88,7 +79,7 @@ export default function Home(): JSX.Element {
           </Text>
         </VStack>
       </Stack>
-      <CrispWithNoSSR />
+      <CrispWithNoSSR name={name} email={email} />
     </>
   )
 }
