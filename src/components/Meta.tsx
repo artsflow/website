@@ -15,7 +15,7 @@ export function Meta({ title = defaultTitle, description = defaultDescription, u
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${url}/img/hero-image.png`} />
+      <meta property="og:image" content={`${url}/img/hero.png`} />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
   )
