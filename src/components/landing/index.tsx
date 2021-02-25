@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { VStack } from '@chakra-ui/react'
 
 import { Hero } from './Hero'
@@ -10,6 +11,10 @@ import { About } from './About'
 import { Why } from './Why'
 
 export default function Landing(): JSX.Element {
+  useEffect(() => {
+    // @ts-ignore
+    if (window?.$crisp) window.$crisp.push(['do', 'chat:hide'])
+  }, [])
   return (
     <>
       <Hero />

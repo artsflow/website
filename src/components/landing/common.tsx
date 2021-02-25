@@ -30,7 +30,7 @@ export const OrderButton = ({ type }: any) => {
       rounded="8px"
       onClick={handleClick}
     >
-      Joint the waiting list
+      Join the waiting list
     </Button>
   )
 }
