@@ -21,12 +21,14 @@ export const Footer = (props: any) => (
     >
       <HStack alignItems="center" justifyContent="center">
         <Link href="/">
-          <Icon as={AfSvg} w="24px" h="32px" />
+          <a>
+            <Icon as={AfSvg} w="24px" h="32px" />
+          </a>
         </Link>
         <Text fontSize="14px">Copyright © 2021 Artsflow</Text>
       </HStack>
       <HStack fontSize="14px" spacing="20px" mb={['20px !important', '0 !important']}>
-        <Link href="/cookies">Cookies </Link>
+        <Link href="/cookies">Cookies</Link>
         <Link href="/terms">Terms & Conditions</Link>
         <Link href="/privacy">Privacy Policy</Link>
       </HStack>
