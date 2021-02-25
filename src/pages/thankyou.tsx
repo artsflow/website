@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { Box, Stack, Text, Heading, VStack, useBreakpoint } from '@chakra-ui/react'
 // @ts-ignore
@@ -10,14 +11,25 @@ import { Meta } from 'components'
 const link = `https://artsflow.com/?utm_source=share`
 const message = 'Check this out: '
 
+const CrispWithNoSSR = dynamic(() => import('../components/CrispChat'), { ssr: false })
+
 export default function Home(): JSX.Element {
   const { query } = useRouter()
-  const { name, utm_source: utmSource } = query
+  const { name, email, utm_source: utmSource } = query
   const screen = useBreakpoint('base')
   const btnSize = screen === 'base' ? { small: true } : {}
 
   useEffect(() => {
     gtmEvent({ event: 'generate_lead', source: utmSource })
+
+    if (name) {
+      // @ts-ignore
+      $crisp.push(['set', 'user:nickname', [name]])
+    }
+    if (email) {
+      // @ts-ignore
+      $crisp.push(['set', 'user:email', email])
+    }
   }, [])
 
   const handleClick = (source: string) => {
@@ -68,8 +80,15 @@ export default function Home(): JSX.Element {
               onClick={() => handleClick('whatsapp')}
             />
           </Box>
+          <Heading pt={['2rem', '4rem']} fontSize="2xl" as="h4">
+            Have more questions?{' '}
+          </Heading>
+          <Text fontSize="xl" px="2rem" textAlign="center">
+            Chat with us by pressing the chat bubble from the right bottom of the screen.
+          </Text>
         </VStack>
       </Stack>
+      <CrispWithNoSSR />
     </>
   )
 }
