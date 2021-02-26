@@ -15,11 +15,7 @@ export const About = () => (
       mt={['-50px', '-80px']}
       ml={['30px', '50px']}
     />
-    <Content
-      py={['40px', '80px']}
-      title="About us"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    />
+    <Content py={['40px', '80px']} title="About us" />
     <Stack
       w="100%"
       p={['2rem']}

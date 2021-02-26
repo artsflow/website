@@ -109,23 +109,23 @@ export const DiscoverMobileApp = () => (
         <Image
           src="/img/mobapp-scr1.webp"
           fallbackSrc="/img/mobapp-scr1.png"
-          htmlWidth="623"
-          htmlHeight="863"
+          htmlWidth="768"
+          htmlHeight="1292"
           alt="Artsflow mobile app explore screenshot 1"
-          transform={['scale(1)', 'scale(1.4)']}
+          transform={['scale(0.8)', 'scale(1.2)']}
           position="absolute"
-          left={['-15px', '0px']}
-          top={['-40px', '-50px']}
+          left={['-15px', '-40px']}
+          top={['-40px', '-70px']}
         />
         <Image
           display={['none', 'block']}
           src="/img/mobapp-scr11.webp"
           fallbackSrc="/img/mobapp-scr11.png"
           alt="Artsflow mobile app explore screenshot 2"
-          transform="scale(1)"
+          transform="scale(0.9)"
           position="absolute"
-          right="-300px"
-          top="0"
+          right="-310px"
+          top="-10"
         />
       </Stack>
     </Stack>
@@ -191,19 +191,19 @@ export const DiscoverMobileApp = () => (
           alt="Artsflow mobile app booking screenshot 2"
           transform="scale(1)"
           position="absolute"
-          left="-225px"
-          top="40px"
+          left="-245px"
+          top="20px"
         />
         <Image
           src="/img/mobapp-scr2.webp"
           fallbackSrc="/img/mobapp-scr2.png"
-          htmlWidth="607"
-          htmlHeight="863"
+          htmlWidth="768"
+          htmlHeight="1291"
           alt="Artsflow mobile app booking screenshot 1"
-          transform={['scale(1)', 'scale(1.4)']}
+          transform={['scale(0.8)', 'scale(1.2)']}
           position="absolute"
-          left={['0px', '0px']}
-          top={['-40px', '-50px']}
+          left={['-10px', '0px']}
+          top={['-30px', '-50px']}
         />
       </Stack>
     </Stack>
