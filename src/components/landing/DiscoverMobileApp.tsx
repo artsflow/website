@@ -19,7 +19,7 @@ const benefits = {
     icon: CalendarSvg,
     title: 'Seamless booking & transaction',
     description:
-      'It’s never been easier for Users to book with you and to earn and income from your passion.',
+      'It’s never been easier for Users to book with you and to earn an income from your passion.',
   },
   3: {
     icon: ChatSvg,

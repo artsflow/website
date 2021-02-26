@@ -156,7 +156,7 @@ export const DiscoverWebApp = () => (
           Your Dashboard will provide you with an overview of your business, with data on your
           income, number of bookings, number of attendees, their age and what type of User they are.
           <br /> <br />
-          Filter and download your data via a PDF Impact report.
+          Filter and download your data via a PDF or CSV file.
         </Text>
       </VStack>
       <Stack

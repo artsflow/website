@@ -28,7 +28,6 @@ export const Footer = (props: any) => (
         <Text fontSize="14px">Copyright © 2021 Artsflow</Text>
       </HStack>
       <HStack fontSize="14px" spacing="20px" mb={['20px !important', '0 !important']}>
-        <Link href="/cookies">Cookies</Link>
         <Link href="/terms">Terms & Conditions</Link>
         <Link href="/privacy">Privacy Policy</Link>
       </HStack>

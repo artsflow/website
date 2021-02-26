@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Box, Stack, Text, Heading, VStack, useBreakpoint } from '@chakra-ui/react'
+import { Icon, Box, Flex, Stack, Text, Heading, VStack, useBreakpoint } from '@chakra-ui/react'
 // @ts-ignore
 import { Twitter, Facebook, Mail, Linkedin, Whatsapp } from 'react-social-sharing'
 
 import { gtmEvent } from 'lib/gtm'
 import { Meta } from 'components'
+
+import ArtsflowSvg from 'svg/artsflow.svg'
 
 const link = `https://artsflow.com/?utm_source=share`
 const message = 'Check this out: '
@@ -31,13 +34,29 @@ export default function Home(): JSX.Element {
     <>
       <Meta title="Thank you!" />
       <Stack bg="#F0F8F9" minH="calc(100vh - 95px)">
-        <VStack flex="1" justifyContent="center" alignItems="center">
+        <Link href="/">
+          <Flex as="a" w="100%" title="Artsflow">
+            <Icon
+              as={ArtsflowSvg}
+              w={['134px', '160px']}
+              h={['30px', '36px']}
+              mt={['2rem', '4rem']}
+              mb="20px"
+              mx="auto"
+            />
+          </Flex>
+        </Link>
+
+        <VStack flex="1" justifyContent="center" alignItems="center" px="2rem" mb="2rem">
           <Heading mb="20px" fontSize="3xl">
             Thank you, {name}
           </Heading>
-          <Text fontSize="xl">thank you copy text here</Text>
+          <Text fontSize="xl">
+            We'll be in touch with you shortly to update you as to our progress!
+          </Text>
           <Text fontSize="xl" pt={['2rem', '4rem']}>
-            share copy text here
+            Please feel free to share our Landing Page if you know anyone that might be interested
+            in Artsflow.
           </Text>
           <Box>
             <Facebook
@@ -72,10 +91,10 @@ export default function Home(): JSX.Element {
             />
           </Box>
           <Heading pt={['2rem', '4rem']} fontSize="2xl" as="h4">
-            Have more questions?{' '}
+            Any questions?
           </Heading>
           <Text fontSize="xl" px="2rem" textAlign="center">
-            Chat with us by pressing the chat bubble from the right bottom of the screen.
+            You can message us by clicking on the chat bubble in the bottom right hand corner.
           </Text>
         </VStack>
       </Stack>
