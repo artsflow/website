@@ -48,7 +48,7 @@ export const defaults = {
     if (ordered) styleType = 'decimal'
     if (depth === 1) styleType = 'circle'
     return (
-      <List spacing={24} as={ordered ? 'ol' : 'ul'} styleType={styleType} pl={4} {...attrs}>
+      <List spacing={4} as={ordered ? 'ol' : 'ul'} styleType={styleType} pl={4} mb={4} {...attrs}>
         {children}
       </List>
     )
