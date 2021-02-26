@@ -21,7 +21,7 @@ export const Footer = (props: any) => (
     >
       <HStack alignItems="center" justifyContent="center">
         <Link href="/">
-          <a>
+          <a title="Artsflow">
             <Icon as={AfSvg} w="24px" h="32px" />
           </a>
         </Link>
