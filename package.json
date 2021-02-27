@@ -81,6 +81,7 @@
     "react-lorem-ipsum": "^1.4.7",
     "react-markdown": "^5.0.3",
     "react-social-sharing": "^3.3.0",
+    "remark-gfm": "^1.0.0",
     "rrule": "^2.6.6",
     "swr": "^0.3.8",
     "uuid": "^8.3.1",

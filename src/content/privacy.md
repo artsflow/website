@@ -4,58 +4,7 @@
 
 This Policy is provided in a layered format so you can click through to the specific areas set out below.
 
-**[1.](#_Toc65187097)** **Introduction 1**
-
-**[Children: 2](#_Toc65187098)**
-
-**[App platform/store: 2](#_Toc65187099)**
-
-**[Our contact details 2](#_Toc65187100)**
-
-**[The GDPR 3](#_Toc65187101)**
-
-**[USA Users - CCPA Privacy Rights 3](#_Toc65187102)**
-
-**[2.](#_Toc65187103)** **Information Collected 3**
-
-**[3.](#_Toc65187104)** **Data collected: 5**
-
-**[4.](#_Toc65187105)** **We will collect and process the following data about you: 7**
-
-**[Information we receive from other sources including third parties and publicly available sources: 7](#_Toc65187106)**
-
-**[Device Data from the following parties: 7](#_Toc65187107)**
-
-**[5.](#_Toc65187108)** **Our use of your Personal Data 8**
-
-**[TABLE OF PURPOSES FOR WHICH WE WILL USE YOUR PERSONAL DATA 8](#_Toc65187109)**
-
-**[6.](#_Toc65187110)** **Providing your personal data to others: 9**
-
-**[7.](#_Toc65187111)** **International Transfers of Your Personal Data 10**
-
-**[8.](#_Toc65187112)** **Retaining and deleting personal data 11**
-
-**[9.](#_Toc65187113)** **Third party sites 11**
-
-**[10.](#_Toc65187114)** **Amendments 11**
-
-**[11.](#_Toc65187115)** **Your data protection rights and Opt-out Policy 12**
-
-**[12.](#_Toc65187116)** **How to complain 12**
-
-**[13.](#_Toc65187117)** **Cookies Policy 13**
-
-**[Cookies that we use: 13](#_Toc65187118)**
-
-**[Cookies used by our service providers: 13](#_Toc65187119)**
-
-**[Managing cookies: 14](#_Toc65187120)**
-
-**[Useful information 14](#_Toc65187121)**
-
-
-#### **Introduction**
+#### **1. Introduction**
 
 ARTSFLOW LTD, which operates this LANDING PAGE, the Website artsflow.com and mobile application (hereinafter referred to as, &quot;we&quot;, &quot;us&quot;, &quot;our&quot;, &quot;Artsflow&quot; or &quot;app&quot;, &quot;website&quot;) and its owner/s respect the privacy of anyone who uses our mobile application and/or our web- page. This Policy was created to demonstrate commitment to privacy.
 
@@ -114,102 +63,81 @@ We are the data controllers under the GDPR, as we are collecting and using your 
 - Request that a business that sells a consumer&#39;s personal data, not sell the consumer&#39;s personal data.
 - If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
 
-#### **Information Collected**
+#### **2. Information Collected**
 
-  1. We are committed to safeguarding the privacy of our clients and visitors to our website and mobile application.
+2.1 We are committed to safeguarding the privacy of our clients and visitors to our website and mobile application.
 
-  2. This Privacy Policy applies where we are acting as a data controller with respect to the personal data of our website and mobile application visitors and service users; in other words, where we determine the purposes and means of the processing of that personal data.
+2.2 This Privacy Policy applies where we are acting as a data controller with respect to the personal data of our website and mobile application visitors and service users; in other words, where we determine the purposes and means of the processing of that personal data.
 
-  3. We also use cookies within our website and mobile application. You will be asked for your consent to the use of cookies when first you download the app.
+2.3 We also use cookies within our website and mobile application. You will be asked for your consent to the use of cookies when first you download the app.
 
-  4. We collect your information when you choose to subscribe to our services, as per our Terms and Conditions, such as without limitation, when you choose to register on our website and mobile application, get a membership with us, get any of the services or have a chat with one of our advisors online or by contacting us via using the relevant features of our website and mobile application and when you visit the app&#39;s pages.
+2.4 We collect your information when you choose to subscribe to our services, as per our Terms and Conditions, such as without limitation, when you choose to register on our website and mobile application, get a membership with us, get any of the services or have a chat with one of our advisors online or by contacting us via using the relevant features of our website and mobile application and when you visit the app&#39;s pages.
 
-  1. We also use Google AdMob to collect your data. AdMob is a mobile application advertising platform created by Google. It is used to promote mobile apps and to help advertisers make money through mobile apps by enabling in-app advertising. AdMob also works with Google Analytics to help app owners get valuable insight and information about their app&#39;s usage and the effectiveness of any advertising campaigns. **By agreeing to this Policy, downloading and using our website and mobile application, you hereby understand and agree that we collect, share, and/or use data collected via AdMob.**
+2.5 We also use Google AdMob to collect your data. AdMob is a mobile application advertising platform created by Google. It is used to promote mobile apps and to help advertisers make money through mobile apps by enabling in-app advertising. AdMob also works with Google Analytics to help app owners get valuable insight and information about their app&#39;s usage and the effectiveness of any advertising campaigns. **By agreeing to this Policy, downloading and using our website and mobile application, you hereby understand and agree that we collect, share, and/or use data collected via AdMob.**
 
 More information about how Google deals with your Privacy can be found here: [https://policies.google.com/privacy?hl=en](https://policies.google.com/privacy?hl=en) .
 
-  1. We may ask and collect the following types of information in order to provide you with the use of our website and mobile application. This includes Usage Data, which may include information such as your IP address, browser type, browser version, time of your visit, etc. (please see our COOKIES POLICY below for more information) and Personal Data, referred to in this Privacy policy.
+2.6 We may ask and collect the following types of information in order to provide you with the use of our website and mobile application. This includes Usage Data, which may include information such as your IP address, browser type, browser version, time of your visit, etc. (please see our COOKIES POLICY below for more information) and Personal Data, referred to in this Privacy policy.
 
-  1. We do not distribute or share customer&#39;s data, unless we need so for the purposes of providing our services. **If we do need share some or all information provided by the customer with anyone outside our company, including, but not limited to, our partners- we will notify the customer immediately and request consent.**
+2.7 We do not distribute or share customer&#39;s data, unless we need so for the purposes of providing our services. **If we do need share some or all information provided by the customer with anyone outside our company, including, but not limited to, our partners- we will notify the customer immediately and request consent.**
 
-  1. We may collect your non-personal information from cookies, server logs and similar technology from your browser or mobile device, including your IP address (please see our COOKIES POLICY below for more information).
+2.8 We may collect your non-personal information from cookies, server logs and similar technology from your browser or mobile device, including your IP address (please see our COOKIES POLICY below for more information).
 
-  1. Some of the non-personal information can be combined with the personal information that is collected. When this is done, your non-personal information will be treated as personal information if the information may be used to identify or locate our customers in the same way as the personal information.
+2.9 Some of the non-personal information can be combined with the personal information that is collected. When this is done, your non-personal information will be treated as personal information if the information may be used to identify or locate our customers in the same way as the personal information.
 
-  1. We collect personal information only when you specifically and knowingly give it to us, for example by filling out an online form, giving our representatives your business card, connecting to us through a company account on social media or by sending us an email. We record the date and time when you give us this information and keep track of where we send it.
+2.10 We collect personal information only when you specifically and knowingly give it to us, for example by filling out an online form, giving our representatives your business card, connecting to us through a company account on social media or by sending us an email. We record the date and time when you give us this information and keep track of where we send it.
 
-  1. We will use the personal information you give us for the reasons stated when you provided it and for the provision of services when such services are requested. We will only use it for other reasons where legally we must or where this is allowed by law.
+2.11 We will use the personal information you give us for the reasons stated when you provided it and for the provision of services when such services are requested. We will only use it for other reasons where legally we must or where this is allowed by law.
 
-#### **Data collected:**
-
+#### **3. Data collected:**
 
 **Please note** : we do not collect any Special Categories of Personal Data about you (this includes details about your race or ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union membership, information about your health, and genetic and biometric data). Nor do we collect any information about criminal convictions and offences.
 
-  1. We may process data about your use of our website and mobile application and services (&quot; **usage data**&quot;). The usage data may include your IP address, geographical location, browser type and version, operating system, referral source, length of visit, page views and app navigation paths, as well as information about the timing, frequency and pattern of your use of our website and mobile application or services. The source of the usage data is Google Analytics. This usage data may be processed for the purposes of analysing the use of our website and mobile application and services. The legal basis for this processing is the legitimate interest of our company, namely the monitoring and improvement of our website and mobile application and services.
+3.1 We may process data about your use of our website and mobile application and services (&quot; **usage data**&quot;). The usage data may include your IP address, geographical location, browser type and version, operating system, referral source, length of visit, page views and app navigation paths, as well as information about the timing, frequency and pattern of your use of our website and mobile application or services. The source of the usage data is Google Analytics. This usage data may be processed for the purposes of analysing the use of our website and mobile application and services. The legal basis for this processing is the legitimate interest of our company, namely the monitoring and improvement of our website and mobile application and services.
 
+3.2 We may process information needed to set up and maintain an account with us in order to provide you with our services (&quot; **account data**&quot;). This account data may include your name, email address and password. The source of the account data is the information you provide. The account data may be processed for the purposes of, providing our services, ensuring the security of our website and mobile application and services, maintaining back-ups of our databases and communicating with you. The legal bases for this processing is to allow the performance of a contract between you and us and/or taking steps, at your request, to enter into such a contract.
 
-  2. We may process information needed to set up and maintain an account with us in order to provide you with our services (&quot; **account data**&quot;). This account data may include your name, email address and password. The source of the account data is the information you provide. The account data may be processed for the purposes of, providing our services, ensuring the security of our website and mobile application and services, maintaining back-ups of our databases and communicating with you. The legal bases for this processing is to allow the performance of a contract between you and us and/or taking steps, at your request, to enter into such a contract.
+3.3 We may process information to be included in your personal client profile on our website and mobile application (&quot; **profile data**&quot;). This profile data may include your name, address, telephone number, email address, profile pictures, gender, date of birth and any other information that you may wish to share. Profile data may be processed for the purposes of enabling your use of our services. The legal basis for this processing is to allow the performance of a contract between you and us and/or taking steps, at you request, to enter into such a contract.
 
+3.4 We may process your personal data that are provided in the course of the use of our services (&quot; **service data**&quot;). This service data may include information about your academic performance and any factors relevant to this, your current, past or future academic institutions, your availability for tuition sessions, your preferred tuition location, and your experience or qualifications. We gather this information directly from you. Service data may be processed for the purpose of effectively providing our services. The legal basis for this processing to facilitate the performance of a contract between you and us and/or taking steps, at your request, to enter into such a contract.
 
-  3. We may process information to be included in your personal client profile on our website and mobile application (&quot; **profile data**&quot;). This profile data may include your name, address, telephone number, email address, profile pictures, gender, date of birth and any other information that you may wish to share. Profile data may be processed for the purposes of enabling your use of our services. The legal basis for this processing is to allow the performance of a contract between you and us and/or taking steps, at you request, to enter into such a contract.
+3.5 We may process information that you post for publication on our website and mobile application or through our services (&quot; **publication data**&quot;). The publication data may be processed for the purposes of enabling such publication and administering our website and mobile application and services. The legal basis for this processing is consent.
 
+3.6 We may process information contained in any enquiry you submit to us regarding our services (&quot; **enquiry data**&quot;). Enquiry data may be processed for the purposes of offering or providing relevant services to you. The legal basis for this processing is the legitimate interest of our company, namely to respond to enquiries concerning our services and to make our services available to potential clients.
 
-  4. We may process your personal data that are provided in the course of the use of our services (&quot; **service data**&quot;). This service data may include information about your academic performance and any factors relevant to this, your current, past or future academic institutions, your availability for tuition sessions, your preferred tuition location, and your experience or qualifications. We gather this information directly from you. Service data may be processed for the purpose of effectively providing our services. The legal basis for this processing to facilitate the performance of a contract between you and us and/or taking steps, at your request, to enter into such a contract.
+3.7 We may process information relating to our customer relationships, including customer contact information (&quot; **customer relationship data**&quot;). The customer relationship data may include your name, your contact details, and information contained in communications between us and you. The source of the customer relationship data is you. The customer relationship data may be processed for the purposes of managing our relationships with customers, communicating with customers, keeping records of those communications and promoting our services to customers. The legal basis for this processing is the legitimate interest of our company, namely the proper management of our customer relationships.
 
+3.8 We may process information relating to transactions, including purchases of goods and services, that you enter into with us and/or through our website and mobile application (&quot; **transaction data**&quot;). Transaction data may include your contact details, details of the payment method used, including details of specific payment cards, your billing address, and the details of the transaction itself. The transaction data may be processed for the purpose of supplying the purchased goods and services and keeping proper records of those transactions. The legal basis for this processing is the performance of a contract between you and us and/or taking steps, at your request, to enter into such a contract and our legitimate interests, namely the proper administration of our website and mobile application and business.
 
-  5. We may process information that you post for publication on our website and mobile application or through our services (&quot; **publication data**&quot;). The publication data may be processed for the purposes of enabling such publication and administering our website and mobile application and services. The legal basis for this processing is consent.
+3.9 We may process information that you provide to us for the purpose of subscribing to our email notifications (&quot; **notification data**&quot;). The notification data may be processed for the purposes of sending you the relevant notifications. The legal basis for this processing is the legitimate interests of our company, namely the need to inform clients of relevant developments in relation to their use of our services, for example any charges to be levied in respect of those services.
 
+3.10 We may process information that you provide to us for the purpose of subscribing to our email newsletters, and/or promotional information (&quot; **marketing data**&quot;). This marketing data may be processed for the purposes of sending you the relevant newsletters. The legal basis for this processing is consent.
 
-  6. We may process information contained in any enquiry you submit to us regarding our services (&quot; **enquiry data**&quot;). Enquiry data may be processed for the purposes of offering or providing relevant services to you. The legal basis for this processing is the legitimate interest of our company, namely to respond to enquiries concerning our services and to make our services available to potential clients.
+3.11 We may process information contained in or relating to any communication that you send to us (&quot; **correspondence data**&quot;). The correspondence data may include the communication content and metadata associated with the communication. Our website and mobile application will generate the metadata associated with communications made using the app contact forms. The correspondence data may be processed for the purposes of communicating with you and record-keeping. The legal basis for this processing is our legitimate interests, namely the proper administration of our website and mobile application and business and communications with users.
 
+3.12 We may process any of your personal data identified in this policy where necessary for the establishment, exercise or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights, your legal rights and the legal rights of others.
 
-  7. We may process information relating to our customer relationships, including customer contact information (&quot; **customer relationship data**&quot;). The customer relationship data may include your name, your contact details, and information contained in communications between us and you. The source of the customer relationship data is you. The customer relationship data may be processed for the purposes of managing our relationships with customers, communicating with customers, keeping records of those communications and promoting our services to customers. The legal basis for this processing is the legitimate interest of our company, namely the proper management of our customer relationships.
+3.13 We may process any of your personal data identified in this policy where necessary for the purposes of obtaining or maintaining insurance coverage, managing risks, or obtaining professional advice. The legal basis for this processing is our legitimate interests, namely the proper protection of our business against risk.
 
+3.14 In addition to the specific purposes for which we may process your personal data set out above, we may also process any of your personal data] where such processing is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.
 
-  8. We may process information relating to transactions, including purchases of goods and services, that you enter into with us and/or through our website and mobile application (&quot; **transaction data**&quot;). Transaction data may include your contact details, details of the payment method used, including details of specific payment cards, your billing address, and the details of the transaction itself. The transaction data may be processed for the purpose of supplying the purchased goods and services and keeping proper records of those transactions. The legal basis for this processing is the performance of a contract between you and us and/or taking steps, at your request, to enter into such a contract and our legitimate interests, namely the proper administration of our website and mobile application and business.
+#### **4. We will collect and process the following data about you:**
 
+4.1 **Information you give us** - This is information (including Identity, Contact, Financial, and Marketing and Communications Data) you consent to giving us about you by filling in forms on the App Site and the Services Sites (together Our Sites), or by corresponding with us (for example, by email or chat). It includes information you provide when you register to use the App Site, download or register an App, subscribe to any of our Services, search for an App or Service, make an in-App purchase, share data via an App&#39;s social media functions, enter a competition, promotion or survey, or any OTHER ACTIVITIES COMMONLY CARRIED OUT IN CONNECTION WITH OUR WEBSITE AND MOBILE APPLICATION, such as without limitation information about your interests, including movies, sports, music and other information that you choose to share.
 
-  9. We may process information that you provide to us for the purpose of subscribing to our email notifications (&quot; **notification data**&quot;). The notification data may be processed for the purposes of sending you the relevant notifications. The legal basis for this processing is the legitimate interests of our company, namely the need to inform clients of relevant developments in relation to their use of our services, for example any charges to be levied in respect of those services.
+4.2 We also store the information when you report a problem with an App, our Services, or any of Our Sites. If you contact us, we will keep a record of that correspondence.
 
+4.3 **Information we collect about you and your device** - Each time you visit one of Our Sites or use one of our website and mobile applications we will automatically collect personal data including Device, Content and Usage Data. We collect this data using cookies and other similar technologies. Please see our Cookie Policy for further details.
 
-  10. We may process information that you provide to us for the purpose of subscribing to our email newsletters, and/or promotional information (&quot; **marketing data**&quot;). This marketing data may be processed for the purposes of sending you the relevant newsletters. The legal basis for this processing is consent.
-
-
-  11. We may process information contained in or relating to any communication that you send to us (&quot; **correspondence data**&quot;). The correspondence data may include the communication content and metadata associated with the communication. Our website and mobile application will generate the metadata associated with communications made using the app contact forms. The correspondence data may be processed for the purposes of communicating with you and record-keeping. The legal basis for this processing is our legitimate interests, namely the proper administration of our website and mobile application and business and communications with users.
-
-
-  12. We may process any of your personal data identified in this policy where necessary for the establishment, exercise or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights, your legal rights and the legal rights of others.
-
-
-  13. We may process any of your personal data identified in this policy where necessary for the purposes of obtaining or maintaining insurance coverage, managing risks, or obtaining professional advice. The legal basis for this processing is our legitimate interests, namely the proper protection of our business against risk.
-
-
-  14. In addition to the specific purposes for which we may process your personal data set out above, we may also process any of your personal data] where such processing is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.
-
-
-#### **We will collect and process the following data about you:**
-
-
-  1. **Information you give us** - This is information (including Identity, Contact, Financial, and Marketing and Communications Data) you consent to giving us about you by filling in forms on the App Site and the Services Sites (together Our Sites), or by corresponding with us (for example, by email or chat). It includes information you provide when you register to use the App Site, download or register an App, subscribe to any of our Services, search for an App or Service, make an in-App purchase, share data via an App&#39;s social media functions, enter a competition, promotion or survey, or any OTHER ACTIVITIES COMMONLY CARRIED OUT IN CONNECTION WITH OUR WEBSITE AND MOBILE APPLICATION, such as without limitation information about your interests, including movies, sports, music and other information that you choose to share.
-
-
-  2. We also store the information when you report a problem with an App, our Services, or any of Our Sites. If you contact us, we will keep a record of that correspondence.
-
-
-  3. **Information we collect about you and your device** - Each time you visit one of Our Sites or use one of our website and mobile applications we will automatically collect personal data including Device, Content and Usage Data. We collect this data using cookies and other similar technologies. Please see our Cookie Policy for further details.
-
-
-  4. **Location Data-** We may also use the GPS technology OR other technology to determine your current location. Some of our location-enabled Services require your personal data for the feature to work. If you wish to use the particular feature, you will be asked to consent to your data being used for this purpose. You can withdraw your consent at any time by disabling Location Data in your settings or contacting us.
+4.4 **Location Data-** We may also use the GPS technology OR other technology to determine your current location. Some of our location-enabled Services require your personal data for the feature to work. If you wish to use the particular feature, you will be asked to consent to your data being used for this purpose. You can withdraw your consent at any time by disabling Location Data in your settings or contacting us.
 
 #### **Information we receive from other sources including third parties and publicly available sources:**
-
 
 We will receive personal data about you from various third parties [and public sources] as set out below:
 
 THIS LIST IS NON-EXHAUSTIVE AND MAY BE UPDATED FROM TIME TO TIME.
 
 #### **Device Data from the following parties:**
-
 
 - analytics providers, such as Google based outside the EU;
 - advertising networks [such as [NAME] based [inside OR outside] the EU]; and
@@ -218,51 +146,26 @@ THIS LIST IS NON-EXHAUSTIVE AND MAY BE UPDATED FROM TIME TO TIME.
 - **Identity and Contact Data** from data brokers or aggregators [such as [NAME] based [inside OR outside] the EU];
 - Unique application numbers. When you want to install or uninstall a Service containing a unique application number or when such a Service searches for automatic updates, that number and information about your installation, for example, the type of operating system, may be sent to us.
 
-#### **Our use of your Personal Data**
+#### **5. Our use of your Personal Data**
 
-  1. We may send you a welcome email/text or otherwise contact you to verify your account and other transactional emails for operational purposes. Those communications can be stopped by terminating your account with us and by emailing [hello@artsflow.com](mailto:hello@artsflow.com)
+5.1 We may send you a welcome email/text or otherwise contact you to verify your account and other transactional emails for operational purposes. Those communications can be stopped by terminating your account with us and by emailing [hello@artsflow.com](mailto:hello@artsflow.com)
 
-  1. We may also use the information to contact customers and prospects to further discuss their interest in our company, the services we provide and ways we can improve them. We may also Email a customer newsletter and updates about the services or the business. You can opt out of receiving these communications by emailing us as per our opt-out policy (below).
+5.2 We may also use the information to contact customers and prospects to further discuss their interest in our company, the services we provide and ways we can improve them. We may also Email a customer newsletter and updates about the services or the business. You can opt out of receiving these communications by emailing us as per our opt-out policy (below).
 
-  1. You agree that we may use your personal information in relation to our services and tools, deliver targeted marketing and promotional offers. You agree that we will use and collect your information and share it with Google AdMob.
-
+5.3 You agree that we may use your personal information in relation to our services and tools, deliver targeted marketing and promotional offers. You agree that we will use and collect your information and share it with Google AdMob.
 
 #### **TABLE OF PURPOSES FOR WHICH WE WILL USE YOUR PERSONAL DATA**
 
-| **Purpose/activity ** | **Type of data ** | **Lawful basis for processing ** |
+| Purpose/activity | Type of data |  Lawful basis for processing |
 | --- | --- | --- |
 | To install the App and register you as a new App user | Identity, Contact, Financial, Device | Your consent |
-| To process in-App purchases and deliver Services including managing payments and collecting money owed to us | Identity, Contact, Financial, Transaction, Device, Marketing and Communications, Location | Your consent;
- Performance of a contract with you;
- Necessary for our legitimate interests (to recover debts due to us) |
-| To manage our relationship with you including notifying you of changes to the App or any Services | Identity
- Contact
- Financial
- Profile
- Marketing and Communications | Your consent;
- Performance of a contract with you;
- Necessary for our legitimate interests (to keep records updated and to analyse how customers use our products/ Services);
- Necessary to comply with legal obligations (to inform you of any changes to our terms and conditions). |
-| To enable you to connect with other users, share your interests, participate in a competition | Identity
- Contact
- Device
- Profile
- Marketing and Communications | Your consent;
- Performance of a contract with you
- Necessary for our legitimate interests (to analyse how customers use our products/Services and to develop them and grow our business). |
-| To administer and protect our business and our mobile application and website including troubleshooting, data analysis and system testing | Identity
- Contact
- Device | Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security) |
-| To deliver content and advertisements to youTo make recommendations to you about goods or services which may interest youTo measure and analyse the effectiveness of the advertising we serve youTo monitor trends so we can improve the App and the Website | Identity
- ContactDevice
- Content
- Profile
- Usage
- Marketing and Communications
- Location | ConsentNecessary for our legitimate interests (to develop our products/Services and grow our business)
+| To process in-App purchases and deliver Services including managing payments and collecting money owed to us | Identity, Contact, Financial, Transaction, Device, Marketing and Communications, Location | Your consent; Performance of a contract with you; Necessary for our legitimate interests (to recover debts due to us) |
+| To manage our relationship with you including notifying you of changes to the App or any Services | Identity / Contact Financial / Profile / Marketing and Communications | Your consent; Performance of a contract with you; Necessary for our legitimate interests (to keep records updated and to analyse how customers use our products/ Services); Necessary to comply with legal obligations (to inform you of any changes to our terms and conditions). |
+| To enable you to connect with other users, share your interests, participate in a competition | Identity / Contact / Device / Profile / Marketing and Communications | Your consent; Performance of a contract with you / Necessary for our legitimate interests (to analyse how customers use our products/Services and to develop them and grow our business). |
+| To administer and protect our business and our mobile application and website including troubleshooting, data analysis and system testing | Identity / Contact / Device | Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security) |
+| To deliver content and advertisements to youTo make recommendations to you about goods or services which may interest youTo measure and analyse the effectiveness of the advertising we serve youTo monitor trends so we can improve the App and the Website | Identity / ContactDevice / Content / Profile / Usage / Marketing and Communications /  Location | ConsentNecessary for our legitimate interests (to develop our products/Services and grow our business)
 
-
-#### **Providing your personal data to others:**
+#### **6. Providing your personal data to others:**
 
 - We may disclose your personal data to any member of our group of companies (this means our subsidiaries, our ultimate holding company and all its subsidiaries) insofar as reasonably necessary for the purposes, and on the legal bases, set out in this policy.
 
@@ -279,27 +182,25 @@ THIS LIST IS NON-EXHAUSTIVE AND MAY BE UPDATED FROM TIME TO TIME.
 
 - In addition to the specific disclosures of personal data set out in this Section, we may disclose your personal data where such disclosure is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person. We may also disclose your personal data where such disclosure is necessary for the establishment, exercise or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure.
 
-#### **International Transfers of Your Personal Data**
+#### **7. International Transfers of Your Personal Data**
 
+  7.1 Our website and mobile application usage analytics provider, Google Analytics, is situated in the USA. Some of our preferred Social Media Platforms, may also be situated in the USA. The European Commission has made an &quot;adequacy decision&quot; with respect to the data protection laws of the USA. Transfers to the USA will be protected by appropriate safeguards, namely the use of standard data protection clauses adopted or approved by the European Commission.
 
-  1. Our website and mobile application usage analytics provider, Google Analytics, is situated in the USA. Some of our preferred Social Media Platforms, may also be situated in the USA. The European Commission has made an &quot;adequacy decision&quot; with respect to the data protection laws of the USA. Transfers to the USA will be protected by appropriate safeguards, namely the use of standard data protection clauses adopted or approved by the European Commission.
+  7.2 Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
 
-  2. Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
+  7.3 If you are located outside United Kingdom and choose to provide information to us, please note that we may transfer the data, including Personal Data, to United Kingdom and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to such transfer.
 
-  3. If you are located outside United Kingdom and choose to provide information to us, please note that we may transfer the data, including Personal Data, to United Kingdom and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to such transfer.
+  7.4 Wewill take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
 
-  4. Wewill take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
+  7.5 We take commercially reasonable steps to protect the Personal Data you provide to us from misuse, disclosure or unauthorized access. We only share your Personal Data with trusted third parties who use the same level of care in processing your Personal Data. That being said, we cannot guarantee that your Personal Data will always be secure due to technology or security breaches. Should there be a data breach of which we are aware, we will inform you immediately.
 
-  5. We take commercially reasonable steps to protect the Personal Data you provide to us from misuse, disclosure or unauthorized access. We only share your Personal Data with trusted third parties who use the same level of care in processing your Personal Data. That being said, we cannot guarantee that your Personal Data will always be secure due to technology or security breaches. Should there be a data breach of which we are aware, we will inform you immediately.
+  7.6 You acknowledge that personal data that you submit for publication through our website and mobile application or services may be available, via the internet, around the world. We cannot prevent the use (or misuse) of such personal data by others.
 
-  6. You acknowledge that personal data that you submit for publication through our website and mobile application or services may be available, via the internet, around the world. We cannot prevent the use (or misuse) of such personal data by others.
+#### **8. Retaining and deleting personal data**
 
-#### **Retaining and deleting personal data**
+8.1 Personal data that we process for any purpose or purposes shall not be kept for longer than is necessary for that purpose or those purposes.
 
-
-  1. Personal data that we process for any purpose or purposes shall not be kept for longer than is necessary for that purpose or those purposes.
-
-  2. We will retain your personal data as follows:
+8.2 We will retain your personal data as follows:
 
 - account data, profile data, service and customer relationship data will be retained for a minimum period of one year from the time of the receipt of this data, and for a maximum period of six years from the end of the period in which the client is in receipt of our services.
 
@@ -309,26 +210,21 @@ THIS LIST IS NON-EXHAUSTIVE AND MAY BE UPDATED FROM TIME TO TIME.
 - the period of retention of publication data will be determined based on the period of time for which this data is intended to remain in publication.
 - the period of retention of enquiry data will be determined based on the likelihood of an enquiry resulting in the provision of services to the data subject.
 
+8.3 Notwithstanding the other provisions of this Section, we may retain your personal data where such retention is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.
 
-  1. Notwithstanding the other provisions of this Section, we may retain your personal data where such retention is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.
-
-#### **Third party sites**
+#### **9. Third party sites**
 
 Our Website and mobile app may contain links to other apps. We are not responsible for the privacy practices or the content of these other apps. Customers and visitors must check the policy statement of these other apps to understand their policies. Customers and visitors who access a linked site may be disclosing their private information. It is your responsibility to keep such information private and confidential.
 
-#### **Amendments**
+#### **10. Amendments**
 
+  10.1 This Policy is effective from 26/02/2021. Artsflow reserves the right to change this Privacy Policy statement to reflect any changes to our privacy practices in accordance with changes to legislation, best practice of app/ website enhancement.
 
-  1. This Policy is effective from 26/02/2021. Artsflow reserves the right to change this Privacy Policy statement to reflect any changes to our privacy practices in accordance with changes to legislation, best practice of app/ website enhancement.
+  10.2 Any changes will be immediately posted on our home page **and we will contact you directly in this event to notify you we have updated our Privacy Policy. You are deemed to have accepted the terms of the Policy on your first use of this page following the alterations.**
 
+  10.3 You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
 
-  2. Any changes will be immediately posted on our home page **and we will contact you directly in this event to notify you we have updated our Privacy Policy. You are deemed to have accepted the terms of the Policy on your first use of this page following the alterations.**
-
-
-  3. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-
-#### **Your data protection rights and Opt-out Policy**
-
+#### **11. Your data protection rights and Opt-out Policy**
 
 If, at any time after registering for information or ordering the Services, you change your mind about receiving information from us or about sharing information with third parties, send us a request specifying your new choice at [hello@artsflow.com](mailto:hello@artsflow.com) .
 
@@ -347,7 +243,7 @@ Please contact us at [hello@artsflow.com](mailto:hello@artsflow.com) .
 
 _Please contact via email in first instance._
 
-#### **How to complain**
+#### **12. How to complain**
 
 If you have any concerns about our use of your personal information, you can make a complaint to us at [hello@artsflow.com](mailto:hello@artsflow.com) .
 
@@ -371,7 +267,7 @@ Helpline number: 0303 123 1113
 
 ICO app: [https://www.ico.org.uk](https://www.ico.org.uk/)
 
-#### **Cookies Policy**
+#### **13. Cookies Policy**
 
 We use cookies and/or other tracking technologies to distinguish you from other users of our mobile application, our website, the distribution platform (Appstore) or Services Sites and to remember your preferences. This helps us to provide you with a good experience when you use the App or browse any of Our Sites and also allows us to improve the App and Our Sites.
 
@@ -391,9 +287,9 @@ A cookie is a file containing an identifier (a string of letters and numbers) th
 
 #### **Cookies that we use:**
 
-  - We use cookies for the following purposes:
-    - advertising – we use cookies to help us to display advertisements that will be relevant to you. Cookies used for this purpose are: Google AdMob, Google AdWords.
-    - analysis – we use cookies to help us to analyse the use and performance of our website and mobile application and services. Cookies used for this purpose are: Google Analytics Tracking Code and Facebook Pixel.
+- We use cookies for the following purposes:
+- advertising – we use cookies to help us to display advertisements that will be relevant to you. Cookies used for this purpose are: Google AdMob, Google AdWords.
+- analysis – we use cookies to help us to analyse the use and performance of our website and mobile application and services. Cookies used for this purpose are: Google Analytics Tracking Code and Facebook Pixel.
 
 #### **Cookies used by our service providers:**
 
@@ -403,16 +299,15 @@ A cookie is a file containing an identifier (a string of letters and numbers) th
 ####
 **Managing cookies:**
 
-  - Most browsers allow you to refuse to accept cookies and to delete cookies. The methods for doing so vary from browser to browser, and from version to version. You can however obtain up-to-date information about blocking and deleting cookies via these links:
-    - [https://support.google.com/chrome/answer/95647](https://support.google.com/chrome/answer/95647?hl=en) (Chrome);
-    - [https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-app-preferences](https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences) (Firefox);
-    - [http://www.opera.com/help/tutorials/security/cookies/](https://help.opera.com/en/latest/) (Opera);
-    - [https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies](https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies) (Internet Explorer);
-    - [https://support.apple.com/en-us/HT201265](https://support.apple.com/en-us/HT201265) (Safari); and
-    - [https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy](https://support.microsoft.com/en-us/help/4468242/microsoft-edge-browsing-data-and-privacy-microsoft-privacy) (Edge).
-  - Blocking all cookies will have a negative impact upon the usability of many apps.
-  - If you block cookies, you will not be able to use all the features on our website and mobile application.
-
+- Most browsers allow you to refuse to accept cookies and to delete cookies. The methods for doing so vary from browser to browser, and from version to version. You can however obtain up-to-date information about blocking and deleting cookies via these links:
+- [https://support.google.com/chrome/answer/95647](https://support.google.com/chrome/answer/95647?hl=en) (Chrome);
+- [https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-app-preferences](https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences) (Firefox);
+- [http://www.opera.com/help/tutorials/security/cookies/](https://help.opera.com/en/latest/) (Opera);
+- [https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies](https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies) (Internet Explorer);
+- [https://support.apple.com/en-us/HT201265](https://support.apple.com/en-us/HT201265) (Safari); and
+- [https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy](https://support.microsoft.com/en-us/help/4468242/microsoft-edge-browsing-data-and-privacy-microsoft-privacy) (Edge).
+- Blocking all cookies will have a negative impact upon the usability of many apps.
+- If you block cookies, you will not be able to use all the features on our website and mobile application.
 
 #### **Useful information**
 
