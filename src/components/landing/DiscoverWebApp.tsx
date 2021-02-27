@@ -179,8 +179,8 @@ export const DiscoverWebApp = () => (
         <Image
           src="/img/webapp-scr2.webp"
           fallbackSrc="/img/webapp-scr2.png"
-          htmlWidth="951"
-          htmlHeight="657"
+          htmlWidth="1535"
+          htmlHeight="1060"
           alt="Artsflow mobile management dashboard screenshot"
           transform={['scale(1.3)', 'scale(2.4)']}
           position="absolute"
