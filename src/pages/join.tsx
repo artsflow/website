@@ -9,7 +9,7 @@ export default function Join(): JSX.Element {
 
   return (
     <>
-      <Meta title="Join" />
+      <Meta title="Join Artsflow" />
       <iframe
         title="typeform"
         id="typeform-full"

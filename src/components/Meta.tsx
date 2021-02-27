@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-const defaultUrl = 'http://preview.artsflow.com'
-const defaultTitle = 'Artsflow - the platform for the arts sector'
+const defaultUrl = 'http://artsflow.com'
+const defaultTitle = 'Artsflow - the platform for the Arts Sector'
 
 const defaultDescription =
   'Artsflow is a tailor-made platform for the Arts Sector enabling creative practitioners to easily create, book, deliver and earn a living from their passion.'
