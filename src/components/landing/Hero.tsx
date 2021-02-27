@@ -131,15 +131,16 @@ const HeroImage = () => {
       height={['520px', '827px']}
       position="absolute"
       top={['auto', '140px']}
-      bottom={['-80px', 'auto']}
-      right={['-250px', `-${x}px`]}
+      bottom={['-60px', 'auto']}
+      right={['auto', `-${x}px`]}
+      left={['20px', `auto`]}
     >
       <Image
-        src="/img/hero.webp" // 1.38 ratio
+        src="/img/hero.webp"
         fallbackSrc="/img/hero.png"
         alt="Artsflow management dashboard"
-        htmlWidth="1120"
-        htmlHeight="811"
+        htmlWidth="1535"
+        htmlHeight="1179"
         // @ts-ignore
         // layout="fill"
         // unsized
