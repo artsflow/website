@@ -1,7 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/core'
+import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 import NProgress from 'nprogress'
 import Router from 'next/router'
+
+import { Layout } from 'components'
 
 import theme from '../theme'
 
@@ -13,7 +15,9 @@ Router.events.on('routeChangeError', () => NProgress.done())
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
   )
 }

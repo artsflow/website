@@ -1,8 +1,6 @@
-import { extendTheme } from '@chakra-ui/core'
+import { extendTheme } from '@chakra-ui/react'
 
 const fonts = { mono: `'Menlo', monospace` }
-
-const breakpoints = ['40em', '52em', '64em']
 
 const theme = {
   styles: {
@@ -12,6 +10,7 @@ const theme = {
         height: '100%',
       },
       body: {
+        fontFamily: 'Manrope',
         width: '100%',
         height: '100%',
       },
@@ -28,7 +27,6 @@ const theme = {
     },
   },
   fonts,
-  breakpoints,
 }
 
 const appTheme = extendTheme(theme)
