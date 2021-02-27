@@ -20,7 +20,7 @@ export const Join = () => (
       mb={['2rem', '40px']}
       textAlign="center"
     >
-      Sign up to receive updates on our progress and join the Beta release of the platform
+      Sign up to receive updates on our progress and join the <b>Beta</b> release of the platform
     </Text>
     <HStack position="relative" w="100%" alignItems="center" justifyContent="center">
       <OrderButton type="footer" />
