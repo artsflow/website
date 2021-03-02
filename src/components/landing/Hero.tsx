@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Stack, Text, Heading, Icon, Image } from '@chakra-ui/react'
+import Image from 'next/image'
+import { Box, Stack, Text, Heading, Icon } from '@chakra-ui/react'
 import { scaleLinear } from 'd3-scale'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
@@ -137,10 +138,12 @@ const HeroImage = () => {
     >
       <Image
         src="/img/hero.webp"
-        fallbackSrc="/img/hero.png"
+        // fallbackSrc="/img/hero.png"
         alt="Artsflow management dashboard"
-        htmlWidth="1535"
-        htmlHeight="1179"
+        width={1535}
+        height={1179}
+        // htmlWidth="1535"
+        // htmlHeight="1179"
         // @ts-ignore
         // layout="fill"
         // unsized
