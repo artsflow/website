@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Icon, Image, Stack, VStack } from '@chakra-ui/react'
+import Image2 from 'next/image'
 
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import EyeSvg from 'svg/landing/eye.svg'
@@ -102,31 +103,37 @@ export const DiscoverMobileApp = () => (
           rounded="50px"
           h="300px"
           alignSelf="center"
-          pos="relative"
+          position="relative"
           bg={['rgba(239, 151, 181, 0.2)', 'none']}
           display={['block', 'none']}
         />
-        <Image
-          src="/img/mobapp-scr1.webp"
-          fallbackSrc="/img/mobapp-scr1.png"
-          htmlWidth="768"
-          htmlHeight="1292"
-          alt="Artsflow mobile app explore screenshot 1"
-          transform={['scale(0.8)', 'scale(1.2)']}
+        <Box
           position="absolute"
-          left={['-15px', '-40px']}
-          top={['-40px', '-70px']}
-        />
-        <Image
+          left={['calc(50% - 170px)', '-60px']}
+          top={['45px', '-100px']}
+          w={['340px', '500px']}
+          h={['485px', '714px']}
+        >
+          <Image2
+            src="/img/mobapp-scr1.webp"
+            alt="Artsflow mobile app explore screenshot 1"
+            layout="fill"
+          />
+        </Box>
+        <Box
+          position="absolute"
           display={['none', 'block']}
-          src="/img/mobapp-scr11.webp"
-          fallbackSrc="/img/mobapp-scr11.png"
-          alt="Artsflow mobile app explore screenshot 2"
-          transform="scale(0.9)"
-          position="absolute"
-          right="-310px"
-          top="-10"
-        />
+          right="-280px"
+          top="-10px"
+          w="360px"
+          h="540px"
+        >
+          <Image2
+            src="/img/mobapp-scr11.webp"
+            alt="Artsflow mobile app explore screenshot 2"
+            layout="fill"
+          />
+        </Box>
       </Stack>
     </Stack>
 
