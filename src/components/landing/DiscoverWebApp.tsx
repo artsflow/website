@@ -1,6 +1,6 @@
-import { Box, Heading, Text, Icon, Image, Stack, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, Image, Stack, VStack } from '@chakra-ui/react'
 
-import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
+// import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import CalendarSvg from 'svg/landing/calendar-alt.svg'
 import StarSvg from 'svg/landing/star.svg'
 import DocumentSvg from 'svg/landing/document.svg'
@@ -37,7 +37,7 @@ const benefits = {
 
 export const DiscoverWebApp = () => (
   <Box pos="relative">
-    <Icon
+    {/* <Icon
       as={CurledArrowSvg}
       w={['80px', '260px']}
       h={['35px', '170px']}
@@ -47,7 +47,7 @@ export const DiscoverWebApp = () => (
       mt={['-50px', '']}
       left={[0, 'auto']}
       right={['auto', '100px']}
-    />
+    /> */}
     <Content
       pt="0"
       textAlign={['left', 'center']}

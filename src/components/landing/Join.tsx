@@ -3,7 +3,7 @@ import { VStack, HStack, Text, Heading, Icon } from '@chakra-ui/react'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import { OrderButton } from './common'
 
-export const Join = () => (
+export const Join = ({ type }: any) => (
   <VStack
     bg="rgba(71, 188, 200, 0.1)"
     p={['2rem']}
@@ -23,7 +23,7 @@ export const Join = () => (
       Sign up to receive updates on our progress and join the <b>Beta</b> release of the platform
     </Text>
     <HStack position="relative" w="100%" alignItems="center" justifyContent="center">
-      <OrderButton type="footer" />
+      <OrderButton type={type} />
       <Icon
         as={CurledArrowSvg}
         w="160"
