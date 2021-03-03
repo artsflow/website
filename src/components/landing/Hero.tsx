@@ -130,26 +130,14 @@ const HeroImage = () => {
   return (
     <Box
       width={['643px', '1023px']}
-      height={['520px', '827px']}
+      height={['494px', '786px']}
       position="absolute"
       top={['auto', '140px']}
       bottom={['-60px', 'auto']}
       right={['auto', `-${x <= 0 ? 0 : x}px`]}
       left={['20px', `auto`]}
     >
-      <Image
-        src="/img/hero.webp"
-        // fallbackSrc="/img/hero.png"
-        alt="Artsflow management dashboard"
-        width={1535}
-        height={1179}
-        // htmlWidth="1535"
-        // htmlHeight="1179"
-        // @ts-ignore
-        // layout="fill"
-        // unsized
-        // quality="95"
-      />
+      <Image src="/img/hero.webp" alt="Artsflow management dashboard" priority layout="fill" />
     </Box>
   )
 }
