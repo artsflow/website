@@ -15,17 +15,21 @@ export default function Landing(): JSX.Element {
     // @ts-ignore
     if (window?.$crisp) window.$crisp.push(['do', 'chat:hide'])
   }, [])
+
   return (
     <>
       <Hero />
       <VStack maxW={['100%', '1440px']} m="auto" overflow="hidden">
         <PlatformBenefits />
         <DiscoverMobileApp />
+      </VStack>
+      <Join type="midway" />
+      <VStack maxW={['100%', '1440px']} m="auto" pt={['80px', 0]} overflow="hidden">
         <DiscoverWebApp />
         <About />
         <Why />
       </VStack>
-      <Join />
+      <Join type="footer" />
     </>
   )
 }
