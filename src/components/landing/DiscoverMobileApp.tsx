@@ -1,5 +1,5 @@
-import { Box, Heading, Text, Icon, Image, Stack, VStack } from '@chakra-ui/react'
-import Image2 from 'next/image'
+import { Box, Heading, Text, Icon, Stack, VStack } from '@chakra-ui/react'
+import Image from 'next/image'
 
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import EyeSvg from 'svg/landing/eye.svg'
@@ -114,7 +114,7 @@ export const DiscoverMobileApp = () => (
           w={['340px', '500px']}
           h={['485px', '714px']}
         >
-          <Image2
+          <Image
             src="/img/mobapp-scr1.webp"
             alt="Artsflow mobile app explore screenshot 1"
             layout="fill"
@@ -128,7 +128,7 @@ export const DiscoverMobileApp = () => (
           w="360px"
           h="540px"
         >
-          <Image2
+          <Image
             src="/img/mobapp-scr11.webp"
             alt="Artsflow mobile app explore screenshot 2"
             layout="fill"
@@ -191,27 +191,33 @@ export const DiscoverMobileApp = () => (
           bg={['rgba(255, 200, 55, 0.3)', 'none']}
           display={['block', 'none']}
         />
-        <Image
+        <Box
+          position="absolute"
           display={['none', 'block']}
-          src="/img/mobapp-scr21.webp"
-          fallbackSrc="/img/mobapp-scr21.png"
-          alt="Artsflow mobile app booking screenshot 2"
-          transform="scale(1)"
+          left="-220px"
+          top="40px"
+          w="360px"
+          h="488px"
+        >
+          <Image
+            src="/img/mobapp-scr21.webp"
+            alt="Artsflow mobile app booking screenshot 2"
+            layout="fill"
+          />
+        </Box>
+        <Box
           position="absolute"
-          left="-245px"
-          top="20px"
-        />
-        <Image
-          src="/img/mobapp-scr2.webp"
-          fallbackSrc="/img/mobapp-scr2.png"
-          htmlWidth="768"
-          htmlHeight="1291"
-          alt="Artsflow mobile app booking screenshot 1"
-          transform={['scale(0.8)', 'scale(1.2)']}
-          position="absolute"
-          left={['-10px', '0px']}
-          top={['-30px', '-50px']}
-        />
+          w={['380px', '580px']}
+          h={['512px', '781px']}
+          left={['calc(50% - 190px)', '-80px']}
+          top={['30px', '-110px']}
+        >
+          <Image
+            src="/img/mobapp-scr2.webp"
+            alt="Artsflow mobile app booking screenshot 1"
+            layout="fill"
+          />
+        </Box>
       </Stack>
     </Stack>
     <Box px={['2rem', '4rem']} my={['100px', '200px']}>
