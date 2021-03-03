@@ -5,8 +5,10 @@ import { useRouter } from 'next/router'
 import { Icon, Box, Flex, Stack, Text, Heading, VStack, useBreakpoint } from '@chakra-ui/react'
 // @ts-ignore
 import { Twitter, Facebook, Mail, Linkedin, Whatsapp } from 'react-social-sharing'
+import md5 from 'md5'
 
 import { gtmEvent } from 'lib/gtm'
+import { hotJar } from 'lib'
 import { Meta } from 'components'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
@@ -18,12 +20,13 @@ const CrispWithNoSSR = dynamic(() => import('../components/CrispChat'), { ssr: f
 
 export default function Home(): JSX.Element {
   const { query } = useRouter()
-  const { name, email, utm_source: utmSource } = query
+  const { name, email = '', utm_source: utmSource } = query as any
   const screen = useBreakpoint('base')
   const btnSize = screen === 'base' ? { small: true } : {}
 
   useEffect(() => {
     gtmEvent({ event: 'generate_lead', source: utmSource })
+    hotJar(md5(email), utmSource)
   }, [])
 
   const handleClick = (source: string) => {

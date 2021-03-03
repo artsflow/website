@@ -12,3 +12,12 @@ export const MD = (source: any) => (
     linkTarget="_blank"
   />
 )
+
+export const hotJar = (userId: string, utmSource = '') => {
+  // @ts-ignore
+  if (window && window?.hj)
+    // @ts-ignore
+    window.hj('identify', userId, {
+      utmSource,
+    })
+}
