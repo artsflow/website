@@ -10,7 +10,6 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="preload" as="style" type="text/css" href="/nprogress.css" />
 
           <link rel="preload" href="/fonts/Manrope-Regular.ttf" as="font" crossOrigin="" />
