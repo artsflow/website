@@ -1,5 +1,5 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document'
 import React from 'react'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 import { GoogleTagManager } from 'lib/gtm'
 
@@ -9,13 +9,15 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="preload" as="style" type="text/css" href="/nprogress.css" />
+
+          <link rel="preload" href="/fonts/Manrope-Regular.ttf" as="font" crossOrigin="" />
+          <link rel="preload" href="/fonts/Manrope-SemiBold.ttf" as="font" crossOrigin="" />
+          <link rel="preload" href="/fonts/Manrope-Bold.ttf" as="font" crossOrigin="" />
+
           <GoogleTagManager />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
-            rel="stylesheet"
-          />
         </Head>
         <style>
           {`

@@ -60,7 +60,7 @@
     "next": "10.0.8-canary.11",
     "next-absolute-url": "^1.2.2",
     "next-compose-plugins": "^2.2.0",
-    "next-google-fonts": "^1.2.1",
+    "next-google-fonts": "^2.0.0",
     "next-pwa": "^3.1.5",
     "next-react-svg": "^1.1.2",
     "nprogress": "^0.2.0",
