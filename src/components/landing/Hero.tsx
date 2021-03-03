@@ -126,6 +126,7 @@ const HeroImage = () => {
   const windowSize = useWindowSize()
   const xFn = scaleLinear().domain([800, 1600]).range([740, 140])
   const x = xFn(windowSize.width)
+
   return (
     <Box
       width={['643px', '1023px']}
@@ -133,7 +134,7 @@ const HeroImage = () => {
       position="absolute"
       top={['auto', '140px']}
       bottom={['-60px', 'auto']}
-      right={['auto', `-${x}px`]}
+      right={['auto', `-${x <= 0 ? 0 : x}px`]}
       left={['20px', `auto`]}
     >
       <Image
