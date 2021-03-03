@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="stylesheet" type="text/css" href="/nprogress.css" />
+          <link rel="preload" as="style" type="text/css" href="/nprogress.css" />
           <GoogleTagManager />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

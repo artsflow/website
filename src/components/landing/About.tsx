@@ -1,4 +1,5 @@
-import { Box, Icon, Heading, Text, Image, Stack, VStack } from '@chakra-ui/react'
+import { Box, Icon, Heading, Text, Stack, VStack } from '@chakra-ui/react'
+import Image from 'next/image'
 
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import { Content } from './common'
@@ -54,20 +55,18 @@ const Founder = ({ img, name, position, children, ...rest }: any) => (
     minH="400px"
     {...rest}
   >
-    <Image
-      src={`/img/${img}.webp`}
-      fallbackSrc={`/img/${img}.png`}
-      htmlWidth="120"
-      htmlHeight="120"
+    <Box
       w="120px"
       h="120px"
       display="block"
-      alt={name}
       border="10px solid white"
       rounded="full"
       mt="-60px"
       mb="30px"
-    />
+      pos="relative"
+    >
+      <Image src={`/img/${img}.webp`} alt={name} layout="fill" />
+    </Box>
     <Heading fontSize="1.5rem" display="flex" dir="row" mb="1rem">
       {name}, &nbsp;
       <Text fontWeight="normal">{position}</Text>
