@@ -1,4 +1,5 @@
-import { Box, Heading, Text, Image, Stack, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, Stack, VStack } from '@chakra-ui/react'
+import Image from 'next/image'
 
 // import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import CalendarSvg from 'svg/landing/calendar-alt.svg'
@@ -108,17 +109,19 @@ export const DiscoverWebApp = () => (
           bg={['rgba(118, 94, 166, 0.1)', 'none']}
           display={['block', 'none']}
         />
-        <Image
-          src="/img/webapp-scr1.webp"
-          fallbackSrc="/img/webapp-scr1.png"
-          htmlWidth="1386"
-          htmlHeight="942"
-          alt="Artsflow management dashboard activities screenshot"
-          transform={['scale(1.4)', 'scale(2.3)']}
+        <Box
           position="absolute"
-          left={['120px', '240px']}
-          top={['110px', '180px']}
-        />
+          left={['10px', '-50px']}
+          top={['45px', '0px']}
+          w={['588px', '924px']}
+          h={['400px', '629px']}
+        >
+          <Image
+            src="/img/webapp-scr1.webp"
+            alt="Artsflow management dashboard activities screenshot"
+            layout="fill"
+          />
+        </Box>
       </Stack>
     </Stack>
 
@@ -176,17 +179,19 @@ export const DiscoverWebApp = () => (
           bg={['rgba(239, 151, 181, 0.1)', 'none']}
           display={['block', 'none']}
         />
-        <Image
-          src="/img/webapp-scr2.webp"
-          fallbackSrc="/img/webapp-scr2.png"
-          htmlWidth="1535"
-          htmlHeight="1060"
-          alt="Artsflow mobile management dashboard screenshot"
-          transform={['scale(1.3)', 'scale(2.4)']}
+        <Box
           position="absolute"
-          left={['-100px', '-250px']}
-          top={['100px', '200px']}
-        />
+          left={['-215px', '-550px']}
+          top={['50px', '10px']}
+          w={['540px', '924px']}
+          h={['375px', '641px']}
+        >
+          <Image
+            src="/img/webapp-scr2.webp"
+            alt="Artsflow mobile management dashboard screenshot"
+            layout="fill"
+          />
+        </Box>
       </Stack>
     </Stack>
 
