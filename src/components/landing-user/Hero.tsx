@@ -1,8 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box, Stack, Text, Heading, Icon } from '@chakra-ui/react'
+import { scaleLinear } from 'd3-scale'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
+import { useWindowSize } from '../../hooks'
 import { OrderButton } from './common'
 
 export const Hero = () => (
@@ -121,6 +123,10 @@ export const Hero = () => (
 )
 
 const HeroImage = () => {
+  const windowSize = useWindowSize()
+  const xFn = scaleLinear().domain([800, 1600]).range([-300, 180])
+  const x = xFn(windowSize.width)
+
   return (
     <Box
       width={['440px', '582px']}
@@ -128,7 +134,7 @@ const HeroImage = () => {
       position="absolute"
       top={['auto', '80px']}
       bottom={['-100px', 'auto']}
-      right={['auto', '180px']}
+      right={['auto', `${x}px`]}
       left={['calc(50% - 190px)', `auto`]}
     >
       <Image src="/img/hero-users.webp" alt="Artsflow" priority layout="fill" />
