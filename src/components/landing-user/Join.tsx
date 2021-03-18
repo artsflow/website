@@ -11,8 +11,8 @@ export const Join = ({ type }: any) => (
     alignItems="center"
     justifyContent="center"
   >
-    <Heading fontSize={['2rem', '3rem']} mb="24px" textAlign="center" fontWeight="semibold">
-      Join the Artsflow platform before we launch publicly!
+    <Heading fontSize={['1.75rem', '2.5rem']} mb="24px" textAlign="center" fontWeight="semibold">
+      Get early access to the Artsflow mobile app before we launch publicly!
     </Heading>
     <Text
       fontSize={['1.125rem', '1.5rem']}
