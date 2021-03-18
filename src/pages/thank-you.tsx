@@ -13,7 +13,7 @@ import { Meta } from 'components'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
 
-const link = `https://artsflow.com/users?utm_source=share`
+const link = `https://artsflow.com/discover?utm_source=share`
 const message = 'Check this out: '
 
 const CrispWithNoSSR = dynamic(() => import('../components/CrispChat'), { ssr: false })
@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
   }, [])
 
   const handleClick = (source: string) => {
-    gtmEvent({ event: 'share_button', source })
+    gtmEvent({ event: 'share_button_user', source })
   }
 
   return (
