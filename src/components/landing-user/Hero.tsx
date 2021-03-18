@@ -54,8 +54,8 @@ export const Hero = () => (
           lineHeight="2rem"
           color="#616167"
         >
-          Whether you’d like to attend a life drawing class, a pottery workshop, a messy play
-          session or a salsa lesson you can find them and more on Artsflow.
+          Whether it’s a life drawing class, a pottery workshop, a messy play session or a salsa
+          lesson you can find them and more on Artsflow.
         </Text>
         <OrderButton type="hero" />
       </Box>

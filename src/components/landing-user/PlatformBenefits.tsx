@@ -24,7 +24,7 @@ const benefits = {
     icon: SendSvg,
     title: 'Connect to Creatives',
     description:
-      'Attend arts activities led by local Creatives. If you have any questions just message them in-app regarding any specific requirements you might have.',
+      'Attend arts activities led by local Creatives. If you have any questions just message them in-app with any specific requirements you might have.',
   },
   4: {
     icon: CardSvg,
@@ -38,7 +38,7 @@ export const PlatformBenefits = () => (
   <>
     <Content
       title="Finally, all of the arts in one place!"
-      subtitle="Artsflow is a tailor-made platform for the Arts helping people to easily find, book and pay for arts activities. Explore your creativity and learn new skills with Artsflow."
+      subtitle="Artsflow is a mobile app platform for the Arts helping people to easily find, book and pay for arts activities. Explore your creativity and learn new skills with Artsflow."
     />
     <Flex
       px={['2rem', '4rem']}
