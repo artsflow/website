@@ -1,10 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box, Stack, Text, Heading, Icon } from '@chakra-ui/react'
-import { scaleLinear } from 'd3-scale'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
-import { useWindowSize } from '../../hooks'
 import { OrderButton } from './common'
 
 export const Hero = () => (
@@ -26,7 +24,7 @@ export const Hero = () => (
       alignItems="flex-start"
       p={['2rem', '0']}
       ml={['0', '32px', '100px']}
-      mb={['0px', 0]}
+      mb={['120px', 0]}
       h="100%"
       zIndex="2"
     >
@@ -74,7 +72,7 @@ export const Hero = () => (
     <Dot image="head1" left={['auto', '500px']} right={['-10px', 'auto']} top={['80px', '160px']} />
     <Dot image="head2" left={['-10px', 'auto']} right={['auto', '170px']} top={['550px', '45px']} />
     <Dot image="head3" top="760px" left="50px" display={['none', 'block']} w="68px" h="68px" />
-    <Dot image="head4" top="800px" right="320px" display={['none', 'block']} w="42px" h="42px" />
+    <Dot image="head4" top="800px" right="220px" display={['none', 'block']} w="42px" h="42px" />
     <Dot
       bg="#FFB4C4"
       left={['-10px', '50px']}
@@ -123,21 +121,17 @@ export const Hero = () => (
 )
 
 const HeroImage = () => {
-  const windowSize = useWindowSize()
-  const xFn = scaleLinear().domain([800, 1600]).range([740, 140])
-  const x = xFn(windowSize.width)
-
   return (
     <Box
-      width={['643px', '1023px']}
-      height={['494px', '786px']}
+      width={['440px', '582px']}
+      height={['722px', '956px']}
       position="absolute"
-      top={['auto', '140px']}
-      bottom={['-60px', 'auto']}
-      right={['auto', `-${x <= 0 ? 0 : x}px`]}
-      left={['20px', `auto`]}
+      top={['auto', '80px']}
+      bottom={['-100px', 'auto']}
+      right={['auto', '180px']}
+      left={['calc(50% - 190px)', `auto`]}
     >
-      <Image src="/img/hero.webp" alt="Artsflow management dashboard" priority layout="fill" />
+      <Image src="/img/hero-users.webp" alt="Artsflow" priority layout="fill" />
     </Box>
   )
 }
