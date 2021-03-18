@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { Footer } from './Footer'
 import { Meta } from './Meta'
 
-const FULL_SCREEN_ROUTES = ['/join']
+const FULL_SCREEN_ROUTES = ['/join', '/early-access']
 
 export function Layout({ children }: any) {
   const { route } = useRouter()
