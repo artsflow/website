@@ -276,28 +276,14 @@ export const DiscoverMobileApp = () => (
         />
         <Box
           position="absolute"
-          left={['calc(50% - 170px)', '-60px']}
-          top={['45px', '-100px']}
-          w={['340px', '500px']}
-          h={['485px', '714px']}
+          left={['calc(50% - 185px)', '-60px']}
+          top={['-15px', '-160px']}
+          w={['340px', '512px']}
+          h={['572px', '862px']}
         >
           <Image
-            src="/img/mobapp-scr1.webp"
-            alt="Artsflow mobile app explore screenshot 1"
-            layout="fill"
-          />
-        </Box>
-        <Box
-          position="absolute"
-          display={['none', 'block']}
-          right="-280px"
-          top="-10px"
-          w="360px"
-          h="540px"
-        >
-          <Image
-            src="/img/mobapp-scr11.webp"
-            alt="Artsflow mobile app explore screenshot 2"
+            src="/img/mobapp-scr3.webp"
+            alt="Artsflow mobile app explore screenshot 3"
             layout="fill"
           />
         </Box>
