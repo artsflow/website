@@ -129,7 +129,7 @@ const HeroImage = () => {
   return (
     <Box
       width={['440px', '932px']}
-      height={['418px', '980px']}
+      height={['463px', '980px']}
       transform={['scale(0.95)', 'scale(0.75)']}
       position="absolute"
       top={['auto', '0px']}
