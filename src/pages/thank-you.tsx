@@ -37,7 +37,7 @@ export default function Home(): JSX.Element {
     <>
       <Meta title="Thank you!" />
       <Stack bg="#F0F8F9" minH="calc(100vh - 95px)">
-        <Link href="/">
+        <Link href="/discover">
           <Flex as="a" w="100%" title="Artsflow">
             <Icon
               as={ArtsflowSvg}
