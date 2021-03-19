@@ -30,7 +30,6 @@ export default function Activity() {
   if (!activity) return null
 
   const { title, description, images, location } = activity
-  console.log(activity)
 
   const { lat, lng } = location.geocode
 
