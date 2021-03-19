@@ -32,6 +32,7 @@
     "@hapi/iron": "^6.0.0",
     "@magic-ext/oauth": "^0.7.0",
     "@magic-sdk/admin": "^1.2.2",
+    "@rehooks/component-size": "^1.0.3",
     "@types/cookie": "^0.4.0",
     "@types/google-map-react": "^2.1.0",
     "@types/google.analytics": "^0.0.41",
