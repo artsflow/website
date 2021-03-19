@@ -2,8 +2,8 @@ import { Flex } from '@chakra-ui/react'
 
 import SquaresSvg from 'svg/landing/squares.svg'
 import CalendarSvg from 'svg/landing/calendar.svg'
-import SendSvg from 'svg/landing/send.svg'
-import CardSvg from 'svg/landing/card.svg'
+import ChatSvg from 'svg/landing/chat.svg'
+import StarSvg from 'svg/landing/star.svg'
 
 import { Content, Benefits } from './common'
 
@@ -21,13 +21,13 @@ const benefits = {
       'Booking and paying for arts activities has never been easier. Whatever your creative interests are you’ll be able to find and book them on Artsflow.',
   },
   3: {
-    icon: SendSvg,
+    icon: ChatSvg,
     title: 'Connect to Creatives',
     description:
       'Attend arts activities led by local Creatives. If you have any questions just message them in-app with any specific requirements you might have.',
   },
   4: {
-    icon: CardSvg,
+    icon: StarSvg,
     title: 'New experiences await',
     description:
       'Maybe you have a creative hobby and you’d like learn new skills and techniques or maybe you’d like to learn something new.',
