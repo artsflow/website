@@ -3,7 +3,7 @@ import { Flex } from '@chakra-ui/react'
 import SquaresSvg from 'svg/landing/squares.svg'
 import CalendarSvg from 'svg/landing/calendar.svg'
 import ChatSvg from 'svg/landing/chat.svg'
-import StarSvg from 'svg/landing/star.svg'
+import StarSvg from 'svg/landing/star-purple.svg'
 
 import { Content, Benefits } from './common'
 
