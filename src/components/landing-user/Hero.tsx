@@ -74,7 +74,7 @@ export const Hero = () => (
     <Dot image="head1" left={['auto', '500px']} right={['-10px', 'auto']} top={['80px', '160px']} />
     <Dot image="head2" left={['-10px', 'auto']} right={['auto', '170px']} top={['550px', '45px']} />
     <Dot image="head3" top="760px" left="50px" display={['none', 'block']} w="68px" h="68px" />
-    <Dot image="head4" top="800px" right="220px" display={['none', 'block']} w="42px" h="42px" />
+    <Dot image="head4" top="830px" right="220px" display={['none', 'block']} w="42px" h="42px" />
     <Dot
       bg="#FFB4C4"
       left={['-10px', '50px']}
@@ -124,20 +124,20 @@ export const Hero = () => (
 
 const HeroImage = () => {
   const windowSize = useWindowSize()
-  const xFn = scaleLinear().domain([800, 1600]).range([-300, 180])
+  const xFn = scaleLinear().domain([800, 1600]).range([-400, 0])
   const x = xFn(windowSize.width)
-
   return (
     <Box
-      width={['440px', '582px']}
-      height={['722px', '956px']}
+      width={['440px', '932px']}
+      height={['418px', '980px']}
+      transform={['scale(0.95)', 'scale(0.75)']}
       position="absolute"
-      top={['auto', '80px']}
-      bottom={['-100px', 'auto']}
+      top={['auto', '0px']}
+      bottom={['80px', 'auto']}
       right={['auto', `${x}px`]}
-      left={['calc(50% - 190px)', `auto`]}
+      left={['calc(50% - 210px)', `auto`]}
     >
-      <Image src="/img/hero-users.webp" alt="Artsflow" priority layout="fill" />
+      <Image src="/img/hero-user.webp" alt="Artsflow" priority layout="fill" />
     </Box>
   )
 }
