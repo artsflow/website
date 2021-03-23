@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -29,9 +29,9 @@ export default function Home(): JSX.Element {
     hotJar(md5(email), utmSource)
   }, [])
 
-  const handleClick = (source: string) => {
+  const handleClick = useCallback((source: string) => {
     gtmEvent({ event: 'share_button', source })
-  }
+  }, [])
 
   return (
     <>

@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { Button, Icon, VStack, Text, Heading, HStack, SimpleGrid, Box } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
@@ -9,14 +10,14 @@ export const OrderButton = ({ type }: any) => {
   const router = useRouter()
   const { utm_source: utmSource } = router.query
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     gtmEvent({ event: 'button_click_user', type })
 
     router.push({
       pathname: '/early-access',
       query: { utm_source: utmSource },
     })
-  }
+  }, [])
 
   return (
     <Button
