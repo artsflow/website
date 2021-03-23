@@ -24,7 +24,7 @@ export const Why = () => (
       />
       <Benefit
         title="Technology Enabler"
-        description="The Arts Sector is one of the only industries without a tailor-made platform that enables people to instantly connect with arts activities around them."
+        description="We want to create a 'technology enabler' for the Arts Sector helping people to instantly connect with creative practitioners and arts activities around them."
       />
       <Benefit
         title="Service Discovery"
