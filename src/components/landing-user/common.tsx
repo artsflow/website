@@ -15,7 +15,7 @@ export const OrderButton = ({ type }: any) => {
 
   const handleClick = useCallback(() => {
     gtmEvent({ event: 'button_click_user', type })
-    mixpanel.track('button_click', { type, source: utmSource })
+    mixpanel.track('button_click_user', { type, source: utmSource })
 
     router.push({
       pathname: '/early-access',

@@ -29,13 +29,13 @@ export default function Home(): JSX.Element {
 
   useEffect(() => {
     gtmEvent({ event: 'generate_lead_user', source: utmSource })
-    mixpanel.track('generate_lead', { source: utmSource })
+    mixpanel.track('generate_lead_user', { source: utmSource })
     hotJar(md5(email), utmSource)
   }, [])
 
   const handleClick = useCallback((source: string) => {
     gtmEvent({ event: 'share_button_user', source })
-    mixpanel.track('share_button', { source })
+    mixpanel.track('share_button_user', { source })
   }, [])
 
   return (
