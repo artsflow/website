@@ -6,6 +6,8 @@ import { Icon, Box, Flex, Stack, Text, Heading, VStack, useBreakpoint } from '@c
 // @ts-ignore
 import { Twitter, Facebook, Mail, Linkedin, Whatsapp } from 'react-social-sharing'
 import md5 from 'md5'
+// @ts-ignore
+import { useMixpanel } from 'react-mixpanel-browser'
 
 import { gtmEvent } from 'lib/gtm'
 import { hotJar } from 'lib'
@@ -20,17 +22,20 @@ const CrispWithNoSSR = dynamic(() => import('../components/CrispChat'), { ssr: f
 
 export default function Home(): JSX.Element {
   const { query } = useRouter()
-  const { name, email = '', utm_source: utmSource } = query as any
+  const mixpanel = useMixpanel()
   const screen = useBreakpoint('base')
+  const { name, email = '', utm_source: utmSource } = query as any
   const btnSize = screen === 'base' ? { small: true } : {}
 
   useEffect(() => {
     gtmEvent({ event: 'generate_lead_user', source: utmSource })
+    mixpanel.track('generate_lead', { source: utmSource })
     hotJar(md5(email), utmSource)
   }, [])
 
   const handleClick = useCallback((source: string) => {
     gtmEvent({ event: 'share_button_user', source })
+    mixpanel.track('share_button', { source })
   }, [])
 
   return (

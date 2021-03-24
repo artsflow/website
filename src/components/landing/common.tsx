@@ -1,6 +1,8 @@
 import { useCallback } from 'react'
 import { Button, Icon, VStack, Text, Heading, HStack, SimpleGrid, Box } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+// @ts-ignore
+import { useMixpanel } from 'react-mixpanel-browser'
 
 import { BsArrowRightShort } from 'react-icons/bs'
 
@@ -8,10 +10,12 @@ import { gtmEvent } from 'lib/gtm'
 
 export const OrderButton = ({ type }: any) => {
   const router = useRouter()
+  const mixpanel = useMixpanel()
   const { utm_source: utmSource } = router.query
 
   const handleClick = useCallback(() => {
     gtmEvent({ event: 'button_click', type })
+    mixpanel.track('button_click', { type, source: utmSource })
 
     router.push({
       pathname: '/join',

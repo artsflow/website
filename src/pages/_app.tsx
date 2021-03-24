@@ -2,6 +2,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 import NProgress from 'nprogress'
 import Router from 'next/router'
+// @ts-ignore
+import { MixpanelProvider } from 'react-mixpanel-browser'
 
 import { Layout } from 'components'
 
@@ -14,11 +16,13 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
+    <MixpanelProvider token="b6e4f2b7971a646c6bbc3603382bc0fb">
+      <ChakraProvider resetCSS theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
+    </MixpanelProvider>
   )
 }
 
