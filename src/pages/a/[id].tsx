@@ -12,6 +12,7 @@ import {
   ModalCloseButton,
   ModalBody,
   useDisclosure,
+  HStack,
 } from '@chakra-ui/react'
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore'
 import { useRouter } from 'next/router'
@@ -36,6 +37,9 @@ export default function Activity() {
   return (
     <Box>
       <Meta title={title} />
+      <HStack p="1rem" bg="red.400" color="white" fontWeight="bold" justifyContent="center">
+        <Text fontSize="lg">Demo activity page / Under Construction</Text>
+      </HStack>
       <VStack w={['100%', '800px']} margin="0 auto" mb={['80px', '180px']}>
         <Box h={['260px', '400px']} w="full" overflow="hidden">
           <ImageGallery images={images} />
