@@ -51,7 +51,7 @@ export default function Activity() {
           spacing={['1.5rem', '2rem']}
         >
           <Heading>{title}</Heading>
-          <Text>{description}</Text>
+          <Text overflowWrap="anywhere">{description}</Text>
 
           <Heading as="h2" fontSize="2xl">
             Event details
