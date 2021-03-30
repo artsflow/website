@@ -2,7 +2,6 @@ import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 import { GoogleTagManager } from 'lib/gtm'
-import { GCP_MAPS_KEY } from 'lib/config'
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -21,12 +20,6 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="manifest" href="/site.webmanifest" />
-
-          <script
-            type="text/javascript"
-            src={`https://maps.google.com/maps/api/js?key=${GCP_MAPS_KEY}&libraries=places`}
-            async
-          />
           <GoogleTagManager />
         </Head>
         <style>
