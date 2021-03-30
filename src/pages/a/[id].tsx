@@ -14,22 +14,30 @@ import {
   useDisclosure,
   HStack,
 } from '@chakra-ui/react'
-import { useDocumentDataOnce } from 'react-firebase-hooks/firestore'
-import { useRouter } from 'next/router'
 import GoogleMap from 'google-map-react'
 
 import { GCP_MAPS_KEY } from 'lib/config'
 import { Meta, ImageGallery } from 'components'
-import { firestore } from 'lib/firebase'
+import { firestore, postToJSON } from 'lib/firebase'
 
-export default function Activity() {
+export async function getServerSideProps({ params }: any) {
+  const { id } = params
+  const docRef = firestore.doc(`/activities/${id}`)
+  const doc = await docRef.get()
+
+  if (!doc.exists) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { activity: postToJSON(doc) },
+  }
+}
+
+export default function Activity({ activity }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const router = useRouter()
-  const id = router.asPath.split('/')[2]
-  const [activity] = useDocumentDataOnce(firestore.doc(`/activities/${id}`))
-
-  if (!activity) return null
-
   const { title, description, images, location } = activity
 
   const { lat, lng } = location.geocode
@@ -121,6 +129,7 @@ export default function Activity() {
     </Box>
   )
 }
+
 const Marker: React.FC<any> = () => (
   <Box
     w="1rem"
