@@ -11,7 +11,7 @@ export const Join = ({ type }: any) => (
     alignItems="center"
     justifyContent="center"
   >
-    <Heading fontSize={['1.75rem', '2.5rem']} mb="24px" textAlign="center" fontWeight="semibold">
+    <Heading fontSize={['1.75rem', '2.2rem']} mb="24px" textAlign="center" fontWeight="semibold">
       Get early access to the Artsflow mobile app before we launch publicly!
     </Heading>
     <Text
@@ -22,7 +22,7 @@ export const Join = ({ type }: any) => (
     >
       Sign up to receive updates on our progress and gain <b>early access</b> to the platform
     </Text>
-    <HStack position="relative" w="100%" alignItems="center" justifyContent="center">
+    <HStack position="relative" w="100%" alignItems="center" justifyContent="center" pt="40px">
       <OrderButton type={type} />
       <Icon
         as={CurledArrowSvg}
@@ -31,7 +31,7 @@ export const Join = ({ type }: any) => (
         display={['none', 'none', 'block']}
         position="absolute"
         left={[0, 0, 'calc(70%)']}
-        top="calc(-100%)"
+        top="calc(-10%)"
       />
     </HStack>
   </VStack>

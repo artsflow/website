@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Box, Stack, Text, Heading, Icon } from '@chakra-ui/react'
+import { Box, Stack, VStack, Text, Heading, Icon } from '@chakra-ui/react'
 import { scaleLinear } from 'd3-scale'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
@@ -11,7 +11,7 @@ export const Hero = () => (
   <Stack
     bg="rgba(71, 188, 200, 0.1)"
     w="100%"
-    h={['auto', '100vh']}
+    h={['auto', '900px']}
     maxH={['auto', '900px']}
     alignItems="center"
     justifyContent="space-between"
@@ -20,13 +20,15 @@ export const Hero = () => (
     overflow="hidden"
     pos="relative"
   >
-    <Stack
+    <VStack
       w={['100%', '440px']}
       justifyContent="center"
       alignItems="flex-start"
+      pos="relative"
       p={['2rem', '0']}
       ml={['0', '32px', '100px']}
-      mb={['120px', 0]}
+      mb={['180px', 0]}
+      mt={['40px', 0]}
       h="100%"
       zIndex="2"
     >
@@ -35,10 +37,10 @@ export const Hero = () => (
         w={['134px', '160px']}
         h={['30px', '36px']}
         justifySelf="flex-start"
-        mt={[0, '40px']}
-        mb="auto"
+        top={['0px', '40px']}
+        pos="absolute"
       />
-      <Box alignSelf="center" pt={['60px', 0]} mb={['150px', 'auto']}>
+      <Box pt={['60px', 0]} mb={['150px', '0']}>
         <Text fontSize="20px">👋 Welcome!</Text>
         <Heading
           as="h1"
@@ -59,7 +61,7 @@ export const Hero = () => (
         </Text>
         <OrderButton type="hero" />
       </Box>
-    </Stack>
+    </VStack>
     <Box
       w={['100%', '500px']}
       h={['375px', '100%']}
