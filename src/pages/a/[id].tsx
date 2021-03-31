@@ -15,6 +15,7 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import GoogleMap from 'google-map-react'
+import { RRuleSet, rrulestr } from 'rrule'
 
 import { GCP_MAPS_KEY } from 'lib/config'
 import { Meta, ImageGallery } from 'components'
@@ -100,6 +101,8 @@ export default function Activity({ activity }: any) {
             Available Dates
           </Heading>
 
+          <AvailableDates {...activity} />
+
           <Button
             bg="af.teal"
             color="white"
@@ -141,3 +144,13 @@ const Marker: React.FC<any> = () => (
     boxShadow="0px 3px 8px -1px rgba(50, 50, 71, 0.05)"
   />
 )
+
+const AvailableDates = ({ frequency }: any) => {
+  const { rrules } = frequency
+  const rruleSet = new RRuleSet()
+  rrules.forEach((r: string) => rruleSet.rrule(rrulestr(r)))
+
+  rruleSet.all().map(console.log)
+
+  return <Box />
+}
