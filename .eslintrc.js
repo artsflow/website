@@ -23,8 +23,6 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:prettier/recommended',
     'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
     'plugin:jest-dom/recommended',
     'plugin:testing-library/react',
     'plugin:cypress/recommended',
