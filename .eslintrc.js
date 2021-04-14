@@ -41,6 +41,7 @@ module.exports = {
     'react/no-children-prop': 0,
     'react/require-default-props': 0,
     'react/no-unescaped-entities': 'off',
+    'react/no-array-index-key': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
     'jsx-a11y/accessible-emoji': 'off',
     '@typescript-eslint/no-var-requires': 0,
