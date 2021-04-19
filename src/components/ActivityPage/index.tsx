@@ -1,16 +1,20 @@
 import React from 'react'
-import { Box, Grid, GridItem, Text, Heading, Button } from '@chakra-ui/react'
+import { Box, Grid, GridItem, Text, Heading, Button, VStack, HStack } from '@chakra-ui/react'
 import GoogleMap from 'google-map-react'
 import { RRuleSet, rrulestr } from 'rrule'
+import { format } from 'date-fns'
 
 import { GCP_MAPS_KEY } from 'lib/config'
+import HourglassIcon from 'svg/activity/hourglass.svg'
+import ClockwiseIcon from 'svg/activity/clockwise.svg'
+import UsercircleplusIcon from 'svg/activity/usercircleplus.svg'
 import { Meta } from '../Meta'
 import { ImageGallery } from '../ImageGallery'
 
 const grid1c = `
   "gallery"
-  "info"
   "description"
+  "info"
   "about"
   "location"
   "reviews"
@@ -25,31 +29,32 @@ const grid2c = `
 `
 
 export function ActivityPage({ activity }: any) {
-  const { title, description, images, location } = activity
+  const { title, description, images, location, whatToBring } = activity
+  console.log(activity)
 
   const { lat, lng } = location.geocode
 
   return (
     <>
       <Meta title={title} />
-      <Box bg="#f9f9f9" pt={['0', '0', '1rem']}>
+      <Box bg={['white', 'white', '#f9f9f9']} pt={['0', '0', '1rem']}>
         <Grid
           m="0 auto"
           p={[0, '2rem']}
           maxW={['100%', '100%', '1200px']}
           templateAreas={[grid1c, grid1c, grid2c]}
           templateColumns={['', '', '1fr 1fr 1fr']}
-          templateRows={['', '', '', '1fr 1fr 1fr 1fr']}
+          templateRows={['', '', '', '1fr 0.3fr 0.3fr 1fr']}
           gap="20px 0px"
         >
           <GridItem gridArea="gallery">
             <Gallery images={images} />
           </GridItem>
           <GridItem gridArea="info">
-            <Info />
+            <Info {...activity} />
           </GridItem>
           <GridItem gridArea="about" bg="white" rounded="1rem" p={['1.5rem', '2rem']}>
-            <Heading as="h2" fontSize="2xl">
+            <Heading as="h2" fontSize="xl" mb="1rem">
               About the artist
             </Heading>
           </GridItem>
@@ -65,14 +70,16 @@ export function ActivityPage({ activity }: any) {
           <GridItem gridArea="reviews" order={[2, 2]}>
             reviews
           </GridItem>
-          <Box gridArea="description" p={['1.5rem', '1.5rem', '3rem']}>
-            <Title text={title} />
+          <GridItem
+            gridArea="description"
+            px={['1.5rem', '1.5rem', '3rem']}
+            mt={['0.5rem', '1rem']}
+          >
+            <Title text={title} fontSize={['2xl', '2xl']} />
             <Description text={description} />
-            <Heading as="h2" fontSize="2xl">
-              What to bring
-            </Heading>
-          </Box>
-          <GridItem gridArea="order" order={[3, 3]}>
+            <WhatToBring text={whatToBring} />
+          </GridItem>
+          <GridItem gridArea="order" order={[3, 3]} px={['1.5rem', '1.5rem', '3rem']}>
             <AvailableDates {...activity} />
           </GridItem>
         </Grid>
@@ -93,25 +100,140 @@ const Gallery = ({ images }: any) => (
   </Box>
 )
 
-const Info = () => (
-  <Box bg="white" h="full" roundedBottomRight="1rem" roundedTopRight="1rem">
-    info
-  </Box>
-)
+const Info = ({ category, capacity, frequency, duration }: any) => {
+  const { rrules } = frequency
+  const rruleSet = new RRuleSet()
+  rrules.forEach((r: string) => rruleSet.rrule(rrulestr(r)))
+  const [nextSession] = rruleSet.all()
 
-const Title = ({ text }: any) => <Heading mb="1rem">{text}</Heading>
+  return (
+    <VStack
+      bg="white"
+      h="full"
+      spacing="2rem"
+      p={[0, '2rem']}
+      roundedBottomRight="1rem"
+      roundedTopRight="1rem"
+      justifyContent="center"
+    >
+      <Heading
+        as="h2"
+        fontSize="xl"
+        alignSelf="flex-start"
+        px="1.5rem"
+        display={['block', 'block', 'none']}
+      >
+        Activity details
+      </Heading>
+      <Box
+        color="af.pink"
+        fontWeight="bold"
+        alignSelf="flex-start"
+        display={['none', 'none', 'block']}
+      >
+        {category}
+      </Box>
+      <HStack spacing="10px">
+        <VStack
+          bg="#edf8fa"
+          rounded="10px"
+          p="1rem"
+          w="100px"
+          h="130px"
+          justifyContent="space-around"
+        >
+          <HourglassIcon />
+          <Text color="#616167" fontSize="xs" textAlign="center">
+            Duration
+          </Text>
+          <Text fontSize="xs" fontWeight="bold" textAlign="center">
+            {duration} min
+          </Text>
+        </VStack>
+        <VStack
+          bg="#fcf2f7"
+          rounded="10px"
+          p="1rem"
+          w="100px"
+          h="130px"
+          justifyContent="space-around"
+        >
+          <ClockwiseIcon />
+          <Text color="#616167" fontSize="xs" textAlign="center">
+            Next session
+          </Text>
+          <Text fontSize="xs" fontWeight="bold" textAlign="center">
+            {format(nextSession, 'dd MMM')}
+          </Text>
+        </VStack>
+        <VStack
+          bg="#fffaea"
+          rounded="10px"
+          p="1rem"
+          w="100px"
+          h="130px"
+          justifyContent="space-around"
+        >
+          <UsercircleplusIcon />
+          <Text color="#616167" fontSize="xs" textAlign="center">
+            Capacity
+          </Text>
+          <Text fontSize="xs" fontWeight="bold" textAlign="center">
+            {capacity} people
+          </Text>
+        </VStack>
+      </HStack>
+      <Button
+        bg="af.teal"
+        color="white"
+        fontSize="xl"
+        alignSelf="flex-start"
+        px="2rem"
+        py={['1.5rem', '2rem']}
+        w="full"
+        rounded="12px"
+        display={['none', 'none', 'flex']}
+      >
+        Book now
+      </Button>
+    </VStack>
+  )
+}
+
+const Title = ({ text, ...rest }: any) => (
+  <Heading mb="1rem" {...rest}>
+    {text}
+  </Heading>
+)
 
 const Description = ({ text }: any) => {
   return text.split('\n').map((line: string, i: number) => (
-    <Text key={i} overflowWrap="anywhere" mb="1rem">
+    <Text color="#616167" key={i} overflowWrap="anywhere" mb="1rem">
       {line}
     </Text>
   ))
 }
 
+const WhatToBring = ({ text }: any) => {
+  const content = text.split('\n').map((line: string, i: number) => (
+    <Text color="#616167" key={i} overflowWrap="anywhere" mb="1rem">
+      {line}
+    </Text>
+  ))
+
+  return (
+    <>
+      <Heading as="h2" fontSize="xl" mt="2rem" mb="1rem">
+        What to bring
+      </Heading>
+      {content}
+    </>
+  )
+}
+
 const Location = ({ lat, lng }: any) => (
   <Box>
-    <Heading as="h2" fontSize="2xl">
+    <Heading as="h3" fontSize="xl" mb="1rem">
       Location
     </Heading>
     <Box
@@ -158,7 +280,7 @@ const AvailableDates = ({ frequency }: any) => {
 
   return (
     <Box>
-      <Heading as="h2" fontSize="2xl">
+      <Heading as="h2" fontSize="xl" mb="1rem">
         Available Dates
       </Heading>
       <Button

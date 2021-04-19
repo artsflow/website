@@ -69,15 +69,19 @@ export function ImageGallery({ images }: { images: string[] }) {
       </AnimatePresence>
       <HStack pos="absolute" left="0" right="0" bottom="20px" zIndex="2" justifyContent="center">
         {images.map((img, i) => (
-          <Box
-            key={img}
-            w="4px"
-            h="4px"
-            rounded="full"
-            bg={i === imageIndex ? 'af.teal' : 'gray.300'}
-          />
+          <Dot key={img} selected={i === imageIndex} />
         ))}
       </HStack>
     </Flex>
   )
 }
+
+const Dot = ({ selected }: any) => (
+  <Box
+    w={selected ? '14px' : '8px'}
+    h={selected ? '14px' : '8px'}
+    rounded="full"
+    bg={selected ? 'af.teal' : 'gray.300'}
+    border={selected ? '2px solid white' : 'none'}
+  />
+)
