@@ -6,7 +6,14 @@ const defaultTitle = 'Artsflow - the platform for the Arts Sector'
 const defaultDescription =
   'Artsflow is a tailor-made platform for the Arts Sector enabling creative practitioners to easily create, book, deliver and earn a living from their passion.'
 
-export function Meta({ title = defaultTitle, description = defaultDescription, url = defaultUrl }) {
+const defaultImage = `${defaultUrl}/img/hero.png`
+
+export function Meta({
+  title = defaultTitle,
+  description = defaultDescription,
+  url = defaultUrl,
+  image = defaultImage,
+}) {
   return (
     <Head>
       <title>{title}</title>
@@ -15,7 +22,7 @@ export function Meta({ title = defaultTitle, description = defaultDescription, u
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${url}/img/hero.png`} />
+      <meta property="og:image" content={image} />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
   )

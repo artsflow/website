@@ -17,6 +17,6 @@ export async function getServerSideProps({ params }: any) {
   }
 
   return {
-    props: { activity: postToJSON(doc) },
+    props: { activity: { id, ...postToJSON(doc) } },
   }
 }

@@ -1,6 +1,9 @@
-import { Box, Grid, GridItem, Heading } from '@chakra-ui/react'
+import { Box, Flex, Icon, Grid, GridItem, Heading, VStack } from '@chakra-ui/react'
+import Link from 'next/link'
 
+import ArtsflowSvg from 'svg/artsflow.svg'
 import { Meta } from '../Meta'
+
 import {
   Info,
   Gallery,
@@ -9,6 +12,7 @@ import {
   WhatToBring,
   Location,
   AvailableDates,
+  Share,
 } from './components'
 
 const grid1c = `
@@ -29,16 +33,36 @@ const grid2c = `
 `
 
 export function ActivityPage({ activity }: any) {
-  const { title, description, images, location, whatToBring } = activity
+  const { id, title, description, images, location, whatToBring } = activity
   const { lat, lng } = location.geocode
-
+  console.log(activity)
   return (
     <>
-      <Meta title={title} />
-      <Box bg={['white', 'white', '#f9f9f9']} pt={['0', '0', '1rem']}>
+      <Meta
+        title={title}
+        description={description}
+        url={`https://artsflow.com/a/${id}`}
+        image={images[0]}
+      />
+      <Box bg={['white', 'white', '#f9f9f9']} pt={['0', '1.5rem', '1.5rem']}>
+        <VStack
+          display={['none', 'block', 'block']}
+          spacing="0"
+          m="0 auto"
+          px={[0, '2rem']}
+          mb="20px"
+          maxW={['100%', '100%', '1200px']}
+        >
+          <Link href="/">
+            <Flex as="a" title="Artsflow" w="107px" mx="auto">
+              <Icon as={ArtsflowSvg} w="107px" h="24px" mx="auto" />
+            </Flex>
+          </Link>
+          <Share {...activity} />
+        </VStack>
         <Grid
           m="0 auto"
-          p={[0, '2rem']}
+          px={[0, '2rem']}
           maxW={['100%', '100%', '1200px']}
           templateAreas={[grid1c, grid1c, grid2c]}
           templateColumns={['', '', '1fr 1fr 1fr']}
