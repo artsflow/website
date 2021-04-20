@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Grid, GridItem, Heading, VStack } from '@chakra-ui/react'
+import { Box, Flex, Icon, Grid, GridItem, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
@@ -13,6 +13,7 @@ import {
   Location,
   AvailableDates,
   Share,
+  AboutCreative,
 } from './components'
 
 const grid1c = `
@@ -32,10 +33,10 @@ const grid2c = `
   "order order reviews"
 `
 
-export function ActivityPage({ activity }: any) {
+export function ActivityPage({ activity, profile }: any) {
   const { id, title, description, images, location, whatToBring } = activity
   const { lat, lng } = location.geocode
-  console.log(activity)
+  console.log(activity, profile)
   return (
     <>
       <Meta
@@ -76,9 +77,7 @@ export function ActivityPage({ activity }: any) {
             <Info {...activity} />
           </GridItem>
           <GridItem gridArea="about" bg="white" rounded="1rem" p={['1.5rem', '2rem']}>
-            <Heading as="h2" fontSize="xl" mb="1rem">
-              About the artist
-            </Heading>
+            <AboutCreative profile={profile} />
           </GridItem>
           <GridItem
             gridArea="location"
