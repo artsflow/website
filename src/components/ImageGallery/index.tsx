@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from 'popmotion'
-import { Flex, HStack, Box } from '@chakra-ui/react'
+import { Flex, HStack, Box, IconButton } from '@chakra-ui/react'
 import useComponentSize from '@rehooks/component-size'
+import { BsCaretLeft, BsCaretRight } from 'react-icons/bs'
 
 import { getImageKitUrl } from 'lib/utils'
 
@@ -37,8 +38,14 @@ export function ImageGallery({ images }: { images: string[] }) {
     setPage([page + newDirection, newDirection])
   }
 
+  const goPage = (p: number) => {
+    setPage([p, direction])
+  }
+
   return (
     <Flex h="full" w="full" pos="relative" ref={ref}>
+      <NavButton dir="left" onClick={() => paginate(-1)} />
+      <NavButton dir="right" onClick={() => paginate(1)} />
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           style={{ position: 'absolute' }}
@@ -69,19 +76,35 @@ export function ImageGallery({ images }: { images: string[] }) {
       </AnimatePresence>
       <HStack pos="absolute" left="0" right="0" bottom="20px" zIndex="2" justifyContent="center">
         {images.map((img, i) => (
-          <Dot key={img} selected={i === imageIndex} />
+          <Dot key={img} selected={i === imageIndex} onClick={() => goPage(i)} />
         ))}
       </HStack>
     </Flex>
   )
 }
 
-const Dot = ({ selected }: any) => (
+const Dot = ({ selected, onClick }: any) => (
   <Box
     w={selected ? '14px' : '8px'}
     h={selected ? '14px' : '8px'}
     rounded="full"
     bg={selected ? 'af.teal' : 'gray.300'}
     border={selected ? '2px solid white' : 'none'}
+    onClick={onClick}
+  />
+)
+
+const NavButton = ({ onClick, dir }: any) => (
+  <IconButton
+    pos="absolute"
+    zIndex="3"
+    aria-label="navigate gallery"
+    isRound
+    bottom="10px"
+    opacity="50%"
+    left={dir === 'left' ? '10px' : ''}
+    right={dir === 'right' ? '10px' : ''}
+    icon={dir === 'left' ? <BsCaretLeft /> : <BsCaretRight />}
+    onClick={onClick}
   />
 )
