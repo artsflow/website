@@ -1,8 +1,7 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Heading, Button, useRadioGroup, Grid, Text, IconButton } from '@chakra-ui/react'
 // import { RRuleSet, rrulestr } from 'rrule'
 import { format } from 'date-fns'
-import { useWindowSize } from 'rooks'
 import { useStateMachine } from 'little-state-machine'
 import { BsCaretLeft, BsCaretRight } from 'react-icons/bs'
 
@@ -11,32 +10,32 @@ import { RadioCard } from '../../RadioCard'
 import { getAvailableDatesMap } from '../utils'
 
 export const AvailableDates = ({ frequency }: any) => {
+  const [selectedDate, setSelectedDate] = useState('')
   const { rrules, exdate } = frequency
-  const { outerWidth = 0 } = useWindowSize() as any
   const {
     state: { order },
     actions,
   } = useStateMachine({ update }) as any
 
   const datesMap = getAvailableDatesMap(rrules, exdate)
-
   const dates = [...datesMap.keys()]
-
-  const isSmallScreen = outerWidth < 480
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'days',
-    value: order.date,
-    // value: 'Fri Apr 30 2021 00:00:00 GMT+0100 (British Summer Time)',
+    value: selectedDate,
     onChange: (date) => {
-      console.log(date)
+      setSelectedDate(date)
       actions.update({ order: { date } })
     },
   })
 
   const group = getRootProps()
 
-  console.log(datesMap, order, isSmallScreen, outerWidth)
+  useEffect(() => {
+    setSelectedDate(order.date)
+  }, [])
+
+  console.log(datesMap, order)
 
   return (
     <Grid bg="white" p={[0, 0, '2rem']} rounded="1rem" mb="2rem">
@@ -76,15 +75,20 @@ export const AvailableDates = ({ frequency }: any) => {
 const XScroller = (props: any) => {
   const { children, ...rest } = props
   const ref = useRef(null) as any
+  const distance = 240
 
   const scroll = (x: number) => {
-    ref.current.scrollLeft += x
+    ref.current.scrollTo({
+      top: 0,
+      left: ref.current.scrollLeft + x,
+      behavior: 'smooth',
+    })
   }
 
   return (
     <Grid pos="relative">
-      <NavButton dir="left" onClick={() => scroll(-84)} />
-      <NavButton dir="right" onClick={() => scroll(84)} />
+      <NavButton dir="left" onClick={() => scroll(-distance)} />
+      <NavButton dir="right" onClick={() => scroll(distance)} />
       <Grid
         as="ul"
         overflow="scroll"
