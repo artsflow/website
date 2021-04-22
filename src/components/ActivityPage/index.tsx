@@ -11,7 +11,7 @@ import {
   Description,
   WhatToBring,
   Location,
-  AvailableDates,
+  OrderBox,
   Share,
   AboutCreative,
 } from './components'
@@ -37,14 +37,6 @@ export function ActivityPage({ activity, profile }: any) {
   const { id, title, description, images, location, whatToBring } = activity
   const { lat, lng } = location.geocode
   console.log(activity, profile)
-
-  // return (
-  //   <Box maxW={['full', 'full', '1200px']}>
-  //     <Grid p="2rem">
-  //       <AvailableDates {...activity} />
-  //     </Grid>
-  //   </Box>
-  // )
 
   return (
     <Box>
@@ -108,7 +100,7 @@ export function ActivityPage({ activity, profile }: any) {
             <WhatToBring text={whatToBring} />
           </GridItem>
           <GridItem gridArea="order" order={[3, 3]} px={['1.5rem', '1.5rem', '3rem']}>
-            <AvailableDates {...activity} />
+            <OrderBox {...activity} />
           </GridItem>
         </Grid>
       </Box>
