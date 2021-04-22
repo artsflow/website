@@ -1,8 +1,10 @@
-import { Heading, Button, useRadioGroup, Grid, Text } from '@chakra-ui/react'
+import { useRef } from 'react'
+import { Heading, Button, useRadioGroup, Grid, Text, IconButton } from '@chakra-ui/react'
 // import { RRuleSet, rrulestr } from 'rrule'
 import { format } from 'date-fns'
 import { useWindowSize } from 'rooks'
 import { useStateMachine } from 'little-state-machine'
+import { BsCaretLeft, BsCaretRight } from 'react-icons/bs'
 
 import { update } from 'lib/store'
 import { RadioCard } from '../../RadioCard'
@@ -72,22 +74,51 @@ export const AvailableDates = ({ frequency }: any) => {
 }
 
 const XScroller = (props: any) => {
-  //
+  const { children, ...rest } = props
+  const ref = useRef(null) as any
+
+  const scroll = (x: number) => {
+    ref.current.scrollLeft += x
+  }
+
   return (
-    <Grid
-      as="ul"
-      overflowX="auto"
-      my="1rem"
-      gap="1rem"
-      autoFlow="column"
-      css={{
-        '&::-webkit-scrollbar': {
-          display: 'none',
-        },
-        scrollSnapType: 'x proximity',
-        scrollbarWidth: 'none',
-      }}
-      {...props}
-    />
+    <Grid pos="relative">
+      <NavButton dir="left" onClick={() => scroll(-84)} />
+      <NavButton dir="right" onClick={() => scroll(84)} />
+      <Grid
+        as="ul"
+        overflow="scroll"
+        my="1rem"
+        gap="1rem"
+        autoFlow="column"
+        pos="relative"
+        ref={ref}
+        css={{
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+          scrollSnapType: 'x proximity',
+          scrollbarWidth: 'none',
+        }}
+        {...rest}
+      >
+        {children}
+      </Grid>
+    </Grid>
   )
 }
+
+const NavButton = ({ onClick, dir }: any) => (
+  <IconButton
+    pos="absolute"
+    zIndex="3"
+    aria-label="navigate dates"
+    isRound
+    top="calc(50% - 20px)"
+    opacity="50%"
+    left={dir === 'left' ? '-20px' : ''}
+    right={dir === 'right' ? '-20px' : ''}
+    icon={dir === 'left' ? <BsCaretLeft /> : <BsCaretRight />}
+    onClick={onClick}
+  />
+)
