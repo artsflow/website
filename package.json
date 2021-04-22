@@ -64,6 +64,7 @@
     "react-select": "^4.3.0",
     "react-social-sharing": "^3.3.0",
     "remark-gfm": "^1.0.0",
+    "rooks": "^4.11.0",
     "rrule": "^2.6.8"
   },
   "devDependencies": {

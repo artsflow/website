@@ -37,8 +37,17 @@ export function ActivityPage({ activity, profile }: any) {
   const { id, title, description, images, location, whatToBring } = activity
   const { lat, lng } = location.geocode
   console.log(activity, profile)
+
+  // return (
+  //   <Box maxW={['full', 'full', '1200px']}>
+  //     <Grid p="2rem">
+  //       <AvailableDates {...activity} />
+  //     </Grid>
+  //   </Box>
+  // )
+
   return (
-    <>
+    <Box>
       <Meta
         title={title}
         description={description}
@@ -52,7 +61,7 @@ export function ActivityPage({ activity, profile }: any) {
           m="0 auto"
           px={[0, '2rem']}
           mb="20px"
-          maxW={['100%', '100%', '1200px']}
+          maxW={['full', 'full', '1200px']}
         >
           <Link href="/">
             <Flex as="a" title="Artsflow" w="107px" mx="auto">
@@ -64,7 +73,7 @@ export function ActivityPage({ activity, profile }: any) {
         <Grid
           m="0 auto"
           px={[0, '2rem']}
-          maxW={['100%', '100%', '1200px']}
+          maxW={['full', 'full', '1200px']}
           templateAreas={[grid1c, grid1c, grid2c]}
           templateColumns={['', '', '1fr 1fr 1fr']}
           templateRows={['', '', '', '1fr 0.3fr 0.3fr 1fr']}
@@ -103,6 +112,6 @@ export function ActivityPage({ activity, profile }: any) {
           </GridItem>
         </Grid>
       </Box>
-    </>
+    </Box>
   )
 }
