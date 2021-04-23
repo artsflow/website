@@ -1,9 +1,26 @@
 import { HStack, Box, Button, Grid, Text } from '@chakra-ui/react'
+import { useStateMachine } from 'little-state-machine'
 
+import { update } from 'lib/store'
+
+import { showAlert } from 'lib/utils'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
+import { AvailableTickets } from './AvailableTickets'
 
 export const OrderBox = ({ frequency, duration, price }: any) => {
+  const {
+    state: { order },
+  } = useStateMachine({ update }) as any
+
+  const handleContinue = () => {
+    if (!order.date || !order.time) showAlert({ title: 'Please confirm date and time' })
+    else {
+      // TODO: check if capacity is not full
+      console.log('next page')
+    }
+  }
+
   return (
     <Grid
       bg="white"
@@ -14,6 +31,7 @@ export const OrderBox = ({ frequency, duration, price }: any) => {
       <Box p={[0, 0, '2rem']}>
         <AvailableDates frequency={frequency} />
         <AvailableTimeSlots frequency={frequency} duration={duration} />
+        <AvailableTickets />
       </Box>
       <HStack
         bg={['white', 'white', '#e0f4f7']}
@@ -32,8 +50,8 @@ export const OrderBox = ({ frequency, duration, price }: any) => {
         borderBottomRadius={[0, 0, '1rem']}
         justifyContent="space-between"
       >
-        <HStack fontSize="1.3rem" fontWeight="bold" flex="1" justifyContent="center">
-          <Text>£{price}</Text>
+        <HStack fontSize="2xl" fontWeight="bold" flex="1" justifyContent="center">
+          <Text>£{price * order.tickets || 1}</Text>
           <Text color="gray.400">/ session</Text>
         </HStack>
         <Button
@@ -44,6 +62,7 @@ export const OrderBox = ({ frequency, duration, price }: any) => {
           px={['2rem', '3rem']}
           py="2rem"
           rounded="12px"
+          onClick={handleContinue}
         >
           Continue
         </Button>
