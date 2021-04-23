@@ -26,6 +26,7 @@ export const Info = ({ category, capacity, frequency, duration }: any) => {
       roundedBottomRight="1rem"
       roundedTopRight="1rem"
       justifyContent="center"
+      boxShadow={[0, 0, '0px 3px 8px -1px rgba(50, 50, 71, 0.05)']}
     >
       <Heading
         as="h2"

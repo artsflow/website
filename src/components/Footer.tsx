@@ -7,7 +7,7 @@ export const Footer = (props: any) => (
   <VStack
     maxW={['100%', '1440px']}
     m="auto"
-    pt={['5rem', '2rem']}
+    pt={['2rem', '2rem', '2rem']}
     pb={['3rem', '2rem']}
     px={['2rem', '4rem']}
     {...props}

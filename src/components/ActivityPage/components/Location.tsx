@@ -4,7 +4,13 @@ import GoogleMap from 'google-map-react'
 import { GCP_MAPS_KEY } from 'lib/config'
 
 export const Location = ({ lat, lng }: any) => (
-  <Box>
+  <Box
+    order={[1, 1]}
+    bg="white"
+    rounded="1rem"
+    p={['1.5rem', '2rem']}
+    boxShadow={[0, 0, '0px 3px 8px -1px rgba(50, 50, 71, 0.05)']}
+  >
     <Heading as="h3" fontSize="xl" mb="1rem">
       Location
     </Heading>
@@ -15,7 +21,6 @@ export const Location = ({ lat, lng }: any) => (
       h={['160px', '200px']}
       borderRadius="20px"
       overflow="hidden"
-      bg="pink.100"
     >
       <GoogleMap
         center={{ lat, lng }}

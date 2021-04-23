@@ -1,4 +1,4 @@
-import { useRadioGroup, Box, Text } from '@chakra-ui/react'
+import { useRadioGroup, Text, VStack } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
 
 import { update } from 'lib/store'
@@ -29,7 +29,7 @@ export const AvailableTimeSlots = ({ frequency, duration }: any) => {
   if (!order.date) return null
 
   return (
-    <Box mb="1.5rem">
+    <VStack mb="1.5rem" alignItems="flex-start">
       <Text mb="1rem">Select one of the available time slots below:</Text>
       <XScroller disableNavigation {...group}>
         {availableTimes.map((value) => {
@@ -43,6 +43,6 @@ export const AvailableTimeSlots = ({ frequency, duration }: any) => {
           )
         })}
       </XScroller>
-    </Box>
+    </VStack>
   )
 }
