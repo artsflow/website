@@ -1,6 +1,6 @@
 import { difference } from 'lodash'
 import { RRuleSet, rrulestr } from 'rrule'
-import { format, addMinutes } from 'date-fns'
+import { format, addMinutes, addHours } from 'date-fns'
 
 export const ruleText = (r: string, duration: number) => {
   const rule = rrulestr(r)
@@ -54,4 +54,12 @@ export const getAvailableDatesMap = (rrules: string[], exdate: string[]) => {
   })
 
   return datesMap
+}
+
+export const getTimeSlot = (t: string, duration: number) => {
+  const d = new Date(2020, 0, 1)
+  const [hh, mm] = t.split(':')
+  const from = addMinutes(addHours(d, +hh), +mm)
+  const to = addMinutes(from, +duration)
+  return `${format(from, 'HH:mm')} - ${format(to, 'HH:mm')}`
 }

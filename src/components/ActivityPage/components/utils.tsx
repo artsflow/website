@@ -3,7 +3,7 @@ import { Grid, IconButton } from '@chakra-ui/react'
 import { TiArrowLeftThick, TiArrowRightThick } from 'react-icons/ti'
 
 export const XScroller = (props: any) => {
-  const { children, ...rest } = props
+  const { children, disableNavigation, ...rest } = props
   const ref = useRef(null) as any
   const distance = 240
 
@@ -17,14 +17,19 @@ export const XScroller = (props: any) => {
 
   return (
     <Grid pos="relative">
-      <NavButton dir="left" onClick={() => scroll(-distance)} />
-      <NavButton dir="right" onClick={() => scroll(distance)} />
+      {!disableNavigation && (
+        <>
+          <NavButton dir="left" onClick={() => scroll(-distance)} />
+          <NavButton dir="right" onClick={() => scroll(distance)} />
+        </>
+      )}
       <Grid
         as="ul"
         overflow="scroll"
         gap="1rem"
         autoFlow="column"
         pos="relative"
+        placeContent="start"
         ref={ref}
         css={{
           '&::-webkit-scrollbar': {

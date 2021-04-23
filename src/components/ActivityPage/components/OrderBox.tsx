@@ -1,12 +1,13 @@
-import { Button, Grid, Text } from '@chakra-ui/react'
+import { Button, Grid } from '@chakra-ui/react'
 
 import { AvailableDates } from './AvailableDates'
+import { AvailableTimeSlots } from './AvailableTimeSlots'
 
-export const OrderBox = ({ frequency }: any) => {
+export const OrderBox = ({ frequency, duration }: any) => {
   return (
     <Grid bg="white" p={[0, 0, '2rem']} rounded="1rem" mb="2rem">
       <AvailableDates frequency={frequency} />
-      <Text>Select one of the available time slots below:</Text>
+      <AvailableTimeSlots frequency={frequency} duration={duration} />
       <Button
         bg="af.teal"
         color="white"

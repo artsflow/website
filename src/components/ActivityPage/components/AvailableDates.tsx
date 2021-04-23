@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Heading, useRadioGroup, Text } from '@chakra-ui/react'
+import { Box, Heading, useRadioGroup, Text } from '@chakra-ui/react'
 import { format } from 'date-fns'
 import { useStateMachine } from 'little-state-machine'
 
@@ -24,7 +24,7 @@ export const AvailableDates = ({ frequency }: any) => {
     value: selectedDate,
     onChange: (date) => {
       setSelectedDate(date)
-      actions.update({ order: { date } })
+      actions.update({ order: { ...order, date, time: '' } })
     },
   })
 
@@ -35,7 +35,7 @@ export const AvailableDates = ({ frequency }: any) => {
   }, [])
 
   return (
-    <>
+    <Box mb="1.5rem">
       <Heading as="h2" fontSize="xl" mb="1.5rem">
         Available Dates
       </Heading>
@@ -52,6 +52,6 @@ export const AvailableDates = ({ frequency }: any) => {
           )
         })}
       </XScroller>
-    </>
+    </Box>
   )
 }
