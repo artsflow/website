@@ -36,7 +36,6 @@ const grid2c = `
 export function ActivityPage({ activity, profile }: any) {
   const { id, title, description, images, location, whatToBring } = activity
   const { lat, lng } = location.geocode
-  console.log(activity, profile)
 
   return (
     <Box>
@@ -68,7 +67,7 @@ export function ActivityPage({ activity, profile }: any) {
           maxW={['full', 'full', '1200px']}
           templateAreas={[grid1c, grid1c, grid2c]}
           templateColumns={['', '', '1fr 1fr 1fr']}
-          templateRows={['', '', '', '1fr 0.3fr 0.3fr 1fr']}
+          templateRows={['', '', '', '0.5fr 0.3fr 0.3fr 1fr']}
           gap="20px 0px"
         >
           <GridItem gridArea="gallery">

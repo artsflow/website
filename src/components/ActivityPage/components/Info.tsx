@@ -109,6 +109,9 @@ export const Info = ({ category, capacity, frequency, duration }: any) => {
         w="full"
         rounded="12px"
         display={['none', 'none', 'flex']}
+        onClick={() => {
+          window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })
+        }}
       >
         Book now
       </Button>
