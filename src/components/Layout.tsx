@@ -15,7 +15,7 @@ export function Layout({ children }: any) {
         children
       ) : (
         <>
-          <Box minH="calc(100vh - 95px)">{children}</Box>
+          <Box minH={['calc(100vh - 153px)', 'calc(100vh - 95px)']}>{children}</Box>
           <Footer />
         </>
       )}

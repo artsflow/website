@@ -2,6 +2,7 @@ import { Box, Flex, Icon, Grid, GridItem, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
+import { getImageKitUrl } from 'lib/utils'
 import { Meta } from '../Meta'
 
 import {
@@ -36,6 +37,7 @@ const grid2c = `
 export function ActivityPage({ activity, profile }: any) {
   const { id, title, description, images, location, whatToBring } = activity
   const { lat, lng } = location.geocode
+  const [image] = images
 
   return (
     <Box>
@@ -43,7 +45,7 @@ export function ActivityPage({ activity, profile }: any) {
         title={title}
         description={description}
         url={`https://artsflow.com/a/${id}`}
-        image={images[0]}
+        image={getImageKitUrl(image, { w: 1200, h: 627 })}
       />
       <Box bg={['white', 'white', '#f9f9f9']} pt={['0', '1.5rem', '1.5rem']}>
         <VStack

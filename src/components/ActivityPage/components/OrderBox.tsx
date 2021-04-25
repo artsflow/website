@@ -1,5 +1,6 @@
 import { HStack, Box, Button, Grid, Text } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
+import { useRouter } from 'next/router'
 
 import { update } from 'lib/store'
 
@@ -8,16 +9,19 @@ import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
 import { AvailableTickets } from './AvailableTickets'
 
-export const OrderBox = ({ frequency, duration, price }: any) => {
+export const OrderBox = ({ id, frequency, duration, price }: any) => {
+  const router = useRouter()
+
   const {
     state: { order },
   } = useStateMachine({ update }) as any
 
   const handleContinue = () => {
+    window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })
     if (!order.date || !order.time) showAlert({ title: 'Please confirm date and time' })
     else {
       // TODO: check if capacity is not full
-      console.log('next page')
+      router.push(`/a/${id}/join`)
     }
   }
 

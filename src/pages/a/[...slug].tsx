@@ -1,12 +1,19 @@
-import { ActivityPage } from 'components'
+import { useRouter } from 'next/router'
+
 import { firestore, postToJSON } from 'lib/firebase'
+import { ActivityPage, ActivityJoin } from 'components'
 
 export default function Activity({ activity, profile }: any) {
+  const { query } = useRouter()
+
+  if (query.slug?.[1] === 'join') return <ActivityJoin activity={activity} />
+
   return <ActivityPage activity={activity} profile={profile} />
 }
 
 export async function getServerSideProps({ params }: any) {
-  const { id } = params
+  const [id] = params.slug
+
   const activityRef = firestore.doc(`/activities/${id}`)
   const activityDoc = await activityRef.get()
   const activity = postToJSON(activityDoc)
