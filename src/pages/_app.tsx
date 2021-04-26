@@ -13,12 +13,16 @@ import { UserContext } from 'lib/context'
 import { useUserData } from 'hooks'
 import theme from '../theme'
 
-createStore(initialStore)
-
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
+
+createStore(initialStore, {
+  storageType: process.browser ? window.localStorage : ({} as Storage),
+  name: '__AF__',
+  middleWares: [],
+})
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const userData = useUserData()

@@ -29,6 +29,7 @@ export const PaymentInfo = () => {
   const fontSize = useBreakpointValue({ base: '12px', lg: '14px' })
 
   const CARD_OPTIONS = {
+    hidePostalCode: true,
     style: {
       base: {
         fontSize,
@@ -40,6 +41,8 @@ export const PaymentInfo = () => {
       },
     },
   }
+
+  if (!email) return null
 
   return (
     <Elements stripe={stripePromise}>

@@ -5,7 +5,8 @@ import pluralize from 'pluralize'
 
 export const OrderInfo = ({ duration, price }: any) => {
   const { state } = useStateMachine() as any
-  const { date, tickets, time } = state.order
+  const { order = {} } = state
+  const { date, tickets, time } = order
 
   if (!date || !tickets || !time) return null
 

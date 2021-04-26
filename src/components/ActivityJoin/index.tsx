@@ -19,7 +19,7 @@ export const ActivityJoin = ({ activity, profile }: any) => {
   const [image] = images
 
   useEffect(() => {
-    const { date, tickets, time } = state.order
+    const { date, tickets, time } = state.order || {}
     if (!date || !tickets || !time) {
       router.push(`/a/${id}`)
     }
