@@ -1,24 +1,33 @@
+import { useContext, useEffect } from 'react'
 import { Flex, Box, Stack, Heading, Text, VStack, Icon, Image, HStack } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
 import { format, addMinutes, setHours, setMinutes } from 'date-fns'
+import { useRouter } from 'next/router'
 import pluralize from 'pluralize'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
 import { getImageKitUrl } from 'lib/utils'
+import { UserContext } from 'lib/context'
 import { Meta } from '../Meta'
+import { Login } from '../Login'
 
 export const ActivityJoin = ({ activity, profile }: any) => {
-  const { title, images, price, duration } = activity
+  const { id, title, images, price, duration } = activity
+  const { user, profile: userProfile } = useContext(UserContext)
   const { state } = useStateMachine() as any
-  const { date, tickets, time } = state.order
-  const { displayName } = profile
+  const router = useRouter()
 
+  console.log(user, userProfile)
+
+  const { displayName } = profile
   const [image] = images
 
-  const bookingDate = new Date(date)
-  const [hh, mm] = time.split(':')
-  const bookingTimeFrom = setMinutes(setHours(bookingDate, hh), mm)
-  const bookingTimeTo = addMinutes(bookingTimeFrom, duration)
+  useEffect(() => {
+    const { date, tickets, time } = state.order
+    if (!date || !tickets || !time) {
+      router.push(`/a/${id}`)
+    }
+  }, [])
 
   return (
     <>
@@ -26,6 +35,7 @@ export const ActivityJoin = ({ activity, profile }: any) => {
       <VStack
         bg="#f9f9f9"
         pt={[0, '1.5rem']}
+        pb="4rem"
         minH={['calc(100vh - 153px)', 'calc(100vh - 95px)']}
         spacing="1.5rem"
       >
@@ -39,8 +49,7 @@ export const ActivityJoin = ({ activity, profile }: any) => {
         </HStack>
         <VStack
           bg="white"
-          mb="20px"
-          py={['1rem', '2rem']}
+          py={['2rem', '4rem']}
           maxW={['full', '800px']}
           w="full"
           rounded={[0, '1rem']}
@@ -64,20 +73,39 @@ export const ActivityJoin = ({ activity, profile }: any) => {
               <Heading fontSize="2xl">{title}</Heading>t
               <Text fontSize="2xl"> with {displayName}</Text>
             </Stack>
-            <Stack direction={['column', 'row']} justifyContent="space-between" w="full">
-              <Text>
-                Booking date: <b>{format(bookingDate, 'dd MMMM')}</b> from{' '}
-                <b>
-                  {format(bookingTimeFrom, 'HH:mm')} - {format(bookingTimeTo, 'HH:mm')}
-                </b>
-              </Text>
-              <Text>
-                Price: <b>£{tickets * price}</b> ({pluralize('ticket', tickets, true)})
-              </Text>
-            </Stack>
+            <OrderInfo duration={duration} price={price} />
+          </VStack>
+          <VStack w="full" pt="2rem">
+            <Login />
           </VStack>
         </VStack>
       </VStack>
     </>
+  )
+}
+
+const OrderInfo = ({ duration, price }: any) => {
+  const { state } = useStateMachine() as any
+  const { date, tickets, time } = state.order
+
+  if (!date || !tickets || !time) return null
+
+  const bookingDate = new Date(date)
+  const [hh, mm] = time.split(':')
+  const bookingTimeFrom = setMinutes(setHours(bookingDate, hh), mm)
+  const bookingTimeTo = addMinutes(bookingTimeFrom, duration)
+
+  return (
+    <Stack direction={['column', 'row']} justifyContent="space-between" w="full">
+      <Text>
+        Booking date: <b>{format(bookingDate, 'dd MMMM')}</b> from{' '}
+        <b>
+          {format(bookingTimeFrom, 'HH:mm')} - {format(bookingTimeTo, 'HH:mm')}
+        </b>
+      </Text>
+      <Text>
+        Price: <b>£{tickets * price}</b> ({pluralize('ticket', tickets, true)})
+      </Text>
+    </Stack>
   )
 }
