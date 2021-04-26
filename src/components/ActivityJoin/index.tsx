@@ -1,23 +1,19 @@
-import { useContext, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Flex, Box, Stack, Heading, Text, VStack, Icon, Image, HStack } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
-import { format, addMinutes, setHours, setMinutes } from 'date-fns'
 import { useRouter } from 'next/router'
-import pluralize from 'pluralize'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
 import { getImageKitUrl } from 'lib/utils'
-import { UserContext } from 'lib/context'
 import { Meta } from '../Meta'
 import { Login } from '../Login'
+import { OrderInfo } from './OrderInfo'
+import { PaymentInfo } from './PaymentInfo'
 
 export const ActivityJoin = ({ activity, profile }: any) => {
   const { id, title, images, price, duration } = activity
-  const { user, profile: userProfile } = useContext(UserContext)
   const { state } = useStateMachine() as any
   const router = useRouter()
-
-  console.log(user, userProfile)
 
   const { displayName } = profile
   const [image] = images
@@ -77,35 +73,10 @@ export const ActivityJoin = ({ activity, profile }: any) => {
           </VStack>
           <VStack w="full" pt="2rem">
             <Login />
+            <PaymentInfo />
           </VStack>
         </VStack>
       </VStack>
     </>
-  )
-}
-
-const OrderInfo = ({ duration, price }: any) => {
-  const { state } = useStateMachine() as any
-  const { date, tickets, time } = state.order
-
-  if (!date || !tickets || !time) return null
-
-  const bookingDate = new Date(date)
-  const [hh, mm] = time.split(':')
-  const bookingTimeFrom = setMinutes(setHours(bookingDate, hh), mm)
-  const bookingTimeTo = addMinutes(bookingTimeFrom, duration)
-
-  return (
-    <Stack direction={['column', 'row']} justifyContent="space-between" w="full">
-      <Text>
-        Booking date: <b>{format(bookingDate, 'dd MMMM')}</b> from{' '}
-        <b>
-          {format(bookingTimeFrom, 'HH:mm')} - {format(bookingTimeTo, 'HH:mm')}
-        </b>
-      </Text>
-      <Text>
-        Price: <b>£{tickets * price}</b> ({pluralize('ticket', tickets, true)})
-      </Text>
-    </Stack>
   )
 }
