@@ -6,7 +6,7 @@ import { ActivityPage, ActivityJoin } from 'components'
 export default function Activity({ activity, profile }: any) {
   const { query } = useRouter()
 
-  if (query.slug?.[1] === 'join') return <ActivityJoin activity={activity} />
+  if (query.slug?.[1] === 'join') return <ActivityJoin activity={activity} profile={profile} />
 
   return <ActivityPage activity={activity} profile={profile} />
 }

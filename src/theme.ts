@@ -16,7 +16,7 @@ const theme = {
   },
   colors: {
     black: '#16161D',
-    grey: '#E2E8F0',
+    gray: '#E5E5E5',
     af: {
       teal: '#45BCC8',
       violet: '#765EA6',
