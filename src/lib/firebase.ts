@@ -17,6 +17,16 @@ const firebaseConfig = {
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig)
+
+  // emulators
+  if (process.env.NEXT_PUBLIC_EMULATOR) {
+    console.info('___using__emulators___')
+
+    firebase.auth().useEmulator('http://localhost:7042')
+    firebase.firestore().useEmulator('localhost', 9042)
+    firebase.firestore().settings({ host: 'localhost:9042', ssl: false, cacheSizeBytes: 2048576 })
+    firebase.app().functions('europe-west2').useEmulator('localhost', 8042)
+  }
 }
 
 // Auth exports
@@ -47,13 +57,14 @@ export function postToJSON(doc: any) {
     ...data,
     createdAt: data?.createdAt?.toMillis?.() || 0,
     updatedAt: data?.updatedAt?.toMillis?.() || 0,
+    verifiedAt: data?.verifiedAt?.toMillis?.() || 0,
   }
 }
 
 // functions
 export const functions = firebase.app().functions('europe-west2')
 
-export const firebaseCallable = async (func: string, params: any) => {
+export const firebaseCallable: any = async (func: string, params: any) => {
   console.info(`>>> callable: ${func}`, params)
 
   try {
@@ -64,41 +75,3 @@ export const firebaseCallable = async (func: string, params: any) => {
     return null
   }
 }
-
-export const uploadTask = async ({ path, blob, onProgres }: any) =>
-  new Promise((resolve, reject) => {
-    const storageRef = storage.ref(path)
-    const task = storageRef.put(blob)
-
-    task.on(
-      STATE_CHANGED,
-      (snapshot) => {
-        const progress = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100).toFixed(0)
-        if (onProgres) onProgres(progress)
-      },
-      (error) => {
-        console.error('upload_error', error)
-        reject()
-      },
-      () => {
-        task.snapshot.ref.getDownloadURL().then((downloadURL) => {
-          resolve(downloadURL)
-        })
-      }
-    )
-  })
-
-// emulators
-// export const setFirebaseEmulators = async () => {
-//   if (__DEV__) {
-//     console.info('____DEV____settings')
-//     firestore.settings({
-//       host: 'https://firestore.ngrok.42tech.co',
-//       ssl: true,
-//       // persistence: true,
-//       cacheSizeBytes: 2048576,
-//     })
-
-//     functions.useFunctionsEmulator('https://functions.ngrok.42tech.co')
-//   }
-// }

@@ -16,11 +16,15 @@ import { loadStripe } from '@stripe/stripe-js'
 import { PhoneIcon, AtSignIcon } from '@chakra-ui/icons'
 import { GrUser } from 'react-icons/gr'
 import { useForm, Controller } from 'react-hook-form'
+import { useRouter } from 'next/router'
+import { useStateMachine } from 'little-state-machine'
+import { addMinutes, addHours, getUnixTime } from 'date-fns'
 
 import { STRIPE_KEY } from 'lib/config'
 import { UserContext } from 'lib/context'
 import StripeIcon from 'svg/stripe.svg'
 import { showAlert } from 'lib/utils'
+import { getPaymentIntent } from 'api'
 
 const stripePromise = loadStripe(STRIPE_KEY as string)
 
@@ -39,17 +43,20 @@ export const PaymentInfo = () => {
 }
 
 const OrderForm = () => {
+  const { query } = useRouter()
   const { user } = useContext(UserContext)
   const { email, displayName } = user
   const [error, setError] = useState(null) as any
   const [cardComplete, setCardComplete] = useState(false)
   const [processing, setProcessing] = useState(false)
-  const [paymentMethod, setPaymentMethod] = useState(null)
+  const [payment, setPayment] = useState({}) as any
   const fontSize = useBreakpointValue({ base: '12px', lg: '14px' })
+  const { control, handleSubmit } = useForm<Inputs>()
   const stripe = useStripe()
   const elements = useElements() as any
-
-  const { control, handleSubmit } = useForm<Inputs>()
+  const [activityId] = query.slug as string
+  const { state } = useStateMachine() as any
+  const { date, time } = state.order || {}
 
   const CARD_OPTIONS = {
     hidePostalCode: true,
@@ -76,16 +83,21 @@ const OrderForm = () => {
   }
 
   const handlePayNow = async (billingDetails: any) => {
-    console.log('handlePayNow', billingDetails)
+    console.log('handlePayNow', billingDetails, error, cardComplete)
+    const { phone, name } = billingDetails
+
+    const [hh, mm] = time.split(':')
+    const activityDate = addMinutes(addHours(new Date(date), +hh), +mm)
+    const unixTime = getUnixTime(activityDate)
+    const dateString = activityDate.toString()
 
     if (!stripe || !elements) {
       return
     }
 
-    if (error) {
+    if (error || !cardComplete) {
       elements.getElement('card').focus()
-      showAlert({ title: error.message })
-      console.log(error)
+      showAlert({ title: error?.message || 'Invalid card number' })
       return
     }
 
@@ -93,24 +105,23 @@ const OrderForm = () => {
       setProcessing(true)
     }
 
-    const payload = (await stripe.createPaymentMethod({
-      type: 'card',
-      card: elements.getElement(CardElement),
-      billing_details: billingDetails,
-    })) as any
+    const { data } = await getPaymentIntent({ activityId, date: unixTime, dateString, phone, name })
 
+    const payload = await stripe.confirmCardPayment(data.clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+        billing_details: billingDetails,
+      },
+    })
+
+    console.log(payload)
     setProcessing(false)
-
-    if (payload.error) {
-      setError(payload.error)
-    } else {
-      setPaymentMethod(payload.paymentMethod)
-    }
+    setPayment(payload)
   }
 
   if (!email) return null
 
-  if (paymentMethod) {
+  if (payment?.paymentIntent?.status === 'succeeded') {
     return (
       <VStack>
         <Text>Booking confirmed</Text>
