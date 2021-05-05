@@ -11,7 +11,7 @@ import { Login } from '../Login'
 import { OrderInfo } from './OrderInfo'
 import { PaymentInfo } from './PaymentInfo'
 
-export const ActivityJoin = ({ activity, profile }: any) => {
+export const ActivityBook = ({ activity, profile }: any) => {
   const { id, title, images, price, duration } = activity
   const { state } = useStateMachine() as any
   const router = useRouter()

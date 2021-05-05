@@ -1,4 +1,5 @@
 import { createStandaloneToast } from '@chakra-ui/react'
+import { addMinutes, addHours, getUnixTime } from 'date-fns'
 
 export const isProd = process.env.NODE_ENV === 'production'
 
@@ -30,3 +31,9 @@ export const showAlert = ({ title, description, status = 'error' }: AlertProps) 
     isClosable: true,
     position: 'top',
   })
+
+export const getTimestamp = (date: string, time: string) => {
+  const [hh, mm] = time.split(':')
+  const activityDate = addMinutes(addHours(new Date(date), +hh), +mm)
+  return getUnixTime(activityDate)
+}

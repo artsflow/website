@@ -18,13 +18,13 @@ import { GrUser } from 'react-icons/gr'
 import { useForm, Controller } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { useStateMachine } from 'little-state-machine'
-import { addMinutes, addHours, getUnixTime } from 'date-fns'
 
 import { STRIPE_KEY } from 'lib/config'
 import { UserContext } from 'lib/context'
 import StripeIcon from 'svg/stripe.svg'
-import { showAlert } from 'lib/utils'
+import { showAlert, getTimestamp } from 'lib/utils'
 import { getPaymentIntent } from 'api'
+import { useBooking } from 'hooks'
 
 const stripePromise = loadStripe(STRIPE_KEY as string)
 
@@ -57,6 +57,8 @@ const OrderForm = () => {
   const [activityId] = query.slug as string
   const { state } = useStateMachine() as any
   const { date, time } = state.order || {}
+  const timestamp = getTimestamp(date, time)
+  const [booking, loading] = useBooking(activityId, timestamp)
 
   const CARD_OPTIONS = {
     hidePostalCode: true,
@@ -86,11 +88,6 @@ const OrderForm = () => {
     console.log('handlePayNow', billingDetails, error, cardComplete)
     const { phone, name } = billingDetails
 
-    const [hh, mm] = time.split(':')
-    const activityDate = addMinutes(addHours(new Date(date), +hh), +mm)
-    const unixTime = getUnixTime(activityDate)
-    const dateString = activityDate.toString()
-
     if (!stripe || !elements) {
       return
     }
@@ -105,7 +102,12 @@ const OrderForm = () => {
       setProcessing(true)
     }
 
-    const { data } = await getPaymentIntent({ activityId, date: unixTime, dateString, phone, name })
+    const { data } = await getPaymentIntent({
+      activityId,
+      timestamp,
+      phone,
+      name,
+    })
 
     const payload = await stripe.confirmCardPayment(data.clientSecret, {
       payment_method: {
@@ -120,12 +122,18 @@ const OrderForm = () => {
   }
 
   useEffect(() => {
+    if (booking?.length > 0) {
+      push(`/a/${activityId}/confirmed/${timestamp}`)
+    }
+  }, [booking])
+
+  useEffect(() => {
     if (payment?.paymentIntent?.status === 'succeeded') {
-      push(`/a/${activityId}/confirmed`)
+      push(`/a/${activityId}/confirmed/${timestamp}`)
     }
   }, [payment])
 
-  if (!email) return null
+  if (!email || loading) return null
 
   return (
     <VStack

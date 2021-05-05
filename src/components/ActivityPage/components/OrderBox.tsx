@@ -20,7 +20,7 @@ export const OrderBox = ({ id, frequency, duration, price }: any) => {
     if (!order.date || !order.time) showAlert({ title: 'Please confirm date and time' })
     else {
       // TODO: check if capacity is not full
-      router.push(`/a/${id}/join`)
+      router.push(`/a/${id}/book`)
     }
   }
 

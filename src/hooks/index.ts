@@ -1,3 +1,3 @@
 export * from './useWindowSize'
 export * from './user'
-export * from './attendee'
+export * from './booking'

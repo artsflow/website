@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 
 import { firestore, postToJSON } from 'lib/firebase'
-import { ActivityPage, ActivityJoin, BookingConfirmed } from 'components'
+import { ActivityPage, ActivityBook, BookingConfirmed } from 'components'
 
 export default function Activity({ activity, profile }: any) {
   const { query } = useRouter()
 
-  if (query.slug?.[1] === 'join') return <ActivityJoin activity={activity} profile={profile} />
+  if (query.slug?.[1] === 'book') return <ActivityBook activity={activity} profile={profile} />
   if (query.slug?.[1] === 'confirmed')
     return <BookingConfirmed activity={activity} profile={profile} />
 

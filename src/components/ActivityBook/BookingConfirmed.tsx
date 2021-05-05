@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Flex, Box, Heading, Text, VStack, Icon, HStack, Avatar, Button } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
 import { format, addMinutes, fromUnixTime } from 'date-fns'
+import { useRouter } from 'next/router'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
 import TickIcon from 'svg/landing/tick.svg'
@@ -10,7 +11,7 @@ import Calendar2Icon from 'svg/calendar2.svg'
 import ClockIcon from 'svg/clock.svg'
 import { getImageKitUrl } from 'lib/utils'
 import { resetStore } from 'lib/store'
-import { useAttended } from 'hooks'
+import { useBooking } from 'hooks'
 import { Meta } from '../Meta'
 import { Share } from '../ActivityPage/components'
 
@@ -18,19 +19,23 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
   const { actions } = useStateMachine({ resetStore }) as any
   const { id, title, duration } = activity
   const { displayName, photoURL } = profile
-  const [attended = [{}]] = useAttended(id)
-  const [{ date }] = attended
+  const { query } = useRouter()
+  const queryTimestamp = query.slug?.[2]
+  const [booking] = useBooking(id, Number(queryTimestamp))
+  const timestamp = booking?.[0]?.timestamp
 
   useEffect(() => {
     actions.resetStore()
   }, [])
 
-  const eventDate = date ? format(fromUnixTime(date), 'dd MMM YYY') : '...'
-  const eventTimeFrom = date ? format(fromUnixTime(date), 'HH:mm') : '...'
-  const eventTimeTo = date ? format(addMinutes(fromUnixTime(date), duration), 'HH:mm') : '...'
+  const eventDate = timestamp ? format(fromUnixTime(timestamp), 'dd MMM YYY') : '...'
+  const eventTimeFrom = timestamp ? format(fromUnixTime(timestamp), 'HH:mm') : '...'
+  const eventTimeTo = timestamp
+    ? format(addMinutes(fromUnixTime(timestamp), duration), 'HH:mm')
+    : '...'
 
   const handleAddToCalendar = () => {
-    window.open(getCalendarUrl(date, duration, title))
+    window.open(getCalendarUrl(timestamp, duration, title))
   }
 
   return (
