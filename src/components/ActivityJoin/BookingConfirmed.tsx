@@ -29,6 +29,10 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
   const eventTimeFrom = date ? format(fromUnixTime(date), 'HH:mm') : '...'
   const eventTimeTo = date ? format(addMinutes(fromUnixTime(date), duration), 'HH:mm') : '...'
 
+  const handleAddToCalendar = () => {
+    window.open(getCalendarUrl(date, duration, title))
+  }
+
   return (
     <>
       <Meta title={`Booking confirmed: ${title}`} />
@@ -131,7 +135,7 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
               placement="top-start"
               triggerProps={{ w: 'full' }}
             />
-            <Button bg="#edf8fa" color="af.teal" w="full" h="3rem">
+            <Button bg="#edf8fa" color="af.teal" w="full" h="3rem" onClick={handleAddToCalendar}>
               Add to Calendar
             </Button>
           </HStack>
@@ -140,3 +144,39 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
     </>
   )
 }
+
+const getCalendarUrl = (date: number, duration: number, title: string) => {
+  const url = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'BEGIN:VEVENT',
+    `DTSTART:${formatCalendarDate(fromUnixTime(date))}`,
+    `DTEND:${formatCalendarDate(addMinutes(fromUnixTime(date), duration))}`,
+    `SUMMARY:${title}`,
+    `DESCRIPTION:Artsflow activity`,
+    `LOCATION:`,
+    'BEGIN:VALARM',
+    'TRIGGER:-PT15M',
+    'REPEAT:1',
+    'DURATION:PT15M',
+    'ACTION:DISPLAY',
+    'DESCRIPTION:Reminder',
+    'END:VALARM',
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\n')
+
+  return encodeURI(`data:text/calendar;charset=utf8,${url}`)
+}
+
+const pad = (num: number) => (num < 10 ? `0${num}` : num)
+
+const formatCalendarDate = (date: Date) =>
+  [
+    date.getUTCFullYear(),
+    pad(date.getUTCMonth() + 1),
+    pad(date.getUTCDate()),
+    'T',
+    pad(date.getUTCHours()),
+    `${pad(date.getUTCMinutes())}00Z`,
+  ].join('')
