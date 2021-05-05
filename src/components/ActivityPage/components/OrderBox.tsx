@@ -7,7 +7,6 @@ import { update } from 'lib/store'
 import { showAlert } from 'lib/utils'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
-import { AvailableTickets } from './AvailableTickets'
 
 export const OrderBox = ({ id, frequency, duration, price }: any) => {
   const router = useRouter()
@@ -35,7 +34,6 @@ export const OrderBox = ({ id, frequency, duration, price }: any) => {
       <Box p={[0, 0, '2rem']}>
         <AvailableDates frequency={frequency} />
         <AvailableTimeSlots frequency={frequency} duration={duration} />
-        <AvailableTickets />
       </Box>
       <HStack
         bg={['white', 'white', '#e0f4f7']}

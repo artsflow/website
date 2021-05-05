@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import {
   Box,
   Text,
@@ -43,7 +43,7 @@ export const PaymentInfo = () => {
 }
 
 const OrderForm = () => {
-  const { query } = useRouter()
+  const { push, query } = useRouter()
   const { user } = useContext(UserContext)
   const { email, displayName } = user
   const [error, setError] = useState(null) as any
@@ -121,13 +121,11 @@ const OrderForm = () => {
 
   if (!email) return null
 
-  if (payment?.paymentIntent?.status === 'succeeded') {
-    return (
-      <VStack>
-        <Text>Booking confirmed</Text>
-      </VStack>
-    )
-  }
+  useEffect(() => {
+    if (payment?.paymentIntent?.status === 'succeeded') {
+      push(`/a/${activityId}/confirmed`)
+    }
+  }, [payment])
 
   return (
     <VStack
