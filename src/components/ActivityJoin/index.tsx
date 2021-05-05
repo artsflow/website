@@ -1,10 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { Flex, Box, Stack, Heading, Text, VStack, Icon, Image, HStack } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
 import { useRouter } from 'next/router'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
 import { getImageKitUrl } from 'lib/utils'
+import { UserContext } from 'lib/context'
 import { Meta } from '../Meta'
 import { Login } from '../Login'
 import { OrderInfo } from './OrderInfo'
@@ -14,6 +15,7 @@ export const ActivityJoin = ({ activity, profile }: any) => {
   const { id, title, images, price, duration } = activity
   const { state } = useStateMachine() as any
   const router = useRouter()
+  const { user } = useContext(UserContext)
 
   const { displayName } = profile
   const [image] = images
@@ -40,7 +42,7 @@ export const ActivityJoin = ({ activity, profile }: any) => {
         </Flex>
         <HStack>
           <Box w="50px" h="6px" bg="af.teal" rounded="3px" />
-          <Box w="50px" h="6px" bg="gray" rounded="3px" />
+          <Box w="50px" h="6px" bg={user.email ? 'af.teal' : 'gray'} rounded="3px" />
           <Box w="50px" h="6px" bg="gray" rounded="3px" />
         </HStack>
         <VStack

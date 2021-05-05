@@ -1,7 +1,8 @@
-import { Box, Flex, Icon, Grid, GridItem, VStack } from '@chakra-ui/react'
+import { Box, Flex, Icon, Grid, GridItem, VStack, IconButton } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
+import ShareSvg from 'svg/activity/share.svg'
 import { getImageKitUrl } from 'lib/utils'
 import { Meta } from '../Meta'
 
@@ -61,7 +62,15 @@ export function ActivityPage({ activity, profile }: any) {
               <Icon as={ArtsflowSvg} w="107px" h="24px" mx="auto" />
             </Flex>
           </Link>
-          <Share {...activity} />
+          <Flex justifyContent="flex-end">
+            <Share
+              id={id}
+              title={title}
+              TriggerButton={(props: any) => (
+                <IconButton aria-label="share" isRound icon={<ShareSvg />} {...props} />
+              )}
+            />
+          </Flex>
         </VStack>
         <Grid
           m="0 auto"

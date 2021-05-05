@@ -119,13 +119,13 @@ const OrderForm = () => {
     setPayment(payload)
   }
 
-  if (!email) return null
-
   useEffect(() => {
     if (payment?.paymentIntent?.status === 'succeeded') {
       push(`/a/${activityId}/confirmed`)
     }
   }, [payment])
+
+  if (!email) return null
 
   return (
     <VStack

@@ -13,3 +13,5 @@ export const update = (state: any, payload: any) => ({
   ...state,
   ...payload,
 })
+
+export const resetStore = () => initialStore
