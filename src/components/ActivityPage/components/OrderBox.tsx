@@ -8,7 +8,7 @@ import { showAlert } from 'lib/utils'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
 
-export const OrderBox = ({ id, frequency, duration, price }: any) => {
+export const OrderBox = ({ id, frequency, duration, price, type }: any) => {
   const router = useRouter()
 
   const {
@@ -23,6 +23,8 @@ export const OrderBox = ({ id, frequency, duration, price }: any) => {
       router.push(`/a/${id}/book`)
     }
   }
+
+  const isFree = type === 'Free'
 
   return (
     <Grid
@@ -53,8 +55,14 @@ export const OrderBox = ({ id, frequency, duration, price }: any) => {
         justifyContent="space-between"
       >
         <HStack fontSize="2xl" fontWeight="bold" flex="1" justifyContent="center">
-          <Text>£{price * order.tickets || 1}</Text>
-          <Text color="gray.400">/ session</Text>
+          {isFree ? (
+            <Text>Free to join</Text>
+          ) : (
+            <>
+              <Text>£{price * order.tickets || 1}</Text>
+              <Text color="gray.400">/ session</Text>
+            </>
+          )}
         </HStack>
         <Button
           bg="af.teal"

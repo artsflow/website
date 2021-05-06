@@ -8,17 +8,20 @@ import { getImageKitUrl } from 'lib/utils'
 import { UserContext } from 'lib/context'
 import { Meta } from '../Meta'
 import { Login } from '../Login'
+import { FreeBooking } from './FreeBooking'
 import { OrderInfo } from './OrderInfo'
 import { PaymentInfo } from './PaymentInfo'
 
 export const ActivityBook = ({ activity, profile }: any) => {
-  const { id, title, images, price, duration } = activity
+  const { id, title, images, price, duration, type } = activity
   const { state } = useStateMachine() as any
   const router = useRouter()
   const { user } = useContext(UserContext)
 
   const { displayName } = profile
   const [image] = images
+
+  const isFree = type === 'Free'
 
   useEffect(() => {
     const { date, tickets, time } = state.order || {}
@@ -75,7 +78,7 @@ export const ActivityBook = ({ activity, profile }: any) => {
           </VStack>
           <VStack w="full" pt="2rem">
             <Login />
-            <PaymentInfo />
+            {isFree ? <FreeBooking /> : <PaymentInfo />}
           </VStack>
         </VStack>
       </VStack>

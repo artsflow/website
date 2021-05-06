@@ -1,33 +1,16 @@
 import { useState, useContext, useEffect } from 'react'
-import {
-  Box,
-  Text,
-  HStack,
-  VStack,
-  InputGroup,
-  InputLeftAddon,
-  Input,
-  Icon,
-  Button,
-  useBreakpointValue,
-} from '@chakra-ui/react'
-import { Elements, CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
+import { VStack, InputGroup, InputLeftAddon, Input, Icon, Button } from '@chakra-ui/react'
 import { PhoneIcon, AtSignIcon } from '@chakra-ui/icons'
 import { GrUser } from 'react-icons/gr'
 import { useForm, Controller } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { useStateMachine } from 'little-state-machine'
 
-import { STRIPE_KEY } from 'lib/config'
 import { UserContext } from 'lib/context'
-import StripeIcon from 'svg/stripe.svg'
 import { showAlert, getTimestamp } from 'lib/utils'
 import { Loading } from 'components/Loading'
-import { getPaymentIntent } from 'api'
 import { useBooking } from 'hooks'
-
-const stripePromise = loadStripe(STRIPE_KEY as string)
+import { createFreeBooking } from 'api'
 
 interface Inputs {
   email: string
@@ -35,45 +18,17 @@ interface Inputs {
   phone: string
 }
 
-export const PaymentInfo = () => {
-  return (
-    <Elements stripe={stripePromise}>
-      <OrderForm />
-    </Elements>
-  )
-}
-
-const OrderForm = () => {
+export const FreeBooking = () => {
   const { push, query } = useRouter()
   const { user } = useContext(UserContext)
   const { email, phone: userPhone, displayName } = user
-  const [error, setError] = useState(null) as any
-  const [cardComplete, setCardComplete] = useState(false)
   const [processing, setProcessing] = useState(false)
-  const [payment, setPayment] = useState({}) as any
-  const fontSize = useBreakpointValue({ base: '12px', lg: '14px' })
   const { control, handleSubmit } = useForm<Inputs>()
-  const stripe = useStripe()
-  const elements = useElements() as any
   const [activityId] = query.slug as string
   const { state } = useStateMachine() as any
   const { date, time } = state.order || {}
   const timestamp = getTimestamp(date, time)
   const [booking, loading] = useBooking(activityId, timestamp)
-
-  const CARD_OPTIONS = {
-    hidePostalCode: true,
-    style: {
-      base: {
-        fontSize,
-        lineHeight: '24px',
-      },
-      invalid: {
-        iconColor: 'red',
-        color: 'red',
-      },
-    },
-  }
 
   const handleErrors = (errors: any) => {
     const { phone, name } = errors
@@ -85,41 +40,16 @@ const OrderForm = () => {
     }
   }
 
-  const handlePayNow = async (billingDetails: any) => {
-    console.log('handlePayNow', billingDetails, error, cardComplete)
-    const { phone, name } = billingDetails
-
-    if (!stripe || !elements) {
-      return
+  const handleBookNow = async (bookingDetails: any) => {
+    console.log('handlePayNow', bookingDetails)
+    const { phone, name } = bookingDetails
+    setProcessing(true)
+    try {
+      await createFreeBooking({ name, phone, timestamp, activityId })
+    } catch (e) {
+      showAlert({ title: 'Booking error', description: e.message })
     }
-
-    if (error || !cardComplete) {
-      elements.getElement('card').focus()
-      showAlert({ title: error?.message || 'Invalid card number' })
-      return
-    }
-
-    if (cardComplete) {
-      setProcessing(true)
-    }
-
-    const { data } = await getPaymentIntent({
-      activityId,
-      timestamp,
-      phone,
-      name,
-    })
-
-    const payload = await stripe.confirmCardPayment(data.clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-        billing_details: billingDetails,
-      },
-    })
-
-    console.log(payload)
     setProcessing(false)
-    setPayment(payload)
   }
 
   useEffect(() => {
@@ -127,12 +57,6 @@ const OrderForm = () => {
       push(`/a/${activityId}/confirmed/${timestamp}`)
     }
   }, [booking])
-
-  useEffect(() => {
-    if (payment?.paymentIntent?.status === 'succeeded') {
-      push(`/a/${activityId}/confirmed/${timestamp}`)
-    }
-  }, [payment])
 
   if (!email) return null
 
@@ -144,7 +68,7 @@ const OrderForm = () => {
       w={['full', '400px']}
       px="2rem"
       spacing="1rem"
-      onSubmit={handleSubmit(handlePayNow, handleErrors)}
+      onSubmit={handleSubmit(handleBookNow, handleErrors)}
     >
       <Controller
         name="email"
@@ -189,30 +113,17 @@ const OrderForm = () => {
           </InputGroup>
         )}
       />
-      <Box w="full" border="1px solid black" p="8px" rounded="5px">
-        <CardElement
-          options={CARD_OPTIONS}
-          onChange={(e: any) => {
-            setError(e.error)
-            setCardComplete(e.complete)
-          }}
-        />
-      </Box>
       <Button
         type="submit"
         bg="af.teal"
         color="white"
         w="full"
         py={['1.5rem', '1rem']}
-        error={error}
-        disabled={!stripe || processing}
+        disabled={processing}
         isLoading={processing}
       >
-        Pay now
+        Book now
       </Button>
-      <HStack>
-        <Text fontSize="12px">Secure payments</Text> <Icon as={StripeIcon} w="88px" h="20px" />
-      </HStack>
     </VStack>
   )
 }

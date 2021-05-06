@@ -1,5 +1,16 @@
 import { useEffect } from 'react'
-import { Flex, Box, Heading, Text, VStack, Icon, HStack, Avatar, Button } from '@chakra-ui/react'
+import {
+  Flex,
+  Box,
+  Heading,
+  Text,
+  VStack,
+  Icon,
+  HStack,
+  Avatar,
+  Button,
+  Skeleton,
+} from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
 import { format, addMinutes, fromUnixTime } from 'date-fns'
 import { useRouter } from 'next/router'
@@ -118,14 +129,20 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
             <VStack bg="#fffaec" w="full" minW="150px" rounded="10px" py="1.5rem">
               <Icon as={Calendar2Icon} boxSize="2rem" />
               <Text color="#616167">Event date</Text>
-              <Text fontWeight="bold">{eventDate}</Text>
+              <Skeleton isLoaded={timestamp} h="1.5rem" startColor="af.teal" endColor="af.pink">
+                <Text w="8rem" textAlign="center" fontWeight="bold">
+                  {eventDate}
+                </Text>
+              </Skeleton>
             </VStack>
             <VStack bg="#fdf3f7" w="full" minW="150px" rounded="10px" py="1.5rem">
               <Icon as={ClockIcon} boxSize="2rem" />
               <Text color="#616167">Time</Text>
-              <Text fontWeight="bold">
-                {eventTimeFrom} - {eventTimeTo}
-              </Text>
+              <Skeleton isLoaded={timestamp} h="1.5rem" startColor="af.teal" endColor="af.pink">
+                <Text w="8rem" textAlign="center" fontWeight="bold">
+                  {eventTimeFrom} - {eventTimeTo}
+                </Text>
+              </Skeleton>
             </VStack>
           </HStack>
           <HStack w="full" maxW="460px" spacing="1rem" pt="2.5rem">
