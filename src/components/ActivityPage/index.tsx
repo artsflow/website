@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ArtsflowSvg from 'svg/artsflow.svg'
 import ShareSvg from 'svg/activity/share.svg'
 import { getImageKitUrl } from 'lib/utils'
+import { ARTSFLOW_URL } from 'lib/config'
 import { Meta } from '../Meta'
 
 import {
@@ -45,7 +46,7 @@ export function ActivityPage({ activity, profile }: any) {
       <Meta
         title={title}
         description={description}
-        url={`https://artsflow.com/a/${id}`}
+        url={`${ARTSFLOW_URL}/a/${id}`}
         image={getImageKitUrl(image, { w: 1200, h: 627 })}
       />
       <Box bg={['white', 'white', '#f9f9f9']} pt={['0', '1.5rem', '1.5rem']}>

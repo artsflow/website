@@ -10,6 +10,8 @@ import {
 // @ts-ignore
 import { Twitter, Facebook, Mail, Linkedin, Whatsapp } from 'react-social-sharing'
 
+import { ARTSFLOW_URL } from 'lib/config'
+
 export const Share = ({
   id,
   title,
@@ -25,7 +27,7 @@ export const Share = ({
     console.log('share menu open')
   }
 
-  const link = `https://artsflow.com/a/${id}`
+  const link = `${ARTSFLOW_URL}/a/${id}`
   const message = `Check this out: ${title}`
 
   return (

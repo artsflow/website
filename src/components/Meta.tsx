@@ -1,17 +1,18 @@
 import Head from 'next/head'
 
-const defaultUrl = 'http://artsflow.com'
+import { ARTSFLOW_URL } from 'lib/config'
+
 const defaultTitle = 'Artsflow - the platform for the Arts Sector'
 
 const defaultDescription =
   'Artsflow is a tailor-made platform for the Arts Sector enabling creative practitioners to easily create, book, deliver and earn a living from their passion.'
 
-const defaultImage = `${defaultUrl}/img/hero.png`
+const defaultImage = `${ARTSFLOW_URL}/img/hero.png`
 
 export function Meta({
   title = defaultTitle,
   description = defaultDescription,
-  url = defaultUrl,
+  url = ARTSFLOW_URL,
   image = defaultImage,
 }) {
   return (

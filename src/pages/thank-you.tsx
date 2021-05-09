@@ -12,10 +12,11 @@ import { useMixpanel } from 'react-mixpanel-browser'
 import { gtmEvent } from 'lib/gtm'
 import { hotJar } from 'lib'
 import { Meta } from 'components'
+import { ARTSFLOW_URL } from 'lib/config'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
 
-const link = `https://artsflow.com/discover?utm_source=share`
+const link = `${ARTSFLOW_URL}/discover?utm_source=share`
 const message = 'Check this out: '
 
 const CrispWithNoSSR = dynamic(() => import('../components/CrispChat'), { ssr: false })
