@@ -32,7 +32,7 @@ const stripePromise = loadStripe(STRIPE_KEY as string)
 interface Inputs {
   email: string
   name: string
-  phone: string
+  phone?: string
 }
 
 export const PaymentInfo = () => {
@@ -76,10 +76,7 @@ const OrderForm = () => {
   }
 
   const handleErrors = (errors: any) => {
-    const { phone, name } = errors
-    if (phone) {
-      showAlert({ title: phone.message })
-    }
+    const { name } = errors
     if (name) {
       showAlert({ title: name.message })
     }
@@ -162,15 +159,10 @@ const OrderForm = () => {
         name="phone"
         defaultValue={userPhone}
         control={control}
-        rules={{
-          required: 'Invalid phone number',
-          minLength: { value: 10, message: 'Phone minimum 10 digits' },
-          maxLength: { value: 11, message: 'Phone maximum 11 digits' },
-        }}
         render={({ field }) => (
           <InputGroup>
             <InputLeftAddon children={<PhoneIcon />} />
-            <Input {...field} type="number" placeholder="Phone number" />
+            <Input {...field} type="number" placeholder="Phone number (optional)" />
           </InputGroup>
         )}
       />

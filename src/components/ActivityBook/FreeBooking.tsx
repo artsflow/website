@@ -86,15 +86,10 @@ export const FreeBooking = () => {
         name="phone"
         defaultValue={userPhone}
         control={control}
-        rules={{
-          required: 'Invalid phone number',
-          minLength: { value: 10, message: 'Phone minimum 10 digits' },
-          maxLength: { value: 11, message: 'Phone maximum 11 digits' },
-        }}
         render={({ field }) => (
           <InputGroup>
             <InputLeftAddon children={<PhoneIcon />} />
-            <Input {...field} type="number" placeholder="Phone number" />
+            <Input {...field} type="number" placeholder="Phone number (optional)" />
           </InputGroup>
         )}
       />
