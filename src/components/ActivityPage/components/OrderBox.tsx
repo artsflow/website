@@ -8,7 +8,7 @@ import { showAlert } from 'lib/utils'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
 
-export const OrderBox = ({ id, frequency, duration, price, type }: any) => {
+export const OrderBox = ({ id, frequency, duration, price, monetizationType }: any) => {
   const router = useRouter()
 
   const {
@@ -24,7 +24,7 @@ export const OrderBox = ({ id, frequency, duration, price, type }: any) => {
     }
   }
 
-  const isFree = type === 'Free'
+  const isFree = monetizationType === 'Free'
 
   return (
     <Grid

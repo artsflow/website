@@ -3,7 +3,7 @@ import { useStateMachine } from 'little-state-machine'
 import { format, addMinutes, setHours, setMinutes } from 'date-fns'
 import pluralize from 'pluralize'
 
-export const OrderInfo = ({ duration, price }: any) => {
+export const OrderInfo = ({ duration, price, isFree }: any) => {
   const { state } = useStateMachine() as any
   const { order = {} } = state
   const { date, tickets, time } = order
@@ -24,7 +24,8 @@ export const OrderInfo = ({ duration, price }: any) => {
         </b>
       </Text>
       <Text>
-        Price: <b>£{tickets * price}</b> ({pluralize('ticket', tickets, true)})
+        Price: <b>{isFree ? 'Free' : `£${tickets * price}`}</b> (
+        {pluralize('ticket', tickets, true)})
       </Text>
     </Stack>
   )
