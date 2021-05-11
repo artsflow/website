@@ -1,9 +1,9 @@
-import { Box, Heading } from '@chakra-ui/react'
+import { Box, Heading, Text } from '@chakra-ui/react'
 import GoogleMap from 'google-map-react'
 
 import { GCP_MAPS_KEY } from 'lib/config'
 
-export const Location = ({ lat, lng }: any) => (
+export const Location = ({ lat, lng, town }: any) => (
   <Box
     order={[1, 1]}
     bg="white"
@@ -11,9 +11,10 @@ export const Location = ({ lat, lng }: any) => (
     p={['1.5rem', '2rem']}
     boxShadow={[0, 0, '0px 3px 8px -1px rgba(50, 50, 71, 0.05)']}
   >
-    <Heading as="h3" fontSize="xl" mb="1rem">
+    <Heading as="h3" fontSize="xl" mb="0.5rem">
       Location
     </Heading>
+    {town && <Text mb="1rem">{town}</Text>}
     <Box
       position="relative"
       maxW="full"

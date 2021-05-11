@@ -38,13 +38,16 @@ const grid2c = `
 
 export function ActivityPage({ activity, profile }: any) {
   const { id, title, description, images, location, whatToBring } = activity
+  const { town } = location
   const { lat, lng } = location.geocode
   const [image] = images
+
+  const pageTitle = town ? `${title} in ${town}` : title
 
   return (
     <Box>
       <Meta
-        title={title}
+        title={pageTitle}
         description={description}
         url={`${ARTSFLOW_URL}/a/${id}`}
         image={getImageKitUrl(image, { w: 1200, h: 627 })}
@@ -92,7 +95,7 @@ export function ActivityPage({ activity, profile }: any) {
             <AboutCreative profile={profile} />
           </GridItem>
           <GridItem gridArea="location">
-            <Location lat={lat} lng={lng} />
+            <Location lat={lat} lng={lng} town={town} />
           </GridItem>
           <GridItem gridArea="reviews" order={[2, 2]} />
           <GridItem
