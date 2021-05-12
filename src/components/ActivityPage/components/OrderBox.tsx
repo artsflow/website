@@ -8,7 +8,7 @@ import { showAlert } from 'lib/utils'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
 
-export const OrderBox = ({ id, frequency, duration, price, monetizationType }: any) => {
+export const OrderBox = ({ id, frequency, dates, duration, price, monetizationType }: any) => {
   const router = useRouter()
 
   const {
@@ -34,8 +34,8 @@ export const OrderBox = ({ id, frequency, duration, price, monetizationType }: a
       boxShadow={[0, 0, '0px 3px 8px -1px rgba(50, 50, 71, 0.05)']}
     >
       <Box p={[0, 0, '2rem']}>
-        <AvailableDates frequency={frequency} />
-        <AvailableTimeSlots frequency={frequency} duration={duration} />
+        <AvailableDates frequency={frequency} dates={dates} />
+        <AvailableTimeSlots frequency={frequency} dates={dates} duration={duration} />
       </Box>
       <HStack
         bg={['white', 'white', '#e0f4f7']}
@@ -54,7 +54,7 @@ export const OrderBox = ({ id, frequency, duration, price, monetizationType }: a
         borderBottomRadius={[0, 0, '1rem']}
         justifyContent="space-between"
       >
-        <HStack fontSize="2xl" fontWeight="bold" flex="1" justifyContent="center">
+        <HStack fontSize={['lg', 'xl']} fontWeight="bold" flex="1" justifyContent="center">
           {isFree ? (
             <Text>Free to join</Text>
           ) : (
@@ -69,7 +69,7 @@ export const OrderBox = ({ id, frequency, duration, price, monetizationType }: a
           color="white"
           fontSize="xl"
           alignSelf="flex-start"
-          px={['2rem', '3rem']}
+          px={['1rem', '3rem']}
           py="2rem"
           rounded="12px"
           onClick={handleContinue}

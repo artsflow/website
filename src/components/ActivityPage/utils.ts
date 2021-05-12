@@ -1,38 +1,15 @@
-import { difference } from 'lodash'
-import { RRuleSet, rrulestr } from 'rrule'
+import { sortBy } from 'lodash'
 import { format, addMinutes, addHours } from 'date-fns'
 
-export const ruleText = (r: string, duration: number) => {
-  const rule = rrulestr(r)
-  const from = format(rule.options.dtstart, 'HH:mm')
-  const to = format(addMinutes(rule.options.dtstart, duration), 'HH:mm')
-  const [freq, days] = rule.toText().replace(' for 15 times', '').split(' on ')
-  return { freq, days, time: `${from} - ${to}` }
-}
-
-export const getAvailableDatesMap = (rrules: string[], exdate: string[]) => {
-  const rruleSet = new RRuleSet()
-
-  rrules.forEach((r: string) => {
-    const rule = rrulestr(r)
-    const { dtstart } = rule.options
-    const date = new Date(dtstart)
-    const now = new Date(Date.now())
-
-    date.setDate(now.getDate())
-    date.setMonth(now.getMonth())
-
-    rruleSet.rrule(rrulestr(r, { dtstart: date }))
-  })
-
-  const dates = difference(
-    rruleSet.all().map((e) => e.toString()),
-    exdate.map((d: string) => new Date(d)).map((e: Date) => e.toString())
-  )
-
+export const getAvailableDatesMap = (dates: string[]) => {
   const datesMap = new Map()
 
-  dates.forEach((date) => {
+  const sorted = sortBy(dates, [(d: string) => new Date(d)])
+    .map((d: string) => new Date(d))
+    .filter((d) => d > new Date())
+    .map((d) => d.toString())
+
+  sorted.forEach((date) => {
     const d = new Date(date)
     const dd = d.getDate()
     const mm = d.getMonth()

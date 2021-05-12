@@ -6,14 +6,13 @@ import { RadioCard } from '../../RadioCard'
 import { getAvailableDatesMap, getTimeSlot } from '../utils'
 import { XScroller } from './utils'
 
-export const AvailableTimeSlots = ({ frequency, duration }: any) => {
-  const { rrules, exdate } = frequency
+export const AvailableTimeSlots = ({ duration, dates }: any) => {
   const {
     state: { order },
     actions,
   } = useStateMachine({ update }) as any
 
-  const datesMap = getAvailableDatesMap(rrules, exdate)
+  const datesMap = getAvailableDatesMap(dates)
   const availableTimes: string[] = Array.from(datesMap.get(order.date) || [])
 
   const { getRootProps, getRadioProps } = useRadioGroup({

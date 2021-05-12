@@ -70,8 +70,7 @@
     "react-social-sharing": "^3.3.0",
     "reactfire": "^3.0.0-rc.0",
     "remark-gfm": "^1.0.0",
-    "rooks": "^4.11.0",
-    "rrule": "^2.6.8"
+    "rooks": "^4.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",

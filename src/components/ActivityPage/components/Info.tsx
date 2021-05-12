@@ -1,20 +1,14 @@
 import { Box, Text, Heading, Button, VStack, HStack } from '@chakra-ui/react'
-import { RRuleSet, rrulestr } from 'rrule'
 import { format } from 'date-fns'
 
 import HourglassIcon from 'svg/activity/hourglass.svg'
 import ClockwiseIcon from 'svg/activity/clockwise.svg'
 import UsercircleplusIcon from 'svg/activity/usercircleplus.svg'
 
-import { getAvailableDatesMap, ruleText } from '../utils'
+import { getAvailableDatesMap } from '../utils'
 
-export const Info = ({ category, capacity, frequency, duration }: any) => {
-  const { rrules, exdate } = frequency
-  const rruleSet = new RRuleSet()
-  rrules.forEach((r: string) => rruleSet.rrule(rrulestr(r)))
-
-  const { freq } = ruleText(rrules[0], duration)
-  const datesMap = getAvailableDatesMap(rrules, exdate)
+export const Info = ({ category, capacity, dates, duration }: any) => {
+  const datesMap = getAvailableDatesMap(dates)
   const [nextSession] = [...datesMap.keys()]
 
   return (
@@ -75,7 +69,7 @@ export const Info = ({ category, capacity, frequency, duration }: any) => {
             Frequency
           </Text>
           <Text fontSize="xs" fontWeight="bold" textAlign="center">
-            {freq}
+            ???
           </Text>
         </VStack>
         <VStack

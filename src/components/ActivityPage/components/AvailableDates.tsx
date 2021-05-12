@@ -8,16 +8,14 @@ import { RadioCard } from '../../RadioCard'
 import { getAvailableDatesMap } from '../utils'
 import { XScroller } from './utils'
 
-export const AvailableDates = ({ frequency }: any) => {
+export const AvailableDates = ({ dates }: any) => {
   const [selectedDate, setSelectedDate] = useState('')
-  const { rrules, exdate } = frequency
   const {
     state: { order },
     actions,
   } = useStateMachine({ update }) as any
 
-  const datesMap = getAvailableDatesMap(rrules, exdate)
-  const dates = [...datesMap.keys()]
+  const datesMap = getAvailableDatesMap(dates)
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'days',
@@ -40,7 +38,7 @@ export const AvailableDates = ({ frequency }: any) => {
         Available Dates
       </Heading>
       <XScroller {...group}>
-        {dates.map((value) => {
+        {[...datesMap.keys()].map((value) => {
           const radio = getRadioProps({ value })
           return (
             <RadioCard key={value} {...radio}>
