@@ -32,6 +32,7 @@
     "@emotion/styled": "^11.3.0",
     "@hookform/error-message": "^2.0.0",
     "@rehooks/component-size": "^1.0.3",
+    "@segment/snippet": "^4.13.2",
     "@stripe/react-stripe-js": "^1.4.0",
     "@stripe/stripe-js": "^1.13.2",
     "@types/google-map-react": "^2.1.0",
