@@ -11,6 +11,7 @@ import { showAlert, getTimestamp } from 'lib/utils'
 import { Loading } from 'components/Loading'
 import { useBooking } from 'hooks'
 import { createFreeBooking } from 'api'
+import { trackActivityBooked } from 'analytics'
 
 interface Inputs {
   email: string
@@ -18,7 +19,7 @@ interface Inputs {
   phone: string
 }
 
-export const FreeBooking = () => {
+export const FreeBooking = ({ activity }: any) => {
   const { push, query } = useRouter()
   const { user } = useContext(UserContext)
   const { email, phone: userPhone, displayName } = user
@@ -46,6 +47,7 @@ export const FreeBooking = () => {
     setProcessing(true)
     try {
       await createFreeBooking({ name, phone, timestamp, activityId })
+      trackActivityBooked(activity, date)
     } catch (e) {
       showAlert({ title: 'Booking error', description: e.message })
     }

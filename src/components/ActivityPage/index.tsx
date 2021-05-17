@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Box, Flex, Icon, Grid, GridItem, VStack, IconButton } from '@chakra-ui/react'
 import Link from 'next/link'
 
@@ -5,6 +6,7 @@ import ArtsflowSvg from 'svg/artsflow.svg'
 import ShareSvg from 'svg/activity/share.svg'
 import { getImageKitUrl } from 'lib/utils'
 import { ARTSFLOW_URL } from 'lib/config'
+import { trackViewActivityPage } from 'analytics'
 import { Meta } from '../Meta'
 
 import {
@@ -43,6 +45,10 @@ export function ActivityPage({ activity, profile }: any) {
   const [image] = images
 
   const pageTitle = town ? `${title} in ${town}` : title
+
+  useEffect(() => {
+    trackViewActivityPage(id, title)
+  }, [])
 
   return (
     <Box>

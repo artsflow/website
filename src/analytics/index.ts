@@ -13,3 +13,15 @@ export const trackUserSignIn = (props: UserProps) => {
   window.analytics.identify(userId, { ...props, isUser: true })
   window.analytics.track('User Signed In', { provider })
 }
+
+export const trackViewActivityPage = (activityId: string, title: string) => {
+  window.analytics.track('Activity Page Viewed', { activityId, title })
+}
+
+export const trackConfirmBookingActivity = (activityId: string, bookingDate: string) => {
+  window.analytics.track('Activity Booking Confirmed', { activityId, bookingDate })
+}
+
+export const trackActivityBooked = (activity: any, bookingDate: string) => {
+  window.analytics.track('Activity Booked', { activity, bookingDate })
+}

@@ -78,7 +78,7 @@ export const ActivityBook = ({ activity, profile }: any) => {
           </VStack>
           <VStack w="full" pt="2rem">
             <Login />
-            {isFree ? <FreeBooking /> : <PaymentInfo />}
+            {isFree ? <FreeBooking activity={activity} /> : <PaymentInfo activity={activity} />}
           </VStack>
         </VStack>
       </VStack>

@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { update } from 'lib/store'
 
 import { showAlert } from 'lib/utils'
+import { trackConfirmBookingActivity } from 'analytics'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
 
@@ -20,6 +21,7 @@ export const OrderBox = ({ id, frequency, dates, duration, price, monetizationTy
     if (!order.date || !order.time) showAlert({ title: 'Please confirm date and time' })
     else {
       // TODO: check if capacity is not full
+      trackConfirmBookingActivity(id, order.date)
       router.push(`/a/${id}/book`)
     }
   }

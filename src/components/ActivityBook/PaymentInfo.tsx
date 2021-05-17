@@ -26,6 +26,7 @@ import { showAlert, getTimestamp } from 'lib/utils'
 import { Loading } from 'components/Loading'
 import { getPaymentIntent } from 'api'
 import { useBooking } from 'hooks'
+import { trackActivityBooked } from 'analytics'
 
 const stripePromise = loadStripe(STRIPE_KEY as string)
 
@@ -35,15 +36,15 @@ interface Inputs {
   phone?: string
 }
 
-export const PaymentInfo = () => {
+export const PaymentInfo = ({ activity }: any) => {
   return (
     <Elements stripe={stripePromise}>
-      <OrderForm />
+      <OrderForm activity={activity} />
     </Elements>
   )
 }
 
-const OrderForm = () => {
+const OrderForm = ({ activity }: any) => {
   const { push, query } = useRouter()
   const { user } = useContext(UserContext)
   const { email, phone: userPhone, displayName } = user
@@ -127,6 +128,7 @@ const OrderForm = () => {
 
   useEffect(() => {
     if (payment?.paymentIntent?.status === 'succeeded') {
+      trackActivityBooked(activity, date)
       push(`/a/${activityId}/confirmed/${timestamp}`)
     }
   }, [payment])
