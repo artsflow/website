@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/nextjs'
 import { UserProps } from './types'
 
 export const trackUserSignOut = () => {
@@ -9,9 +10,10 @@ export const trackUserSignUp = ({ provider }: { provider: string }) => {
 }
 
 export const trackUserSignIn = (props: UserProps) => {
-  const { userId, provider } = props
+  const { userId, provider, email, displayName } = props
   window.analytics.identify(userId, { ...props, isUser: true })
   window.analytics.track('User Signed In', { provider })
+  Sentry.setUser({ email, displayName, userId })
 }
 
 export const trackViewActivityPage = (activityId: string, title: string) => {
