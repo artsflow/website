@@ -78,12 +78,16 @@ export const functions = firebase.app().functions('europe-west2')
 
 export const firebaseCallable: any = async (func: string, params: any) => {
   console.info(`>>> callable: ${func}`, params)
+  const trace = perf.trace(`web:${func}`)
+  trace.start()
 
   try {
     const result = await functions.httpsCallable(func, { timeout: 5000 })(params)
+    trace.stop()
     return result
   } catch (e) {
     console.error(`firebaseCallable:error:${func}: ${JSON.stringify(e)}`)
-    return null
+    trace.stop()
+    return e
   }
 }
