@@ -39,8 +39,6 @@ if (!firebase.apps.length) {
   }
 }
 
-export const perf = firebase.performance()
-
 // Auth exports
 export const auth = firebase.auth()
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
@@ -78,6 +76,7 @@ export const functions = firebase.app().functions('europe-west2')
 
 export const firebaseCallable: any = async (func: string, params: any) => {
   console.info(`>>> callable: ${func}`, params)
+  const perf = firebase.performance()
   const trace = perf.trace(`web:${func}`)
   trace.start()
 
