@@ -16,8 +16,8 @@ export const trackUserSignIn = (props: UserProps) => {
   Sentry.setUser({ email, displayName, userId })
 }
 
-export const trackViewActivityPage = (activityId: string, title: string) => {
-  window.analytics.track('Activity Page Viewed', { activityId, title })
+export const trackViewActivityPage = (activityId: string, creativeId: string, title: string) => {
+  window.analytics.track('Activity Page Viewed', { activityId, creativeId, title })
 }
 
 export const trackConfirmBookingActivity = (activityId: string, bookingDate: string) => {

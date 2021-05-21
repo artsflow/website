@@ -39,7 +39,7 @@ const grid2c = `
 `
 
 export function ActivityPage({ activity, profile }: any) {
-  const { id, title, description, images, location, whatToBring } = activity
+  const { id, userId, title, description, images, location, whatToBring } = activity
   const { town } = location
   const { lat, lng } = location.geocode
   const [image] = images
@@ -47,7 +47,7 @@ export function ActivityPage({ activity, profile }: any) {
   const pageTitle = town ? `${title} in ${town}` : title
 
   useEffect(() => {
-    trackViewActivityPage(id, title)
+    trackViewActivityPage(id, userId, title)
   }, [])
 
   return (
