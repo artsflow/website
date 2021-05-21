@@ -24,7 +24,7 @@ import { UserContext } from 'lib/context'
 import StripeIcon from 'svg/stripe.svg'
 import { showAlert, getTimestamp } from 'lib/utils'
 import { Loading } from 'components/Loading'
-import { getPaymentIntent } from 'api'
+import { createPaymentIntent } from 'api'
 import { useBooking } from 'hooks'
 import { trackActivityBooked } from 'analytics'
 
@@ -101,7 +101,7 @@ const OrderForm = ({ activity }: any) => {
       setProcessing(true)
     }
 
-    const { data } = await getPaymentIntent({
+    const { data } = await createPaymentIntent({
       activityId,
       timestamp,
       phone,
