@@ -91,7 +91,7 @@ export const Info = ({ category, capacity, dates, duration }: any) => {
       </HStack>
       <Text fontSize="xs" textAlign="center" display={['none', 'none', 'flex']}>
         Next session on&nbsp;
-        <b>{format(new Date(nextSession), 'dd MMMM')}</b>
+        <b>{nextSession ? format(new Date(nextSession), 'dd MMMM') : '- not scheduleds yet'}</b>
       </Text>
       <Button
         bg="af.teal"
