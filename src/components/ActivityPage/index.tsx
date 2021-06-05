@@ -99,9 +99,11 @@ export function ActivityPage({ activity, profile }: any) {
           <GridItem gridArea="about">
             <AboutCreative profile={profile} />
           </GridItem>
-          <GridItem gridArea="location">
-            <Location lat={lat} lng={lng} town={town} />
-          </GridItem>
+          {lat && lng && (
+            <GridItem gridArea="location">
+              <Location lat={lat} lng={lng} town={town} />
+            </GridItem>
+          )}
           <GridItem gridArea="reviews" order={[2, 2]} />
           <GridItem
             gridArea="description"

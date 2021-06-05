@@ -37,7 +37,7 @@ export const AvailableDates = ({ dates }: any) => {
       <Heading as="h2" fontSize="xl" mb="1.5rem">
         Available Dates
       </Heading>
-      <XScroller {...group}>
+      <XScroller {...group} disableNavigation={dates.length <= 4}>
         {[...datesMap.keys()].map((value) => {
           const radio = getRadioProps({ value })
           return (
