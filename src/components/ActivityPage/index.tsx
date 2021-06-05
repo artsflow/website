@@ -14,7 +14,6 @@ import {
   Gallery,
   Title,
   Description,
-  WhatToBring,
   Location,
   OrderBox,
   Share,
@@ -39,7 +38,7 @@ const grid2c = `
 `
 
 export function ActivityPage({ activity, profile }: any) {
-  const { id, userId, title, description, images, location, whatToBring } = activity
+  const { id, userId, title, description, images, location } = activity
   const { town } = location
   const { lat, lng } = location.geocode
   const [image] = images
@@ -111,7 +110,6 @@ export function ActivityPage({ activity, profile }: any) {
           >
             <Title text={title} fontSize={['2xl', '2xl']} />
             <Description text={description} />
-            <WhatToBring text={whatToBring} />
           </GridItem>
           <GridItem gridArea="order" order={[3, 3]} px={['1.5rem', '1.5rem', '3rem']}>
             <OrderBox {...activity} />
