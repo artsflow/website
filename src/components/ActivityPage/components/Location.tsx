@@ -9,6 +9,7 @@ export const Location = ({ lat, lng, town }: any) => (
     bg="white"
     rounded="1rem"
     p={['1.5rem', '2rem']}
+    mt={[0, '1.5rem']}
     boxShadow={[0, 0, '0px 3px 8px -1px rgba(50, 50, 71, 0.05)']}
   >
     <Heading as="h3" fontSize="xl" mb="0.5rem">

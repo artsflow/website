@@ -33,12 +33,12 @@ const grid1c = `
 const grid2c = `
   "gallery gallery info"
   "description description about"
-  "description description location"
-  "order order reviews"
+  "description description ."
+  "order order ."
 `
 
 export function ActivityPage({ activity, profile }: any) {
-  const { id, userId, title, description, images, location } = activity
+  const { id, userId, title, description, images, location, activityPresence } = activity
   const { town } = location
   const { lat, lng } = location.geocode
   const [image] = images
@@ -87,7 +87,7 @@ export function ActivityPage({ activity, profile }: any) {
           maxW={['full', 'full', '1200px']}
           templateAreas={[grid1c, grid1c, grid2c]}
           templateColumns={['', '', '1fr 1fr 1fr']}
-          templateRows={['', '', '', '0.5fr 0.3fr 0.3fr 1fr']}
+          templateRows={['', '', '', '']}
           gap="20px 0px"
         >
           <GridItem gridArea="gallery">
@@ -98,13 +98,8 @@ export function ActivityPage({ activity, profile }: any) {
           </GridItem>
           <GridItem gridArea="about">
             <AboutCreative profile={profile} />
+            {activityPresence === 'In Person' && <Location lat={lat} lng={lng} town={town} />}
           </GridItem>
-          {lat && lng && (
-            <GridItem gridArea="location">
-              <Location lat={lat} lng={lng} town={town} />
-            </GridItem>
-          )}
-          <GridItem gridArea="reviews" order={[2, 2]} />
           <GridItem
             gridArea="description"
             px={['1.5rem', '1.5rem', '3rem']}
