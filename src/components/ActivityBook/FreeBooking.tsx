@@ -11,6 +11,7 @@ import { showAlert, getTimestamp } from 'lib/utils'
 import { Loading } from 'components/Loading'
 import { useBooking } from 'hooks'
 import { createFreeBooking } from 'api'
+import { trackActivityBooked } from 'analytics'
 
 interface Inputs {
   email: string
@@ -18,7 +19,7 @@ interface Inputs {
   phone: string
 }
 
-export const FreeBooking = () => {
+export const FreeBooking = ({ activity }: any) => {
   const { push, query } = useRouter()
   const { user } = useContext(UserContext)
   const { email, phone: userPhone, displayName } = user
@@ -41,11 +42,11 @@ export const FreeBooking = () => {
   }
 
   const handleBookNow = async (bookingDetails: any) => {
-    console.log('handlePayNow', bookingDetails)
     const { phone, name } = bookingDetails
     setProcessing(true)
     try {
       await createFreeBooking({ name, phone, timestamp, activityId })
+      trackActivityBooked(activity, date)
     } catch (e) {
       showAlert({ title: 'Booking error', description: e.message })
     }
@@ -86,15 +87,10 @@ export const FreeBooking = () => {
         name="phone"
         defaultValue={userPhone}
         control={control}
-        rules={{
-          required: 'Invalid phone number',
-          minLength: { value: 10, message: 'Phone minimum 10 digits' },
-          maxLength: { value: 11, message: 'Phone maximum 11 digits' },
-        }}
         render={({ field }) => (
           <InputGroup>
             <InputLeftAddon children={<PhoneIcon />} />
-            <Input {...field} type="number" placeholder="Phone number" />
+            <Input {...field} type="number" placeholder="Phone number (optional)" />
           </InputGroup>
         )}
       />

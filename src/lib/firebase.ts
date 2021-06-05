@@ -3,6 +3,7 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 import 'firebase/functions'
+import 'firebase/performance'
 
 import {
   FIREBASE_API_KEY,
@@ -74,13 +75,17 @@ export function postToJSON(doc: any) {
 export const functions = firebase.app().functions('europe-west2')
 
 export const firebaseCallable: any = async (func: string, params: any) => {
-  console.info(`>>> callable: ${func}`, params)
+  const perf = firebase.performance()
+  const trace = perf.trace(`web:${func}`)
+  trace.start()
 
   try {
     const result = await functions.httpsCallable(func, { timeout: 5000 })(params)
+    trace.stop()
     return result
   } catch (e) {
     console.error(`firebaseCallable:error:${func}: ${JSON.stringify(e)}`)
-    return null
+    trace.stop()
+    return e
   }
 }

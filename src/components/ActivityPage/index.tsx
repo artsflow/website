@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Box, Flex, Icon, Grid, GridItem, VStack, IconButton } from '@chakra-ui/react'
 import Link from 'next/link'
 
@@ -5,6 +6,7 @@ import ArtsflowSvg from 'svg/artsflow.svg'
 import ShareSvg from 'svg/activity/share.svg'
 import { getImageKitUrl } from 'lib/utils'
 import { ARTSFLOW_URL } from 'lib/config'
+import { trackViewActivityPage } from 'analytics'
 import { Meta } from '../Meta'
 
 import {
@@ -12,7 +14,6 @@ import {
   Gallery,
   Title,
   Description,
-  WhatToBring,
   Location,
   OrderBox,
   Share,
@@ -32,19 +33,26 @@ const grid1c = `
 const grid2c = `
   "gallery gallery info"
   "description description about"
-  "description description location"
-  "order order reviews"
+  "description description ."
+  "order order ."
 `
 
 export function ActivityPage({ activity, profile }: any) {
-  const { id, title, description, images, location, whatToBring } = activity
+  const { id, userId, title, description, images, location, activityPresence } = activity
+  const { town } = location
   const { lat, lng } = location.geocode
   const [image] = images
+
+  const pageTitle = town ? `${title} in ${town}` : title
+
+  useEffect(() => {
+    trackViewActivityPage(id, userId, title)
+  }, [])
 
   return (
     <Box>
       <Meta
-        title={title}
+        title={pageTitle}
         description={description}
         url={`${ARTSFLOW_URL}/a/${id}`}
         image={getImageKitUrl(image, { w: 1200, h: 627 })}
@@ -79,7 +87,7 @@ export function ActivityPage({ activity, profile }: any) {
           maxW={['full', 'full', '1200px']}
           templateAreas={[grid1c, grid1c, grid2c]}
           templateColumns={['', '', '1fr 1fr 1fr']}
-          templateRows={['', '', '', '0.5fr 0.3fr 0.3fr 1fr']}
+          templateRows={['', '', '', '']}
           gap="20px 0px"
         >
           <GridItem gridArea="gallery">
@@ -90,11 +98,8 @@ export function ActivityPage({ activity, profile }: any) {
           </GridItem>
           <GridItem gridArea="about">
             <AboutCreative profile={profile} />
+            {activityPresence === 'In Person' && <Location lat={lat} lng={lng} town={town} />}
           </GridItem>
-          <GridItem gridArea="location">
-            <Location lat={lat} lng={lng} />
-          </GridItem>
-          <GridItem gridArea="reviews" order={[2, 2]} />
           <GridItem
             gridArea="description"
             px={['1.5rem', '1.5rem', '3rem']}
@@ -102,7 +107,6 @@ export function ActivityPage({ activity, profile }: any) {
           >
             <Title text={title} fontSize={['2xl', '2xl']} />
             <Description text={description} />
-            <WhatToBring text={whatToBring} />
           </GridItem>
           <GridItem gridArea="order" order={[3, 3]} px={['1.5rem', '1.5rem', '3rem']}>
             <OrderBox {...activity} />

@@ -1,4 +1,5 @@
-import { Text, Heading } from '@chakra-ui/react'
+import { Heading, VStack } from '@chakra-ui/react'
+import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 
 export const Title = ({ text, ...rest }: any) => (
   <Heading mb="1rem" {...rest}>
@@ -7,26 +8,43 @@ export const Title = ({ text, ...rest }: any) => (
 )
 
 export const Description = ({ text }: any) => {
-  return text.split('\n').map((line: string, i: number) => (
-    <Text color="#616167" key={i} overflowWrap="anywhere" mb="1rem">
-      {line}
-    </Text>
-  ))
+  return (
+    <VStack
+      alignItems="flex-start"
+      pb="1rem"
+      sx={{
+        h3: { fontWeight: 'semibold', fontSize: 'lg' },
+        'ul, ol': { pl: '2rem' },
+        blockquote: {
+          bg: 'rgba(0, 0, 0, 0.05)',
+          p: '1rem',
+          borderLeft: '4px solid #ccc',
+          quotes: '-',
+          w: 'full',
+        },
+        'blockquote:before': {
+          color: '#ccc',
+          content: 'open-quote',
+          fontSize: '4em',
+          lineHeight: '0.1em',
+          mr: '0.25em',
+          verticalAlign: '-0.4em',
+        },
+        'blockquote p': {
+          display: 'inline',
+          fontStyle: 'italic',
+        },
+      }}
+    >
+      {ReactHtmlParser(text, { transform })}
+    </VStack>
+  )
 }
 
-export const WhatToBring = ({ text }: any) => {
-  const content = text.split('\n').map((line: string, i: number) => (
-    <Text color="#616167" key={i} overflowWrap="anywhere" mb="1rem">
-      {line}
-    </Text>
-  ))
-
-  return (
-    <>
-      <Heading as="h2" fontSize="xl" mt="2rem" mb="1rem">
-        What to bring
-      </Heading>
-      {content}
-    </>
-  )
+const transform = (node: any, index: number) => {
+  if (node.type === 'tag' && node.name === 'a') {
+    const newNode = { ...node, name: 'span', attribs: { ...node.attribs, href: null } }
+    return convertNodeToElement(newNode, index, transform)
+  }
+  return convertNodeToElement(node, index, transform)
 }

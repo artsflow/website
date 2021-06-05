@@ -29,7 +29,7 @@ export const showAlert = ({ title, description, status = 'error' }: AlertProps) 
     status,
     duration: 3000,
     isClosable: true,
-    position: 'top',
+    position: 'bottom',
   })
 
 export const getTimestamp = (date: string, time: string) => {

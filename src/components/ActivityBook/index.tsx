@@ -13,7 +13,7 @@ import { OrderInfo } from './OrderInfo'
 import { PaymentInfo } from './PaymentInfo'
 
 export const ActivityBook = ({ activity, profile }: any) => {
-  const { id, title, images, price, duration, type } = activity
+  const { id, title, images, price, duration, monetizationType } = activity
   const { state } = useStateMachine() as any
   const router = useRouter()
   const { user } = useContext(UserContext)
@@ -21,7 +21,7 @@ export const ActivityBook = ({ activity, profile }: any) => {
   const { displayName } = profile
   const [image] = images
 
-  const isFree = type === 'Free'
+  const isFree = monetizationType === 'Free'
 
   useEffect(() => {
     const { date, tickets, time } = state.order || {}
@@ -74,11 +74,11 @@ export const ActivityBook = ({ activity, profile }: any) => {
               <Heading fontSize="2xl">{title}</Heading>t
               <Text fontSize="2xl"> with {displayName}</Text>
             </Stack>
-            <OrderInfo duration={duration} price={price} />
+            <OrderInfo duration={duration} price={price} isFree={isFree} />
           </VStack>
           <VStack w="full" pt="2rem">
             <Login />
-            {isFree ? <FreeBooking /> : <PaymentInfo />}
+            {isFree ? <FreeBooking activity={activity} /> : <PaymentInfo activity={activity} />}
           </VStack>
         </VStack>
       </VStack>

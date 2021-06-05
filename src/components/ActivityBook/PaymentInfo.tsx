@@ -24,26 +24,27 @@ import { UserContext } from 'lib/context'
 import StripeIcon from 'svg/stripe.svg'
 import { showAlert, getTimestamp } from 'lib/utils'
 import { Loading } from 'components/Loading'
-import { getPaymentIntent } from 'api'
+import { createPaymentIntent } from 'api'
 import { useBooking } from 'hooks'
+import { trackActivityBooked } from 'analytics'
 
 const stripePromise = loadStripe(STRIPE_KEY as string)
 
 interface Inputs {
   email: string
   name: string
-  phone: string
+  phone?: string
 }
 
-export const PaymentInfo = () => {
+export const PaymentInfo = ({ activity }: any) => {
   return (
     <Elements stripe={stripePromise}>
-      <OrderForm />
+      <OrderForm activity={activity} />
     </Elements>
   )
 }
 
-const OrderForm = () => {
+const OrderForm = ({ activity }: any) => {
   const { push, query } = useRouter()
   const { user } = useContext(UserContext)
   const { email, phone: userPhone, displayName } = user
@@ -76,17 +77,13 @@ const OrderForm = () => {
   }
 
   const handleErrors = (errors: any) => {
-    const { phone, name } = errors
-    if (phone) {
-      showAlert({ title: phone.message })
-    }
+    const { name } = errors
     if (name) {
       showAlert({ title: name.message })
     }
   }
 
   const handlePayNow = async (billingDetails: any) => {
-    console.log('handlePayNow', billingDetails, error, cardComplete)
     const { phone, name } = billingDetails
 
     if (!stripe || !elements) {
@@ -103,7 +100,7 @@ const OrderForm = () => {
       setProcessing(true)
     }
 
-    const { data } = await getPaymentIntent({
+    const { data } = await createPaymentIntent({
       activityId,
       timestamp,
       phone,
@@ -117,7 +114,6 @@ const OrderForm = () => {
       },
     })
 
-    console.log(payload)
     setProcessing(false)
     setPayment(payload)
   }
@@ -130,6 +126,7 @@ const OrderForm = () => {
 
   useEffect(() => {
     if (payment?.paymentIntent?.status === 'succeeded') {
+      trackActivityBooked(activity, date)
       push(`/a/${activityId}/confirmed/${timestamp}`)
     }
   }, [payment])
@@ -162,15 +159,10 @@ const OrderForm = () => {
         name="phone"
         defaultValue={userPhone}
         control={control}
-        rules={{
-          required: 'Invalid phone number',
-          minLength: { value: 10, message: 'Phone minimum 10 digits' },
-          maxLength: { value: 11, message: 'Phone maximum 11 digits' },
-        }}
         render={({ field }) => (
           <InputGroup>
             <InputLeftAddon children={<PhoneIcon />} />
-            <Input {...field} type="number" placeholder="Phone number" />
+            <Input {...field} type="number" placeholder="Phone number (optional)" />
           </InputGroup>
         )}
       />

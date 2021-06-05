@@ -44,8 +44,12 @@ export function ImageGallery({ images }: { images: string[] }) {
 
   return (
     <Flex h="full" w="full" pos="relative" ref={ref}>
-      <NavButton dir="left" onClick={() => paginate(-1)} />
-      <NavButton dir="right" onClick={() => paginate(1)} />
+      {images.length > 1 && (
+        <>
+          <NavButton dir="left" onClick={() => paginate(-1)} />
+          <NavButton dir="right" onClick={() => paginate(1)} />
+        </>
+      )}
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           style={{ position: 'absolute' }}
@@ -74,11 +78,13 @@ export function ImageGallery({ images }: { images: string[] }) {
           }}
         />
       </AnimatePresence>
-      <HStack pos="absolute" left="0" right="0" bottom="20px" zIndex="2" justifyContent="center">
-        {images.map((img, i) => (
-          <Dot key={img} selected={i === imageIndex} onClick={() => goPage(i)} />
-        ))}
-      </HStack>
+      {images.length > 1 && (
+        <HStack pos="absolute" left="0" right="0" bottom="20px" zIndex="2" justifyContent="center">
+          {images.map((img, i) => (
+            <Dot key={img} selected={i === imageIndex} onClick={() => goPage(i)} />
+          ))}
+        </HStack>
+      )}
     </Flex>
   )
 }

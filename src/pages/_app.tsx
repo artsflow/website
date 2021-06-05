@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 import NProgress from 'nprogress'
@@ -15,7 +16,10 @@ import theme from '../theme'
 
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', () => NProgress.start())
-Router.events.on('routeChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeComplete', (url) => {
+  NProgress.done()
+  window.analytics?.page(url)
+})
 Router.events.on('routeChangeError', () => NProgress.done())
 
 createStore(initialStore, {
@@ -26,6 +30,10 @@ createStore(initialStore, {
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const userData = useUserData()
+
+  useEffect(() => {
+    // if (userData) window.analytics?.identify(userData.user.id)
+  }, [])
 
   return (
     <MixpanelProvider token="b6e4f2b7971a646c6bbc3603382bc0fb">

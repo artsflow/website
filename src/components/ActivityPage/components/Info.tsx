@@ -1,20 +1,14 @@
-import { Box, Text, Heading, Button, VStack, HStack } from '@chakra-ui/react'
-import { RRuleSet, rrulestr } from 'rrule'
+import { Text, Heading, Button, VStack, HStack } from '@chakra-ui/react'
 import { format } from 'date-fns'
 
 import HourglassIcon from 'svg/activity/hourglass.svg'
 import ClockwiseIcon from 'svg/activity/clockwise.svg'
 import UsercircleplusIcon from 'svg/activity/usercircleplus.svg'
 
-import { getAvailableDatesMap, ruleText } from '../utils'
+import { getAvailableDatesMap } from '../utils'
 
-export const Info = ({ category, capacity, frequency, duration }: any) => {
-  const { rrules, exdate } = frequency
-  const rruleSet = new RRuleSet()
-  rrules.forEach((r: string) => rruleSet.rrule(rrulestr(r)))
-
-  const { freq } = ruleText(rrules[0], duration)
-  const datesMap = getAvailableDatesMap(rrules, exdate)
+export const Info = ({ category, capacity, dates, duration, activityPresence }: any) => {
+  const datesMap = getAvailableDatesMap(dates)
   const [nextSession] = [...datesMap.keys()]
 
   return (
@@ -37,14 +31,14 @@ export const Info = ({ category, capacity, frequency, duration }: any) => {
       >
         Activity details
       </Heading>
-      <Box
-        color="af.pink"
-        fontWeight="bold"
-        alignSelf="flex-start"
-        display={['none', 'none', 'block']}
-      >
-        {category}
-      </Box>
+      <HStack justifyContent="space-between" w="full" px={['2rem', 0]}>
+        <Text color="af.pink" fontWeight="bold">
+          {category}
+        </Text>
+        <Text color="af.teal" fontWeight="bold">
+          {activityPresence}
+        </Text>
+      </HStack>
       <HStack spacing="10px">
         <VStack
           bg="#edf8fa"
@@ -66,16 +60,17 @@ export const Info = ({ category, capacity, frequency, duration }: any) => {
           bg="#fcf2f7"
           rounded="10px"
           p="1rem"
+          px="0"
           w="100px"
           h="130px"
           justifyContent="space-around"
         >
           <ClockwiseIcon />
           <Text color="#616167" fontSize="xs" textAlign="center">
-            Frequency
+            Next session
           </Text>
           <Text fontSize="xs" fontWeight="bold" textAlign="center">
-            {freq}
+            {nextSession ? format(new Date(nextSession), 'dd MMMM') : '- not scheduleds yet'}
           </Text>
         </VStack>
         <VStack
@@ -95,10 +90,6 @@ export const Info = ({ category, capacity, frequency, duration }: any) => {
           </Text>
         </VStack>
       </HStack>
-      <Text fontSize="xs" textAlign="center" display={['none', 'none', 'flex']}>
-        Next session on&nbsp;
-        <b>{format(new Date(nextSession), 'dd MMMM')}</b>
-      </Text>
       <Button
         bg="af.teal"
         color="white"
