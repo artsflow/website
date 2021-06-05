@@ -75,7 +75,6 @@ export function postToJSON(doc: any) {
 export const functions = firebase.app().functions('europe-west2')
 
 export const firebaseCallable: any = async (func: string, params: any) => {
-  console.info(`>>> callable: ${func}`, params)
   const perf = firebase.performance()
   const trace = perf.trace(`web:${func}`)
   trace.start()

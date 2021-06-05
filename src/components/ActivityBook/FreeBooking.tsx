@@ -42,7 +42,6 @@ export const FreeBooking = ({ activity }: any) => {
   }
 
   const handleBookNow = async (bookingDetails: any) => {
-    console.log('handlePayNow', bookingDetails)
     const { phone, name } = bookingDetails
     setProcessing(true)
     try {

@@ -11,6 +11,7 @@ import {
 import { Twitter, Facebook, Mail, Linkedin, Whatsapp } from 'react-social-sharing'
 
 import { ARTSFLOW_URL } from 'lib/config'
+import { trackShareButtonClicked, trackShareMenuClicked } from 'analytics'
 
 export const Share = ({
   id,
@@ -20,11 +21,11 @@ export const Share = ({
   triggerProps,
 }: any) => {
   const handleClick = (source: string) => {
-    console.log('share:', source)
+    trackShareMenuClicked(source)
   }
 
   const handleClickShareMenu = () => {
-    console.log('share menu open')
+    trackShareButtonClicked()
   }
 
   const link = `${ARTSFLOW_URL}/a/${id}`

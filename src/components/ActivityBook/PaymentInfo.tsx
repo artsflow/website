@@ -84,7 +84,6 @@ const OrderForm = ({ activity }: any) => {
   }
 
   const handlePayNow = async (billingDetails: any) => {
-    console.log('handlePayNow', billingDetails, error, cardComplete)
     const { phone, name } = billingDetails
 
     if (!stripe || !elements) {
@@ -115,7 +114,6 @@ const OrderForm = ({ activity }: any) => {
       },
     })
 
-    console.log(payload)
     setProcessing(false)
     setPayment(payload)
   }
