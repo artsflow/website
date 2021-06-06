@@ -3,6 +3,6 @@ export interface UserProps {
   email: string
   firstName?: string
   lastName?: string
-  displayName: string
+  name: string
   provider: string
 }

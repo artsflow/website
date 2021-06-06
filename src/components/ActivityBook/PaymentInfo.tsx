@@ -159,10 +159,11 @@ const OrderForm = ({ activity }: any) => {
         name="phone"
         defaultValue={userPhone}
         control={control}
+        rules={{ required: true }}
         render={({ field }) => (
           <InputGroup>
             <InputLeftAddon children={<PhoneIcon />} />
-            <Input {...field} type="number" placeholder="Phone number (optional)" />
+            <Input {...field} type="number" placeholder="Phone number" />
           </InputGroup>
         )}
       />
