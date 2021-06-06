@@ -36,6 +36,11 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="manifest" href="/site.webmanifest" />
           <script dangerouslySetInnerHTML={{ __html: this.renderSnippet() }} />
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "bd642cc7908340e2bd5708e89639e30a"}'
+          />
         </Head>
         <style>
           {`
