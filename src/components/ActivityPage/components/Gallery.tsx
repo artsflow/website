@@ -4,7 +4,7 @@ import { ImageGallery } from 'components/ImageGallery'
 
 export const Gallery = ({ images }: any) => (
   <Box
-    h={['260px', 'full']}
+    h={['260px', '380px', 'full']}
     w="full"
     roundedTopLeft={[0, 0, 0, '1rem']}
     roundedBottomLeft={['0', '0', '1rem']}
