@@ -1,13 +1,24 @@
-import { Text, Heading, Button, VStack, HStack } from '@chakra-ui/react'
+import { Text, Heading, Button, VStack, HStack, Icon } from '@chakra-ui/react'
 import { format } from 'date-fns'
 
 import HourglassIcon from 'svg/activity/hourglass.svg'
 import ClockwiseIcon from 'svg/activity/clockwise.svg'
 import UsercircleplusIcon from 'svg/activity/usercircleplus.svg'
+import { FiUser, FiStar } from 'react-icons/fi'
+import { MdEqualizer } from 'react-icons/md'
 
 import { getAvailableDatesMap } from '../utils'
 
-export const Info = ({ category, capacity, dates, duration, activityPresence }: any) => {
+export const Info = ({
+  category,
+  capacity,
+  dates,
+  duration,
+  activityPresence,
+  audienceLevel,
+  audienceType,
+  categoryType,
+}: any) => {
   const datesMap = getAvailableDatesMap(dates)
   const [nextSession] = [...datesMap.keys()]
 
@@ -15,8 +26,8 @@ export const Info = ({ category, capacity, dates, duration, activityPresence }: 
     <VStack
       bg="white"
       h="full"
-      spacing="2rem"
-      p={[0, '2rem']}
+      spacing="1rem"
+      p={[0, '1rem']}
       roundedBottomRight="1rem"
       roundedTopRight="1rem"
       justifyContent="center"
@@ -26,12 +37,12 @@ export const Info = ({ category, capacity, dates, duration, activityPresence }: 
         as="h2"
         fontSize="xl"
         alignSelf="flex-start"
-        px="1.5rem"
+        px="2rem"
         display={['block', 'block', 'none']}
       >
         Activity details
       </Heading>
-      <HStack justifyContent="space-between" w="full" px={['2rem', 0]}>
+      <HStack justifyContent="space-between" w="full" px={['2rem', '0rem']}>
         <Text color="af.pink" fontWeight="bold">
           {category}
         </Text>
@@ -39,6 +50,59 @@ export const Info = ({ category, capacity, dates, duration, activityPresence }: 
           {activityPresence}
         </Text>
       </HStack>
+
+      <HStack spacing="10px">
+        <VStack
+          bg="#fffaea"
+          rounded="10px"
+          p="1rem"
+          w="100px"
+          h="130px"
+          justifyContent="space-around"
+        >
+          <Icon as={MdEqualizer} boxSize="24px" color="#FCCE36" />
+          <Text color="#616167" fontSize="xs" textAlign="center">
+            Level
+          </Text>
+          <Text fontSize="xs" fontWeight="bold" textAlign="center">
+            {audienceLevel}
+          </Text>
+        </VStack>
+        <VStack
+          bg="#edf8fa"
+          rounded="10px"
+          p="1rem"
+          px="0"
+          w="100px"
+          h="130px"
+          justifyContent="space-around"
+        >
+          <Icon as={FiUser} boxSize="24px" color="#47BCC8" />
+          <Text color="#616167" fontSize="xs" textAlign="center">
+            Suitability
+          </Text>
+          <Text fontSize="xs" fontWeight="bold" textAlign="center">
+            {audienceType}
+          </Text>
+        </VStack>
+        <VStack
+          bg="#fcf2f7"
+          rounded="10px"
+          p="1rem"
+          w="100px"
+          h="130px"
+          justifyContent="space-around"
+        >
+          <Icon as={FiStar} boxSize="24px" color="#E27CB0" />
+          <Text color="#616167" fontSize="xs" textAlign="center">
+            Type
+          </Text>
+          <Text fontSize="xs" fontWeight="bold" textAlign="center">
+            {categoryType}
+          </Text>
+        </VStack>
+      </HStack>
+
       <HStack spacing="10px">
         <VStack
           bg="#edf8fa"
@@ -94,7 +158,6 @@ export const Info = ({ category, capacity, dates, duration, activityPresence }: 
         bg="af.teal"
         color="white"
         fontSize="xl"
-        alignSelf="flex-start"
         px="2rem"
         py={['1.5rem', '2rem']}
         w="full"
