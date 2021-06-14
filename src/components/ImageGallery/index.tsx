@@ -91,10 +91,10 @@ export function ImageGallery({ images }: { images: string[] }) {
 
 const Dot = ({ selected, onClick }: any) => (
   <Box
-    w={selected ? '14px' : '8px'}
-    h={selected ? '14px' : '8px'}
+    w={selected ? '14px' : '10px'}
+    h={selected ? '14px' : '10px'}
     rounded="full"
-    bg={selected ? 'af.teal' : 'gray.300'}
+    bg={selected ? 'af.teal' : 'gray'}
     border={selected ? '2px solid white' : 'none'}
     onClick={onClick}
   />
