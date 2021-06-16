@@ -134,7 +134,7 @@ export const Info = ({
             Next session
           </Text>
           <Text fontSize="xs" fontWeight="bold" textAlign="center">
-            {nextSession ? format(new Date(nextSession), 'dd MMMM') : '- not scheduleds yet'}
+            {nextSession ? format(new Date(nextSession), 'dd MMMM') : 'not scheduled'}
           </Text>
         </VStack>
         <VStack
