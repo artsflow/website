@@ -10,7 +10,8 @@ import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
 import { getAvailableDatesMap } from '../utils'
 
-export const OrderBox = ({ id, frequency, dates, duration, price, monetizationType }: any) => {
+export const OrderBox = (activity: any) => {
+  const { id, frequency, dates, duration, price, monetizationType, status } = activity
   const router = useRouter()
 
   const {
@@ -32,6 +33,8 @@ export const OrderBox = ({ id, frequency, dates, duration, price, monetizationTy
   const datesMap = getAvailableDatesMap(dates)
   const availableDates = [...datesMap.keys()]
 
+  const isPaused = status === 'paused'
+
   return (
     <Grid
       bg="white"
@@ -40,8 +43,14 @@ export const OrderBox = ({ id, frequency, dates, duration, price, monetizationTy
       boxShadow={[0, 0, '0px 3px 8px -1px rgba(50, 50, 71, 0.05)']}
     >
       <Box p={[0, 0, '2rem']}>
-        <AvailableDates frequency={frequency} dates={dates} />
-        <AvailableTimeSlots frequency={frequency} dates={dates} duration={duration} />
+        {isPaused ? (
+          <Text>This activity is paused and does not accept bookings at this time.</Text>
+        ) : (
+          <>
+            <AvailableDates frequency={frequency} dates={dates} />
+            <AvailableTimeSlots frequency={frequency} dates={dates} duration={duration} />
+          </>
+        )}
       </Box>
       <HStack
         bg={['white', 'white', '#e0f4f7']}
@@ -79,7 +88,7 @@ export const OrderBox = ({ id, frequency, dates, duration, price, monetizationTy
           py="2rem"
           rounded="12px"
           onClick={handleContinue}
-          disabled={!availableDates.length}
+          disabled={!availableDates.length || isPaused}
         >
           Continue
         </Button>
