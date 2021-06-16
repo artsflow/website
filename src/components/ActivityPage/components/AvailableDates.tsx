@@ -3,7 +3,7 @@ import { Box, Heading, useRadioGroup, Text } from '@chakra-ui/react'
 import { format } from 'date-fns'
 import { useStateMachine } from 'little-state-machine'
 
-import { update } from 'lib/store'
+import { update, resetStore } from 'lib/store'
 import { RadioCard } from '../../RadioCard'
 import { getAvailableDatesMap } from '../utils'
 import { XScroller } from './utils'
@@ -13,9 +13,10 @@ export const AvailableDates = ({ dates }: any) => {
   const {
     state: { order },
     actions,
-  } = useStateMachine({ update }) as any
+  } = useStateMachine({ update, resetStore }) as any
 
   const datesMap = getAvailableDatesMap(dates)
+  const availableDates = [...datesMap.keys()]
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'days',
@@ -29,7 +30,7 @@ export const AvailableDates = ({ dates }: any) => {
   const group = getRootProps()
 
   useEffect(() => {
-    setSelectedDate(order.date)
+    actions.resetStore()
   }, [])
 
   return (
@@ -37,19 +38,23 @@ export const AvailableDates = ({ dates }: any) => {
       <Heading as="h2" fontSize="xl" mb="1.5rem">
         Available Dates
       </Heading>
-      <XScroller {...group} disableNavigation={dates.length <= 4}>
-        {[...datesMap.keys()].map((value) => {
-          const radio = getRadioProps({ value })
-          return (
-            <RadioCard key={value} {...radio}>
-              <Text fontSize="xs">{format(new Date(value), 'eee')}</Text>
-              <Text fontWeight="bold" fontSize="xs">
-                {format(new Date(value), 'dd MMM')}
-              </Text>
-            </RadioCard>
-          )
-        })}
-      </XScroller>
+      {availableDates.length > 0 ? (
+        <XScroller {...group} disableNavigation={availableDates.length <= 4}>
+          {availableDates.map((value) => {
+            const radio = getRadioProps({ value })
+            return (
+              <RadioCard key={value} {...radio}>
+                <Text fontSize="xs">{format(new Date(value), 'eee')}</Text>
+                <Text fontWeight="bold" fontSize="xs">
+                  {format(new Date(value), 'dd MMM')}
+                </Text>
+              </RadioCard>
+            )
+          })}
+        </XScroller>
+      ) : (
+        <Text>no dates are scheduled</Text>
+      )}
     </Box>
   )
 }

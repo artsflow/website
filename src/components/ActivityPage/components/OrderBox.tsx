@@ -8,6 +8,7 @@ import { showAlert } from 'lib/utils'
 import { trackConfirmBookingActivity } from 'analytics'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
+import { getAvailableDatesMap } from '../utils'
 
 export const OrderBox = ({ id, frequency, dates, duration, price, monetizationType }: any) => {
   const router = useRouter()
@@ -27,6 +28,9 @@ export const OrderBox = ({ id, frequency, dates, duration, price, monetizationTy
   }
 
   const isFree = monetizationType === 'Free'
+
+  const datesMap = getAvailableDatesMap(dates)
+  const availableDates = [...datesMap.keys()]
 
   return (
     <Grid
@@ -75,6 +79,7 @@ export const OrderBox = ({ id, frequency, dates, duration, price, monetizationTy
           py="2rem"
           rounded="12px"
           onClick={handleContinue}
+          disabled={!availableDates.length}
         >
           Continue
         </Button>

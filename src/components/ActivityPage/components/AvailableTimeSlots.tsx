@@ -25,7 +25,7 @@ export const AvailableTimeSlots = ({ duration, dates }: any) => {
 
   const group = getRootProps()
 
-  if (!order.date) return null
+  if (!order.date || !availableTimes.length) return null
 
   return (
     <VStack mb="1.5rem" alignItems="flex-start">
