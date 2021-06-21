@@ -37,3 +37,9 @@ export const getTimestamp = (date: string, time: string) => {
   const activityDate = addMinutes(addHours(new Date(date), +hh), +mm)
   return getUnixTime(activityDate)
 }
+
+const ARTSFLOW_FEE = 10
+
+export const getAmount = (price: number, isFeePassed: boolean) => {
+  return isFeePassed ? price + (price * ARTSFLOW_FEE) / 100 : price
+}
