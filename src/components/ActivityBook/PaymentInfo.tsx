@@ -119,7 +119,7 @@ const OrderForm = ({ activity }: any) => {
   }
 
   useEffect(() => {
-    if (booking?.length > 0) {
+    if (booking?.length > 0 && !booking?.[0].isCancelled) {
       push(`/a/${activityId}/confirmed/${timestamp}`)
     }
   }, [booking])
