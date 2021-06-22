@@ -4,7 +4,7 @@ import { useStateMachine } from 'little-state-machine'
 import { useRouter } from 'next/router'
 
 import ArtsflowSvg from 'svg/artsflow.svg'
-import { getImageKitUrl } from 'lib/utils'
+import { getImageKitUrl, getAmount } from 'lib/utils'
 import { UserContext } from 'lib/context'
 import { Meta } from '../Meta'
 import { Login } from '../Login'
@@ -13,7 +13,7 @@ import { OrderInfo } from './OrderInfo'
 import { PaymentInfo } from './PaymentInfo'
 
 export const ActivityBook = ({ activity, profile }: any) => {
-  const { id, title, images, price, duration, monetizationType } = activity
+  const { id, title, images, price, duration, monetizationType, isFeePassed } = activity
   const { state } = useStateMachine() as any
   const router = useRouter()
   const { user } = useContext(UserContext)
@@ -22,6 +22,8 @@ export const ActivityBook = ({ activity, profile }: any) => {
   const [image] = images
 
   const isFree = monetizationType === 'Free'
+
+  const amount = getAmount(price, isFeePassed)
 
   useEffect(() => {
     const { date, tickets, time } = state.order || {}
@@ -74,7 +76,7 @@ export const ActivityBook = ({ activity, profile }: any) => {
               <Heading fontSize="2xl">{title}</Heading>t
               <Text fontSize="2xl"> with {displayName}</Text>
             </Stack>
-            <OrderInfo duration={duration} price={price} isFree={isFree} />
+            <OrderInfo duration={duration} price={amount} isFree={isFree} />
           </VStack>
           <VStack w="full" pt="2rem">
             <Login />

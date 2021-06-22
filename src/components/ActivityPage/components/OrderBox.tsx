@@ -4,14 +4,14 @@ import { useRouter } from 'next/router'
 
 import { update } from 'lib/store'
 
-import { showAlert } from 'lib/utils'
+import { showAlert, getAmount } from 'lib/utils'
 import { trackConfirmBookingActivity } from 'analytics'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
 import { getAvailableDatesMap } from '../utils'
 
 export const OrderBox = (activity: any) => {
-  const { id, frequency, dates, duration, price, monetizationType, status } = activity
+  const { id, frequency, dates, duration, price, isFeePassed, monetizationType, status } = activity
   const router = useRouter()
 
   const {
@@ -74,7 +74,7 @@ export const OrderBox = (activity: any) => {
             <Text>Free to join</Text>
           ) : (
             <>
-              <Text>£{price * order.tickets || 1}</Text>
+              <Text>£{getAmount(price, isFeePassed) * (order.tickets || 1)}</Text>
               <Text color="gray.400">/ session</Text>
             </>
           )}
