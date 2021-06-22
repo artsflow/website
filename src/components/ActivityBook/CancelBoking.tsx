@@ -25,7 +25,6 @@ export function CancelBooking({ booking }: any) {
   const isPaid = Number(booking?.amount) > 0
 
   const handleCancelBooking = async () => {
-    console.log('handleCancelBooking', booking?.id)
     if (!booking) return
     setLoading(true)
     await cancelBooking(booking)
