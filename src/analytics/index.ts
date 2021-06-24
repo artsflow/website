@@ -37,5 +37,5 @@ export const trackShareButtonClicked = () => {
 }
 
 export const trackLead = (opts: any) => {
-  window.analytics.track('Lead Subscribed', opts)
+  window.analytics.track('Lead', opts)
 }
