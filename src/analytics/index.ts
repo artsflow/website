@@ -31,6 +31,11 @@ export const trackActivityBooked = (activity: any, bookingDate: string) => {
 export const trackShareMenuClicked = (source: string) => {
   window.analytics.track('Share Menu Clicked', { source })
 }
+
 export const trackShareButtonClicked = () => {
   window.analytics.track('Share Button Clicked')
+}
+
+export const trackLead = (opts: any) => {
+  window.analytics.track('Lead Subscribed', opts)
 }

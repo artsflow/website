@@ -1,16 +1,13 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Icon, Box, Flex, Stack, Text, Heading, VStack, useBreakpoint } from '@chakra-ui/react'
 // @ts-ignore
 import { Twitter, Facebook, Mail, Linkedin, Whatsapp } from 'react-social-sharing'
-import md5 from 'md5'
 // @ts-ignore
-import { useMixpanel } from 'react-mixpanel-browser'
+import { trackLead } from 'analytics'
 
-import { gtmEvent } from 'lib/gtm'
-import { hotJar } from 'lib'
 import { Meta } from 'components'
 import { ARTSFLOW_URL } from 'lib/config'
 
@@ -23,20 +20,12 @@ const CrispWithNoSSR = dynamic(() => import('../components/CrispChat'), { ssr: f
 
 export default function Home(): JSX.Element {
   const { query } = useRouter()
-  const mixpanel = useMixpanel()
   const screen = useBreakpoint('base')
   const { name, email = '', utm_source: utmSource } = query as any
   const btnSize = screen === 'base' ? { small: true } : {}
 
   useEffect(() => {
-    gtmEvent({ event: 'generate_lead', source: utmSource })
-    mixpanel.track('generate_lead', { source: utmSource })
-    hotJar(md5(email), utmSource)
-  }, [])
-
-  const handleClick = useCallback((source: string) => {
-    gtmEvent({ event: 'share_button', source })
-    mixpanel.track('share_button', { source })
+    trackLead({ source: utmSource, email, name, isLead: true })
   }, [])
 
   return (
@@ -68,36 +57,11 @@ export default function Home(): JSX.Element {
             in Artsflow.
           </Text>
           <Box>
-            <Facebook
-              {...btnSize}
-              message={message}
-              link={`${link}_facebook`}
-              onClick={() => handleClick('facebook')}
-            />
-            <Twitter
-              {...btnSize}
-              message={message}
-              link={`${link}_twitter`}
-              onClick={() => handleClick('twitter')}
-            />
-            <Linkedin
-              {...btnSize}
-              message={message}
-              link={`${link}_linkedin`}
-              onClick={() => handleClick('linkedin')}
-            />
-            <Mail
-              {...btnSize}
-              message={message}
-              link={`${link}_email`}
-              onClick={() => handleClick('email')}
-            />
-            <Whatsapp
-              {...btnSize}
-              message={message}
-              link={`${link}_whatsapp`}
-              onClick={() => handleClick('whatsapp')}
-            />
+            <Facebook {...btnSize} message={message} link={`${link}_facebook`} />
+            <Twitter {...btnSize} message={message} link={`${link}_twitter`} />
+            <Linkedin {...btnSize} message={message} link={`${link}_linkedin`} />
+            <Mail {...btnSize} message={message} link={`${link}_email`} />
+            <Whatsapp {...btnSize} message={message} link={`${link}_whatsapp`} />
           </Box>
           <Heading pt={['2rem', '4rem']} fontSize="2xl" as="h4">
             Any questions?

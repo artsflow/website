@@ -25,6 +25,7 @@ import { resetStore } from 'lib/store'
 import { useBooking } from 'hooks'
 import { Meta } from '../Meta'
 import { Share } from '../ActivityPage/components'
+import { CancelBooking } from './CancelBoking'
 
 export const BookingConfirmed = ({ activity, profile }: any) => {
   const { actions } = useStateMachine({ resetStore }) as any
@@ -48,6 +49,8 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
   const handleAddToCalendar = () => {
     window.open(getCalendarUrl(timestamp, duration, title))
   }
+
+  const { isCancelled } = booking?.[0] || {}
 
   return (
     <>
@@ -85,11 +88,11 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
             fontWeight="semibold"
             alignSelf="center"
           >
-            Booking confirmed
+            Booking{' '}
+            <Text as="span" color={isCancelled ? 'red.600' : 'black'}>
+              {isCancelled ? 'cancelled' : 'confirmed'}
+            </Text>
           </Heading>
-          <Text textAlign="center" color="#616167">
-            You can cancel your booking up to 24 hours prior to the event.
-          </Text>
           <VStack
             px="1.5rem"
             alignItems="flex-start"
@@ -162,6 +165,7 @@ export const BookingConfirmed = ({ activity, profile }: any) => {
             </Button>
           </HStack>
         </VStack>
+        {!isCancelled && <CancelBooking booking={booking?.[0]} />}
       </VStack>
     </>
   )
