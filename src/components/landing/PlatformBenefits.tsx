@@ -22,7 +22,7 @@ const benefits = {
   },
   3: {
     icon: SendSvg,
-    title: 'Deliver your activities',
+    title: 'Deliver your activities and events',
     description:
       'Deliver your arts activities to those that have booked with you locally. Users can then review you, save your activity or share with friends.',
   },
@@ -44,7 +44,7 @@ export const PlatformBenefits = () => (
     />
     <Flex
       px={['2rem', '4rem']}
-      mb={['96px', '96px']}
+      pb={['96px', '96px']}
       w="100%"
       alignItems="center"
       justifyContent="center"

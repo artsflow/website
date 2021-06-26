@@ -17,7 +17,7 @@ export default function Join(): JSX.Element {
         height="100%"
         frameBorder="0"
         allow="camera; microphone; autoplay; encrypted-media;"
-        src={`https://form.typeform.com/to/bnKnqrBe?typeform-medium=embed-snippet#utm_source=${utmSource}`}
+        src={`https://artsflow.typeform.com/to/TfwEbics?utm_source=${utmSource}`}
       />
       <script type="text/javascript" src="https://embed.typeform.com/embed.js" />
     </>

@@ -8,7 +8,7 @@ import { Hero } from './Hero'
 import { PlatformBenefits } from './PlatformBenefits'
 import { Join } from './Join'
 
-import { DiscoverMobileApp } from './DiscoverMobileApp'
+// import { DiscoverMobileApp } from './DiscoverMobileApp'
 import { DiscoverWebApp } from './DiscoverWebApp'
 import { About } from './About'
 import { Why } from './Why'
@@ -29,7 +29,7 @@ export default function Landing(): JSX.Element {
       <Hero />
       <VStack maxW={['100%', '1440px']} m="auto" overflow="hidden">
         <PlatformBenefits />
-        <DiscoverMobileApp />
+        {/* <DiscoverMobileApp /> */}
       </VStack>
       <Join type="midway" />
       <VStack maxW={['100%', '1440px']} m="auto" pt={['80px', 0]} overflow="hidden">

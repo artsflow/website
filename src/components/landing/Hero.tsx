@@ -48,7 +48,11 @@ export const Hero = () => (
           pt={['16px', '32px']}
           mb={['20px', '30px']}
         >
-          Share your passion for the arts
+          Artsflow is the{' '}
+          <Text as="span" color="af.pink">
+            event management platform
+          </Text>{' '}
+          for the arts sector
         </Heading>
         <Text
           fontSize={['1.125rem', '1.25rem']}
@@ -56,8 +60,8 @@ export const Hero = () => (
           lineHeight="2rem"
           color="#616167"
         >
-          Whether you’re a skilled artist, musician, dancer or drama practitioner, you can share
-          your passion with Artsflow.
+          Whether you’re a skilled artist, musician, dancer or drama practitioner, you can host your
+          events and activities with Artsflow.
         </Text>
         <OrderButton type="hero" />
       </Box>
