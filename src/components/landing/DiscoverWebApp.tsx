@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 // import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import CalendarSvg from 'svg/landing/calendar-alt.svg'
-import StarSvg from 'svg/landing/star.svg'
+import SendSvg from 'svg/landing/send.svg'
 import DocumentSvg from 'svg/landing/document.svg'
 import DataSvg from 'svg/landing/data.svg'
 
@@ -17,10 +17,9 @@ const benefits = {
       'Filter by day, week or month to see what’s going on and when, including every freelancer and franchisee (‘member’) in your organisation.',
   },
   2: {
-    icon: StarSvg,
-    title: 'Organisation Membership',
-    description:
-      'Upgrade your membership at any time and add multiple members to your Organisation account. View member reviews and activities.',
+    icon: SendSvg,
+    title: 'Connect with your audience',
+    description: 'Send them newsletters, track open rates, clicks and other useful information',
   },
   3: {
     icon: DocumentSvg,
@@ -53,7 +52,7 @@ export const DiscoverWebApp = () => (
       pt="0"
       textAlign={['left', 'center']}
       title={<Text px="40px">Discover the Web app</Text>}
-      subtitle="The web app or ‘management platform’ will be where you’ll be able to create activities, view data analytics and access resources to help grow your business."
+      subtitle="The web app or ‘management platform’ will be where you’ll be able to create events and activities, view data analytics and access resources to help grow your business."
     />
 
     <Stack
@@ -83,7 +82,7 @@ export const DiscoverWebApp = () => (
         // border="1px solid green"
       >
         <Heading fontSize={['1.375rem', '2rem']} fontWeight="semibold">
-          Create your activities
+          Create your activities and events
         </Heading>
         <Text fontSize="1rem" lineHeight="2rem" pt="20px">
           Easily create, publish and amend your arts activities in the Artsflow web app.
