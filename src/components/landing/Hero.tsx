@@ -48,7 +48,11 @@ export const Hero = () => (
           pt={['16px', '32px']}
           mb={['20px', '30px']}
         >
-          Artsflow is the event management platform for the arts sector
+          Artsflow is the{' '}
+          <Text as="span" color="af.pink">
+            event management platform
+          </Text>{' '}
+          for the arts sector
         </Heading>
         <Text
           fontSize={['1.125rem', '1.25rem']}
