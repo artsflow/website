@@ -43,3 +43,7 @@ export const trackLead = (opts: any) => {
 export const trackLandingPageButton = (opts: any) => {
   window.analytics.track('Landing Page Button Clicked', opts)
 }
+
+export const trackLandingPageView = (opts: any) => {
+  window.analytics.track('Landing Page Viewed', opts)
+}
