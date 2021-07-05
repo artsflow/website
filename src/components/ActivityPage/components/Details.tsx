@@ -13,7 +13,6 @@ export const Description = ({ text }: any) => {
       alignItems="flex-start"
       pb="1rem"
       wordBreak="break-all"
-      // wordWrap="break-word"
       sx={{
         h3: { fontWeight: 'semibold', fontSize: 'lg' },
         'ul, ol': { pl: '2rem' },

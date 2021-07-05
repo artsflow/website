@@ -114,6 +114,10 @@ const OrderForm = ({ activity }: any) => {
       },
     })
 
+    if (payload.error) {
+      console.error(payload.error)
+    }
+
     setProcessing(false)
     setPayment(payload)
   }
