@@ -51,7 +51,7 @@ export function CancelBooking({ booking }: any) {
             your booking
           </Text>
         </HStack>
-        <Text as="span" textAlign="center">
+        <Text as="span" textAlign="center" pl="1">
           up to 24 hours prior to the event.
         </Text>
       </Stack>

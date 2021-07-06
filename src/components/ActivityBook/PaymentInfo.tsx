@@ -28,15 +28,14 @@ import { createPaymentIntent } from 'api'
 import { useBooking } from 'hooks'
 import { trackActivityBooked } from 'analytics'
 
-const stripePromise = loadStripe(STRIPE_KEY as string)
-
 interface Inputs {
   email: string
   name: string
   phone?: string
 }
 
-export const PaymentInfo = ({ activity }: any) => {
+export const PaymentInfo = ({ activity, stripeAccountId }: any) => {
+  const stripePromise = loadStripe(STRIPE_KEY as string, { stripeAccount: stripeAccountId })
   return (
     <Elements stripe={stripePromise}>
       <OrderForm activity={activity} />
@@ -113,6 +112,10 @@ const OrderForm = ({ activity }: any) => {
         billing_details: billingDetails,
       },
     })
+
+    if (payload.error) {
+      console.error(payload.error)
+    }
 
     setProcessing(false)
     setPayment(payload)
