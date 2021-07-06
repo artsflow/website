@@ -18,7 +18,7 @@ export const ActivityBook = ({ activity, profile }: any) => {
   const router = useRouter()
   const { user } = useContext(UserContext)
 
-  const { displayName } = profile
+  const { displayName, stripeAccountId } = profile
   const [image] = images
 
   const isFree = monetizationType === 'Free'
@@ -80,7 +80,11 @@ export const ActivityBook = ({ activity, profile }: any) => {
           </VStack>
           <VStack w="full" pt="2rem">
             <Login />
-            {isFree ? <FreeBooking activity={activity} /> : <PaymentInfo activity={activity} />}
+            {isFree ? (
+              <FreeBooking activity={activity} />
+            ) : (
+              <PaymentInfo activity={activity} stripeAccountId={stripeAccountId} />
+            )}
           </VStack>
         </VStack>
       </VStack>
