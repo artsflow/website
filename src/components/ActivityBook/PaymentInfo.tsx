@@ -36,7 +36,6 @@ interface Inputs {
 
 export const PaymentInfo = ({ activity, stripeAccountId }: any) => {
   const stripePromise = loadStripe(STRIPE_KEY as string, { stripeAccount: stripeAccountId })
-  console.log('stripeAccountId', stripeAccountId)
   return (
     <Elements stripe={stripePromise}>
       <OrderForm activity={activity} />
