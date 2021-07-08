@@ -12,7 +12,7 @@ export const Description = ({ text }: any) => {
     <VStack
       alignItems="flex-start"
       pb="1rem"
-      wordBreak="break-all"
+      wordBreak="break-word"
       sx={{
         h3: { fontWeight: 'semibold', fontSize: 'lg' },
         'ul, ol': { pl: '2rem' },

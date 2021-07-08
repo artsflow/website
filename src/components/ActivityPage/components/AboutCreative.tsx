@@ -27,7 +27,7 @@ export const AboutCreative = ({ profile }: any) => {
           {displayName}
         </Text>
       </HStack>
-      <Text color="#616167" fontSize="sm" lineHeight="md">
+      <Text color="#616167" fontSize="sm" lineHeight="md" wordBreak="break-word">
         {bio}
       </Text>
     </Box>
