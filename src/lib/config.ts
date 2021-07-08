@@ -1,5 +1,5 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
 export const ARTSFLOW_URL = process.env.NEXT_PUBLIC_ARTSFLOW_URL
+export const ARTSFLOW_APP_URL = process.env.NEXT_PUBLIC_ARTSFLOW_APP_URL
 export const GCP_MAPS_KEY = process.env.NEXT_PUBLIC_GCP_MAPS_KEY
 export const FIREBASE_API_KEY = process.env.NEXT_PUBLIC_FIREBASE_API_KEY
 export const FIREBASE_AUTH_DOMAIN = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
