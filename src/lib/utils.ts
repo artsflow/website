@@ -38,7 +38,7 @@ export const getTimestamp = (date: string, time: string) => {
   return getUnixTime(activityDate)
 }
 
-const ARTSFLOW_FEE = 5
+export const ARTSFLOW_FEE = 5
 
 export const getAmount = (price: number, isFeePassed: boolean) => {
   return isFeePassed ? price + (price * ARTSFLOW_FEE) / 100 : price
