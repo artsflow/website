@@ -1,10 +1,10 @@
-import { HStack, Box, Button, Grid, Text } from '@chakra-ui/react'
+import { HStack, Box, Button, Grid, Text, VStack } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
 import { useRouter } from 'next/router'
 
 import { update } from 'lib/store'
 
-import { showAlert, getAmount } from 'lib/utils'
+import { showAlert, getAmount, ARTSFLOW_FEE } from 'lib/utils'
 import { trackConfirmBookingActivity } from 'analytics'
 import { AvailableDates } from './AvailableDates'
 import { AvailableTimeSlots } from './AvailableTimeSlots'
@@ -34,6 +34,7 @@ export const OrderBox = (activity: any) => {
   const availableDates = [...datesMap.keys()]
 
   const isPaused = status === 'paused'
+  const nominalFee = (price * ARTSFLOW_FEE) / 100
 
   return (
     <Grid
@@ -73,10 +74,17 @@ export const OrderBox = (activity: any) => {
           {isFree ? (
             <Text>Free to join</Text>
           ) : (
-            <>
-              <Text>£{getAmount(price, isFeePassed) * (order.tickets || 1)}</Text>
-              <Text color="gray.400">/ session</Text>
-            </>
+            <VStack>
+              <HStack>
+                <Text>£{getAmount(price, isFeePassed) * (order.tickets || 1)}</Text>
+                <Text color="gray.400">/ session</Text>
+              </HStack>
+              {isFeePassed && (
+                <Text color="#616166" fontSize="xs">
+                  (£{nominalFee} service fee)
+                </Text>
+              )}
+            </VStack>
           )}
         </HStack>
         <Button
