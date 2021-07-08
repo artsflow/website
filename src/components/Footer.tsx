@@ -12,6 +12,8 @@ export const Footer = (props: any) => (
     px={['2rem', '4rem']}
     {...props}
     minH="95px"
+    bg="#edf8fa"
+    w="full"
   >
     <Stack
       direction={['column-reverse', 'row']}

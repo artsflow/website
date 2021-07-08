@@ -1,7 +1,6 @@
 import React from 'react'
-
-import Landing from 'components/landing'
+import { Box } from '@chakra-ui/react'
 
 export default function Home(): JSX.Element {
-  return <Landing />
+  return <Box>home page here</Box>
 }
