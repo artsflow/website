@@ -12,6 +12,7 @@ interface BgMap {
 
 const bg: BgMap = {
   '/why': '#fff9e7',
+  '/creative-corner': '#fef4f4',
 }
 
 export const Header = () => {
