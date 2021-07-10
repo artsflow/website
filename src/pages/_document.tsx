@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import * as snippet from '@segment/snippet'
+import Script from 'next/script'
 
 import { SEGMENT_KEY } from 'lib/config'
 
@@ -35,11 +36,15 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="manifest" href="/site.webmanifest" />
-          <script dangerouslySetInnerHTML={{ __html: this.renderSnippet() }} />
-          <script
+          <Script
+            dangerouslySetInnerHTML={{ __html: this.renderSnippet() }}
+            strategy="beforeInteractive"
+          />
+          <Script
             defer
             src="https://static.cloudflareinsights.com/beacon.min.js"
             data-cf-beacon='{"token": "bd642cc7908340e2bd5708e89639e30a"}'
+            strategy="beforeInteractive"
           />
         </Head>
         <style>

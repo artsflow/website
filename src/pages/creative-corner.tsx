@@ -1,7 +1,9 @@
 import React from 'react'
 import { VStack, Stack, Text, Heading, Box } from '@chakra-ui/react'
+import Image from 'next/image'
 
 import { Meta } from 'components'
+import HeroImg from '../../public/img/hero-cc.webp'
 
 export default function CreativeCorner(): JSX.Element {
   return (
@@ -38,12 +40,24 @@ export default function CreativeCorner(): JSX.Element {
             </Text>
           </VStack>
           <Box
-            bg="blue.100"
+            display="grid"
             w="full"
+            alignItems="center"
             maxW={['full', '750px']}
             maxH="450px"
             h={['220px', '450px']}
-          />
+            pos="relative"
+          >
+            <Image
+              src={HeroImg}
+              layout="responsive"
+              width={718}
+              height={423}
+              placeholder="blur"
+              loading="lazy"
+              alt="Creative Corner"
+            />
+          </Box>
         </Stack>
       </VStack>
       <VStack minH="400px">
