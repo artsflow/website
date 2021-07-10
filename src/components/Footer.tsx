@@ -17,10 +17,10 @@ export const Footer = () => (
     <VStack py="3rem" mb="2rem" spacing="1rem" pos="relative">
       <Icon
         as={CurledArrowSvg}
-        w="160"
+        w={['100px', '160px']}
         h="70"
         position="absolute"
-        right={['-50px', '-20px']}
+        right={['-20px', '-20px']}
         top={['180px', '140px']}
       />
       <Text fontWeight="bold" fontSize={['1.8rem', '2rem']} textAlign="center">
