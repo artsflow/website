@@ -5,6 +5,14 @@ import ReactPlayer from 'react-player'
 import { GetStartedButton } from 'components'
 
 export default function Home(): JSX.Element {
+  const handlePlayVideo = () => {
+    console.log('handlePlayVideo')
+  }
+
+  const handleEndVideo = () => {
+    console.log('handleEndVideo')
+  }
+
   return (
     <>
       <VStack
@@ -47,6 +55,8 @@ export default function Home(): JSX.Element {
             width="100%"
             height="100%"
             config={{ wistia: { options: { qualityMin: '1080', qualityControl: false } } }}
+            onPlay={handlePlayVideo}
+            onEnded={handleEndVideo}
           />
         </Box>
       </VStack>
