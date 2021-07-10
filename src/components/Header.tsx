@@ -3,8 +3,7 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 
 import Logo from 'svg/artsflow.svg'
-
-import { ARTSFLOW_APP_URL } from 'lib/config'
+import { GetStartedButton } from './GetStartedButton'
 
 interface BgMap {
   [key: string]: string
@@ -35,17 +34,7 @@ export const Header = () => {
         <MenuLink href="/creative-corner" title="Creative Corner" />
         <MenuLink href="/why" title="Why Artsflow?" />
         <MenuLink href="/about" title="About Us" />
-        <Link
-          isExternal
-          href={ARTSFLOW_APP_URL}
-          color="white"
-          bg="af.teal"
-          px="1rem"
-          py="0.5rem"
-          rounded="8px"
-        >
-          <Text fontWeight="bold">Get Started</Text>
-        </Link>
+        <GetStartedButton location="header" />
       </HStack>
     </HStack>
   )

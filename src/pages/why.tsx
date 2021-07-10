@@ -60,7 +60,7 @@ export default function WhyArtsflow(): JSX.Element {
           </Box>
         </Stack>
       </VStack>
-      <VStack minH="400px">
+      <VStack minH="600px" justifyContent="center">
         <Text>rest of content goes here</Text>
       </VStack>
     </>

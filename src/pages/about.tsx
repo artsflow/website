@@ -54,7 +54,7 @@ export default function About(): JSX.Element {
           left={['auto', 'auto']}
         />
       </VStack>
-      <VStack minH="400px">
+      <VStack minH="600px" justifyContent="center">
         <Text>rest of content goes here</Text>
       </VStack>
     </>

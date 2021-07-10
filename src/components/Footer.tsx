@@ -3,8 +3,7 @@ import NextLink from 'next/link'
 
 import AfSvg from 'svg/af.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
-
-import { ARTSFLOW_APP_URL } from 'lib/config'
+import { GetStartedButton } from './GetStartedButton'
 
 export const Footer = () => (
   <VStack
@@ -28,17 +27,7 @@ export const Footer = () => (
         Start your creative journey
       </Text>
       <Text>Join Artsflow today for FREE.</Text>
-      <Link
-        isExternal
-        href={ARTSFLOW_APP_URL}
-        color="white"
-        bg="af.teal"
-        px="1rem"
-        py="0.5rem"
-        rounded="8px"
-      >
-        <Text fontWeight="bold">Get Started</Text>
-      </Link>
+      <GetStartedButton location="footer" />
     </VStack>
     <Stack
       direction={['column-reverse', 'column-reverse', 'row']}
