@@ -190,7 +190,6 @@ const Newsletter = () => {
         top={['-80px', '-110px', '-30px']}
         right={['0px', '40px', '80px']}
         transform="rotate(-30deg)"
-        // display={['none', 'none', 'block']}
       />
       <Text fontSize="xl" textAlign="center" maxW="540px">
         Subscribe to our newsletter <b>In the Flow</b> to be notified about our next Creative Corner

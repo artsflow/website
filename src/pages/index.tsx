@@ -1,8 +1,13 @@
 import React from 'react'
-import { VStack, Text, Heading, Box, Spacer } from '@chakra-ui/react'
+import { VStack, Text, Heading, Box, Spacer, Icon } from '@chakra-ui/react'
 import ReactPlayer from 'react-player'
 
-import { GetStartedButton } from 'components'
+import { GetStartedButton, Benefits } from 'components'
+import SquaresSvg from 'svg/landing/squares.svg'
+import CalendarSvg from 'svg/landing/calendar.svg'
+import SendSvg from 'svg/landing/send.svg'
+import CardSvg from 'svg/landing/card.svg'
+import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 
 export default function Home(): JSX.Element {
   const handlePlayVideo = () => {
@@ -60,9 +65,65 @@ export default function Home(): JSX.Element {
           />
         </Box>
       </VStack>
-      <VStack minH="600px" justifyContent="center">
-        <Text>rest of content goes here</Text>
+      <VStack
+        justifyContent="center"
+        maxW="1000px"
+        px="2rem"
+        py={['4rem', '6rem']}
+        m="auto"
+        spacing={['1.5rem', '2rem']}
+        textAlign="center"
+        pos="relative"
+      >
+        <Icon
+          as={CurledArrowSvg}
+          w="120px"
+          h="90px"
+          pos="absolute"
+          top="60px"
+          left="80px"
+          transform="scaleX(-1) rotate(-30deg)"
+          display={['none', 'none', 'block']}
+        />
+        <Heading px="2rem">Finally, a platform for the arts!</Heading>
+        <Text fontSize="lg">
+          Artsflow is a tailor-made platform for the arts & cultural sector empowering creative
+          practitioners and arts organisations (Creatives) enabling them to create activities and
+          events, receive bookings and generate an income from their passion.
+        </Text>
+        <Text fontSize="lg">
+          We want to help you to connect with people interested in the arts, so that you can share
+          your passion with them.
+        </Text>
+        <Benefits data={benefits} pt={['3rem', '6rem']} />
       </VStack>
     </>
   )
+}
+
+const benefits = {
+  1: {
+    icon: SquaresSvg,
+    title: 'Create your activities',
+    description:
+      'As a Creative you can create multiple activities and publish them so that people can discover them locally and nationally.',
+  },
+  2: {
+    icon: CalendarSvg,
+    title: 'Receive bookings',
+    description:
+      'Share your Activity Page with your clients and they can easily book you’re activity/event in a few clicks.',
+  },
+  3: {
+    icon: SendSvg,
+    title: 'Send newsletters',
+    description:
+      'Communicate with your clients by sharing upcoming events, send reminders, include video call links and more information. Connect with your client base more easily.',
+  },
+  4: {
+    icon: CardSvg,
+    title: 'Generate an income',
+    description:
+      'Earn an income by sharing your passion for the arts. Once you’ve delivered your activity you’ll receive your payment. Track your earnings and other metrics via the Dashboard.',
+  },
 }
