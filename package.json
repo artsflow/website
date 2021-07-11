@@ -45,6 +45,7 @@
     "@types/pluralize": "^0.0.29",
     "@types/react-html-parser": "^2.0.1",
     "@u-wave/react-vimeo": "^0.9.5",
+    "@vercel/node": "^1.11.1",
     "d3-scale": "^3.2.4",
     "date-fns": "^2.19.0",
     "firebase": "^8.4.2",
