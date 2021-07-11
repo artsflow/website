@@ -5,8 +5,11 @@ import Image from 'next/image'
 import { Meta, Dot } from 'components'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import IconPainting from 'svg/icon-painting.svg'
+import IconCode from 'svg/icon-code.svg'
 import James1 from '../../public/img/about-james1.webp'
 import James2 from '../../public/img/about-james2.webp'
+import Radu1 from '../../public/img/about-radu1.webp'
+import Radu2 from '../../public/img/about-radu2.webp'
 
 export default function About(): JSX.Element {
   return (
@@ -59,11 +62,18 @@ export default function About(): JSX.Element {
           left={['auto', 'auto']}
         />
       </VStack>
-      <VStack minH="600px" justifyContent="center" maxW="1000px" px="2rem" py="4rem" m="auto">
+      <VStack
+        justifyContent="center"
+        maxW="1000px"
+        px="2rem"
+        py={['4rem', '8rem']}
+        m="auto"
+        spacing={['4rem', '8rem']}
+      >
         <Stack
           direction={['column-reverse', 'column-reverse', 'row']}
           justifyContent="space-between"
-          spacing={['4rem', '4rem', '200px']}
+          spacing={['4rem', '4rem', '240px']}
         >
           <VStack spacing="1rem" justifyContent="center" alignItems="flex-start">
             <Heading>James Cropper, CEO</Heading>
@@ -101,6 +111,46 @@ export default function About(): JSX.Element {
             >
               <Image src={James2} placeholder="blur" loading="lazy" alt="James Cropper" />
             </Box>
+          </VStack>
+        </Stack>
+        <Stack
+          direction={['column', 'column', 'row']}
+          justifyContent="space-between"
+          spacing={['6rem', '6rem', '240px']}
+        >
+          <VStack pos="relative" alignItems="flex-start">
+            <Box w={['160px', '260px']}>
+              <Image src={Radu1} placeholder="blur" loading="lazy" alt="James Cropper" />
+            </Box>
+            <Box
+              pos="absolute"
+              top={['80px', '120px']}
+              left={['100px', '180px']}
+              w={['120px', '160px']}
+            >
+              <Image src={Radu2} placeholder="blur" loading="lazy" alt="James Cropper" />
+            </Box>
+            <HStack pos="absolute" top="0" left={['200px', '260px']} spacing="0">
+              <Icon as={IconCode} w="72px" h="72px" />
+              <Icon
+                as={CurledArrowSvg}
+                w={['60px', '120px']}
+                h="90px"
+                display={['none', 'block']}
+              />
+            </HStack>
+          </VStack>
+          <VStack spacing="1rem" justifyContent="center" alignItems="flex-start">
+            <Heading>Radu Ciocan, CTO</Heading>
+            <Text>
+              Radu is the technical wizard at Artsflow. As a Full Stack Developer with more than 10
+              years professional experience he’s worked for prominent Fintech, Social Media and
+              advertising start-ups.
+            </Text>
+            <Text>
+              He’s also an avid photographer, with an interest in street photography. He had his
+              first solo exhibiton in 2019.
+            </Text>
           </VStack>
         </Stack>
       </VStack>
