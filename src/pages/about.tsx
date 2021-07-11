@@ -1,7 +1,12 @@
 import React from 'react'
-import { VStack, Text, Heading } from '@chakra-ui/react'
+import { VStack, Text, Heading, HStack, Stack, Box, Icon } from '@chakra-ui/react'
+import Image from 'next/image'
 
 import { Meta, Dot } from 'components'
+import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
+import IconPainting from 'svg/icon-painting.svg'
+import James1 from '../../public/img/about-james1.webp'
+import James2 from '../../public/img/about-james2.webp'
 
 export default function About(): JSX.Element {
   return (
@@ -28,7 +33,7 @@ export default function About(): JSX.Element {
           accessible to everyone they started Artsflow, a web & mobile app events platform for the
           arts & cultural sector.
         </Text>
-        <Dot bg="#3176EE" w="1rem" h="1rem" top={['80px', '50px']} left={['50px', '100px']} />
+        <Dot bg="#3176EE" w="1rem" h="1rem" top={['60px', '50px']} left={['50px', '100px']} />
         <Dot
           border="8px solid #F9D278"
           top={['-50px', '70px']}
@@ -54,8 +59,50 @@ export default function About(): JSX.Element {
           left={['auto', 'auto']}
         />
       </VStack>
-      <VStack minH="600px" justifyContent="center">
-        <Text>rest of content goes here</Text>
+      <VStack minH="600px" justifyContent="center" maxW="1000px" px="2rem" py="4rem" m="auto">
+        <Stack
+          direction={['column-reverse', 'column-reverse', 'row']}
+          justifyContent="space-between"
+          spacing={['4rem', '4rem', '200px']}
+        >
+          <VStack spacing="1rem" justifyContent="center" alignItems="flex-start">
+            <Heading>James Cropper, CEO</Heading>
+            <Text>
+              James is the strategic wizard at Artsflow. He is also an entrepreneur and founder of
+              Creative Minds a nationwide community of artists that deliver art sessions to care
+              homes and other venues.
+            </Text>
+            <Text>
+              He has a BA Fine Art degree from Loughborough University and has a keen interest in
+              sculpture.
+            </Text>
+          </VStack>
+          <VStack pos="relative" alignItems="flex-end">
+            <HStack pos="absolute" top="0" right={['240px', '300px']} spacing="0">
+              <Icon
+                as={CurledArrowSvg}
+                w={['60px', '120px']}
+                h="90px"
+                transform="scaleX(-1)"
+                display={['none', 'block']}
+              />
+              <Icon as={IconPainting} w="72px" h="72px" />
+            </HStack>
+
+            <Box w={['160px', '260px']}>
+              <Image src={James1} placeholder="blur" loading="lazy" alt="James Cropper" />
+            </Box>
+            <Box
+              pos="absolute"
+              top={['80px', '120px']}
+              left={['auto', 'auto', '-180px']}
+              right={['100px', '180px', 'auto']}
+              w={['160px', '260px']}
+            >
+              <Image src={James2} placeholder="blur" loading="lazy" alt="James Cropper" />
+            </Box>
+          </VStack>
+        </Stack>
       </VStack>
     </>
   )
