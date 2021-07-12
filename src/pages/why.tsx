@@ -9,6 +9,8 @@ import TechSvg from 'svg/b-tech.svg'
 import LocateSvg from 'svg/b-locate.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import HeroImg from '../../public/img/hero-why.webp'
+import WhyImg1 from '../../public/img/why-img1.webp'
+import WhyImg2 from '../../public/img/why-img2.webp'
 
 export default function WhyArtsflow(): JSX.Element {
   return (
@@ -98,6 +100,83 @@ export default function WhyArtsflow(): JSX.Element {
           to everyone! 💯
         </Text>
         <Benefits data={benefits} pt={['3rem', '4rem']} />
+      </VStack>
+      <VStack
+        bg="#fafafa"
+        px="2rem"
+        textAlign="center"
+        spacing={['4rem', '4rem', '6rem']}
+        pt={['4rem', '6rem']}
+        pb={['4rem', '6rem']}
+        pos="relative"
+      >
+        <Stack
+          direction={['column-reverse', 'column-reverse', 'row']}
+          maxW="1200px"
+          w="full"
+          justifyContent="space-between"
+          spacing={['1rem', '2rem', '4rem']}
+        >
+          <VStack
+            justifyContent="center"
+            alignItems="flex-start"
+            textAlign="left"
+            spacing="1rem"
+            maxW={['auto', 'auto', '40%']}
+          >
+            <Heading color="#484848">Empowering people through the arts</Heading>
+            <Text lineHeight="1.8rem">
+              We’ve been making a difference to peoples lives over the last 9 years with Creative
+              Minds (CM), enabling people of all ages and abilities to explore their creativity.
+            </Text>
+            <Text lineHeight="1.8rem">
+              At one stage our nationwide community of artists were delivering 350 art sessions to
+              nearly 2000 people a month!
+            </Text>
+          </VStack>
+          <VStack justifyContent="center">
+            <Image
+              src={WhyImg1}
+              placeholder="blur"
+              loading="lazy"
+              alt="Empowering people through the arts"
+            />
+          </VStack>
+        </Stack>
+        <Stack
+          direction={['column', 'column', 'row']}
+          maxW="1200px"
+          w="full"
+          justifyContent="space-between"
+          spacing={['1rem', '2rem', '4rem']}
+        >
+          <VStack justifyContent="center">
+            <Image
+              src={WhyImg2}
+              placeholder="blur"
+              loading="lazy"
+              alt="Empowering people through the arts"
+            />
+          </VStack>
+          <VStack
+            justifyContent="center"
+            alignItems="flex-start"
+            textAlign="left"
+            spacing="1rem"
+            maxW={['auto', 'auto', '40%']}
+          >
+            <Heading color="#484848">Becoming a Creative is well within reach</Heading>
+            <Text lineHeight="1.8rem">
+              We’ve trained up to 70 CM Artists, and one thing that we’ve learnt is that sharing
+              your passion for the arts is well within reach. All you need to do is decide to start
+              your creative journey today.
+            </Text>
+            <Text lineHeight="1.8rem">
+              With Artsflow we’ll provide you with the <b>tools</b> and <b>know-how</b> to make it
+              happen!
+            </Text>
+          </VStack>
+        </Stack>
       </VStack>
     </>
   )
