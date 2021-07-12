@@ -1,5 +1,5 @@
 import React from 'react'
-import { VStack, Stack, Text, Heading, Box, Icon } from '@chakra-ui/react'
+import { VStack, Stack, Text, Heading, Box, Icon, SimpleGrid, HStack } from '@chakra-ui/react'
 import Image from 'next/image'
 
 import { Meta, Benefits } from 'components'
@@ -7,6 +7,7 @@ import UsersSvg from 'svg/b-users.svg'
 import BulbSvg from 'svg/b-bulb.svg'
 import TechSvg from 'svg/b-tech.svg'
 import LocateSvg from 'svg/b-locate.svg'
+import CheckSvg from 'svg/check.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import HeroImg from '../../public/img/hero-why.webp'
 import WhyImg1 from '../../public/img/why-img1.webp'
@@ -63,7 +64,8 @@ export default function WhyArtsflow(): JSX.Element {
         justifyContent="center"
         maxW="1000px"
         px="2rem"
-        py={['4rem', '6rem']}
+        pt={['2rem', '5rem']}
+        pb={['4rem', '6rem']}
         m="auto"
         spacing={['1.5rem', '2rem']}
         textAlign="center"
@@ -74,7 +76,7 @@ export default function WhyArtsflow(): JSX.Element {
           w="120px"
           h="90px"
           pos="absolute"
-          top="60px"
+          top="2rem"
           right="120px"
           transform="rotate(-30deg)"
           display={['none', 'none', 'block']}
@@ -171,9 +173,122 @@ export default function WhyArtsflow(): JSX.Element {
           </VStack>
         </Stack>
       </VStack>
+      <VStack
+        justifyContent="center"
+        maxW="1000px"
+        px="2rem"
+        pt={['2rem', '2rem']}
+        pb={['2rem', '4rem']}
+        m="auto"
+        spacing={['1.5rem', '2rem']}
+        textAlign="center"
+        pos="relative"
+      >
+        <Icon
+          as={CurledArrowSvg}
+          w="120px"
+          h="90px"
+          pos="absolute"
+          top="0.5rem"
+          left={['0', '100px', '200px']}
+          transform="scaleX(-1) rotate(-30deg)"
+        />
+        <Heading px="2rem">Why join Artsflow?</Heading>
+        <SimpleGrid columns={[1, 1, 2]} spacing="2rem" textAlign="left" pt={['1rem', '2rem']}>
+          <Item
+            title={
+              <>
+                <b>Create arts activities/events with ease!</b> - Our ‘Add Activity’ flow is only
+                for creative events meaning that Users who are interested in the arts will be able
+                to find and book your event more easily.
+              </>
+            }
+          />
+          <Item
+            title={
+              <>
+                <b>Accessible Platform</b> – Due to working with a range of clients over the years
+                we understand how important accessibility is for you when using the platform, and
+                your clients who book your events.
+              </>
+            }
+          />
+          <Item
+            title={
+              <>
+                <b>Seamless bookings & payments</b> – Our 3-step booking process makes it super easy
+                for people to book and pay to attend your arts activities. It’s never been easier to
+                earn an income from your passion.
+              </>
+            }
+          />
+          <Item
+            title={
+              <>
+                <b>Creative Profiles (coming soon)</b> – Beautiful public profiles are coming your
+                way! This will be your landing page displaying all of your arts activities/events
+                for people to explore and book!
+              </>
+            }
+          />
+          <Item
+            title={
+              <>
+                <b>A Smooth Experience</b> – We’ve had some great initial feedback from Creatives
+                who have told us their experience has been much better than other platforms. The
+                last thing you want is to get lost in a maze!
+              </>
+            }
+          />
+          <Item
+            title={
+              <>
+                <b>Creative Corner webinars</b> – Learn from the experts and gain valuable insights
+                when you attend our Creative Corner webinars! We’ll explore many different areas of
+                your creative business.
+              </>
+            }
+          />
+          <Item
+            title={
+              <>
+                <b>Discount on Artsflow Training</b> – Get a 20% discount on our Training when you
+                login in and create your first arts activity/event on Artsflow. Make today the day
+                you start your creative journey.
+              </>
+            }
+          />
+          <Item
+            title={
+              <>
+                <b>Access to our Google Drive</b> – Our Drive is full of free templates to help you
+                get started with your creative business. Once you’ve joined the platform we’ll send
+                you an invite link... Yep, that’s it!
+              </>
+            }
+          />
+        </SimpleGrid>
+        <Text fontSize="xl" py={['2rem', '3rem']} maxW="550px">
+          We’re not just an events platform, we’re here to <B>support</B> and foster a{' '}
+          <B>Creative Community</B> that wants to bring the arts into their community!
+        </Text>
+      </VStack>
     </>
   )
 }
+
+const Item = ({ title }: any) => (
+  <HStack alignItems="flex-start" spacing="1rem">
+    <Icon w={['30px', '40px']} h={['30px', '40px']} as={CheckSvg} />
+    <Text lineHeight="1.8rem">{title}</Text>
+  </HStack>
+)
+
+const B = ({ children }: any) => (
+  <Text as="span" fontWeight="bold" color="af.pink">
+    {children}
+  </Text>
+)
 
 const benefits = {
   1: {
