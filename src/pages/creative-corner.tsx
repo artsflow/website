@@ -24,7 +24,7 @@ export default function CreativeCorner(): JSX.Element {
       >
         <Stack
           direction={['column', 'column', 'row']}
-          maxW="1200px"
+          maxW="1000px"
           w="full"
           justifyContent="space-between"
           spacing="2rem"

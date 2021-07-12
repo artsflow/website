@@ -21,13 +21,13 @@ export default function WhyArtsflow(): JSX.Element {
         px="2rem"
         textAlign="center"
         spacing="1.5rem"
-        pt={['40px', '130px']}
+        pt={['2rem', '6rem']}
         pb={['4rem', '6rem']}
         pos="relative"
       >
         <Stack
           direction={['column', 'column', 'row']}
-          maxW="1200px"
+          maxW="1000px"
           w="full"
           justifyContent="space-between"
           spacing="2rem"
@@ -55,15 +55,7 @@ export default function WhyArtsflow(): JSX.Element {
             h={['220px', '450px']}
             pos="relative"
           >
-            <Image
-              src={HeroImg}
-              layout="responsive"
-              width={767}
-              height={467}
-              placeholder="blur"
-              loading="lazy"
-              alt="Why Artsflow?"
-            />
+            <Image src={HeroImg} placeholder="blur" loading="lazy" alt="Why Artsflow?" />
           </Box>
         </Stack>
       </VStack>
@@ -101,6 +93,7 @@ export default function WhyArtsflow(): JSX.Element {
         </Text>
         <Benefits data={benefits} pt={['3rem', '4rem']} />
       </VStack>
+
       <VStack
         bg="#fafafa"
         px="2rem"
@@ -112,7 +105,7 @@ export default function WhyArtsflow(): JSX.Element {
       >
         <Stack
           direction={['column-reverse', 'column-reverse', 'row']}
-          maxW="1200px"
+          maxW="1000px"
           w="full"
           justifyContent="space-between"
           spacing={['1rem', '2rem', '4rem']}
@@ -145,7 +138,7 @@ export default function WhyArtsflow(): JSX.Element {
         </Stack>
         <Stack
           direction={['column', 'column', 'row']}
-          maxW="1200px"
+          maxW="1000px"
           w="full"
           justifyContent="space-between"
           spacing={['1rem', '2rem', '4rem']}
@@ -155,7 +148,7 @@ export default function WhyArtsflow(): JSX.Element {
               src={WhyImg2}
               placeholder="blur"
               loading="lazy"
-              alt="Empowering people through the arts"
+              alt="Becoming a Creative is well within reach"
             />
           </VStack>
           <VStack
