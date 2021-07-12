@@ -98,7 +98,9 @@ export default function Home(): JSX.Element {
           We want to help you to connect with people interested in the arts, so that you can share
           your passion with them.
         </Text>
+
         <Benefits data={benefits} py={['3rem', '6rem']} />
+
         <Stack
           bg={['none', 'none', 'none', '#f1eff6']}
           rounded="50px"
@@ -135,6 +137,80 @@ export default function Home(): JSX.Element {
             <Image src={Scr1} placeholder="blur" loading="lazy" alt="Create your activities" />
           </VStack>
         </Stack>
+
+        <Spacer py={['1rem', '1rem', '1rem', '4rem']} />
+
+        <Stack
+          bg={['none', 'none', 'none', '#fef5f8']}
+          rounded="50px"
+          p={[0, 0, 0, '4rem']}
+          w={['100%', '100%', '100%', '75%']}
+          alignSelf="flex-end"
+          pos="relative"
+          direction={['column', 'column', 'column', 'row']}
+        >
+          <VStack
+            pos={['relative', 'relative', 'relative', 'absolute']}
+            top="1rem"
+            right={[0, 0, 0, '60%']}
+            w="full"
+            bg={['#f1eff6', '#f1eff6', '#f1eff6', 'none']}
+            rounded="50px"
+            pt={['2rem', '2rem', '2rem', 0]}
+            mb={['4rem', '4rem', '4rem', 0]}
+          >
+            <Image src={Scr1} placeholder="blur" loading="lazy" alt="Create your activities" />
+          </VStack>
+          <VStack alignItems="flex-start" textAlign="left" pl={[0, 0, 0, '40%']}>
+            <Heading size="lg">Dedicated Activity Page</Heading>
+            <Text lineHeight="1.8rem">
+              Each activity or event that you create will have its own Activity Page where your
+              clients can navigate to, book and make payment.
+            </Text>
+            <Text lineHeight="1.8rem">
+              Our 3-step booking process makes booking your activity a breeze!
+            </Text>
+          </VStack>
+        </Stack>
+
+        <Spacer py={['1rem', '1rem', '1rem', '4rem']} />
+
+        <Stack
+          bg={['none', 'none', 'none', '#fff7e1']}
+          rounded="50px"
+          p={[0, 0, 0, '4rem']}
+          w={['100%', '100%', '100%', '75%']}
+          alignSelf="flex-start"
+          pos="relative"
+          direction={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
+        >
+          <VStack
+            alignItems="flex-start"
+            textAlign="left"
+            w={['100%', '100%', '100%', '60%']}
+            mt={['4rem', '4rem', '4rem', 0]}
+          >
+            <Heading size="lg">Valuable data insights</Heading>
+            <Text lineHeight="1.8rem">
+              Your Dashboard will provide you with an overview of your business, with data on your
+              balance, number of bookings, number of attendees, and the number activity page views.
+            </Text>
+            <Text lineHeight="1.8rem">Easily download your booking data via a TXT file.</Text>
+          </VStack>
+          <VStack
+            pos={['relative', 'relative', 'relative', 'absolute']}
+            top="1rem"
+            left={[0, 0, 0, '55%']}
+            w="full"
+            bg={['#f1eff6', '#f1eff6', '#f1eff6', 'none']}
+            rounded="50px"
+            pt={['2rem', '2rem', '2rem', 0]}
+          >
+            <Image src={Scr1} placeholder="blur" loading="lazy" alt="Create your activities" />
+          </VStack>
+        </Stack>
+
+        <Spacer py={['1rem', '1rem', '1rem', '4rem']} />
       </VStack>
     </>
   )
