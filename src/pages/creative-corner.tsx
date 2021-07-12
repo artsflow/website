@@ -79,11 +79,11 @@ export default function CreativeCorner(): JSX.Element {
           url="https://www.youtube.com/watch?v=D6VKhHMXSow"
           title="How To CONNECT With Your Community"
         >
-          <Text>
+          <Text lineHeight="1.8rem">
             'How to connect with your community' is the 1st Creative Corner webinar in our series
             exploring how you can CONNECT with your community and restart your creative practice. 🙌
           </Text>
-          <Text>
+          <Text lineHeight="1.8rem">
             <b>In the webinar we cover:</b>
             <br />
             ✔️ How to find & contact various types of client.
@@ -101,12 +101,12 @@ export default function CreativeCorner(): JSX.Element {
           url="https://www.youtube.com/watch?v=wvEda8JoaYA"
           title="Branding - How To Get Started?"
         >
-          <Text>
+          <Text lineHeight="1.8rem">
             'Branding - How to get started?' is the 2nd Creative Corner webinar in our series
             exploring the importance of branding and how to craft your BRAND for your creative
             business. 🙌
           </Text>
-          <Text>
+          <Text lineHeight="1.8rem">
             <b>In the webinar we cover:</b>
             <br />
             ✔️ What is Branding? - It's more than just a logo!
