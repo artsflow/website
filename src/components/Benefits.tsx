@@ -20,7 +20,7 @@ type Props = SimpleGridProps & {
 }
 
 export const Benefits = ({ data, ...rest }: Props) => (
-  <SimpleGrid columns={[1, 2]} spacing={10} textAlign="left" {...rest}>
+  <SimpleGrid columns={[1, 1, 2]} spacing={10} textAlign="left" {...rest}>
     <VStack>
       <HStack
         spacing={['16px', '24px']}

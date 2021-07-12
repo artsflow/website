@@ -18,12 +18,12 @@ export default function About(): JSX.Element {
       <VStack
         bg="#edf8fa"
         px="2rem"
-        textAlign="center"
+        textAlign={['left', 'left', 'center']}
         spacing="1.5rem"
         py={['40px', '130px']}
         pos="relative"
       >
-        <Heading size="xl" color="#484848">
+        <Heading size="xl" color="#484848" textAlign="center">
           The origins of Artsflow...
         </Heading>
         <Text color="#616167" maxW="900px" fontSize="xl">

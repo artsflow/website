@@ -1,6 +1,7 @@
 import React from 'react'
-import { VStack, Text, Heading, Box, Spacer, Icon } from '@chakra-ui/react'
+import { Stack, VStack, Text, Heading, Box, Spacer, Icon } from '@chakra-ui/react'
 import ReactPlayer from 'react-player'
+import Image from 'next/image'
 
 import { GetStartedButton, Benefits } from 'components'
 import SquaresSvg from 'svg/landing/squares.svg'
@@ -8,6 +9,7 @@ import CalendarSvg from 'svg/landing/calendar.svg'
 import SendSvg from 'svg/landing/send.svg'
 import CardSvg from 'svg/landing/card.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
+import Scr1 from '../../public/img/scr1.webp'
 
 export default function Home(): JSX.Element {
   const handlePlayVideo = () => {
@@ -74,6 +76,7 @@ export default function Home(): JSX.Element {
         spacing={['1.5rem', '2rem']}
         textAlign="center"
         pos="relative"
+        overflow={['hidden', 'hidden', 'hidden', 'hidden', 'visible']}
       >
         <Icon
           as={CurledArrowSvg}
@@ -86,16 +89,52 @@ export default function Home(): JSX.Element {
           display={['none', 'none', 'block']}
         />
         <Heading px="2rem">Finally, a platform for the arts!</Heading>
-        <Text fontSize="lg">
+        <Text fontSize="lg" textAlign={['left', 'center']}>
           Artsflow is a tailor-made platform for the arts & cultural sector empowering creative
           practitioners and arts organisations (Creatives) enabling them to create activities and
           events, receive bookings and generate an income from their passion.
         </Text>
-        <Text fontSize="lg">
+        <Text fontSize="lg" textAlign={['left', 'center']}>
           We want to help you to connect with people interested in the arts, so that you can share
           your passion with them.
         </Text>
-        <Benefits data={benefits} pt={['3rem', '6rem']} />
+        <Benefits data={benefits} py={['3rem', '6rem']} />
+        <Stack
+          bg={['none', 'none', 'none', '#f1eff6']}
+          rounded="50px"
+          p={[0, 0, 0, '4rem']}
+          w={['100%', '100%', '100%', '75%']}
+          alignSelf="flex-start"
+          pos="relative"
+          direction={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
+        >
+          <VStack
+            alignItems="flex-start"
+            textAlign="left"
+            w={['100%', '100%', '100%', '60%']}
+            mt={['4rem', '4rem', '4rem', 0]}
+          >
+            <Heading size="lg">Create your activities</Heading>
+            <Text lineHeight="1.8rem">
+              Easily create, publish and amend your arts activities in Artsflow.
+            </Text>
+            <Text lineHeight="1.8rem">
+              Whether your delivering activities on a weekly basis, bi-monthly basis or delivering a
+              6 week course, you can determine what activities you want to deliver and when.
+            </Text>
+          </VStack>
+          <VStack
+            pos={['relative', 'relative', 'relative', 'absolute']}
+            top="1rem"
+            left={[0, 0, 0, '55%']}
+            w="full"
+            bg={['#f1eff6', '#f1eff6', '#f1eff6', 'none']}
+            rounded="50px"
+            pt={['2rem', '2rem', '2rem', 0]}
+          >
+            <Image src={Scr1} placeholder="blur" loading="lazy" alt="Create your activities" />
+          </VStack>
+        </Stack>
       </VStack>
     </>
   )
