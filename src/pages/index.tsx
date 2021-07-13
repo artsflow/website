@@ -227,8 +227,8 @@ const Dots = () => (
       left={['auto', '120px']}
     />
     <Dot bg="#F4B7C4" size="1rem" top={['80px', '0px']} right={['10px', '450px']} />
-    <Dot bg="#F4B7C4" top={['420px', '550px']} left={['0px', '250px']} />
-    <Dot bg="#F9D278" size="1rem" top={['420px', '650px']} right={['0px', '300px']} />
+    <Dot bg="#F4B7C4" top={['420px', '580px']} left={['0px', '200px']} />
+    <Dot bg="#F9D278" size="1rem" top={['420px', '650px']} right={['0px', '200px']} />
     <Dot
       image="home-dot1"
       size="70px"
@@ -247,7 +247,7 @@ const Dots = () => (
       image="home-dot3"
       size="46px"
       left={['-200px', 'auto']}
-      right={['auto', '260px']}
+      right={['auto', '100px']}
       top={['330px', '500px']}
     />
     <Dot image="home-dot4" size="60px" left={['-200px', '100px']} top={['330px', '400px']} />
