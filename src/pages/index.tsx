@@ -3,7 +3,7 @@ import { Stack, VStack, Text, Heading, Box, Spacer, Icon } from '@chakra-ui/reac
 import ReactPlayer from 'react-player'
 import Image from 'next/image'
 
-import { GetStartedButton, Benefits } from 'components'
+import { GetStartedButton, Benefits, Dot } from 'components'
 import SquaresSvg from 'svg/landing/squares.svg'
 import CalendarSvg from 'svg/landing/calendar.svg'
 import SendSvg from 'svg/landing/send.svg'
@@ -26,18 +26,19 @@ export default function Home(): JSX.Element {
         bg="#edf8fa"
         px="2rem"
         textAlign={['left', 'center']}
-        pt={['40px', '100px']}
+        pt={['3rem', '5rem']}
         pos="relative"
       >
-        <Text fontSize="20px" w="full" mb="1rem">
+        <Dots />
+        <Text fontSize="20px" w="full" pb={['2rem', '1rem']}>
           👋 Welcome!
         </Text>
-        <Heading as="h1" size="xl" color="#484848">
+        <Heading as="h1" size="xl" color="#484848" zIndex="2">
           Connect with your community!
         </Heading>
         <Text fontSize="xl" color="#616167" pb="2rem">
-          Create wonderful activities and events, receive bookings, accept payments and share your
-          passion for the arts.
+          Create wonderful activities and events, receive bookings and share your passion for the
+          arts.
         </Text>
         <GetStartedButton location="home" />
         <Spacer pt="2rem" />
@@ -215,6 +216,43 @@ export default function Home(): JSX.Element {
     </>
   )
 }
+
+const Dots = () => (
+  <>
+    <Dot bg="#3176EE" size="1rem" top={['0px', '50px']} left={['50px', '220px']} />
+    <Dot
+      border="8px solid #F9D278"
+      top={['300px', '120px']}
+      right={['20px', 'auto']}
+      left={['auto', '120px']}
+    />
+    <Dot bg="#F4B7C4" size="1rem" top={['80px', '0px']} right={['10px', '450px']} />
+    <Dot bg="#F4B7C4" top={['420px', '550px']} left={['0px', '250px']} />
+    <Dot bg="#F9D278" size="1rem" top={['420px', '650px']} right={['0px', '300px']} />
+    <Dot
+      image="home-dot1"
+      size="70px"
+      left={['auto', '400px']}
+      right={['40px', 'auto']}
+      top={['-20px', '-20px']}
+    />
+    <Dot
+      image="home-dot2"
+      size="56px"
+      left={['-20px', 'auto']}
+      right={['auto', '200px']}
+      top={['330px', '100px']}
+    />
+    <Dot
+      image="home-dot3"
+      size="46px"
+      left={['-200px', 'auto']}
+      right={['auto', '260px']}
+      top={['330px', '500px']}
+    />
+    <Dot image="home-dot4" size="60px" left={['-200px', '100px']} top={['330px', '400px']} />
+  </>
+)
 
 const benefits = {
   1: {

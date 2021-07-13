@@ -36,27 +36,25 @@ export default function About(): JSX.Element {
           accessible to everyone they started Artsflow, a web & mobile app events platform for the
           arts & cultural sector.
         </Text>
-        <Dot bg="#3176EE" w="1rem" h="1rem" top={['60px', '50px']} left={['50px', '100px']} />
+        <Dot bg="#3176EE" size="1rem" top={['60px', '50px']} left={['50px', '100px']} />
         <Dot
           border="8px solid #F9D278"
           top={['-50px', '70px']}
           right={['20px', 'auto']}
           left={['auto', '120px']}
         />
-        <Dot bg="#F4B7C4" w="30px" h="30px" bottom={['80px', '50px']} left={['-10px', '350px']} />
+        <Dot bg="#F4B7C4" size="30px" bottom={['80px', '50px']} left={['-10px', '350px']} />
         <Dot
           bg="#F4B7C4"
-          w="1rem"
-          h="1rem"
+          size="1rem"
           top={['-20px', '0px']}
           right={['auto', '180px']}
           left={['30px', 'auto']}
         />
-        <Dot bg="#3176EE" w="1rem" h="1rem" display={['none', 'block']} right="130px" top="250px" />
+        <Dot bg="#3176EE" size="1rem" display={['none', 'block']} right="130px" top="250px" />
         <Dot
           bg="#F9D278"
-          w="1rem"
-          h="1rem"
+          size="1rem"
           bottom={['30px', '140px']}
           right={['50px', '40px']}
           left={['auto', 'auto']}

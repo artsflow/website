@@ -2,13 +2,14 @@ import { Box, BoxProps } from '@chakra-ui/react'
 
 type DotProps = BoxProps & {
   image?: string
+  size?: string
 }
 
-export const Dot = ({ image, ...rest }: DotProps) => (
+export const Dot = ({ image, size = '42px', ...rest }: DotProps) => (
   <Box
     pos="absolute"
-    width="42px"
-    height="42px"
+    width={size}
+    height={size}
     rounded="full"
     {...(image ? { backgroundImage: `url(/img/${image}.webp)` } : {})}
     {...rest}
