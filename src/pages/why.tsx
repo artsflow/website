@@ -2,7 +2,7 @@ import React from 'react'
 import { VStack, Stack, Text, Heading, Box, Icon, SimpleGrid, HStack } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import { Meta, Benefits } from 'components'
+import { Meta, Benefits, Dot } from 'components'
 import UsersSvg from 'svg/b-users.svg'
 import BulbSvg from 'svg/b-bulb.svg'
 import TechSvg from 'svg/b-tech.svg'
@@ -26,6 +26,7 @@ export default function WhyArtsflow(): JSX.Element {
         pb={['4rem', '8rem']}
         pos="relative"
       >
+        <Dots />
         <Stack
           direction={['column', 'column', 'row']}
           maxW="1000px"
@@ -38,6 +39,7 @@ export default function WhyArtsflow(): JSX.Element {
             justifyContent="center"
             textAlign={['center', 'center', 'left']}
             spacing="1rem"
+            zIndex="1"
           >
             <Heading size="xl" color="#484848">
               Share your passion for the arts
@@ -76,10 +78,9 @@ export default function WhyArtsflow(): JSX.Element {
           w="120px"
           h="90px"
           pos="absolute"
-          top="2rem"
-          right="120px"
+          top={['-2rem', '2rem']}
+          right={['60px', '120px']}
           transform="rotate(-30deg)"
-          display={['none', 'none', 'block']}
         />
         <Heading px="2rem">Why we’re doing this?</Heading>
         <Text fontSize="xl" maxW="500px">
@@ -316,3 +317,41 @@ const benefits = {
       'A world of opportunities and experiences will be opened up for both Creatives & Users. Artsflow will enable Users to discover wonderful arts activities local to them.',
   },
 }
+
+const Dots = () => (
+  <>
+    <Dot
+      bg="#F9D278"
+      size="1rem"
+      top={['0px', '40px']}
+      left={['0px', '30%']}
+      display={['none', 'block']}
+    />
+    <Dot
+      bg="#F4B7C4"
+      size="1rem"
+      top={['0px', '-20px']}
+      left={['0px', '60%']}
+      display={['none', 'block']}
+    />
+    <Dot bg="#3176EE" size="1rem" top={['0px', '60px']} left={['45%', '75%']} />
+    <Dot border="8px solid #F9D278" top={['-40px', '60px']} left={['80%', '88%']} />
+    <Dot bg="#F9D278" size="1rem" top={['480px', '500px']} left={['5%', '5%']} />
+    <Dot
+      image="why-dot1"
+      size="46px"
+      left={['-30px', '15%']}
+      top={['80px', '60px']}
+      display={['block', 'none', 'block']}
+    />
+    <Dot
+      image="why-dot2"
+      size="70px"
+      left={['30px', '3%']}
+      top={['80px', '160px']}
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot image="why-dot3" size="56px" left={['25%', '25%']} top={['500px', '520px']} />
+    <Dot image="why-dot4" size="40px" right={['0', '5%']} top={['450px', '520px']} />
+  </>
+)
