@@ -1,15 +1,16 @@
 import { Text, Link, BoxProps, LinkProps } from '@chakra-ui/react'
 
 import { ARTSFLOW_APP_URL } from 'lib/config'
+import { trackGetStartedButton } from 'analytics'
 
 type Props = BoxProps &
   LinkProps & {
-    location?: string
+    location: string
   }
 
 export const GetStartedButton = ({ location, ...rest }: Props) => {
   const handleClick = () => {
-    console.log('handle click analytics here', location)
+    trackGetStartedButton(location)
   }
 
   return (

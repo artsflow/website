@@ -3,6 +3,7 @@ import { Stack, VStack, Text, Heading, Box, Spacer, Icon } from '@chakra-ui/reac
 import ReactPlayer from 'react-player'
 import Image from 'next/image'
 
+import { trackHomepageVideoPlay, trackHomepageVideoEnd } from 'analytics'
 import { GetStartedButton, Benefits, Dot } from 'components'
 import SquaresSvg from 'svg/landing/squares.svg'
 import CalendarSvg from 'svg/landing/calendar.svg'
@@ -13,11 +14,11 @@ import Scr1 from '../../public/img/scr1.webp'
 
 export default function Home(): JSX.Element {
   const handlePlayVideo = () => {
-    console.log('handlePlayVideo')
+    trackHomepageVideoPlay()
   }
 
   const handleEndVideo = () => {
-    console.log('handleEndVideo')
+    trackHomepageVideoEnd()
   }
 
   return (

@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 
 import { Meta, Dot } from 'components'
 import { showAlert } from 'lib/utils'
+import { trackWebminarPlay, trackWebminarEnd, trackNewsletterSignedUp } from 'analytics'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import HeroImg from '../../public/img/hero-cc.webp'
 
@@ -129,11 +130,11 @@ export default function CreativeCorner(): JSX.Element {
 
 const Webminar = ({ url, title, children }: any) => {
   const handlePlayVideo = () => {
-    console.log('handlePlayVideo')
+    trackWebminarPlay({ url, title })
   }
 
   const handleEndVideo = () => {
-    console.log('handleEndVideo')
+    trackWebminarEnd({ url, title })
   }
 
   return (
@@ -174,6 +175,7 @@ const Newsletter = () => {
       body: JSON.stringify(data),
     }).then((r) => r.json())
     if (res.ok) {
+      trackNewsletterSignedUp()
       showAlert({ title: "You're now In the Flow!", status: 'success' })
       reset()
     } else {
