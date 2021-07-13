@@ -4,7 +4,7 @@ import Image from 'next/image'
 import ReactPlayer from 'react-player'
 import { useForm } from 'react-hook-form'
 
-import { Meta } from 'components'
+import { Meta, Dot } from 'components'
 import { showAlert } from 'lib/utils'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
 import HeroImg from '../../public/img/hero-cc.webp'
@@ -18,10 +18,11 @@ export default function CreativeCorner(): JSX.Element {
         px="2rem"
         textAlign="center"
         spacing="1.5rem"
-        pt={['40px', '130px']}
-        pb={['80px', '130px']}
+        pt={['2rem', '5rem']}
+        pb={['4rem', '8rem']}
         pos="relative"
       >
+        <Dots />
         <Stack
           direction={['column', 'column', 'row']}
           maxW="1000px"
@@ -34,6 +35,7 @@ export default function CreativeCorner(): JSX.Element {
             justifyContent="center"
             textAlign="center"
             spacing="1rem"
+            zIndex="2"
           >
             <Heading size="xl" color="#484848">
               Creative Corner
@@ -232,3 +234,16 @@ const Newsletter = () => {
     </VStack>
   )
 }
+
+const Dots = () => (
+  <>
+    <Dot bg="#3176EE" size="1rem" top={['-40px', '0px']} left={['220px', '400px']} />
+    <Dot bg="#F4B7C4" size="40px" top={['-40px', '100px']} left={['280px', '430px']} />
+    <Dot bg="#F4B7C4" size="22px" top={['450px', '500px']} left={['140px', '60px']} />
+    <Dot border="8px solid #F9D278" top={['420px', '420px']} left={['30px', '380px']} />
+    <Dot bg="#F9D278" size="1rem" top={['400px', '520px']} right={['40px', '80px']} />
+    <Dot image="cc-dot1" size="56px" left="120px" top="80px" display={['none', 'none', 'block']} />
+    <Dot image="cc-dot2" size="60px" left="180px" top="480px" display={['none', 'none', 'block']} />
+    <Dot image="cc-dot3" size="46px" top={['420px', '550px']} right={['100px', '360px']} />
+  </>
+)

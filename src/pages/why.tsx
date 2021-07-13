@@ -22,8 +22,8 @@ export default function WhyArtsflow(): JSX.Element {
         px="2rem"
         textAlign="center"
         spacing="1.5rem"
-        pt={['2rem', '6rem']}
-        pb={['4rem', '6rem']}
+        pt={['2rem', '5rem']}
+        pb={['4rem', '8rem']}
         pos="relative"
       >
         <Stack
