@@ -20,45 +20,24 @@ export default function About(): JSX.Element {
         px="2rem"
         textAlign={['left', 'left', 'center']}
         spacing="1.5rem"
-        py={['40px', '130px']}
+        pt={['3rem', '5rem']}
+        pb={['3rem', '8rem']}
         pos="relative"
       >
-        <Heading size="xl" color="#484848" textAlign="center">
+        <Heading size="xl" color="#484848" textAlign="center" zIndex="2">
           The origins of Artsflow...
         </Heading>
-        <Text color="#616167" maxW="900px" fontSize="xl">
+        <Text color="#616167" maxW="900px" fontSize="xl" zIndex="2">
           <b>James</b> was working on his business Creative Minds and <b>Radu</b> was a contractor
           for tech start-ups. They were on completely different paths until they crossed in
           September 2020.
         </Text>
-        <Text color="#616167" maxW="900px" fontSize="lg">
+        <Text color="#616167" maxW="900px" fontSize="lg" zIndex="2">
           With a shared passion for the arts, a desire to empower people and to make the arts
           accessible to everyone they started Artsflow, a web & mobile app events platform for the
           arts & cultural sector.
         </Text>
-        <Dot bg="#3176EE" size="1rem" top={['60px', '50px']} left={['50px', '100px']} />
-        <Dot
-          border="8px solid #F9D278"
-          top={['-50px', '70px']}
-          right={['20px', 'auto']}
-          left={['auto', '120px']}
-        />
-        <Dot bg="#F4B7C4" size="30px" bottom={['80px', '50px']} left={['-10px', '350px']} />
-        <Dot
-          bg="#F4B7C4"
-          size="1rem"
-          top={['-20px', '0px']}
-          right={['auto', '180px']}
-          left={['30px', 'auto']}
-        />
-        <Dot bg="#3176EE" size="1rem" display={['none', 'block']} right="130px" top="250px" />
-        <Dot
-          bg="#F9D278"
-          size="1rem"
-          bottom={['30px', '140px']}
-          right={['50px', '40px']}
-          left={['auto', 'auto']}
-        />
+        <Dots />
       </VStack>
       <VStack
         justifyContent="center"
@@ -155,3 +134,63 @@ export default function About(): JSX.Element {
     </>
   )
 }
+
+const Dots = () => (
+  <>
+    <Dot bg="#3176EE" size="1rem" top={['60px', '50px']} left={['50px', '100px']} />
+    <Dot
+      border="8px solid #F9D278"
+      top={['-50px', '70px']}
+      right={['20px', 'auto']}
+      left={['auto', '120px']}
+      zIndex="1"
+    />
+    <Dot bg="#F4B7C4" size="30px" bottom={['80px', '50px']} left={['-10px', '350px']} />
+    <Dot
+      bg="#F4B7C4"
+      size="1rem"
+      top={['-20px', '0px']}
+      right={['auto', '180px']}
+      left={['30px', 'auto']}
+    />
+    <Dot bg="#3176EE" size="1rem" display={['none', 'block']} right="130px" top="250px" />
+    <Dot
+      bg="#F9D278"
+      size="1rem"
+      bottom={['30px', '140px']}
+      right={['50px', '40px']}
+      left={['auto', 'auto']}
+    />
+    <Dot
+      image="about-dot1"
+      size="70px"
+      left={['auto', '400px']}
+      right={['20px', 'auto']}
+      top={['-100px', '-20px']}
+    />
+    <Dot
+      image="about-dot2"
+      size="60px"
+      left={['-30px', 'auto']}
+      right={['auto', '100px']}
+      top={['0px', '120px']}
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      image="about-dot3"
+      size="56px"
+      left={['auto', '40px']}
+      right={['auto', 'auto']}
+      top={['0px', '220px']}
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      image="about-dot4"
+      size="46px"
+      left={['auto', 'auto']}
+      right={['-20px', '400px']}
+      top={['260px', '320px']}
+      display={['block', 'none', 'none', 'block']}
+    />
+  </>
+)
