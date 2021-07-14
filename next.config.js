@@ -22,9 +22,6 @@ const nextConfig = {
     })
     return config
   },
-  future: {
-    webpack5: true,
-  },
 }
 
 module.exports = withPlugins([

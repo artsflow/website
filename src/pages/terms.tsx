@@ -12,8 +12,8 @@ export default function Terms({ content }: any): JSX.Element {
         flex="1"
         maxW="900px"
         m="0 auto"
-        mb={['0px', '80px']}
-        pt={['80px', '160px']}
+        mb={['6rem', '6rem']}
+        pt={['2rem', '4rem']}
         px="8"
         justifyContent="flex-start"
         alignItems="flex-start"

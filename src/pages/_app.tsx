@@ -4,8 +4,6 @@ import { AppProps } from 'next/app'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import { StateMachineProvider, createStore } from 'little-state-machine'
-// @ts-ignore
-import { MixpanelProvider } from 'react-mixpanel-browser'
 
 import { Layout } from 'components'
 
@@ -36,17 +34,15 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   }, [])
 
   return (
-    <MixpanelProvider token="b6e4f2b7971a646c6bbc3603382bc0fb">
-      <StateMachineProvider>
-        <ChakraProvider resetCSS theme={theme}>
-          <UserContext.Provider value={userData}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </UserContext.Provider>
-        </ChakraProvider>
-      </StateMachineProvider>
-    </MixpanelProvider>
+    <StateMachineProvider>
+      <ChakraProvider resetCSS theme={theme}>
+        <UserContext.Provider value={userData}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </UserContext.Provider>
+      </ChakraProvider>
+    </StateMachineProvider>
   )
 }
 
