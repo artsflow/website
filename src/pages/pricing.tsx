@@ -14,6 +14,7 @@ import {
 import Logo from 'svg/artsflow.svg'
 import Eventbrite from 'svg/eventbrite.svg'
 import StarSvg from 'svg/star.svg'
+import { Dot } from 'components'
 
 export default function Pricing(): JSX.Element {
   return (
@@ -25,10 +26,11 @@ export default function Pricing(): JSX.Element {
       pb="8rem"
       pos="relative"
     >
+      <Dots />
       <Heading as="h1" size="xl" color="#484848" mb="2rem">
         Pricing & Features
       </Heading>
-      <Text fontSize="xl" color="#616167" pb="2rem">
+      <Text fontSize="xl" color="#616167" pb="4rem">
         An{' '}
         <Text as="b" color="af.violet">
           accessible & affordable
@@ -41,7 +43,6 @@ export default function Pricing(): JSX.Element {
         </Text>{' '}
         events.
       </Text>
-
       <VStack
         justifyContent="center"
         w="full"
@@ -54,15 +55,16 @@ export default function Pricing(): JSX.Element {
         bg="white"
         rounded="1.5rem"
         boxShadow="25px 25px 40px rgba(0, 0, 0, 0.08)"
+        zIndex="1"
       >
         <Stack
-          direction={['column', 'row']}
+          direction={['column', 'column', 'row']}
           w="full"
           justifyContent="space-between"
-          spacing={['2rem', '6rem']}
+          spacing={['2rem', '2rem', '6rem']}
           px={[0, '2rem']}
         >
-          <VStack spacing="0" w={['full', '45%']}>
+          <VStack spacing="0" w={['full', 'full', '45%']}>
             <Heading as="h2" fontSize={['2xl', 'xl']} color="#484848">
               Service Fee
             </Heading>
@@ -72,7 +74,7 @@ export default function Pricing(): JSX.Element {
             </Text>
             <Text color="#616166">Yep, that’s it just 5%!</Text>
           </VStack>
-          <VStack w={['full', '55%']} spacing="1.5rem" alignItems="flex-start">
+          <VStack w={['full', 'full', '55%']} spacing="1.5rem" alignItems="flex-start">
             <Heading as="h2" size="md" color="#484848" pb="1.2rem">
               Comparison on an £8 ticket
             </Heading>
@@ -106,7 +108,7 @@ export default function Pricing(): JSX.Element {
           <Item>Detailed Data Analytics</Item>
           <Item>Online or In Person Events</Item>
           <Item>
-            Beautiful Creative ‘Landing Pages’ (<b>coming soon</b>)
+            Beautiful Creative Profiles (<b>coming soon</b>)
           </Item>
           <Title>Instant Payments</Title>
           <Item>Easy 3-step Booking Process</Item>
@@ -172,4 +174,98 @@ const Item = ({ children }: any) => (
     <ListIcon as={StarSvg} w={['24px', '32px']} h={['24px', '32px']} />
     <Text textAlign="left">{children}</Text>
   </ListItem>
+)
+
+const Dots = () => (
+  <>
+    <Dot
+      bg="#3176EE"
+      size="1rem"
+      top="150px"
+      right="200px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      bg="#F4B7C4"
+      size="1rem"
+      top="200px"
+      left="160px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      border="8px solid #F9D278"
+      top="250px"
+      right="160px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      bg="#3176EE"
+      size="1rem"
+      top="400px"
+      left="200px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      bg="#F4B7C4"
+      size="40px"
+      top="550px"
+      right="200px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      bg="#3176EE"
+      size="1rem"
+      top="700px"
+      left="240px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      bg="#F4B7C4"
+      size="40px"
+      top="800px"
+      left="180px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      bg="#F9D278"
+      size="22px"
+      top="1300px"
+      right="200px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      border="8px solid #F9D278"
+      top="1450px"
+      left="160px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      bg="#3176EE"
+      size="1rem"
+      top="1600px"
+      right="150px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      image="pricing-dot1"
+      size="46px"
+      top="30px"
+      left="260px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      image="pricing-dot2"
+      size="56px"
+      top="1150px"
+      left="220px"
+      display={['none', 'none', 'none', 'block']}
+    />
+    <Dot
+      image="pricing-dot3"
+      size="60px"
+      top="900px"
+      right="150px"
+      display={['none', 'none', 'none', 'block']}
+    />
+  </>
 )
