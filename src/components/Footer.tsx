@@ -30,7 +30,7 @@ export const Footer = () => (
       <GetStartedButton location="footer" />
     </VStack>
     <Stack
-      direction={['column-reverse', 'column-reverse', 'row']}
+      direction={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
       w="100%"
       justifyContent="space-between"
       alignItems="center"
@@ -44,9 +44,9 @@ export const Footer = () => (
         <Text fontSize="14px">Copyright © 2021 Artsflow</Text>
       </HStack>
       <Stack
-        direction={['column', 'column', 'row']}
+        direction={['column', 'column', 'column', 'row']}
         fontSize="14px"
-        spacing="1.5rem"
+        spacing={['1.5rem', '1.2rem']}
         alignItems="center"
       >
         <NextLink href="/about">About</NextLink>
