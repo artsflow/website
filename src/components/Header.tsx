@@ -33,9 +33,8 @@ export const Header = () => {
       </NextLink>
       <HStack display={['none', 'none', 'flex']} spacing="2rem">
         <MenuLink href="/creative-corner" title="Creative Corner" />
-        <MenuLink href="/pricing" title="Pricing" />
         <MenuLink href="/why" title="Why Artsflow?" />
-        <MenuLink href="/about" title="About Us" />
+        <MenuLink href="/pricing" title="Pricing" />
         <GetStartedButton location="header" />
       </HStack>
     </HStack>

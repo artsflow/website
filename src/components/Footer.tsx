@@ -36,11 +36,11 @@ export const Footer = () => (
       alignItems="center"
     >
       <HStack alignItems="center" justifyContent="center" mt={['1rem', '1rem', '1.5rem', 0]}>
-        <Link href="/">
+        <NextLink href="/">
           <a title="Artsflow">
             <Icon as={AfSvg} w="24px" h="32px" />
           </a>
-        </Link>
+        </NextLink>
         <Text fontSize="14px">Copyright © 2021 Artsflow</Text>
       </HStack>
       <Stack

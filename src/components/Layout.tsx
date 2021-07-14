@@ -18,7 +18,7 @@ export function Layout({ children }: any) {
       <Meta />
       <VStack minH="100vh" justifyContent="space-between" spacing="0">
         <Header />
-        <Box minH="100px" w="full" flex="auto">
+        <Box as="main" minH="100px" w="full" flex="auto">
           {children}
         </Box>
         <Footer />
