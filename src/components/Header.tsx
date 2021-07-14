@@ -3,6 +3,7 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 
 import Logo from 'svg/artsflow.svg'
+import { trackExploreClick } from 'analytics'
 import { GetStartedButton } from './GetStartedButton'
 
 interface BgMap {
@@ -41,7 +42,7 @@ export const Header = () => {
           p="0.5rem 1rem"
           rounded="0.5rem"
         >
-          <Link to="#" _hover={{ textDecor: 'none' }}>
+          <Link to="#" _hover={{ textDecor: 'none' }} onClick={() => trackExploreClick()}>
             Explore
           </Link>
         </Tooltip>

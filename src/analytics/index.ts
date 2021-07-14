@@ -71,3 +71,7 @@ export const trackHomepageVideoPlay = () => {
 export const trackHomepageVideoEnd = () => {
   window.analytics.track('Homepage Video Ended')
 }
+
+export const trackExploreClick = () => {
+  window.analytics.track('Explore Link Clicked')
+}

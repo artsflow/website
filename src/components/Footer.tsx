@@ -46,7 +46,7 @@ export const Footer = () => (
       <Stack
         direction={['column', 'column', 'row']}
         fontSize="14px"
-        spacing={['1.5rem', '1.5rem']}
+        spacing={['1.5rem', '2rem']}
         alignItems="center"
       >
         <NextLink href="/creative-corner">Creative Corner</NextLink>
