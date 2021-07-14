@@ -50,6 +50,7 @@ export const Footer = () => (
         alignItems="center"
       >
         <NextLink href="/about">About</NextLink>
+        <NextLink href="/pricing">Pricing</NextLink>
         <Link isExternal href="https://support.artsflow.com/en/">
           Support
         </Link>

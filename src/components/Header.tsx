@@ -12,6 +12,7 @@ interface BgMap {
 const bg: BgMap = {
   '/why': '#fff9e7',
   '/creative-corner': '#fef4f4',
+  '/pricing': '#fafafa',
 }
 
 export const Header = () => {
@@ -30,8 +31,9 @@ export const Header = () => {
           <Logo width="107px" height="24px" />
         </Link>
       </NextLink>
-      <HStack display={['none', 'none', 'flex']} spacing="3rem">
+      <HStack display={['none', 'none', 'flex']} spacing="2rem">
         <MenuLink href="/creative-corner" title="Creative Corner" />
+        <MenuLink href="/pricing" title="Pricing" />
         <MenuLink href="/why" title="Why Artsflow?" />
         <MenuLink href="/about" title="About Us" />
         <GetStartedButton location="header" />
