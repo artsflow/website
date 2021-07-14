@@ -25,11 +25,11 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <link rel="preload" as="style" type="text/css" href="/nprogress.css" />
+          <link rel="stylesheet" type="text/css" href="/nprogress.css" />
 
-          <link rel="preload" href="/fonts/Manrope-Regular.ttf" as="font" crossOrigin="" />
-          <link rel="preload" href="/fonts/Manrope-SemiBold.ttf" as="font" crossOrigin="" />
-          <link rel="preload" href="/fonts/Manrope-Bold.ttf" as="font" crossOrigin="" />
+          <link href="/fonts/Manrope-Regular.ttf" as="font" />
+          <link href="/fonts/Manrope-SemiBold.ttf" as="font" />
+          <link href="/fonts/Manrope-Bold.ttf" as="font" />
 
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
