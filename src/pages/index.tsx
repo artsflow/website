@@ -148,6 +148,7 @@ export default function Home(): JSX.Element {
               placeholder="blur"
               loading="lazy"
               alt="Create your activities"
+              quality="95"
             />
           </VStack>
         </Stack>
@@ -179,6 +180,7 @@ export default function Home(): JSX.Element {
               placeholder="blur"
               loading="lazy"
               alt="Create your activities"
+              quality="95"
             />
           </VStack>
           <VStack alignItems="flex-start" textAlign="left" pl={[0, 0, 0, '40%']}>
