@@ -49,15 +49,15 @@ export const Footer = () => (
         spacing={['1.5rem', '1.2rem']}
         alignItems="center"
       >
-        <NextLink href="/about">About</NextLink>
+        <NextLink href="/creative-corner">Creative Corner</NextLink>
+        <NextLink href="/why">Why Artsflow?</NextLink>
         <NextLink href="/pricing">Pricing</NextLink>
+        <NextLink href="/about">About</NextLink>
         <Link isExternal href="https://support.artsflow.com/en/">
           Support
         </Link>
-        <NextLink href="/why">Why Artsflow?</NextLink>
-        <NextLink href="/creative-corner">Creative Corner</NextLink>
-        <NextLink href="/terms">Terms & Conditions</NextLink>
-        <NextLink href="/privacy">Privacy Policy</NextLink>
+        <NextLink href="/terms">Terms</NextLink>
+        <NextLink href="/privacy">Privacy</NextLink>
       </Stack>
     </Stack>
   </VStack>
