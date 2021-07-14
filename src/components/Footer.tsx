@@ -35,7 +35,7 @@ export const Footer = () => (
       justifyContent="space-between"
       alignItems="center"
     >
-      <HStack alignItems="center" justifyContent="center" mt={['1rem', '1rem', 0]}>
+      <HStack alignItems="center" justifyContent="center" mt={['1rem', '1rem', '1.5rem', 0]}>
         <Link href="/">
           <a title="Artsflow">
             <Icon as={AfSvg} w="24px" h="32px" />
@@ -44,9 +44,9 @@ export const Footer = () => (
         <Text fontSize="14px">Copyright © 2021 Artsflow</Text>
       </HStack>
       <Stack
-        direction={['column', 'column', 'column', 'row']}
+        direction={['column', 'column', 'row']}
         fontSize="14px"
-        spacing={['1.5rem', '1.2rem']}
+        spacing={['1.5rem', '1.5rem']}
         alignItems="center"
       >
         <NextLink href="/creative-corner">Creative Corner</NextLink>
