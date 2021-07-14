@@ -47,3 +47,31 @@ export const trackLandingPageButton = (opts: any) => {
 export const trackLandingPageView = (opts: any) => {
   window.analytics.track('Landing Page Viewed', opts)
 }
+
+export const trackGetStartedButton = (location: string) => {
+  window.analytics.track('Get Started Clicked', { location })
+}
+
+export const trackNewsletterSignedUp = () => {
+  window.analytics.track('Newsletter Signed Up')
+}
+
+export const trackWebminarPlay = (opts: any) => {
+  window.analytics.track('Webminar Video Played', opts)
+}
+
+export const trackWebminarEnd = (opts: any) => {
+  window.analytics.track('Webminar Video Ended', opts)
+}
+
+export const trackHomepageVideoPlay = () => {
+  window.analytics.track('Homepage Video Played')
+}
+
+export const trackHomepageVideoEnd = () => {
+  window.analytics.track('Homepage Video Ended')
+}
+
+export const trackExploreClick = () => {
+  window.analytics.track('Explore Link Clicked')
+}
