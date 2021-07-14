@@ -97,7 +97,7 @@ export default function Home(): JSX.Element {
           <Text as="span" color="af.pink">
             events platform
           </Text>{' '}
-          for the arts!!
+          for the arts!
         </Heading>
         <Heading as="h2" fontWeight="normal" size="md" py={['1rem', 0]}>
           Artsflow is an <b>events platform</b> for <b>the arts & cultural sector.</b>
