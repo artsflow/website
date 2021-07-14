@@ -10,7 +10,9 @@ import CalendarSvg from 'svg/landing/calendar.svg'
 import SendSvg from 'svg/landing/send.svg'
 import CardSvg from 'svg/landing/card.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
-import Scr1 from '../../public/img/scr1.webp'
+import ScrActivities from '../../public/img/scr-activities.webp'
+import ScrActivityPage from '../../public/img/scr-activity-page.webp'
+import ScrDashboard from '../../public/img/scr-dashboard.webp'
 
 export default function Home(): JSX.Element {
   const handlePlayVideo = () => {
@@ -90,15 +92,19 @@ export default function Home(): JSX.Element {
           transform="scaleX(-1) rotate(-30deg)"
           display={['none', 'none', 'block']}
         />
-        <Heading px="2rem">Finally, a platform for the arts!</Heading>
-        <Text fontSize="lg" textAlign={['left', 'center']}>
-          Artsflow is a tailor-made platform for the arts & cultural sector empowering creative
-          practitioners and arts organisations (Creatives) enabling them to create activities and
-          events, receive bookings and generate an income from their passion.
-        </Text>
-        <Text fontSize="lg" textAlign={['left', 'center']}>
-          We want to help you to connect with people interested in the arts, so that you can share
-          your passion with them.
+        <Heading px="1rem">
+          An{' '}
+          <Text as="span" color="af.pink">
+            events platform
+          </Text>{' '}
+          for the arts!!
+        </Heading>
+        <Heading as="h2" fontWeight="normal" size="md" py={['1rem', 0]}>
+          Artsflow is an <b>events platform</b> for <b>the arts & cultural sector.</b>
+        </Heading>
+        <Text fontSize="lg" textAlign={['left', 'center']} px={[0, '3rem']}>
+          We want to empower creative practitioners and arts organisations (Creatives) enabling you
+          to create activities/events, receive bookings and generate an income from your passion!
         </Text>
 
         <Benefits data={benefits} py={['3rem', '6rem']} />
@@ -135,8 +141,14 @@ export default function Home(): JSX.Element {
             bg={['#f1eff6', '#f1eff6', '#f1eff6', 'none']}
             rounded="50px"
             pt={['2rem', '2rem', '2rem', 0]}
+            transform="scale(85%)"
           >
-            <Image src={Scr1} placeholder="blur" loading="lazy" alt="Create your activities" />
+            <Image
+              src={ScrActivities}
+              placeholder="blur"
+              loading="lazy"
+              alt="Create your activities"
+            />
           </VStack>
         </Stack>
 
@@ -160,8 +172,14 @@ export default function Home(): JSX.Element {
             rounded="50px"
             pt={['2rem', '2rem', '2rem', 0]}
             mb={['4rem', '4rem', '4rem', 0]}
+            transform="scale(85%)"
           >
-            <Image src={Scr1} placeholder="blur" loading="lazy" alt="Create your activities" />
+            <Image
+              src={ScrActivityPage}
+              placeholder="blur"
+              loading="lazy"
+              alt="Create your activities"
+            />
           </VStack>
           <VStack alignItems="flex-start" textAlign="left" pl={[0, 0, 0, '40%']}>
             <Heading size="lg">Dedicated Activity Page</Heading>
@@ -207,8 +225,15 @@ export default function Home(): JSX.Element {
             bg={['#f1eff6', '#f1eff6', '#f1eff6', 'none']}
             rounded="50px"
             pt={['2rem', '2rem', '2rem', 0]}
+            transform="scale(85%)"
           >
-            <Image src={Scr1} placeholder="blur" loading="lazy" alt="Create your activities" />
+            <Image
+              src={ScrDashboard}
+              placeholder="blur"
+              loading="lazy"
+              alt="Create your activities"
+              quality="95"
+            />
           </VStack>
         </Stack>
 
@@ -260,24 +285,24 @@ const benefits = {
     icon: SquaresSvg,
     title: 'Create your activities',
     description:
-      'As a Creative you can create multiple activities and publish them so that people can discover them locally and nationally.',
+      'You can create multiple activities on the platform and share them with your community. Our ‘Explore’ page will enable people to discover your events.',
   },
   2: {
     icon: CalendarSvg,
     title: 'Receive bookings',
     description:
-      'Share your Activity Page with your clients and they can easily book you’re activity/event in a few clicks.',
+      'Share your Activity Page with your clients and via your social media channels and people can easily book you’re activity/event in a few clicks.',
   },
   3: {
     icon: SendSvg,
     title: 'Send newsletters',
     description:
-      'Communicate with your clients by sharing upcoming events, send reminders, include video call links and more information. Connect with your client base more easily.',
+      'Communicate with your clients. Share upcoming events, send reminders, include video call links and more information. Connect with your client base more easily.',
   },
   4: {
     icon: CardSvg,
     title: 'Generate an income',
     description:
-      'Earn an income by sharing your passion for the arts. Once you’ve delivered your activity you’ll receive your payment. Track your earnings and other metrics via the Dashboard.',
+      'Once you’ve delivered your activity you’ll receive payment from all of your bookings. You can track your earnings and other metrics via the Dashboard.',
   },
 }

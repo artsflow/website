@@ -31,7 +31,7 @@ export const Benefits = ({ data, ...rest }: Props) => (
         <Heading fontSize={['20px', '24px']}>{data[1].title}</Heading>
       </HStack>
       <Box>
-        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']}>
+        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']} lineHeight="1.8rem">
           {data[1].description}
         </Text>
       </Box>
@@ -46,7 +46,7 @@ export const Benefits = ({ data, ...rest }: Props) => (
         <Heading fontSize={['20px', '24px']}>{data[2].title}</Heading>
       </HStack>
       <Box>
-        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']}>
+        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']} lineHeight="1.8rem">
           {data[2].description}
         </Text>
       </Box>
@@ -61,7 +61,7 @@ export const Benefits = ({ data, ...rest }: Props) => (
         <Heading fontSize={['20px', '24px']}>{data[3].title}</Heading>
       </HStack>
       <Box>
-        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']}>
+        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']} lineHeight="1.8rem">
           {data[3].description}
         </Text>
       </Box>
@@ -76,7 +76,7 @@ export const Benefits = ({ data, ...rest }: Props) => (
         <Heading fontSize={['20px', '24px']}>{data[4].title}</Heading>
       </HStack>
       <Box>
-        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']}>
+        <Text pl={['0', '96px']} pt={['18px', 0]} mt={[0, '-30px']} lineHeight="1.8rem">
           {data[4].description}
         </Text>
       </Box>
