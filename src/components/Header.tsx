@@ -1,4 +1,4 @@
-import { HStack, Text, Link } from '@chakra-ui/react'
+import { HStack, Text, Link, Tooltip } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -32,6 +32,19 @@ export const Header = () => {
         </Link>
       </NextLink>
       <HStack display={['none', 'none', 'flex']} spacing="2rem">
+        <Tooltip
+          hasArrow
+          label="Coming soon..."
+          aria-label="Explore"
+          color="black"
+          bg="af.yellow"
+          p="0.5rem 1rem"
+          rounded="0.5rem"
+        >
+          <Link to="#" _hover={{ textDecor: 'none' }}>
+            Explore
+          </Link>
+        </Tooltip>
         <MenuLink href="/creative-corner" title="Creative Corner" />
         <MenuLink href="/why" title="Why Artsflow?" />
         <MenuLink href="/pricing" title="Pricing" />
