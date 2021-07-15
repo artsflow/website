@@ -262,9 +262,9 @@ export default function WhyArtsflow(): JSX.Element {
           <Item
             title={
               <>
-                <b>Access to our Google Drive</b> – Our Drive is full of free templates to help you
-                get started with your creative business. Once you’ve joined the platform we’ll send
-                you an invite link... Yep, that’s it!
+                <b>Resources page (coming soon)</b> – Login to Artsflow to access our Resources
+                page, which will have video tutorials and a variety of templates to help you get
+                started with your creative business.
               </>
             }
           />

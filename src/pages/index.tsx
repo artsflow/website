@@ -123,6 +123,7 @@ export default function Home(): JSX.Element {
             textAlign="left"
             w={['100%', '100%', '100%', '60%']}
             mt={['4rem', '4rem', '4rem', 0]}
+            spacing="1.5rem"
           >
             <Heading size="lg">Create your activities</Heading>
             <Text lineHeight="1.8rem">
@@ -183,7 +184,7 @@ export default function Home(): JSX.Element {
               quality="95"
             />
           </VStack>
-          <VStack alignItems="flex-start" textAlign="left" pl={[0, 0, 0, '40%']}>
+          <VStack alignItems="flex-start" textAlign="left" pl={[0, 0, 0, '40%']} spacing="1.5rem">
             <Heading size="lg">Dedicated Activity Page</Heading>
             <Text lineHeight="1.8rem">
               Each activity or event that you create will have its own Activity Page where your
@@ -211,13 +212,14 @@ export default function Home(): JSX.Element {
             textAlign="left"
             w={['100%', '100%', '100%', '60%']}
             mt={['4rem', '4rem', '4rem', 0]}
+            spacing="1.5rem"
           >
             <Heading size="lg">Valuable data insights</Heading>
             <Text lineHeight="1.8rem">
               Your Dashboard will provide you with an overview of your business, with data on your
               balance, number of bookings, number of attendees, and the number activity page views.
             </Text>
-            <Text lineHeight="1.8rem">Easily download your booking data via a TXT file.</Text>
+            <Text lineHeight="1.8rem">Easily download your booking data via a CSV text file.</Text>
           </VStack>
           <VStack
             pos={['relative', 'relative', 'relative', 'absolute']}
