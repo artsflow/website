@@ -1,6 +1,18 @@
-import { HStack, Text, Link, Tooltip } from '@chakra-ui/react'
+import {
+  HStack,
+  VStack,
+  Text,
+  Link,
+  Tooltip,
+  Icon,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+} from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 import Logo from 'svg/artsflow.svg'
 import { trackExploreClick } from 'analytics'
@@ -18,6 +30,12 @@ const bg: BgMap = {
 
 export const Header = () => {
   const { route } = useRouter()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const handleOpenMenu = () => {
+    onOpen()
+  }
+
   return (
     <HStack
       as="nav"
@@ -26,32 +44,63 @@ export const Header = () => {
       w="full"
       justifyContent="space-between"
       px="2rem"
+      pos="relative"
     >
       <NextLink href="/">
         <Link>
           <Logo width="107px" height="24px" />
         </Link>
       </NextLink>
-      <HStack display={['none', 'none', 'flex']} spacing="2rem">
-        <Tooltip
-          hasArrow
-          label="Coming soon..."
-          aria-label="Explore"
-          color="black"
-          bg="af.yellow"
-          p="0.5rem 1rem"
-          rounded="0.5rem"
-        >
-          <Link to="#" _hover={{ textDecor: 'none' }} onClick={() => trackExploreClick()}>
-            Explore
-          </Link>
-        </Tooltip>
-        <MenuLink href="/creative-corner" title="Creative Corner" />
-        <MenuLink href="/why" title="Why Artsflow?" />
-        <MenuLink href="/pricing" title="Pricing" />
-        <GetStartedButton location="header" />
-      </HStack>
+      <Icon
+        as={GiHamburgerMenu}
+        w="32px"
+        h="32px"
+        color="af.teal"
+        display={['block', 'block', 'none']}
+        onClick={handleOpenMenu}
+      />
+      <DesktopMenu />
+      <MobileMenu isOpen={isOpen} onClose={onClose} />
     </HStack>
+  )
+}
+
+const DesktopMenu = () => (
+  <HStack display={['none', 'none', 'flex']} spacing="2rem">
+    <Tooltip
+      hasArrow
+      label="Coming soon..."
+      aria-label="Explore"
+      color="black"
+      bg="af.yellow"
+      p="0.5rem 1rem"
+      rounded="0.5rem"
+    >
+      <Link to="#" _hover={{ textDecor: 'none' }} onClick={() => trackExploreClick()}>
+        Explore
+      </Link>
+    </Tooltip>
+    <MenuLink href="/creative-corner" title="Creative Corner" />
+    <MenuLink href="/why" title="Why Artsflow?" />
+    <MenuLink href="/pricing" title="Pricing" />
+    <GetStartedButton location="header" />
+  </HStack>
+)
+
+const MobileMenu = ({ isOpen, onClose }: any) => {
+  const { route } = useRouter()
+
+  return (
+    <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
+      <DrawerOverlay />
+      <DrawerContent py="2rem" bg={bg[route] || '#edf8fa'} onClick={onClose}>
+        <VStack w="full" spacing="0rem">
+          <MenuLink href="/creative-corner" title="Creative Corner" />
+          <MenuLink href="/why" title="Why Artsflow?" />
+          <MenuLink href="/pricing" title="Pricing" />
+        </VStack>
+      </DrawerContent>
+    </Drawer>
   )
 }
 
@@ -65,7 +114,7 @@ const MenuLink = ({ href, title }: MenuLinkProps) => {
   const selectedLine = {
     content: '""',
     position: 'absolute',
-    top: '28px',
+    top: '44px',
     height: '1px',
     bg: '#47BCC8',
     w: 'full',
@@ -79,6 +128,7 @@ const MenuLink = ({ href, title }: MenuLinkProps) => {
         _hover={{
           _before: selectedLine,
         }}
+        py={['1rem', '1rem', '']}
       >
         <Text>{title}</Text>
       </Link>
