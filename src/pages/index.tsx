@@ -261,8 +261,8 @@ const Dots = () => (
       image="home-dot1"
       size="70px"
       left={['auto', '400px']}
-      right={['40px', 'auto']}
-      top={['-20px', '-20px']}
+      right={['60px', 'auto']}
+      top={['0px', '-20px']}
     />
     <Dot
       image="home-dot2"
