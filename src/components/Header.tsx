@@ -120,11 +120,13 @@ const MenuLink = ({ href, title }: MenuLinkProps) => {
     w: 'full',
   }
 
+  const isCC = route === '/cc/[...slug]' && href === '/creative-corner'
+
   return (
     <NextLink href={href}>
       <Link
         pos="relative"
-        _before={href === route ? selectedLine : undefined}
+        _before={href === route || isCC ? selectedLine : undefined}
         _hover={{
           _before: selectedLine,
         }}
