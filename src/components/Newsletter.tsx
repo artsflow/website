@@ -36,7 +36,14 @@ export const Newsletter = () => {
   }
 
   return (
-    <VStack spacing="1rem" w="full" as="form" onSubmit={handleSubmit(onSubmit)} pos="relative">
+    <VStack
+      spacing="1rem"
+      w="full"
+      py="4rem"
+      as="form"
+      onSubmit={handleSubmit(onSubmit)}
+      pos="relative"
+    >
       <Icon
         as={CurledArrowSvg}
         w={['80px', '120px']}

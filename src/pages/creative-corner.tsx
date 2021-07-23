@@ -1,12 +1,13 @@
 import { VStack, Stack, Text, Heading, Box } from '@chakra-ui/react'
 import Image from 'next/image'
-import ReactPlayer from 'react-player'
+import NextLink from 'next/link'
+import { format } from 'date-fns'
 
 import { Meta, Dot, Newsletter } from 'components'
-import { trackWebminarPlay, trackWebminarEnd } from 'analytics'
+import { getArticlesList } from 'api'
 import HeroImg from '../../public/img/hero-cc.webp'
 
-export default function CreativeCorner(): JSX.Element {
+export default function CreativeCorner({ list }: any): JSX.Element {
   return (
     <>
       <Meta title="Creative Corner" />
@@ -70,84 +71,53 @@ export default function CreativeCorner(): JSX.Element {
         pt={['2rem', '4rem']}
         pb={['8rem', '12rem']}
         m="auto"
-        spacing="8rem"
+        spacing="4rem"
         pos="relative"
       >
         <Newsletter />
-        <Webminar
-          url="https://www.youtube.com/watch?v=D6VKhHMXSow"
-          title="How To CONNECT With Your Community"
-        >
-          <Text lineHeight="1.8rem">
-            'How to connect with your community' is the 1st Creative Corner webinar in our series
-            exploring how you can CONNECT with your community and restart your creative practice. 🙌
-          </Text>
-          <Text lineHeight="1.8rem">
-            <b>In the webinar we cover:</b>
-            <br />
-            ✔️ How to find & contact various types of client.
-            <br />
-            ✔️ How to market yourself locally.
-            <br />
-            ✔️ How to plant those seeds & build lasting relationships.
-            <br />
-            ✔️ We share our experiences and insights over the last 9 years with Creative Minds.
-            <br />
-            ✔️ And more!
-          </Text>
-        </Webminar>
-        <Webminar
-          url="https://www.youtube.com/watch?v=wvEda8JoaYA"
-          title="Branding - How To Get Started?"
-        >
-          <Text lineHeight="1.8rem">
-            'Branding - How to get started?' is the 2nd Creative Corner webinar in our series
-            exploring the importance of branding and how to craft your BRAND for your creative
-            business. 🙌
-          </Text>
-          <Text lineHeight="1.8rem">
-            <b>In the webinar we cover:</b>
-            <br />
-            ✔️ What is Branding? - It's more than just a logo!
-            <br />
-            ✔️ The brand values, brand positioning, fonts, colours and logo.
-            <br />
-            ✔️ How branding can shape the success of your creative business.
-            <br />
-            ✔️ What to focus on (depending on what stage you're at in your creative journey).
-            <br />
-            ✔️ And more!
-          </Text>
-        </Webminar>
+        {list?.articles?.map((article: any) => {
+          const { hash, ext, width, height } = article.Image?.[0] || {}
+          const date = format(new Date(article.Date), 'dd MMMM, yyyy')
+          return (
+            <VStack key={article.slug} alignItems="flex-start" w="full">
+              <NextLink href={`/cc/${article.slug}`}>
+                <a>
+                  {hash && (
+                    <Box w="full" mb="1.5rem">
+                      <Image
+                        src={`${hash}/${hash}${ext}`}
+                        placeholder="blur"
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN03XPiPwAF4QLKUuLYlwAAAABJRU5ErkJggg=="
+                        loading="lazy"
+                        alt={article.Title}
+                        width={width}
+                        height={height}
+                        layout="responsive"
+                        loader={({ src }) => `https://ik.imagekit.io/artsflow/${src}`}
+                      />
+                    </Box>
+                  )}
+                  <Heading size="lg">{article.Title}</Heading>
+                  <Text lineHeight="1.8rem" pt="1rem">
+                    {article.Description}
+                  </Text>
+                </a>
+              </NextLink>
+              <Text color="#A4A4A4" fontSize="sm">
+                {article.author?.Name && (
+                  <Text as="span">
+                    by <b>{article.author?.Name}</b> on{' '}
+                  </Text>
+                )}
+                {date}
+                {` `}
+                {article.category?.Name && <Text as="span">in {article.category?.Name}</Text>}
+              </Text>
+            </VStack>
+          )
+        })}
       </VStack>
     </>
-  )
-}
-
-const Webminar = ({ url, title, children }: any) => {
-  const handlePlayVideo = () => {
-    trackWebminarPlay({ url, title })
-  }
-
-  const handleEndVideo = () => {
-    trackWebminarEnd({ url, title })
-  }
-
-  return (
-    <VStack w="full" maxW="800px" spacing="1rem" alignItems="flex-start">
-      <Box w="full" maxW="800px" h={['180px', '450px']} bg="teal.100" pos="relative" mt="-4rem">
-        <ReactPlayer
-          url={url}
-          controls
-          width="100%"
-          height="100%"
-          onPlay={handlePlayVideo}
-          onEnded={handleEndVideo}
-        />
-      </Box>
-      <Heading size="lg">{title}</Heading>
-      {children}
-    </VStack>
   )
 }
 
@@ -163,3 +133,17 @@ const Dots = () => (
     <Dot image="cc-dot3" size="46px" top={['420px', '550px']} right={['100px', '360px']} />
   </>
 )
+
+export async function getServerSideProps() {
+  try {
+    const list = await getArticlesList()
+    return {
+      props: { list },
+    }
+  } catch (e) {
+    return {
+      notFound: true,
+      props: {},
+    }
+  }
+}

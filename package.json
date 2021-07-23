@@ -52,6 +52,8 @@
     "firebase": "^8.4.2",
     "framer-motion": "^4.0.3",
     "google-map-react": "^2.1.9",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.4.0",
     "heic2any": "^0.0.3",
     "little-state-machine": "^4.1.0",
     "lodash": "^4.17.21",
