@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { UserContext } from 'lib/context'
 import { Header } from './Header'
 import { Footer } from './Footer'
-import { Meta } from './Meta'
 
 export function Layout({ children }: any) {
   const { user } = useContext(UserContext)
@@ -17,7 +16,6 @@ export function Layout({ children }: any) {
 
   return (
     <>
-      <Meta />
       {route === '/a/[...slug]' ? (
         children
       ) : (

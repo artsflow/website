@@ -14,6 +14,9 @@ export function Meta({
   description = defaultDescription,
   url = ARTSFLOW_URL,
   image = defaultImage,
+  type = 'website',
+  date = undefined,
+  author = undefined,
 }) {
   return (
     <Head>
@@ -22,8 +25,10 @@ export function Meta({
       <meta property="og:title" content={title} key="title" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
+      {date && <meta property="article:published_time" content={date} />}
+      {author && <meta property="article:author" content={author} />}
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
   )

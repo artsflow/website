@@ -11,9 +11,8 @@ import {
   Image,
 } from '@chakra-ui/react'
 
-function getCoreProps(props: any) {
-  return props['data-sourcepos'] ? { 'data-sourcepos': props['data-sourcepos'] } : {}
-}
+export const getCoreProps = (props: any) =>
+  props['data-sourcepos'] ? { 'data-sourcepos': props['data-sourcepos'] } : {}
 
 export const defaults = {
   paragraph: ({ children }: any) => <Text mb={2}>{children}</Text>,
