@@ -1,4 +1,4 @@
-import { HStack, Box, Button, Grid, Text, VStack } from '@chakra-ui/react'
+import { HStack, Stack, Box, Button, Grid, Text, VStack } from '@chakra-ui/react'
 import { useStateMachine } from 'little-state-machine'
 import { useRouter } from 'next/router'
 
@@ -53,9 +53,9 @@ export const OrderBox = (activity: any) => {
           </>
         )}
       </Box>
-      <HStack
+      <Stack
         bg={['white', 'white', '#e0f4f7']}
-        p="2rem"
+        p={['1.5rem', '2rem']}
         left="0"
         w="full"
         pos={['fixed', 'fixed', 'relative']}
@@ -69,6 +69,8 @@ export const OrderBox = (activity: any) => {
         borderTopRadius={['1rem', '1rem', 0]}
         borderBottomRadius={[0, 0, '1rem']}
         justifyContent="space-between"
+        direction={['column', 'row']}
+        spacing={['20px', 0]}
       >
         <HStack fontSize={['lg', 'xl']} fontWeight="bold" flex="1" justifyContent="center">
           {isFree ? (
@@ -100,7 +102,7 @@ export const OrderBox = (activity: any) => {
         >
           Continue
         </Button>
-      </HStack>
+      </Stack>
     </Grid>
   )
 }
