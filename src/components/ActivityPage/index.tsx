@@ -108,7 +108,12 @@ export function ActivityPage({ activity, profile }: any) {
             <Title text={title} fontSize={['2xl', '2xl']} />
             <Description text={description} />
           </GridItem>
-          <GridItem gridArea="order" order={[3, 3]} px={['1.5rem', '1.5rem', '3rem']}>
+          <GridItem
+            gridArea="order"
+            order={[3, 3]}
+            px={['1.5rem', '1.5rem', '3rem']}
+            mb={['200px', 0]}
+          >
             <OrderBox {...activity} />
           </GridItem>
         </Grid>
