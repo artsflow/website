@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 import Image from 'next/image'
 
 import { trackHomepageVideoPlay, trackHomepageVideoEnd } from 'analytics'
-import { GetStartedButton, Benefits, Dot } from 'components'
+import { GetStartedButton, Benefits, Dot, Meta } from 'components'
 import SquaresSvg from 'svg/landing/squares.svg'
 import CalendarSvg from 'svg/landing/calendar.svg'
 import SendSvg from 'svg/landing/send.svg'
@@ -25,6 +25,7 @@ export default function Home(): JSX.Element {
 
   return (
     <>
+      <Meta />
       <VStack
         bg="#edf8fa"
         px="2rem"

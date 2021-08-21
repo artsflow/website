@@ -1,7 +1,7 @@
 import { createStandaloneToast } from '@chakra-ui/react'
 import { addMinutes, addHours, getUnixTime } from 'date-fns'
 
-export const isProd = process.env.NODE_ENV === 'production'
+export const isStaging = process.env.NEXT_PUBLIC_SENTRY_ENV === 'staging'
 
 export const getImageKitUrl = (url: string, options: any = {}) => {
   const { w = '150', h = '150', tr = 'fo-auto' } = options

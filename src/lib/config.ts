@@ -10,3 +10,4 @@ export const FIREBASE_APP_ID = process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 export const FIREBASE_MEASUREMENT_ID = process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 export const SEGMENT_KEY = process.env.NEXT_PUBLIC_SEGMENT_KEY
 export const STRIPE_KEY = process.env.NEXT_PUBLIC_STRIPE_KEY
+export const STRAPI_API_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL as string
