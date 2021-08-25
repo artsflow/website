@@ -11,7 +11,7 @@ export const Footer = () => (
     pt={['2rem', '2rem', '2rem']}
     pb={['3rem', '2rem']}
     px={['2rem', '4rem']}
-    bg="#edf8fa"
+    bg="#e0f4f7"
     w="full"
   >
     <VStack py="3rem" mb="2rem" spacing="1rem" pos="relative">
@@ -49,10 +49,10 @@ export const Footer = () => (
         spacing={['1.5rem', '2rem']}
         alignItems="center"
       >
-        <NextLink href="/creative-corner">Creative Corner</NextLink>
         <NextLink href="/why">Why Artsflow?</NextLink>
         <NextLink href="/pricing">Pricing</NextLink>
         <NextLink href="/about">About</NextLink>
+        <NextLink href="/in-the-flow">In the Flow!</NextLink>
         <Link isExternal href="https://support.artsflow.com/en/">
           Support
         </Link>

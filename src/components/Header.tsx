@@ -23,8 +23,8 @@ interface BgMap {
 }
 
 const bg: BgMap = {
-  '/why': '#edf8fa',
-  '/creative-corner': '#fae9f2',
+  '/why': '#e0f4f7',
+  '/in-the-flow': '#fae9f2',
   '/pricing': '#fafafa',
 }
 
@@ -40,7 +40,7 @@ export const Header = () => {
     <HStack
       as="nav"
       h="100px"
-      bg={bg[route] || '#edf8fa'}
+      bg={bg[route] || '#e0f4f7'}
       w="full"
       justifyContent="space-between"
       px="2rem"
@@ -81,7 +81,6 @@ const DesktopMenu = () => (
         Explore
       </Link>
     </Tooltip>
-    <MenuLink href="/creative-corner" title="Creative Corner" />
     <MenuLink href="/why" title="Why Artsflow?" />
     <MenuLink href="/pricing" title="Pricing" />
     <GetStartedButton location="header" />
@@ -94,10 +93,9 @@ const MobileMenu = ({ isOpen, onClose }: any) => {
   return (
     <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay />
-      <DrawerContent py="2rem" bg={bg[route] || '#edf8fa'} onClick={onClose}>
+      <DrawerContent py="2rem" bg={bg[route] || '#e0f4f7'} onClick={onClose}>
         <VStack w="full" spacing="0rem">
           <MenuLink href="/" title="Home" />
-          <MenuLink href="/creative-corner" title="Creative Corner" />
           <MenuLink href="/why" title="Why Artsflow?" />
           <MenuLink href="/pricing" title="Pricing" />
         </VStack>
@@ -122,7 +120,7 @@ const MenuLink = ({ href, title }: MenuLinkProps) => {
     w: 'full',
   }
 
-  const isCC = route === '/cc/[...slug]' && href === '/creative-corner'
+  const isCC = route === '/cc/[...slug]' && href === '/in-the-flow'
 
   return (
     <NextLink href={href}>

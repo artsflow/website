@@ -18,7 +18,7 @@ export default function WhyArtsflow(): JSX.Element {
     <>
       <Meta title="Why Artsflow?" />
       <VStack
-        bg="#edf8fa"
+        bg="#e0f4f7"
         px="2rem"
         textAlign="center"
         spacing="1.5rem"
@@ -100,9 +100,11 @@ export default function WhyArtsflow(): JSX.Element {
             alignItems="flex-start"
             textAlign="left"
             spacing="1rem"
-            maxW={['auto', 'auto', '40%']}
+            maxW={['auto', 'auto', '42%']}
           >
-            <Heading color="#484848">Inspire people by sharing your creative passion.</Heading>
+            <Heading color="#484848" lineHeight="xl">
+              Inspire people by sharing your creative passion.
+            </Heading>
             <Text lineHeight="1.8rem">
               Whether you’re a visual artist, musician, photographer, dancer or an arts
               organisation, our <b>tailor-made platform</b> has everything you need to get your
@@ -124,9 +126,11 @@ export default function WhyArtsflow(): JSX.Element {
             alignItems="flex-start"
             textAlign="left"
             spacing="1rem"
-            maxW={['auto', 'auto', '40%']}
+            maxW={['auto', 'auto', '44%']}
           >
-            <Heading color="#484848">Managing your events has never been easier!</Heading>
+            <Heading color="#484848" lineHeight="xl">
+              Managing your events has never been easier!
+            </Heading>
             <Text lineHeight="1.8rem">
               It’s never been easier to create, publish and manage your creative events through
               Artsflow. Our <b>mobile optimised Event Pages</b> and 3-step booking process make it
@@ -177,7 +181,9 @@ export default function WhyArtsflow(): JSX.Element {
             >
               Coming Soon
             </Badge>
-            <Heading color="#484848">Make your events shine with Organiser Profiles.</Heading>
+            <Heading color="#484848" lineHeight="xl">
+              Make your events shine with Organiser Profiles.
+            </Heading>
             <Text lineHeight="1.8rem">
               Whether you’re delivering workshops, hosting a festival or teaching specialised
               courses. Our Organiser Profiles will enable you to <b>create a destination</b> for

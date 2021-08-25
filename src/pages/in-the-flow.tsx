@@ -7,10 +7,10 @@ import { Meta, Dot, Newsletter } from 'components'
 import { getArticlesList } from 'api'
 import HeroImg from '../../public/img/hero-cc.webp'
 
-export default function CreativeCorner({ list }: any): JSX.Element {
+export default function InTheFlow({ list }: any): JSX.Element {
   return (
     <>
-      <Meta title="Creative Corner" />
+      <Meta title="In the Flow!" />
       <VStack
         bg="#fae9f2"
         px="2rem"

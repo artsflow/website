@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
     <>
       <Meta />
       <VStack
-        bg="#edf8fa"
+        bg="#e0f4f7"
         px="2rem"
         textAlign={['left', 'center']}
         pt={['3rem', '5rem']}
@@ -104,14 +104,14 @@ export default function Home(): JSX.Element {
           those who enjoy the arts with wonderful creative events!
         </Heading>
         <Text fontSize="lg" textAlign={['left', 'center']} px={[0, '3rem']}>
-          Take your creative events to the <b>next</b> level with Artsflow enabling you to easily
+          Take your creative events to the <b>next level</b> with Artsflow enabling you to easily
           create your events, promote them, secure bookings and share your creative passion!
         </Text>
 
         <Benefits data={benefits} py={['3rem', '6rem']} />
 
         <Stack
-          bg={['none', 'none', 'none', '#f1eff6']}
+          bg={['none', 'none', 'none', '#ece8f3']}
           rounded="50px"
           p={[0, 0, 0, '4rem']}
           w={['100%', '100%', '100%', '75%']}
@@ -158,7 +158,7 @@ export default function Home(): JSX.Element {
         <Spacer py={['1rem', '1rem', '1rem', '4rem']} />
 
         <Stack
-          bg={['none', 'none', 'none', '#fef5f8']}
+          bg={['none', 'none', 'none', '#fef6db']}
           rounded="50px"
           p={[0, 0, 0, '4rem']}
           w={['100%', '100%', '100%', '75%']}
@@ -200,7 +200,7 @@ export default function Home(): JSX.Element {
         <Spacer py={['1rem', '1rem', '1rem', '4rem']} />
 
         <Stack
-          bg={['none', 'none', 'none', '#fff7e1']}
+          bg={['none', 'none', 'none', '#e0f4f7']}
           rounded="50px"
           p={[0, 0, 0, '4rem']}
           w={['100%', '100%', '100%', '75%']}
