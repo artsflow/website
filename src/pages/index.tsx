@@ -10,7 +10,7 @@ import CalendarSvg from 'svg/landing/calendar.svg'
 import SendSvg from 'svg/landing/send.svg'
 import CardSvg from 'svg/landing/card.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
-import ScrActivities from '../../public/img/scr-activities.webp'
+import ScrEvents from '../../public/img/scr-events.webp'
 import ScrActivityPage from '../../public/img/scr-activity-page.webp'
 import ScrDashboard from '../../public/img/scr-dashboard.webp'
 
@@ -146,7 +146,7 @@ export default function Home(): JSX.Element {
             transform="scale(85%)"
           >
             <Image
-              src={ScrActivities}
+              src={ScrEvents}
               placeholder="blur"
               loading="lazy"
               alt="Create your activities"
