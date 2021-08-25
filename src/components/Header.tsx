@@ -23,8 +23,8 @@ interface BgMap {
 }
 
 const bg: BgMap = {
-  '/why': '#fff9e7',
-  '/creative-corner': '#fef4f4',
+  '/why': '#edf8fa',
+  '/creative-corner': '#fae9f2',
   '/pricing': '#fafafa',
 }
 
@@ -67,6 +67,7 @@ export const Header = () => {
 
 const DesktopMenu = () => (
   <HStack display={['none', 'none', 'flex']} spacing="2rem">
+    <MenuLink href="/" title="Home" />
     <Tooltip
       hasArrow
       label="Coming soon..."
@@ -95,6 +96,7 @@ const MobileMenu = ({ isOpen, onClose }: any) => {
       <DrawerOverlay />
       <DrawerContent py="2rem" bg={bg[route] || '#edf8fa'} onClick={onClose}>
         <VStack w="full" spacing="0rem">
+          <MenuLink href="/" title="Home" />
           <MenuLink href="/creative-corner" title="Creative Corner" />
           <MenuLink href="/why" title="Why Artsflow?" />
           <MenuLink href="/pricing" title="Pricing" />

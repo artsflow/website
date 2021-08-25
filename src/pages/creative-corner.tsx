@@ -12,7 +12,7 @@ export default function CreativeCorner({ list }: any): JSX.Element {
     <>
       <Meta title="Creative Corner" />
       <VStack
-        bg="#fef4f4"
+        bg="#fae9f2"
         px="2rem"
         textAlign="center"
         spacing="1.5rem"
