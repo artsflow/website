@@ -87,8 +87,8 @@ export default function Home(): JSX.Element {
           w="120px"
           h="90px"
           pos="absolute"
-          top="60px"
-          left="80px"
+          top="40px"
+          left="40px"
           transform="scaleX(-1) rotate(-30deg)"
           display={['none', 'none', 'block']}
         />
