@@ -1,24 +1,24 @@
 import React from 'react'
-import { VStack, Stack, Text, Heading, Box, Icon, SimpleGrid, HStack } from '@chakra-ui/react'
+import { VStack, Stack, Text, Heading, Box, Icon, Badge } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import { Meta, Benefits, Dot } from 'components'
+import { Meta, Benefits, Dot, GetStartedButton } from 'components'
 import UsersSvg from 'svg/b-users.svg'
 import BulbSvg from 'svg/b-bulb.svg'
 import TechSvg from 'svg/b-tech.svg'
 import LocateSvg from 'svg/b-locate.svg'
-import CheckSvg from 'svg/check.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
-import HeroImg from '../../public/img/hero-why.webp'
+import HeroImg from '../../public/img/hero-why2.webp'
 import WhyImg1 from '../../public/img/why-img1.webp'
 import WhyImg2 from '../../public/img/why-img2.webp'
+import WhyImg3 from '../../public/img/why-img3.webp'
 
 export default function WhyArtsflow(): JSX.Element {
   return (
     <>
       <Meta title="Why Artsflow?" />
       <VStack
-        bg="#fff9e7"
+        bg="#e0f4f7"
         px="2rem"
         textAlign="center"
         spacing="1.5rem"
@@ -42,11 +42,11 @@ export default function WhyArtsflow(): JSX.Element {
             zIndex="1"
           >
             <Heading size="xl" color="#484848">
-              Share your passion for the arts
+              Creative events all in one place!
             </Heading>
             <Text color="#616167" maxW="900px" fontSize="xl">
-              We’re here to help Creatives <b>connect</b> with their community and share their
-              passion with others!
+              We’ve built a tailor-made platform to super-charge your creative events helping you to
+              share your passion with others!
             </Text>
           </VStack>
           <Box
@@ -62,43 +62,8 @@ export default function WhyArtsflow(): JSX.Element {
           </Box>
         </Stack>
       </VStack>
-      <VStack
-        justifyContent="center"
-        maxW="1000px"
-        px="2rem"
-        pt={['2rem', '5rem']}
-        pb={['4rem', '6rem']}
-        m="auto"
-        spacing={['1.5rem', '2rem']}
-        textAlign="center"
-        pos="relative"
-      >
-        <Icon
-          as={CurledArrowSvg}
-          w="120px"
-          h="90px"
-          pos="absolute"
-          top={['-2rem', '2rem']}
-          right={['60px', '120px']}
-          transform="rotate(-30deg)"
-        />
-        <Heading px="2rem">Why we’re doing this?</Heading>
-        <Text fontSize="xl" maxW="500px">
-          We’re on a mission to{' '}
-          <Text as="span" color="af.pink" fontWeight="bold">
-            ‘level up’
-          </Text>{' '}
-          the arts and cultural sector and make the arts{' '}
-          <Text as="span" color="af.pink" fontWeight="bold">
-            accessible
-          </Text>{' '}
-          to everyone! 💯
-        </Text>
-        <Benefits data={benefits} pt={['3rem', '4rem']} />
-      </VStack>
 
       <VStack
-        bg="#fafafa"
         px="2rem"
         textAlign="center"
         spacing={['4rem', '4rem', '6rem']}
@@ -106,6 +71,49 @@ export default function WhyArtsflow(): JSX.Element {
         pb={['4rem', '6rem']}
         pos="relative"
       >
+        <Icon
+          as={CurledArrowSvg}
+          w="120px"
+          h="90px"
+          pos="absolute"
+          top={['-2rem', '-2rem']}
+          right={['60px', '120px']}
+          transform="rotate(-30deg)"
+        />
+        <Stack
+          direction={['column', 'column', 'row']}
+          maxW="1000px"
+          w="full"
+          justifyContent="space-between"
+          spacing={['1rem', '2rem', '4rem']}
+        >
+          <VStack justifyContent="center">
+            <Image
+              src={WhyImg1}
+              placeholder="blur"
+              loading="lazy"
+              alt="Becoming a Creative is well within reach"
+            />
+          </VStack>
+          <VStack
+            justifyContent="center"
+            alignItems="flex-start"
+            textAlign="left"
+            spacing="1rem"
+            maxW={['auto', 'auto', '42%']}
+          >
+            <Heading color="#484848" lineHeight="xl">
+              Inspire people by sharing your creative passion.
+            </Heading>
+            <Text lineHeight="1.8rem">
+              Whether you’re a visual artist, musician, photographer, dancer or an arts
+              organisation, our <b>tailor-made platform</b> has everything you need to get your
+              creative events out there to those that are interested!
+            </Text>
+            <GetStartedButton label="Create your events ⇾" location="why" />
+          </VStack>
+        </Stack>
+
         <Stack
           direction={['column-reverse', 'column-reverse', 'row']}
           maxW="1000px"
@@ -118,27 +126,28 @@ export default function WhyArtsflow(): JSX.Element {
             alignItems="flex-start"
             textAlign="left"
             spacing="1rem"
-            maxW={['auto', 'auto', '40%']}
+            maxW={['auto', 'auto', '44%']}
           >
-            <Heading color="#484848">Empowering people through the arts</Heading>
+            <Heading color="#484848" lineHeight="xl">
+              Managing your events has never been easier!
+            </Heading>
             <Text lineHeight="1.8rem">
-              We’ve been making a difference to peoples lives over the last 9 years with Creative
-              Minds (CM), enabling people of all ages and abilities to explore their creativity.
+              It’s never been easier to create, publish and manage your creative events through
+              Artsflow. Our <b>mobile optimised Event Pages</b> and 3-step booking process make it
+              effortless for your audience to book your event!
             </Text>
-            <Text lineHeight="1.8rem">
-              At one stage our nationwide community of artists were delivering 350 art sessions to
-              nearly 2000 people a month!
-            </Text>
+            <GetStartedButton location="why" />
           </VStack>
           <VStack justifyContent="center">
             <Image
-              src={WhyImg1}
+              src={WhyImg2}
               placeholder="blur"
               loading="lazy"
               alt="Empowering people through the arts"
             />
           </VStack>
         </Stack>
+
         <Stack
           direction={['column', 'column', 'row']}
           maxW="1000px"
@@ -148,7 +157,7 @@ export default function WhyArtsflow(): JSX.Element {
         >
           <VStack justifyContent="center">
             <Image
-              src={WhyImg2}
+              src={WhyImg3}
               placeholder="blur"
               loading="lazy"
               alt="Becoming a Creative is well within reach"
@@ -161,132 +170,73 @@ export default function WhyArtsflow(): JSX.Element {
             spacing="1rem"
             maxW={['auto', 'auto', '40%']}
           >
-            <Heading color="#484848">Becoming a Creative is well within reach</Heading>
+            <Badge
+              variant="outline"
+              textTransform="none"
+              color="white"
+              bg="#cfcfd1"
+              rounded="8px"
+              px="2"
+              py="1"
+            >
+              Coming Soon
+            </Badge>
+            <Heading color="#484848" lineHeight="xl">
+              Make your events shine with Organiser Profiles.
+            </Heading>
             <Text lineHeight="1.8rem">
-              We’ve trained up to 70 CM Artists, and one thing that we’ve learnt is that sharing
-              your passion for the arts is well within reach. All you need to do is decide to start
-              your creative journey today.
+              Whether you’re delivering workshops, hosting a festival or teaching specialised
+              courses. Our Organiser Profiles will enable you to <b>create a destination</b> for
+              your audience where they can find out more about you and your events..
             </Text>
-            <Text lineHeight="1.8rem">
-              With Artsflow we’ll provide you with the <b>tools</b> and <b>know-how</b> to make it
-              happen!
-            </Text>
+            <GetStartedButton label="Explore more ⇾" location="why" />
           </VStack>
         </Stack>
       </VStack>
-      <VStack
-        justifyContent="center"
-        maxW="1000px"
-        px="2rem"
-        pt={['2rem', '2rem']}
-        pb={['2rem', '4rem']}
-        m="auto"
-        spacing={['1.5rem', '2rem']}
-        textAlign="center"
-        pos="relative"
-      >
-        <Icon
-          as={CurledArrowSvg}
-          w="120px"
-          h="90px"
-          pos="absolute"
-          top="0.5rem"
-          left={['0', '100px', '200px']}
-          transform="scaleX(-1) rotate(-30deg)"
-        />
-        <Heading px="2rem">Why join Artsflow?</Heading>
-        <SimpleGrid columns={[1, 1, 2]} spacing="2rem" textAlign="left" pt={['1rem', '2rem']}>
-          <Item
-            title={
-              <>
-                <b>Create arts activities/events with ease!</b> - Our ‘Add Activity’ flow is only
-                for creative events meaning that Users who are interested in the arts will be able
-                to find and book your event more easily.
-              </>
-            }
+
+      <VStack bg="#fafafa">
+        <VStack
+          justifyContent="center"
+          maxW="1000px"
+          px="2rem"
+          pt={['2rem', '2rem']}
+          pb={['2rem', '4rem']}
+          m="auto"
+          spacing={['1.5rem', '2rem']}
+          textAlign="center"
+          pos="relative"
+        >
+          <Icon
+            as={CurledArrowSvg}
+            w="120px"
+            h="90px"
+            pos="absolute"
+            top="-2rem"
+            left={['0', '100px', '200px']}
+            transform="scaleX(-1) rotate(-30deg)"
           />
-          <Item
-            title={
-              <>
-                <b>Accessible Platform</b> – Due to working with a range of clients over the years
-                we understand how important accessibility is for you when using the platform, and
-                your clients who book your events.
-              </>
-            }
-          />
-          <Item
-            title={
-              <>
-                <b>Seamless bookings & payments</b> – Our 3-step booking process makes it super easy
-                for people to book and pay to attend your arts activities. It’s never been easier to
-                earn an income from your passion.
-              </>
-            }
-          />
-          <Item
-            title={
-              <>
-                <b>Creative Profiles (coming soon)</b> – Beautiful public profiles are coming your
-                way! This will be your landing page displaying all of your arts activities/events
-                for people to explore and book!
-              </>
-            }
-          />
-          <Item
-            title={
-              <>
-                <b>A Smooth Experience</b> – We’ve had some great initial feedback from Creatives
-                who have told us their experience has been much better than other platforms. The
-                last thing you want is to get lost in a maze!
-              </>
-            }
-          />
-          <Item
-            title={
-              <>
-                <b>Creative Corner webinars</b> – Learn from the experts and gain valuable insights
-                when you attend our Creative Corner webinars! We’ll explore many different areas of
-                your creative business.
-              </>
-            }
-          />
-          <Item
-            title={
-              <>
-                <b>Discount on Artsflow Training</b> – Get a 20% discount on our Training when you
-                login in and create your first arts activity/event on Artsflow. Make today the day
-                you start your creative journey.
-              </>
-            }
-          />
-          <Item
-            title={
-              <>
-                <b>Resources page (coming soon)</b> – Login to Artsflow to access our Resources
-                page, which will have video tutorials and a variety of templates to help you get
-                started with your creative business.
-              </>
-            }
-          />
-        </SimpleGrid>
-        <Text fontSize="xl" py={['2rem', '3rem']} maxW="550px">
-          We’re not just an events platform, we’re here to <B>support</B> and foster a{' '}
-          <B>Creative Community</B> that wants to bring the arts into their community!
-        </Text>
+          <Heading px="2rem">Why we’re doing this?</Heading>
+          <Text fontSize="xl" pt={['2rem', '2rem']} maxW="550px">
+            We’re on a mission to <B>‘level up’</B> arts and culture and make the arts{' '}
+            <B>accessible</B> to everyone! 💯💪
+          </Text>
+          <Text fontSize="xl" maxW="650px">
+            We want a world where arts and culture is valued, abundant and truely accessible to
+            people, so we decided enough was enough it’s time to build it!
+          </Text>
+          <Text fontSize="xl" maxW="550px">
+            Join us on this journey.
+          </Text>
+
+          <Benefits data={benefits} pt={['3rem', '4rem']} />
+        </VStack>
       </VStack>
     </>
   )
 }
 
-const Item = ({ title }: any) => (
-  <HStack alignItems="flex-start" spacing="1rem">
-    <Icon w={['30px', '40px']} h={['30px', '40px']} as={CheckSvg} />
-    <Text lineHeight="1.8rem">{title}</Text>
-  </HStack>
-)
-
 const B = ({ children }: any) => (
-  <Text as="span" fontWeight="bold" color="af.pink">
+  <Text as="span" fontWeight="bold" color="af.teal">
     {children}
   </Text>
 )
@@ -296,25 +246,25 @@ const benefits = {
     icon: UsersSvg,
     title: 'Increase Access ',
     description:
-      'We want the arts to be accessible to all. Through Artsflow we hope to increase access to the arts and thus increase awareness of arts activity locally.',
+      'We want the arts to be accessible to all. Through Artsflow we hope to increase access to the arts and thus increase awareness of the arts locally & nationally.',
   },
   2: {
     icon: BulbSvg,
-    title: 'Empower Creatives',
+    title: 'Empower Organisations',
     description:
-      'We want to empower Creatives both experienced and new to the sector, enabling them to share their passion and creativity with others, and earn an income.',
+      'We want to empower creative people and organisations enabling them to create wonderful events, engage their audiences and generate an income.',
   },
   3: {
     icon: TechSvg,
-    title: 'Technology Enabler ',
+    title: 'Technology Empowerer',
     description:
-      'The Arts Sector is one of the only industries without a tailor-made platform that enables people to instantly and easily connect with art activities around them.',
+      'Arts & culture is one of the only areas without a tailor-made platform that enables people to instantly and easily connect with the arts - we want to change that. ',
   },
   4: {
     icon: LocateSvg,
     title: 'Service Discovery',
     description:
-      'A world of opportunities and experiences will be opened up for both Creatives & Users. Artsflow will enable Users to discover wonderful arts activities local to them.',
+      'New opportunities and experiences will emerge for both creative organisations and their audiences, enabling the discovery of wonderful arts events locally and nationally.',
   },
 }
 

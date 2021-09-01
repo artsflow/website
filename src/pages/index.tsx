@@ -10,7 +10,7 @@ import CalendarSvg from 'svg/landing/calendar.svg'
 import SendSvg from 'svg/landing/send.svg'
 import CardSvg from 'svg/landing/card.svg'
 import CurledArrowSvg from 'svg/landing/curled-arrow.svg'
-import ScrActivities from '../../public/img/scr-activities.webp'
+import ScrEvents from '../../public/img/scr-events.webp'
 import ScrActivityPage from '../../public/img/scr-activity-page.webp'
 import ScrDashboard from '../../public/img/scr-dashboard.webp'
 
@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
     <>
       <Meta />
       <VStack
-        bg="#edf8fa"
+        bg="#e0f4f7"
         px="2rem"
         textAlign={['left', 'center']}
         pt={['3rem', '5rem']}
@@ -41,8 +41,7 @@ export default function Home(): JSX.Element {
           Connect with your community!
         </Heading>
         <Text fontSize="xl" color="#616167" pb="2rem">
-          Create wonderful activities and events, receive bookings and share your passion for the
-          arts.
+          Create wonderful events, receive bookings and share your creative passion!
         </Text>
         <GetStartedButton location="home" />
         <Spacer pt="2rem" />
@@ -88,30 +87,31 @@ export default function Home(): JSX.Element {
           w="120px"
           h="90px"
           pos="absolute"
-          top="60px"
-          left="80px"
+          top="40px"
+          left="40px"
           transform="scaleX(-1) rotate(-30deg)"
           display={['none', 'none', 'block']}
         />
         <Heading px="1rem">
-          An{' '}
-          <Text as="span" color="af.pink">
+          The{' '}
+          <Text as="span" color="af.teal">
             events platform
           </Text>{' '}
-          for the arts!
+          for creative events!
         </Heading>
         <Heading as="h2" fontWeight="normal" size="md" py={['1rem', 0]}>
-          Artsflow is an <b>events platform</b> for <b>the arts & cultural sector.</b>
+          We’ve created a <b>go-to events platform for arts and culture</b>, helping to connect
+          those who enjoy the arts with wonderful creative events!
         </Heading>
         <Text fontSize="lg" textAlign={['left', 'center']} px={[0, '3rem']}>
-          We want to empower creative practitioners and arts organisations (Creatives) enabling you
-          to create activities/events, receive bookings and generate an income from your passion!
+          Take your creative events to the <b>next level</b> with Artsflow enabling you to easily
+          create your events, promote them, secure bookings and share your creative passion!
         </Text>
 
         <Benefits data={benefits} py={['3rem', '6rem']} />
 
         <Stack
-          bg={['none', 'none', 'none', '#f1eff6']}
+          bg={['none', 'none', 'none', '#ece8f3']}
           rounded="50px"
           p={[0, 0, 0, '4rem']}
           w={['100%', '100%', '100%', '75%']}
@@ -126,13 +126,13 @@ export default function Home(): JSX.Element {
             mt={['4rem', '4rem', '4rem', 0]}
             spacing="1.5rem"
           >
-            <Heading size="lg">Create your activities</Heading>
+            <Heading size="lg">Create your events</Heading>
             <Text lineHeight="1.8rem">
-              Easily create, publish and amend your arts activities in Artsflow.
+              Easily create, publish and amend your arts events in Artsflow.
             </Text>
             <Text lineHeight="1.8rem">
-              Whether your delivering activities on a weekly basis, bi-monthly basis or delivering a
-              6 week course, you can determine what activities you want to deliver and when.
+              Whether your organising events on a weekly or monthly basis or delivering a 6 week
+              course, you can determine what events you want to deliver and when.
             </Text>
           </VStack>
           <VStack
@@ -146,7 +146,7 @@ export default function Home(): JSX.Element {
             transform="scale(85%)"
           >
             <Image
-              src={ScrActivities}
+              src={ScrEvents}
               placeholder="blur"
               loading="lazy"
               alt="Create your activities"
@@ -158,7 +158,7 @@ export default function Home(): JSX.Element {
         <Spacer py={['1rem', '1rem', '1rem', '4rem']} />
 
         <Stack
-          bg={['none', 'none', 'none', '#fef5f8']}
+          bg={['none', 'none', 'none', '#fef6db']}
           rounded="50px"
           p={[0, 0, 0, '4rem']}
           w={['100%', '100%', '100%', '75%']}
@@ -186,13 +186,13 @@ export default function Home(): JSX.Element {
             />
           </VStack>
           <VStack alignItems="flex-start" textAlign="left" pl={[0, 0, 0, '40%']} spacing="1.5rem">
-            <Heading size="lg">Dedicated Activity Page</Heading>
+            <Heading size="lg">Dedicated Event Page</Heading>
             <Text lineHeight="1.8rem">
-              Each activity or event that you create will have its own Activity Page where your
-              clients can navigate to, book and make payment.
+              Each event that you create will have its own Event Page that your audience can visit
+              via a short link. From there they can easily book and make payment.
             </Text>
             <Text lineHeight="1.8rem">
-              Our 3-step booking process makes booking your activity a breeze!
+              Our 3-step booking process makes booking your event a breeze!
             </Text>
           </VStack>
         </Stack>
@@ -200,7 +200,7 @@ export default function Home(): JSX.Element {
         <Spacer py={['1rem', '1rem', '1rem', '4rem']} />
 
         <Stack
-          bg={['none', 'none', 'none', '#fff7e1']}
+          bg={['none', 'none', 'none', '#e0f4f7']}
           rounded="50px"
           p={[0, 0, 0, '4rem']}
           w={['100%', '100%', '100%', '75%']}
@@ -218,9 +218,9 @@ export default function Home(): JSX.Element {
             <Heading size="lg">Valuable data insights</Heading>
             <Text lineHeight="1.8rem">
               Your Dashboard will provide you with an overview of your business, with data on your
-              balance, number of bookings, number of attendees, and the number activity page views.
+              balance, number of bookings, number of attendees, and the number of event page views.
             </Text>
-            <Text lineHeight="1.8rem">Easily download your booking data via a CSV text file.</Text>
+            <Text lineHeight="1.8rem">Easily download your booking data via a TXT file.</Text>
           </VStack>
           <VStack
             pos={['relative', 'relative', 'relative', 'absolute']}
@@ -288,26 +288,26 @@ const Dots = () => (
 const benefits = {
   1: {
     icon: SquaresSvg,
-    title: 'Create your activities',
+    title: 'Eye-catching events',
     description:
-      'You can create multiple activities on the platform and share them with your community. Our ‘Explore’ page will enable people to discover your events.',
+      'You can create multiple events on the platform and share them with your community. Our ‘Explore’ page will enable people to discover your events.',
   },
   2: {
     icon: CalendarSvg,
-    title: 'Receive bookings',
+    title: 'Seamless Bookings',
     description:
-      'Share your Activity Page with your clients and via your social media channels and people can easily book you’re activity/event in a few clicks.',
+      'Share your Event Page with your audience and via your social media channels and people can book it easily, in just a few clicks.',
   },
   3: {
     icon: SendSvg,
-    title: 'Send newsletters',
+    title: 'Engaging newsletters',
     description:
-      'Communicate with your clients. Share upcoming events, send reminders, include video call links and more information. Connect with your client base more easily.',
+      'Communicate with your audience. Share upcoming events, send reminders, include video call links and more. Connect with your audience more easily.',
   },
   4: {
     icon: CardSvg,
-    title: 'Generate an income',
+    title: 'Smooth payments',
     description:
-      'Once you’ve delivered your activity you’ll receive payment from all of your bookings. You can track your earnings and other metrics via the Dashboard.',
+      'Once you’re event has finished you’ll receive payment from all of your bookings. You can track your income and other metrics via the Dashboard.',
   },
 }

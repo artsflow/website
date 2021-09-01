@@ -6,9 +6,10 @@ import { trackGetStartedButton } from 'analytics'
 type Props = BoxProps &
   LinkProps & {
     location: string
+    label?: string
   }
 
-export const GetStartedButton = ({ location, ...rest }: Props) => {
+export const GetStartedButton = ({ location, label = 'Get Started ⇾', ...rest }: Props) => {
   const handleClick = () => {
     trackGetStartedButton(location)
   }
@@ -18,14 +19,14 @@ export const GetStartedButton = ({ location, ...rest }: Props) => {
       isExternal
       href={ARTSFLOW_APP_URL}
       color="white"
-      bg="af.teal"
+      bg="af.violet"
       px="1rem"
       py="0.5rem"
       rounded="8px"
       onClick={handleClick}
       {...rest}
     >
-      <Text fontWeight="bold">Get Started</Text>
+      <Text fontWeight="bold">{label}</Text>
     </Link>
   )
 }
