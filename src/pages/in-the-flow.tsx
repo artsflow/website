@@ -4,10 +4,13 @@ import NextLink from 'next/link'
 import { format } from 'date-fns'
 
 import { Meta, Dot, Newsletter } from 'components'
-import { getArticlesList } from 'api'
+import { getArticlesList, getAllPosts, urlForSource } from 'api'
 import HeroImg from '../../public/img/hero-cc.webp'
 
-export default function InTheFlow({ list }: any): JSX.Element {
+const WIDTH = 617
+const HEIGHT = 317
+
+export default function InTheFlow({ posts }: any): JSX.Element {
   return (
     <>
       <Meta title="In the Flow!" />
@@ -75,43 +78,45 @@ export default function InTheFlow({ list }: any): JSX.Element {
         pos="relative"
       >
         <Newsletter />
-        {list?.articles?.map((article: any) => {
-          const { hash, ext, width, height } = article.Image?.[0] || {}
-          const date = format(new Date(article.Date), 'dd MMMM, yyyy')
+        {posts?.allPost?.map((post: any) => {
+          const { slug, title, description, author, categories, publishedAt, mainImage } = post
+          const date = format(new Date(publishedAt), 'dd MMMM, yyyy')
+          const imgUrl = urlForSource(mainImage.asset._id).size(WIDTH, HEIGHT)
+          const category = categories[0]
+
           return (
-            <VStack key={article.slug} alignItems="flex-start" w="full">
-              <NextLink href={`/cc/${article.slug}`}>
+            <VStack key={slug.current} alignItems="flex-start" w="full">
+              <NextLink href={`/cc/${slug.current}`}>
                 <a>
-                  {hash && (
+                  {imgUrl && (
                     <Box w="full" mb="1.5rem">
                       <Image
-                        src={`${hash}/${hash}${ext}`}
+                        src={imgUrl.url()}
                         placeholder="blur"
                         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN03XPiPwAF4QLKUuLYlwAAAABJRU5ErkJggg=="
                         loading="lazy"
-                        alt={article.Title}
-                        width={width}
-                        height={height}
+                        alt={title}
+                        width={WIDTH}
+                        height={HEIGHT}
                         layout="responsive"
-                        loader={({ src }) => `https://ik.imagekit.io/artsflow/${src}`}
                       />
                     </Box>
                   )}
-                  <Heading size="lg">{article.Title}</Heading>
+                  <Heading size="lg">{title}</Heading>
                   <Text lineHeight="1.8rem" pt="1rem">
-                    {article.Description}
+                    {description}
                   </Text>
                 </a>
               </NextLink>
               <Text color="#A4A4A4" fontSize="sm">
-                {article.author?.Name && (
+                {author?.name && (
                   <Text as="span">
-                    by <b>{article.author?.Name}</b> on{' '}
+                    by <b>{author?.name}</b> on{' '}
                   </Text>
                 )}
                 {date}
                 {` `}
-                {article.category?.Name && <Text as="span">in {article.category?.Name}</Text>}
+                {category && <Text as="span">in {category.title}</Text>}
               </Text>
             </VStack>
           )
@@ -136,9 +141,10 @@ const Dots = () => (
 
 export async function getServerSideProps() {
   try {
+    const posts = await getAllPosts()
     const list = await getArticlesList()
     return {
-      props: { list },
+      props: { list, posts },
     }
   } catch (e) {
     return {

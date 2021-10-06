@@ -9,9 +9,9 @@ const SentryWebpackPluginOptions = {
 }
 
 const nextConfig = {
-  // images: {
-  //   loader: 'custom',
-  // },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.md$/,
