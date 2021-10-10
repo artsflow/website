@@ -2,32 +2,39 @@ import { useEffect } from 'react'
 import { VStack, Stack, Text, Heading, Box, HStack, Avatar } from '@chakra-ui/react'
 import Image from 'next/image'
 import { format } from 'date-fns'
+import toMarkdown from '@sanity/block-content-to-markdown'
 
 import { Meta, Newsletter } from 'components'
 import { trackCreativeCornerArticle } from 'analytics'
-import { getArticle } from 'api'
+import { getPostBySlug, urlForSource } from 'api'
 import { ARTSFLOW_URL } from 'lib/config'
+import { mdserializers } from 'lib/sanity'
 import { MDArticle } from 'lib'
 
-export default function Article({ article }: any) {
-  const { hash, ext, width, height } = article.Image?.[0] || {}
-  const date = format(new Date(article.Date), 'dd MMMM, yyyy')
-  const { hash: ahash, ext: aext } = article.author?.Avatar?.[0] || {}
+const WIDTH = 617
+const HEIGHT = 317
+
+export default function Post({ post }: any) {
+  const { slug, title, description, author, publishedAt, mainImage, bodyRaw } = post
+  const date = format(new Date(publishedAt), 'dd MMMM, yyyy')
+  const imgUrl = urlForSource(mainImage.asset._id).size(WIDTH, HEIGHT).url()
+  const avatarUrl = urlForSource(author.image.asset._id).url()
+  const markdown = toMarkdown(bodyRaw, { serializers: mdserializers })
 
   useEffect(() => {
-    trackCreativeCornerArticle(article.Title)
+    trackCreativeCornerArticle(title)
   }, [])
 
   return (
     <>
       <Meta
-        title={article.Title}
-        description={article.Description}
-        url={`${ARTSFLOW_URL}/cc/${article.slug}`}
-        image={loader({ src: `${hash}/${hash}${ext}` })}
+        title={title}
+        description={description}
+        url={`${ARTSFLOW_URL}/cc/${slug}`}
+        image={imgUrl}
         type="article"
-        date={article.Date}
-        author={article.author?.Name}
+        date={publishedAt}
+        author={author?.name}
       />
       <VStack
         maxW="1000px"
@@ -40,39 +47,33 @@ export default function Article({ article }: any) {
         margin="0 auto"
         as="article"
       >
-        {hash && (
+        {imgUrl && (
           <Box w="full">
             <Image
-              src={`${hash}/${hash}${ext}`}
+              src={imgUrl}
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN03XPiPwAF4QLKUuLYlwAAAABJRU5ErkJggg=="
               loading="lazy"
-              alt={article.Title}
-              width={width}
-              height={height}
+              alt={title}
+              width={WIDTH}
+              height={HEIGHT}
               layout="responsive"
-              loader={loader}
             />
           </Box>
         )}
         <Stack spacing={['1rem', '1.5rem']}>
           <Heading size="xl" color="#484848" zIndex="2">
-            {article.Title}
+            {title}
           </Heading>
           <HStack spacing="1rem">
-            {ahash && (
-              <Avatar
-                name={article.author?.Name}
-                src={loader({ src: `${ahash}/${ahash}${aext}` })}
-              />
-            )}
+            {avatarUrl && <Avatar name={author?.name} src={avatarUrl} />}
             <VStack alignItems="flex-start" spacing="0">
-              <Text>{article.author?.Name}</Text>
+              <Text>{author?.name}</Text>
               <Text color="#A4A4A4">{date}</Text>
             </VStack>
           </HStack>
         </Stack>
-        <Box pt={['1rem', '1.5rem']}>{MDArticle(article.Body)}</Box>
+        <Box pt={['1rem', '1.5rem']}>{MDArticle(markdown)}</Box>
         <Newsletter />
       </VStack>
     </>
@@ -81,14 +82,11 @@ export default function Article({ article }: any) {
 
 export async function getServerSideProps({ params }: any) {
   const [slug] = params.slug
-  const { articles } = await getArticle(slug)
-  const [article] = articles
+  const { allPost } = await getPostBySlug(slug)
 
-  if (!article) return { notFound: true }
+  if (!allPost.length) return { notFound: true }
 
   return {
-    props: { article },
+    props: { post: allPost[0] },
   }
 }
-
-const loader = ({ src }: any) => `https://ik.imagekit.io/artsflow/${src}`

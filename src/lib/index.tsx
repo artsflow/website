@@ -58,7 +58,7 @@ export const MDArticle = (source: string) => (
   />
 )
 
-const Player = ({ url, title }: any) => {
+export const Player = ({ url, title }: any) => {
   const handlePlayVideo = () => {
     trackWebminarPlay({ url, title })
   }
