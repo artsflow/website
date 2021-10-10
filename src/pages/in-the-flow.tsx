@@ -4,7 +4,7 @@ import NextLink from 'next/link'
 import { format } from 'date-fns'
 
 import { Meta, Dot, Newsletter } from 'components'
-import { getArticlesList, getAllPosts, urlForSource } from 'api'
+import { getAllPosts, urlForSource } from 'api'
 import HeroImg from '../../public/img/hero-cc.webp'
 
 const WIDTH = 617
@@ -142,9 +142,8 @@ const Dots = () => (
 export async function getServerSideProps() {
   try {
     const posts = await getAllPosts()
-    const list = await getArticlesList()
     return {
-      props: { list, posts },
+      props: { posts },
     }
   } catch (e) {
     return {

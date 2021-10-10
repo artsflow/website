@@ -38,8 +38,42 @@ const LIST = gql`
   }
 `
 
+const POST = gql`
+  query getPostBySlug($slug: String) {
+    allPost(where: { slug: { current: { eq: $slug } } }) {
+      title
+      description
+      slug {
+        current
+      }
+      author {
+        name
+        image {
+          asset {
+            _id
+          }
+        }
+      }
+      categories {
+        title
+      }
+      mainImage {
+        asset {
+          _id
+        }
+      }
+      publishedAt
+      bodyRaw
+    }
+  }
+`
+
 export const getAllPosts = async () => {
   return request(API_URL, LIST)
+}
+
+export const getPostBySlug = async (slug: string) => {
+  return request(API_URL, POST, { slug })
 }
 
 export const urlForSource = (source: string) => builder.image(source)
